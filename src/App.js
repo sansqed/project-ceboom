@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {MapContainer, Marker, Popup, TileLayer, useMap} from "react-leaflet"
 
