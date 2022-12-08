@@ -1,0 +1,56 @@
+.sidebar {
+    position: absolute;
+    overflow: hidden;
+    background: #fff;
+    color: #000;
+    height: 100vh;
+    width: 200px;
+    z-index: 10000000;
+    transition: all 0.5s;
+}
+
+.menubars {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.top_section {
+    display: flex;
+    align-items: center;
+    padding: 20px 15px;
+    position: absolute;
+}
+
+.logo {
+    font-size: 30px;
+}
+
+.bars {
+    display: flex;
+    font-size: 25px;
+    margin-left: 50px;
+}
+
+.link {
+    display: flex;
+    color: #fff;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.5s;
+}
+
+.link:hover {
+    background: lightskyblue;
+    color: #000;
+    transition: all 0.5s;
+}
+
+.active {
+    background: lightskyblue;
+    color: #000;
+}
+
+.icon,
+.link_text {
+    font-size: 20px;
+}
