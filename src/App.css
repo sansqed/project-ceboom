@@ -21,7 +21,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: #9cc0f9;
 }
 
 .App-link {
@@ -42,4 +42,21 @@
 .leaflet-container {
   width: 100%;
   height: 100vh;
+  background: #9cc0f9 !important;
+}
+
+/* .leaflet-tile-container{
+  /* opacity: 0.3;
+} */
+
+.cebu-outline{
+  fill: #bbe2c6;
+  fill-opacity: 1;
+  stroke: #bbe2c6;
+  stroke-width: 5px;
+}
+
+.cebu-roads{
+  stroke: white;
+  stroke-width: 2px;
 }
