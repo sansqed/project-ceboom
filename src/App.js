@@ -49,7 +49,7 @@ function App() {
         center={[10.3157, 123.8854]} 
         zoom={9} 
         minZoom={9}
-        scrollWheelZoom={true}>
+        scrollWheelZoom={true}
       >
         {/* <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
