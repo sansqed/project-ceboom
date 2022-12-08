@@ -18,11 +18,7 @@ To start, the react directory goes:
 	- src
 		- ApiCalls [to be added pa]
 		- Assets
-			- CebuMap.geojson
-			- CebuMap.js
-			- CebuRoads.geojson
-			- CebuRoads.js
-		- Components [to be added pa]
+		- components
 		- App.css
 		- App.js
 		- index.css
@@ -38,12 +34,12 @@ To start, the react directory goes:
 We will mostly touch the `/src` directory. 
 - Under `Assets`, naa dira ang *images, geojson data, and other raw files*. Ideally, naka group na into folders ang related assets, like icons, maps, etc. 
 - `ApiCalls` deals with, as the name suggests, **API calls**, pero later na na butangan after maka create nag API ang backend.
-- Sa `Components`, naa dira ang ang actual components nga makita sa web app (usually in `.js` file), so things like *buttons, input fields, navbar, traffic lines, route lines, etc.* Each component kay dapat **under their own folder** para organized. Each component sad kay naay `.js` and `.css` files. Ang `.js` is for the creating and initializing the component and its properties and `.css` is for styling.
+- Sa `components`, naa dira ang ang actual components nga makita sa web app (usually in `.js` file), so things like *buttons, input fields, navbar, traffic lines, route lines, etc.* Each component kay dapat **under their own folder** para organized. Each component sad kay naay `.js` and `.css` files. Ang `.js` is for the creating and initializing the component and its properties and `.css` is for styling.
 - Kanang `App.js` and `App.css` is the **actual web app**, so whatever nga ibutang sa `.js` file, mashow na sa actual web app, and ang wala dira kay di mashow.
 - The rest kay files we won’t be touching na.
 
 # Naming conventions
-React is pretty strict sa naming conventions sa react components so lets use ==camelCase== lang all throughout. Make sure nga the ==variable name is descriptive== para di ta maglibog. *Bahalag taas na na, be descriptive gihapon*. 
+React is pretty strict sa naming conventions sa react components so lets use **camelCase** lang all throughout. Make sure nga the **variable name is descriptive** para di ta maglibog. *Bahalag taas na na, be descriptive gihapon*. 
 
 Not really an urgent concern pero ig integrate sa API, mag agad ta sa giset sa backend, usually its in the form of `foo-bar`, pero later nana.  
 
@@ -66,21 +62,21 @@ You can put Javascript code sad inside the `return` pero dapat enclosed siya sa 
 
 So if makakita mog `foo={true}` or `bar={9}`, Javascript code na ang `true` and `9`.
 
-## Events
+### Events
 If makakita mo sa Javascript code part nga naay `e` nga argument sa functions, like `const _onChange = e => {...}`, that `e` is basically an `event`, which is a JS object. You can do `console.log(e)` to see unsay contents ana, but almost always, an `event` is returned when naay changes or actions nga gibuhat sa components. For example, if mu click kag button or muwrite sa input fields, an `event` is triggered. 
 
 **Events are usually returned when doing an action sa components**, so if you see `onChange` or `onClick` sa components, it means nga when naay interaction sa components, mareturn ang event. And usually, kanang mga `onChange` and others kay mu accept og variable so u need to do [[#Higher Order Functions]] for that. 
 
-## useState
+### useState
 To address the issue of the persistence sa changes to variables and some other sht, we can use `useState`. *Medj complicated baya ni hahahaha*. Iyang syntax kay
-```
+```Javascript
 const [data, setData] = useState()
 ```
 `data` and `setData` can be any noun pero as a convention, **dapat naay `set` at the beginning sa second part**. Inside the parenthesis sa `useState` can be anything, pwede string, int, or object, so u can have `const [num, setNum] = useState(69)`.
 Pero evident sa code, naay 2 parts:
 1. First part kay ang `data`, or the noun, which **behaves just like a variable that stores anything within the `()` pero u cant assign anything to it**. Using the example above, `num` has the value `69`, pero u cant assign `num=420` kay ang pagchange sa value is handled by the second part
 2. The second part **is a function and handles the mutation of the data**. For example, we can have `setNum(420)` (everything inside the parenthesis will be stored), so `num==420` should be true na. *BUT, it changes all the data*. For example, the object below contains the properties `name` and `age` and we want to change the value of `name` after initializing it.
-```
+```Javascript
 const [data, setData] = useState({
 	name: "initial name",
 	age: 69,
@@ -106,8 +102,7 @@ To explain,
 There are still a lot of React concepts that you’ll encounter, pero hopefully you’ll grasp them easily after reading this. Unlike the backend nga logic and algo, frontend deals with libraries, behaviors sa components, styling, and layout. If na overwhelm or galisod mo, ask lang sa server kay tabangan ra ta mo. Good luck!!
 
 ---
-
-  
+ 
 
 # Getting Started with Create React App
 
