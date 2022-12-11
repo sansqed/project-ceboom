@@ -74,7 +74,7 @@ function locationChecker(location){
     }
 }
 
-const TestMarker = ({vars}) => {
+const Marker = ({vars}) => {
     return (
         <div>{
             test.map((location) =>{
@@ -89,4 +89,4 @@ const TestMarker = ({vars}) => {
 
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
 
-export default TestMarker
+export default Marker
