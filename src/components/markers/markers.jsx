@@ -35,46 +35,46 @@ templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')})
 touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')})
 
 function locationChecker(location){
-    if(location.type == "Hospitals"){
+    if(location.type === "Hospitals"){
         return hospitalIcon
-    }else if(location.type == "Health Centers"){
+    }else if(location.type === "Health Centers"){
         return healthCenterIcon
-    }else if(location.type == "Pharmacies"){
+    }else if(location.type === "Pharmacies"){
         return hospitalIcon
-    }else if(location.type == "Barangay Halls"){
+    }else if(location.type === "Barangay Halls"){
         return barangayHallIcon
-    }else if(location.type == "Malls/Department Stores"){
+    }else if(location.type === "Malls/Department Stores"){
         return mallDepartmentIcon
-    }else if(location.type == "Markets"){
+    }else if(location.type === "Markets"){
         return publicMarketIcon
-    }else if(location.type == "City Halls"){
+    }else if(location.type === "City Halls"){
         return cityHallIcon
-    }else if(location.type == "Schools"){
+    }else if(location.type === "Schools"){
         return schoolIcon
-    }else if(location.type == "Bars"){
+    }else if(location.type === "Bars"){
         return barIcon
-    }else if(location.type == "Police Stations"){
+    }else if(location.type === "Police Stations"){
         return policeStationIcon
-    }else if(location.type == "Fire Stations"){
+    }else if(location.type === "Fire Stations"){
         return fireStationIcon
-    }else if(location.type == "Churches"){
+    }else if(location.type === "Churches"){
         return churchIcon
-    }else if(location.type == "Restaurants"){
+    }else if(location.type === "Restaurants"){
         return restaurantIcon
-    }else if(location.type == "Tourist Spots" || location.type == "Tourist spots"){
+    }else if(location.type === "Tourist Spots" || location.type == "Tourist spots"){
         return touristSpotIcon
-    }else if(location.type == "Cemetaries"){
+    }else if(location.type === "Cemetaries"){
         return cemetaryIcon
-    }else if(location.type == "Police Stations"){
+    }else if(location.type === "Police Stations"){
         return policeStationIcon
-    }else if(location.type == "Municipal Halls" || location.type == "Municipal halls"){
+    }else if(location.type === "Municipal Halls" || location.type == "Municipal halls"){
         return municipalHallIcon
-    }else if(location.type == "Ports"){
+    }else if(location.type === "Ports"){
         return portIcon
     }
 }
 
-const Marker = ({vars}) => {
+const MarkerLayer = ({vars}) => {
     return (
         <div>{
             test.map((location) =>{
@@ -89,4 +89,4 @@ const Marker = ({vars}) => {
 
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
 
-export default Marker
+export default MarkerLayer
