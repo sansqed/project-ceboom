@@ -11,6 +11,8 @@ import "leaflet-draw/dist/leaflet.draw.css"
 import { useRef } from 'react';
 // import TestSidebar from './components/navbar/test';
 import Sidebar from './components/navbar/sidebar';
+import TestMarker from './components/markers/markers'
+
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/pages/Dashboard';
 
@@ -69,6 +71,11 @@ function App() {
           className="cebu-roads"
         />
         
+        {/* Renders markers*/}
+        <TestMarker></TestMarker>
+
+
+
         {/* Editable layer */}
         <FeatureGroup>
           <EditControl
