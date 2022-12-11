@@ -1,44 +1,87 @@
 import React, { useState } from 'react';
-import { Menu, Search } from "@mui/icons-material"
+
+// ! material UI icons and other stuff. please check docs. Material UI has many capabilities
+// ! that are all worth checking out. 
+import { Menu, Search, Route, AddLocation, Traffic } from "@mui/icons-material"
 import { Box } from "@mui/system"
 import { IconButton } from '@mui/material';
 
+// ! routing
 import { NavLink } from "react-router-dom"
+
+// ! CSS
 import './sidebar.css'
+
+// ! other imports
+import CeboomLogo from '../../Assets/images/project_ceboom_logo.png'
+
 
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = useState('MENU');
   const toggle = () => setIsOpen(!isOpen);
+
+  const doubleToggle = () => {
+    toggle();
+    setSelectedMenuItem('Menu');
+  }
+
   const menuItem = [
     {
       path: "#search",
-      name: "Test",
-      icon: <Search />
+      name: "Search",
+      icon: <Search sx={{ fontSize: "3.5vh" }} />
     },
-
+    {
+      path: "#pathfinder",
+      name: "Pathfinder",
+      icon: <Route sx={{ fontSize: "3.5vh" }} />
+    },
+    {
+      path: "#add-location",
+      name: "Edit Map",
+      icon: <AddLocation sx={{ fontSize: "3.5vh" }} />
+    },
+    {
+      path: "#update-traffic",
+      name: "Update Traffic",
+      icon: <Traffic sx={{ fontSize: "3.5vh" }} />
+    },
   ]
+
+
+
   return (
-    <div className="container">
-      <div style={{ width: isOpen ? "200px" : "50px" }} className="sidebar">
-        <div classNmae="top-section">
-          <h1 style={{ display: isOpen ? "block" : "none" }} className="logo">Logo</h1>
-          <div style={{ marginLeft: isOpen ? "50px" : "0px" }} className="menubars">
+    <div className="sidebar-container">
+      <div style={{ width: isOpen ? "23vh" : "6.5vh" }} className="sidebar">
+        <div className="sidebar-top-section">
+          <div className="sidebar-hamburger">
             <Box>
               <IconButton>
                 {" "}
-                <Menu onClick={toggle} />
+                <Menu onClick={doubleToggle} sx={{ fontSize: "4vh" }} />
               </IconButton>
             </Box>
           </div>
+          <div className="sidebar-display">
+            <div style={{ display: isOpen ? "flex" : "none" }} className="sidebar-display-text">{selectedMenuItem}</div>
+          </div>
+
         </div>
-        {
-          menuItem.map((item, index) => (
-            <NavLink to={item.path} key={index} className="link" activeclassName="active">
-              <div className="icon">{item.icon}</div>
-              <div style={{ display: "none" }} className="link_text">{item.name}</div>
-            </NavLink>
-          ))
-        }
+        <div className="sidebar-menu">
+          {
+            menuItem.map((item, index) => (
+              <div to={item.path} key={index} className="sidebar-link" activeclassName="sidebar-active" onClick={() => setSelectedMenuItem(item.name)}>
+                <Box>
+                  <IconButton>
+                    <div className="sidebar-icon" onClick={toggle}>{item.icon}</div>
+                  </IconButton>
+                </Box>
+                <div style={{ display: isOpen ? "flex" : "none" }} className="sidebar-link_text">{item.name}</div>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </div>
   )
