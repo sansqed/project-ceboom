@@ -77,7 +77,7 @@ function locationChecker(location){
     }
 }
 
-const MarkerLayer = (landmark) => {
+const MarkerLayer = (data) => {
     return (
         <div>{
             test.map((location) =>{
@@ -93,7 +93,7 @@ const MarkerLayer = (landmark) => {
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
 
 MarkerLayer.propTypes = {
-    landmark: PropTypes.object,
+    data: PropTypes.object,
 }
 
 export default MarkerLayer
