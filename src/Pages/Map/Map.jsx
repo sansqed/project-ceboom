@@ -30,9 +30,6 @@ const Map = ({ children }) => {
       return(<UpdateTraffic/>)
   }
 
-
-  console.log(action)
-
   const _onCreate = e => {
     console.log(e)
   }
@@ -52,7 +49,7 @@ const Map = ({ children }) => {
     <div className="map-container">
 
       <SideBar/>
-      {handleAction()}
+      {handleSubpage()}
 
       <link 
         rel="stylesheet"
