@@ -17,27 +17,19 @@ import UpdateTraffic from "../UpdateTraffic/UpdateTraffic"
 
 const Map = ({ children }) => {
   const location = useLocation()
-  const action = location.hash  
+  const subpage = location.hash  
 
-  const handleAction = () => {
-    if (action === "#editmap"){
-      console.log("editing")
-      return(
-        <EditMap/>
-      )
-    }
+  const handleSubpage = () => {
+    if (subpage === "#editmap")
+      return(<EditMap/>)
+    else if (subpage === "#search")
+      return(<Search/>)
+    else if (subpage === "#pathfinder")
+      return(<PathFinder/>)
+    else if (subpage === "#updatetraffic")
+      return(<UpdateTraffic/>)
   }
 
-  <EditMap/>
-
-  
-  // elif (action === "#search")
-  //   <Search/>
-  // elif (action === "#pathfinder")
-  //   <PathFinder/>
-  // elif (action === "#updatetraffic")
-  //   <UpdateTraffic/>
-  
 
   console.log(action)
 
