@@ -1,3 +1,6 @@
+import React from "react";
+import PropTypes from "prop-types";
+
 import {Marker} from "react-leaflet"
 import L from "leaflet"
 
@@ -74,7 +77,7 @@ function locationChecker(location){
     }
 }
 
-const MarkerLayer = ({vars}) => {
+const MarkerLayer = (landmark) => {
     return (
         <div>{
             test.map((location) =>{
@@ -88,5 +91,9 @@ const MarkerLayer = ({vars}) => {
 }
 
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
+
+MarkerLayer.propTypes = {
+    landmark: PropTypes.object,
+}
 
 export default MarkerLayer
