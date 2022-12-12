@@ -10,7 +10,7 @@ import { IconButton } from '@mui/material';
 import { NavLink } from "react-router-dom"
 
 // ! CSS
-import './sidebar.css'
+import './Sidebar.css'
 
 // ! other imports
 import CeboomLogo from '../../Assets/images/project_ceboom_logo.png'
@@ -23,7 +23,7 @@ const Sidebar = ({ children }) => {
 
   const doubleToggle = () => {
     toggle();
-    setSelectedMenuItem('Menu');
+    setSelectedMenuItem('MENU');
   }
 
   const menuItem = [
@@ -38,18 +38,16 @@ const Sidebar = ({ children }) => {
       icon: <Route sx={{ fontSize: "3.5vh" }} />
     },
     {
-      path: "#add-location",
+      path: "#editmap",
       name: "Edit Map",
       icon: <AddLocation sx={{ fontSize: "3.5vh" }} />
     },
     {
-      path: "#update-traffic",
+      path: "#updatetraffic",
       name: "Update Traffic",
       icon: <Traffic sx={{ fontSize: "3.5vh" }} />
     },
   ]
-
-
 
   return (
     <div className="sidebar-container">
@@ -71,12 +69,14 @@ const Sidebar = ({ children }) => {
         <div className="sidebar-menu">
           {
             menuItem.map((item, index) => (
-              <div to={item.path} key={index} className="sidebar-link" activeclassName="sidebar-active" onClick={() => setSelectedMenuItem(item.name)}>
-                <Box>
-                  <IconButton>
-                    <div className="sidebar-icon" onClick={toggle}>{item.icon}</div>
-                  </IconButton>
-                </Box>
+              <div to={item.path} key={index} className="sidebar-link" activeclassName="sidebar-active" onClick={() => {setSelectedMenuItem(item.name);setIsOpen(false)}}>
+                <NavLink to={item.path}>
+                  <Box>
+                    <IconButton >
+                      <div className="sidebar-icon">{item.icon}</div>
+                    </IconButton>
+                  </Box>
+                </NavLink>
                 <div style={{ display: isOpen ? "flex" : "none" }} className="sidebar-link_text">{item.name}</div>
               </div>
             ))

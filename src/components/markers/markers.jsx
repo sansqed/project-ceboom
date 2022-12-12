@@ -1,7 +1,7 @@
 import {Marker} from "react-leaflet"
 import L from "leaflet"
 
-import './markers.css'
+import './Markers.css'
 
 var test = [{type: "Hospitals", cords: [10.253781, 123.838469]},
 {type: "Cemetaries", cords: [10.263133, 123.839979]},

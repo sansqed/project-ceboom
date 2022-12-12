@@ -63,4 +63,5 @@
     align-items: center;
     justify-content: left;
     font-size: 2vh;
+    cursor: pointer;
 }
