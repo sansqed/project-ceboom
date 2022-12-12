@@ -1,0 +1,781 @@
+id,name,type,location,lat,lon
+1,Cebu South Medical Center,Hospitals,Talisay,10.253780719586434,123.83846878657616
+2,Simbajon Medical Clinic,Health Centers,Talisay,10.261654916331313,123.83701029448979
+3,Gomez Clinic,Health Centers,Talisay,10.263132917531365,123.83997852396953
+4,Talisay Rural Health Unit I,Health Centers,Talisay,10.261952910910981,123.80323957683486
+5,Three Sixty Pharmacy,Pharmacies,Talisay,10.260597844202549,123.84067679386828
+6,Mercury Drug,Pharmacies,Talisay,10.248985075376124,123.83885263708811
+7,Rose Pharmacy Rabaya St. Tabunok,Pharmacies,Talisay,10.262769429503917,123.8410896506988
+8,San Isidro Barangay Hall,Barangay Halls,Talisay,10.25962900515505,123.84045140740014
+9,Tabunok Barangay Hall,Barangay Halls,Talisay,10.260840090439556,123.84356395596227
+10,Lawa-an III Barangay Hall,Barangay Halls,Talisay,10.265211957347182,123.83143601715426
+11,Jaclupan Barangay Hall,Barangay Halls,Talisay,10.300894161466399,123.81764355599479
+12,Pooc Barangay Hall,Barangay Halls,Talisay,10.238373156641225,123.82470140634891
+13,Poblacion Barangay Hall,Barangay Halls,Talisay,10.242418444752806,123.84833080023287
+14,Linao Barangay Hall,Barangay Halls,Talisay,10.262573058483792,123.81804444372348
+15,Gaisano Grand Fiesta Mall,Malls/Department Stores,Talisay,10.265547994525262,123.84232540300663
+16,Gaisano Capital SRP,Malls/Department Stores,Talisay,10.257366214044552,123.85974771771588
+17,Starmall ,Malls/Department Stores,Talisay,10.25881143511968,123.82360125029797
+18,South Town Centre,Malls/Department Stores,Talisay,10.266866379905906,123.84332859419726
+19,Tabunok Public Market,Markets,Talisay,10.26318008441158,123.83859506033333
+20,Shopwell Talisay,Markets,Talisay,10.260916406087059,123.83857146272865
+21,Robinsons Supermarket,Markets,Talisay,10.259612816911897,123.82969485124184
+22,Talisay City Hall,City Halls,Talisay,10.25325673136384,123.82940434364212
+23,St. Scholastica's Academy,Schools,Talisay,10.264769781506573,123.83659631968054
+24,Talisay City College,Schools,Talisay,10.242928678781206,123.84830367330198
+25,Asian College of Technology Bulacao,Schools,Talisay,10.271311264621465,123.84704331784924
+26,Cebu Sacred Heart College,Schools,Talisay,10.258907661215552,123.8259387167817
+27,Talisay City Science High School,Schools,Talisay,10.2448272740786,123.84423943522059
+28,Talisay City Central Elementary School,Schools,Talisay,10.245367090228367,123.84454486194484
+29,Sam's Place 2022 Sportsbar,Bars,Talisay,10.256982775530371,123.83037980066725
+30,Muscle Cafe & Bar,Bars,Talisay,10.257790867352387,123.81963108674114
+31,Talisay City Police Station,Police Stations,Talisay,10.242470492812643,123.84848732022476
+32,Talisay City Fire Station,Fire Stations,Talisay,10.242585173367257,123.84822665740516
+33,Sta. Teresa de Avila Church,Churches,Talisay,10.243853834993761,123.84769962520679
+34,Bible Baptist Temple,Churches,Talisay,10.24928715883964,123.83755952965222
+35,Mani Mogo Korean Restaurant with Daega,Restaurants,Talisay,10.258216027788421,123.82263982504989
+36,Talisay Lechon,Restaurants,Talisay,10.24137768549822,123.84780513298335
+37,King Crab Capital Seafoods Restaurant,Restaurants,Talisay,10.249762573030484,123.83688125328054
+38,SamgyOppa UNLIMITED+,Restaurants,Talisay,10.256016894202652,123.83973552756427
+39,Talisay City Plaza,Tourist Spots,Talisay,10.242492254665226,123.84880269889851
+40,Museo de Talisay,Tourist Spots,Talisay,10.245671361157816,123.84464693315329
+41,Crocolandia,Tourist Spots,Talisay,10.246558266652032,123.8339701639861
+42,Villa Teresita Resort,Tourist Spots,Talisay,10.236196852465822,123.83222007743134
+43,Aznar Beach Resort,Tourist Spots,Talisay,10.243301105724052,123.84980951851307
+44,Camp 4 Bridge,Tourist Spots,Talisay,10.319710763239723,123.82075633829453
+45,Kawasan Falls,Tourist Spots,Talisay,10.29082750628574,123.79142083198745
+46,Igutan Falls,Tourist Spots,Talisay,10.305780565184312,123.81263302083211
+47,Manipis Viewing Deck,Tourist Spots,Talisay,10.29579021800587,123.81855238146098
+48,Talisay Cemetery,Cemeteries,Talisay,10.241702461215885,123.84359569078438
+49,Cebu South Memorial Garden Inc,Cemeteries,Talisay,10.255833297367305,123.82315623951446
+50,Minglanilla District Hospital,Hospitals,Minglanilla,10.249073509143942,123.80401533092564
+51,Bever Maternity Clinic,Health Centers,Minglanilla,10.247635027130181,123.80020391191536
+52,Mingnilla Main Health Center,Health Centers,Minglanilla,10.245718800583946,123.79552815104934
+53,Minglanilla Municipal Hall,Barangay Halls,Minglanilla,10.246093192417206,123.79563417441247
+54,Tungkil Barangay Hall,Barangay Halls,Minglanilla,10.244714792857577,123.8136833381446
+55,Poblacion Ward I Barangay Hall,Barangay Halls,Minglanilla,10.24453085157597,123.79801524363353
+56,Calajo-an Barangay Hall,Barangay Halls,Minglanilla,10.239682601792346,123.80255749515483
+57,Tubod Barangay Hall,Barangay Halls,Minglanilla,10.263718971379825,123.79893661464276
+58,Tunghaan Barangay Hall,Barangay Halls,Minglanilla,10.245524646982298,123.78083532442106
+59,Minglanilla Police Station,Police stations,Minglanilla,10.245841894264924,123.79546005817002
+60,Minglanilla Fire Station,Fire Stations,Minglanilla,10.24417498195027,123.7962109240057
+61,Gaisano Grand Mall of Minglanilla,Malls/Department Stores,Minglanilla,10.244340222923116,123.79283782201179
+62,Belmont One,Malls/Department Stores,Minglanilla,10.247294005860285,123.80007665805186
+63,Archdiocesan Shrine of the Immaculate Heart of Mary,Churches,Minglanilla,10.246714822344938,123.79579966491745
+64,San Roque Parish,Churches,Minglanilla,10.255382018073904,123.81062729320826
+65,Bible Baptist Church Minglanilla,Churches,Minglanilla,10.246157007008105,123.79134405764808
+66,Assembly of God Church,Churches,Minglanilla,10.24556965495797,123.79373874413359
+67,Pentecostal Missionary Church of Christ (4th Watch),Churches,Minglanilla,10.242805506969331,123.78873310980883
+68,Evangelical Community Church,Churches,Minglanilla,10.243897582797578,123.79445796793706
+69,Rose Pharmacy Gaisano Grand Mall Minglanilla,Pharmacies,Minglanilla,10.245122121960389,123.79453083814711
+70,La Nueva Pharmacy - Minglanilla,Pharmacies,Minglanilla,10.245067435986602,123.79536459968375
+71,TGP The Generics Pharmacy,Pharmacies,Minglanilla,10.2451646829838,123.79557414727334
+72,"St. Cecilia's College - Cebu, Inc.",Schools,Minglanilla,10.244771696857379,123.79440988460077
+73,Minglanilla Central School,Schools,Minglanilla,10.243939685378683,123.79670843383174
+74,"Southern Bethany Christian School of Minglanilla, Inc.",Schools,Minglanilla,10.243116633487338,123.78877142113771
+75,"The Sisters of Mary School-Boystown, Inc.",Schools,Minglanilla,10.238654116677207,123.77900843129432
+76,Mary Help Of Christians School,Schools,Minglanilla,10.240816665557205,123.78171809644365
+77,Tungkop National High School,Schools,Minglanilla,10.239449082399352,123.78258610238173
+78,University of the Visayas - Minglanilla Campus,Schools,Minglanilla,10.246009798543561,123.79900929217523
+79,Anjo World Theme Park,Tourist Spots,Minglanilla,10.248436750711612,123.79995044316298
+80,Gullas Heights,Tourist Spots,Minglanilla,10.262932695318439,123.77646800972302
+81,Tubod Flowing Water Resort,Tourist Spots,Minglanilla,10.26214531742907,123.7986682105828
+82,Snow World Cebu,Tourist Spots,Minglanilla,10.249036236132577,123.79978976583477
+83,Circa La Playa,Tourist Spots,Minglanilla,10.238605466611752,123.81383164635038
+84,Matun-og Falls,Tourist Spots,Minglanilla,10.289259834911665,123.75770308969342
+85,Dakit Tubod Falls,Tourist Spots,Minglanilla,10.293903563607758,123.77577085799427
+86,The Market Place Minglanilla,Markets,Minglanilla,10.24194865379055,123.79851574120049
+87,Tungkil Market,Markets,Minglanilla,10.24477919292918,123.81368727444766
+88,Robinsons Supermarket,Markets,Minglanilla,10.247380305282965,123.79996290985483
+89,Prince Hypermart Minglanilla,Markets,Minglanilla,10.241167744557567,123.79827186632826
+90,La Nueva Supermart,Markets,Minglanilla,10.244953329938113,123.79520992351617
+91,Big G's Burger Grill & Restobar,Bars,Minglanilla,10.24650568073124,123.7988776522379
+92,Chillout Mobile Bar,Bars,Minglanilla,10.243747292242842,123.80983648397707
+93,The Hangover Sportsbar,Bars,Minglanilla,10.245602722683536,123.79694904970333
+94,Jollibee,Restaurants,Minglanilla,10.245726877337631,123.79758814500947
+95,AA BBQ Minglanilla,Restaurants,Minglanilla,10.249151766512242,123.8032575696012
+96,Mako's Burger and Flavored Chicken Wings,Restaurants,Minglanilla,10.246649550512267,123.79883458108608
+97,3.21 Lechon House & Sizzling Hub,Restaurants,Minglanilla,10.251337829617402,123.80158500432587
+98,Dickong,Restaurants,Minglanilla,10.244471568983835,123.79220622659862
+99,South Point Food Express - Minglanilla Branch,Restaurants,Minglanilla,10.252378407628933,123.80694437282506
+100,Food Hub - Gullas Drive Minglanilla,Restaurants,Minglanilla,10.249090830279107,123.78254324198234
+101,Minglanilla Public Cemetery,Cemeteries,Minglanilla,10.250484799862969,123.79615756441319
+102,Sanctuary Memorial Park,Cemeteries,Minglanilla,10.251329901139993,123.797670090556
+103,Roman Catholic Memorial Gardens,Cemeteries,Minglanilla,10.248691464522313,123.79729219741819
+104,Cebu South General Hospital,Hospitals,Naga,10.232002234122184,123.77118082959366
+105,St. Jude Medical and Surgical Clinic,Health Centers,Naga,10.22825720474255,123.76709283173692
+106,Colon Barangay Health Center,Health Centers,Naga,10.2193850088769,123.76223145469653
+107,Health Care Diagnostic and Drugtesting Laboratory,Health Centers,Naga,10.20740190182388,123.75826259093728
+108,"Hi-Precision Diagnostics - Naga, Cebu",Health Centers,Naga,10.212390692742225,123.75901381724208
+109,Cuizona Childrern's Medical Clinic,Health Centers,Naga,10.209285022330711,123.75911965889428
+110,City Hall of Naga,City Halls,Naga,10.207087147314269,123.75985646595609
+111,North Poblacion Barangay Hall,Barangay Halls,Naga,10.211759900444987,123.76004499234662
+112,Central Poblacion Barangay Hall,Barangay Halls,Naga,10.208743694207131,123.75662136573966
+113,South Poblacion Barangay Hall,Barangay Halls,Naga,10.207357456662573,123.75591681279819
+114,Pangdan Barangay Hall,Barangay Halls,Naga,10.231893579685941,123.73029923683839
+115,Cogon Barangay Hall,Barangay Halls,Naga,10.268528611698772,123.74000155313657
+116,Bairan Barangay Hall,Barangay Halls,Naga,10.197432225749258,123.72009016715585
+117,Cabungahan Barangay Hall,Barangay Halls,Naga,10.213614726878678,123.72076309021436
+118,Tina-an Barangay Hall,Barangay Halls,Naga,10.193621504604778,123.74500094162384
+119,Inoburan Barangay Hall,Barangay Halls,Naga,10.188407874974653,123.73980843890303
+120,Naalad Barangay Hall,Barangay Halls,Naga,10.209492485634268,123.74431941793755
+121,Inayagan Barangay Hall,Barangay Halls,Naga,10.23666625623893,123.77443887863028
+122,Tuyan Barangay Hall,Barangay Halls,Naga,10.228188626731646,123.76744177201043
+123,Lanas Barangay Hall,Barangay Halls,Naga,10.272294101561787,123.71701261211541
+124,Three Sixty Pharmacy,Pharmacies,Naga,10.236768370692864,123.77477443061676
+125,C & S Pharmaceutical,Pharmacies,Naga,10.235901459100205,123.77415756192515
+126,Will Tyrone Pharmacy,Pharmacies,Naga,10.233951933896691,123.77202998702822
+127,Metro Pharmacy,Pharmacies,Naga,10.207773462333213,123.75909736075963
+128,Rose Pharmacy,Pharmacies,Naga,10.208105381739411,123.75832691884315
+129,TGP The Generics Pharmacy,Pharmacies,Naga,10.207759650443833,123.75787753618384
+130,3 Angels Pharmacy Naga,Pharmacies,Naga,10.209358903699647,123.75650791972724
+131,City of Naga National High School,Schools,Naga,10.208887090355997,123.75487327398744
+132,Naalad Elementary School,Schools,Naga,10.209325868350641,123.74452846123623
+133,Exceed Learning Center Elem. Dept,Schools,Naga,10.207626099693828,123.75626647026476
+134,Exceed Learning Center High Sch. Dept.,Schools,Naga,10.207091070932222,123.7568026533675
+135,Cebu Technological University - Naga Extension,Schools,Naga,10.209055307616016,123.75660652092385
+136,Professional Academy of the Philippines,Schools,Naga,10.204121509670363,123.75490912449112
+137,City of Naga Boardwalk,Tourist Spots,Naga,10.20868078739108,123.7606951589907
+138,City of Naga Plaza Field,Tourist Spots,Naga,10.208135847824792,123.75997075367601
+139,Pasilong sa Naga,Tourist Spots,Naga,10.208423878931095,123.759107376606
+140,"Mount Magdook Lookout, Sabah, Malaysia",Tourist Spots,Naga,10.235140050441744,123.74946334042374
+141,Secret Garden,Tourist Spots,Naga,10.199423904938783,123.75377754430737
+142,Manayon's Peak,Tourist Spots,Naga,10.265400756401753,123.70272843557072
+143,Mt. Naupa,Tourist Spots,Naga,10.273150233413412,123.72970060667781
+144,Guanzon Beach Resort,Tourist Spots,Naga,10.178926193948183,123.72959719028923
+145,Blu-pool Waterpark ,Tourist Spots,Naga,10.178601832176884,123.72922962274596
+146,SM Savemore,Markets,Naga,10.208015614346364,123.75831408841633
+147,SuperMetro Market,Markets,Naga,10.20767468069313,123.75884254636884
+148,Naga City People's Market,Markets,Naga,10.205760624577536,123.75993518346945
+149,BFP Naga City Fire Station,Fire Stations,Naga,10.20459607969528,123.75911888726382
+150,City of Naga Police Station,Police Stations,Naga,10.204524370493123,123.7593747184918
+151,Archdiocesan Shrine of St. Francis of Assisi,Churches,Naga,10.208684080675877,123.75849811825323
+152,"United Church of Christ Philippines, Naga",Churches,Naga,10.207531128139392,123.75667455139927
+153,Naga Christian Fellowship Center Evangelical Free Church,Churches,Naga,10.20703754827669,123.75491319347505
+154,Pentecostal Missionary Church of Christ,Churches,Naga,10.212180157978464,123.75898493320611
+155,Naga Bible Baptist Church,Churches,Naga,10.201934672022901,123.75407756005775
+156,Chef Gourmet Restobar,Restaurants,Naga,10.206343939396104,123.75669227571377
+157,The Cookout Cebu,Restaurants,Naga,10.209314306477218,123.76025496502442
+158,Jollibee,Restaurants,Naga,10.209049262797611,123.75900906633821
+159,Tam Bok Joo Korean BBQ Restaurant,Restaurants,Naga,10.208975030081604,123.75931617770473
+160,Burrito & Kebab Brothers,Restaurants,Naga,10.208965790978015,123.75939262065998
+161,Chowking's,Restaurants,Naga,10.20890484829754,123.7591056243017
+162,MANI MOGO KOREAN RESTAURANT WITH DAEGA IN NAGA,Restaurants,Naga,10.210437609822735,123.7590075560242
+163,KKD STK + BBQ,Restaurants,Naga,10.21132427010046,123.75918559849696
+164,Ramen Takayama,Restaurants,Naga,10.209262865868466,123.75645871668006
+165,St. Francis Of Assisi Cemetery,Cemeteries,Naga,10.206736478436612,123.75277654908973
+166,Olive Hills Memorial Garden,Cemeteries,Naga,10.207144760631033,123.75321029786413
+167,Legacy Plains Memorial Garden,Cemeteries,Naga,10.208544090649912,123.75336850551456
+168,San Fernando Municipal Hall,Municipal Halls,San Fernando,10.162600777497806,123.70727581377942
+169,San Fernando Fire Station,Fire Stations,San Fernando,10.16119478893933,123.70777189047506
+170,San Fernando Municipal Police Station,Police Stations,San Fernando,10.160180359462338,123.70657210105166
+171,Pitalo Barangay Hall,Barangay Halls,San Fernando,10.17632871939904,123.72144203029158
+172,Tañañas Brgy. Hall,Barangay Halls,San Fernando,10.183079472578406,123.69891073031125
+173,Ilaya Barangay Hall,Barangay Halls,San Fernando,10.187851263647364,123.70789946056358
+174,Tinubdan Barangay Hall,Barangay Halls,San Fernando,10.17620028515407,123.68365385983367
+175,Balud Barangay Hall (San Fernando),Barangay Halls,San Fernando,10.14812125085707,123.69464072934528
+176,Sangat Barangay Hall,Barangay Halls,San Fernando,10.133535412604328,123.68762123255551
+177,South Poblacio Barangay Hall,Barangay Halls,San Fernando,10.159732142036882,123.70478862903909
+178,Rural Health Centre,Health Centers,San Fernando,10.16213874040299,123.70714663044203
+179,Bacaltos Medical Clinic,Health Centers,San Fernando,10.16327808438784,123.7073821265213
+180,ThreeSixty Pharmacy,Pharmacies,San Fernando,10.162052281847984,123.70656829443281
+181,TGP The Generics Pharmacy,Pharmacies,San Fernando,10.161859979428991,123.70687318033886
+182,Greenhills Elementary School,Schools,San Fernando,10.13891092389799,123.6739782946422
+183,Balud Elementary School,Schools,San Fernando,10.148670168927822,123.69493770073817
+184,Sangat National High School,Schools,San Fernando,10.133567489678697,123.68657041165105
+185,Notre Dame Academy of San Fernando Cebu,Schools,San Fernando,10.162991390046699,123.70704204723314
+186,San Fernando National High School,Schools,San Fernando,10.158429409939188,123.70841507606893
+187,Busay Falls,Tourist Spots,San Fernando,10.161344353012893,123.67377780880163
+188,Cebu Paradise Mountain Park,Tourist Spots,San Fernando,10.19932077081488,123.68768596136721
+189,Buntod CampBar,Tourist Spots,San Fernando,10.199190469803135,123.68817878281523
+190,BACALLA WOODS CAMPSITE,Tourist Spots,San Fernando,10.204386089918215,123.69367459999434
+191,El Kargador,Tourist Spots,San Fernando,10.158462161323005,123.70903291850652
+192,Singli Outdoor Museum and Resort,Tourist Spots,San Fernando,10.177225903479938,123.67463977835838
+193,Cebu Hidden Paradise Mountain Resort,Tourist Spots,San Fernando,10.20709229336891,123.6939960303806
+194,San Fernando Public Market,Markets,San Fernando,10.161142171937316,123.70723684132658
+195,Taiheiyo Cement Philippines Port,Ports,San Fernando,10.154336697868313,123.70856640014898
+196,Route 45,Restaurants,San Fernando,10.170181540665919,123.71442080130242
+197,Teology Cafe,Restaurants,San Fernando,10.156054358909577,123.70161188598435
+198,Hilltop Flavors,Restaurants,San Fernando,10.166276330133941,123.70056454662118
+199,Bite Kru MMXX,Restaurants,San Fernando,10.164860229877297,123.71043399386001
+200,Park Place Restaurant Videoke,Restaurants,San Fernando,10.137204671644417,123.69223656011371
+201,Green Kiosk,Restaurants,San Fernando,10.173636429776527,123.71637648894952
+202,St. John Cementery,Cemeteries,San Fernando,10.169817119790075,123.710215848683
+203,Carcar City Hall,City Halls,San Fernando,10.105804348479046,123.6413151250026
+204,Poblacion I Barangay Hall,Barangay Halls,San Fernando,10.107035270349986,123.63909077765102
+205,Poblacion II Barangay Hall,Barangay Halls,San Fernando,10.100923126675786,123.6434839236152
+206,Valladolid Barangay Hall,Barangay Halls,San Fernando,10.10027698288463,123.66286311776828
+207,Liburon Barangay Hall,Barangay Halls,San Fernando,10.117360408780307,123.65219739004728
+208,Valencia Barangay Hall,Barangay Halls,San Fernando,10.146947940386811,123.6183963357808
+209,"Guadalupe Barangay Hall, Carcar",Barangay Halls,San Fernando,10.109370594745746,123.60723009833082
+210,Buenavista Barangay Hall,Barangay Halls,San Fernando,10.169321469785448,123.61743768511111
+211,Cebu Provincial Hospital-Carcar City,Hospitals,San Fernando,10.099230741104332,123.64372117953458
+212,DR. JOSEPH REY C. BACALSO MEDICAL CLINIC AND INFIRMARY,Hospitals,San Fernando,10.104173812074176,123.63854829943702
+213,Health and Life Summit Diagnostic Center,Health Centers,San Fernando,10.099930174207463,123.63966528680022
+214,Poblacion III Health Center,Health Centers,San Fernando,10.10994960865823,123.64972798699088
+215,Sato Maternity Clinic,Health Centers,San Fernando,10.104049925689907,123.64099431117062
+216,ThreeSixty Pharmacy,Pharmacies,San Fernando,10.103879263995594,123.64052505774045
+217,Rose Pharmacy Poblacion Carcar,Pharmacies,San Fernando,10.103783419643877,123.64000825995717
+218,The Generics Pharmacy,Pharmacies,San Fernando,10.103665260898314,123.63970804346363
+219,Watsons pharmacy,Pharmacies,San Fernando,10.107848950717662,123.64527016791833
+220,Carcar City Fire Station,Fire Stations,San Fernando,10.109879139225715,123.64277543632302
+221,Carcar City Police Station,Police Stations,San Fernando,10.106889153154187,123.6483113911553
+222,Gaisano Grand Mall,Malls/Department Stores,San Fernando,10.109215088404694,123.64547297888663
+223,Gaisano Supermarket,Markets,San Fernando,10.109036799009392,123.64494152242258
+224,Carcar City Public Market,Markets,San Fernando,10.105274219670768,123.64685018799837
+225,Savemore Market,Markets,San Fernando,10.102468020311502,123.63924498893246
+226,Super Metro Carcar,Markets,San Fernando,10.109528673312331,123.6511835176704
+227,Mother Mary's Children School,Schools,San Fernando,10.111546150487653,123.6455217315729
+228,Carcar City College,Schools,San Fernando,10.10735654131146,123.64208810528461
+229,Carcar Central National High School,Schools,San Fernando,10.105285941326889,123.64346512086503
+230,"Carcar Christian School, Inc.",Schools,San Fernando,10.104271679393769,123.64174429250076
+231,Carcar Academy Technical School Incorporated,Schools,San Fernando,10.105326210524883,123.6370243055211
+232,"St. Teresa's School of Valladolid, Inc. (STSV)",Schools,San Fernando,10.102352542075554,123.65936215115423
+233,St. Catherine's College,Schools,San Fernando,10.106243415293955,123.64054396112348
+234,Carcar City Museum,Tourist Spots,San Fernando,10.105912095247906,123.64089154987904
+235,Mancao Ancestral House,Tourist Spots,San Fernando,10.108128468794089,123.64476933838556
+236,Theotokos Shrine,Tourist Spots,San Fernando,10.116227350241752,123.67384765833458
+237,Carcar City Rotunda,Tourist Spots,San Fernando,10.103317989461,123.6403935527555
+238,The Writers’ Block,Tourist Spots,San Fernando,10.0862964863138,123.66439308702897
+239,San Roque Parish Church - Carcar,Churches,San Fernando,10.100272125527145,123.66135238292206
+240,St. Catherine of Alexandria Church,Churches,San Fernando,10.105979093765397,123.6403518130607
+241,"Pentecostal Missionary Church of Christ (4th Watch) - Carcar, Cebu",Churches,San Fernando,10.114927584456323,123.67500538549622
+242,The Church of Jesus Christ of Latter-Day Saints - Carcar Ward,Churches,San Fernando,10.103383548846644,123.63764651103479
+243,Cardams Kitchen & Bar,Restaurants,San Fernando,10.10796891774717,123.6400088837736
+244,1878 Filipino-Chinese Fusion Restaurant,Restaurants,San Fernando,10.107130025409383,123.64044185647863
+245,Mang Inasal,Restaurants,San Fernando,10.108600766574941,123.64549768512525
+246,Bowlud Coffee House,Restaurants,San Fernando,10.108571313989746,123.61784368204043
+247,Juans Grill and Seafoods Resto,Restaurants,San Fernando,10.07833524687248,123.62994262559948
+248,Dianne's Seafood House,Restaurants,San Fernando,10.089854180827718,123.64827229346562
+249,St. Martha's Cemetery,Cemeteries,San Fernando,10.096129020369423,123.63417200006168
+250,Regis' Memorial Park,Cemeteries,San Fernando,10.093473151298529,123.66017916747602
+251,Sibonga Municipal Hall,Barangay Halls,San Fernando,10.017219747425333,123.62107036979462
+252,Sabang Barangay Hall,Barangay Halls,San Fernando,10.031824172861569,123.61859084810426
+253,Poblacion Barangay Hall,Barangay Halls,San Fernando,10.017174836368858,123.61475405603981
+254,Bae Barangay Hall,Barangay Halls,San Fernando,9.995932460610128,123.54150492080046
+255,Cantolaroy Barangay Hall,Barangay Halls,San Fernando,10.004566158885858,123.52401085187996
+256,Deiparine Community Hospital,Hospitals,San Fernando,10.018077512985741,123.61610438504046
+257,Bato Health Center,Health Centers,San Fernando,10.01675029834515,123.58080522022743
+258,Barangay Tubod Health Center,Health Centers,San Fernando,9.993819328294999,123.58261028280951
+259,TGP The Generics Pharmacy,Pharmacies,San Fernando,10.017456125857734,123.62016096192967
+260,Rose Pharmacy Sibonga Poblacion,Pharmacies,San Fernando,9.876286306529908,123.59685612986524
+261,Simala Elementary School,Schools,San Fernando,9.971693938370668,123.62136360637493
+262,Our Lady of the Pillar Academy,Schools,San Fernando,10.017751409651652,123.6199651993973
+263,Golden Brains Development School,Schools,San Fernando,10.020362204854495,123.61825238269687
+264,Magcagong Elementary School,Schools,San Fernando,10.009491439654255,123.58306261777966
+265,Monastery of the Holy Eucharist,Churches,San Fernando,9.979431206374494,123.59986047797756
+266,Simala Parish Church,Churches,San Fernando,9.979455604067622,123.5996576173155
+267,Our Lady of Divine Grace Parish,Churches,San Fernando,9.9685340705419,123.61883379409599
+268,Sibonga Public Market,Markets,San Fernando,10.01729844967255,123.6154808060121
+269,Prince Hypermart – Sibonga,Markets,San Fernando,10.01575488895682,123.61930626443376
+270,Sibonga Fire Station,Fire Stations,San Fernando,10.019253491483646,123.61477214221338
+271,Sibonga Municipal Police Station,Police Stations,San Fernando,10.01663167377659,123.62132027544149
+272,Lestanov Fajas Restaurant and Snack Bar,Restaurants,San Fernando,10.0149973616609,123.62050302281423
+273,Antonio’s Kitchen + Bar,Restaurants,San Fernando,10.019717250812347,123.62037579447193
+274,Juan's Seafood House,Restaurants,San Fernando,10.014666725617905,123.61889772577048
+275,Eda's Caldereta And Balbacua,Restaurants,San Fernando,10.01583665034832,123.61965326418012
+276,New Sibonga Public Cemetery,Cemeteries,San Fernando,10.02115352818532,123.61558896518655
+277,Simala Public Cemetery,Cemeteries,San Fernando,9.968978390642006,123.61522635275553
+278,Argao Municipal Hall,Barangay Halls,Argao,9.881199168556718,123.60862969492112
+279,Poblacion Barangay Hall,Barangay Halls,Argao,9.88067009424374,123.6089155906724
+280,Lamacan Barangay Hall,Barangay Halls,Argao,9.879239333647337,123.59614446318838
+281,Tulic Barangay Hall,Barangay Halls,Argao,9.86908338465035,123.5859140582779
+282,Isidro C. Kintanar Memorial Hospital,Hospitals,Argao,9.85638392136473,123.57077919948279
+283,Bogo Barangay Health Station,Health Centers,Argao,9.85974286429769,123.57222706459441
+284,VL SUAREZ WELLCARE MIDWIFE CLINIC,Health Centers,Argao,9.863040064374994,123.5781451755407
+285,Balisong Health Station,Health Centers,Argao,9.840228982061545,123.5551686355707
+286,Panadtaran Barangay Health Station,Health Centers,Argao,9.895475606743911,123.57168647667518
+287,Three-Sixty Pharmacy,Pharmacies,Argao,9.881690251578451,123.60365730066857
+288,Rose Pharmacy Argao Prince Warehouse,Pharmacies,Argao,9.881877016739287,123.60372239127629
+289,GENERIKA DRUGSTORE,Pharmacies,Argao,9.881667820765275,123.60540014496829
+290,Rose Pharmacy Argao National Highway,Pharmacies,Argao,9.880489233844223,123.60501047172467
+291,"Mercury Drug, Argao, Cebu",Pharmacies,Argao,9.881387796866816,123.60593334048689
+292,Talaga National High School,Schools,Argao,9.850090177140329,123.56396044825543
+293,"Saint Michael Parish Montessori Learning Center (L’ Ecole Du Coeur), Inc.",Schools,Argao,9.88279393832879,123.60867881160695
+294,Academia de San Miguel Arcangel (ASMA),Schools,Argao,9.882604315311006,123.60810023440601
+295,Argao Central Elementary School,Schools,Argao,9.877087636439912,123.60335702391967
+296,Argao National High School,Schools,Argao,9.886292920355087,123.59715563274808
+297,Philippine Science High School - Central Visayas Campus,Schools,Argao,9.899515380189866,123.58595709203053
+298,St. Michael School Hijas de Jesus,Schools,Argao,9.883327446082651,123.5999888392709
+299,Argao Fire Station (Argao Old railway station),Fire Stations,Argao,9.881634366948425,123.5996473549701
+300,Argao Police Station,Police Stations,Argao,9.880839281396606,123.60878339728033
+301,Argao Nature Park,Tourist Spots,Argao,9.879769415580549,123.6001652280199
+302,Ka Treasure Water Terraces Mountain Resort,Tourist Spots,Argao,9.894536725824606,123.54344736951462
+303,Liki Spring,Tourist Spots,Argao,9.951965051156082,123.61552444662118
+304,Tubod Spring Argao,Tourist Spots,Argao,9.939190451220632,123.61887652269583
+305,Argao Plaza,Tourist Spots,Argao,9.881548790906558,123.60827039386
+306,Argao Hall of Justice,Tourist Spots,Argao,9.881245368087663,123.60831046397863
+307,Argao Public Market,Markets,Argao,9.881938593993727,123.60095475207969
+308,Prince Hypermart – Argao,Markets,Argao,9.881885947525896,123.60368294213514
+309,Chill Tambayan Bar and Resto.,Restaurants,Argao,9.873294874489853,123.59923554194093
+310,Z-Spot Restobar,Restaurants,Argao,9.8728274149284,123.60063600505292
+311,The Highway Food Park Argao,Restaurants,Argao,9.874095999214909,123.60161792261503
+312,624 Carlock St. Restaurant & Good Good Delivery ARGAO,Restaurants,Argao,9.880752766667253,123.59784495336748
+313,Ai's Beach Resort & Restaurant,Restaurants,Argao,9.872138009065143,123.59479763496448
+314,Sugbo Silog Argao,Restaurants,Argao,9.874215557738632,123.60198486441222
+315,Pocherohan Ni Naijil Sa Argao,Restaurants,Argao,9.872436366573531,123.59644919999626
+316,Alex Kafe,Restaurants,Argao,9.880843896966491,123.60764959447192
+317,SHIKYNA's PIZZA and PASTA,Restaurants,Argao,9.881177074104526,123.60500430685993
+318,St. Michael the Archangel Parish Church,Churches,Argao,9.88123004418298,123.60865802303537
+319,Argao Seventh-day Adventist Church,Churches,Argao,9.884676436279891,123.60536787054657
+320,The Church of Jesus Christ of Latter-day Saints - Argao Branch,Churches,Argao,9.884790606114036,123.60599642269581
+321,Iglesia Ni Cristo - Lokal ng Argao,Churches,Argao,9.883775067319124,123.60889460612863
+322,Green Acres & Nature Garden,Cemeteries,Argao,9.862752882707218,123.57306186595821
+323,Argao Cemetery,Cemeteries,Argao,9.876598972764372,123.60668382330776
+324,Dalaguete Municipal Hall,Barangay Halls,Dalaguete,9.761887221768191,123.53299601595587
+325,Mananggal Barangay Hall,Barangay Halls,Dalaguete,9.780884659327763,123.52071763307927
+326,Casay Barangay Hall,Barangay Halls,Dalaguete,9.8240656951779,123.55019713629049
+327,Malones Barangay Hall,Barangay Halls,Dalaguete,9.818397800951285,123.5244149029224
+328,Mantalongon Barangay Hall,Barangay Halls,Dalaguete,9.813031410069668,123.46236000427642
+329,Julio Cardinal Rosales Memorial Hospital,Hospitals,Dalaguete,9.763492338225078,123.53486489743511
+330,Dr. Ildefonso Alcantara Memorial Hospital,Hospitals,Dalaguete,9.764130880553394,123.53381296831441
+331,Municipal Health Unit I - City Gavernment Of Dalaguete City,Health Centers,Dalaguete,9.756855052133094,123.52698905888985
+332,Casay Rural Health Center,Health Centers,Dalaguete,9.820809251814952,123.55003604109878
+333,Dalaguete Rural Health Unit II,Health Centers,Dalaguete,9.812998645751513,123.46243785020366
+334,Dalaguete Health Management Complex,Health Centers,Dalaguete,9.763751996567576,123.53623980243358
+335,Rose Pharmacy,Pharmacies,Dalaguete,9.762513015372146,123.5332142893433
+336,Botica Sta. Maria,Pharmacies,Dalaguete,9.763918760839148,123.53344554244796
+337,Watsons Pharmacy Dalaguete,Pharmacies,Dalaguete,9.759825472894601,123.53301718442839
+338,TOP MED PHARMACY,Pharmacies,Dalaguete,9.80986596494907,123.53780512821818
+339,Shekinah Children's Haven Learning Center New Campus,Schools,Dalaguete,9.810914179976981,123.53895996429704
+340,Cawayan National High School,Schools,Dalaguete,9.807078021506744,123.53336159998193
+341,St. Mary's Academy of Dalaguete,Schools,Dalaguete,9.763915638463262,123.53567831777296
+342,Dalaguete National High School,Schools,Dalaguete,9.761576765063232,123.53091953556398
+343,Dalaguete Central Elementary School,Schools,Dalaguete,9.75844922569023,123.53358052449147
+344,Obong Watchtower Ruins,Tourist Spots,Dalaguete,9.741332775568887,123.51351596954602
+345,Kandungaw Peak,Tourist Spots,Dalaguete,9.866888348415563,123.45939731778654
+346,Archbishop Salvador Memorial Museum and Library,Tourist Spots,Dalaguete,9.761719130421794,123.53467075275671
+347,Osmeña Peak,Tourist Spots,Dalaguete,9.821685416155997,123.4663929644134
+348,Mantalongon Public Market,Markets,Dalaguete,9.807499609098203,123.46482879570581
+349,Dalaguete Public Market,Markets,Dalaguete,9.762002099390036,123.53439254759876
+350,Nalhub Public Market,Markets,Dalaguete,9.766887860833341,123.45102685888646
+351,Dalaguete Vegetables Trading Center,Markets,Dalaguete,9.808179653239497,123.46555373557298
+352,Dalaguete Fire Station,Fire Stations,Dalaguete,9.764179920533973,123.53606925813396
+353,Dalaguete Police Station,Police Stations,Dalaguete,9.76198526076003,123.5347147381503
+354,San Guillermo Church,Churches,Dalaguete,9.762583955859796,123.53522851103355
+355,Dalaguete Seventh-day Adventist Church,Churches,Dalaguete,9.75980320872894,123.53177398772687
+356,Dalaguete Christian Church (Faith Tabernacle),Churches,Dalaguete,9.759169062934234,123.52885658772689
+357,Santa Monica Parish Church,Churches,Dalaguete,9.803396394852168,123.53340688833877
+358,Kingdom Hall of Jehovah's Witnesses,Churches,Dalaguete,9.76076726957727,123.53115360551789
+359,Maria's Batchoy and Restaurant,Restaurants,Dalaguete,9.763747947199334,123.53344935674687
+360,Bar.KO,Restaurants,Dalaguete,9.761539987046223,123.53634572944324
+361,Barrio Kusina,Restaurants,Dalaguete,9.749865969566514,123.5167550724623
+362,Dispickable Shack Foodhouse,Restaurants,Dalaguete,9.761853647891712,123.53634794723428
+363,5AM café,Restaurants,Dalaguete,9.761432869312351,123.53636602035424
+364,Dalaguete Public Cemetery,Cemeteries,Dalaguete,9.75444781366117,123.52756794420604
+365,San Guillermo Roman Catholic Cemetery,Cemeteries,Dalaguete,9.754116461253627,123.52733372978834
+366,Alcoy Municipal Hall,Barangay Halls,Dalaguete,9.708818805525766,123.50776544380072
+367,Poblacion Barangay Hall,Barangay Halls,Dalaguete,9.708667189039998,123.5057736316717
+368,Atabay Barangay Hall,Barangay Halls,Dalaguete,9.69809146696529,123.50514817054773
+369,Nug-as Baranggay Hall,Barangay Halls,Dalaguete,9.716498918064401,123.43348893844211
+370,Guiwang Barangay Hall,Barangay Halls,Dalaguete,9.68833939642625,123.50411515889103
+371,Daan Lungsod Barangay Hall,Barangay Halls,Dalaguete,9.677700257120797,123.50207804109998
+372,Nug-as Health Center,Health Centers,Dalaguete,9.716723451606832,123.43350021574165
+373,Rural Health Unit,Health Centers,Dalaguete,9.708495654406935,123.50711982543568
+374,Atabay Barangay Health Station,Health Centers,Dalaguete,9.69811159333855,123.50516376907234
+375,J And L Pharmacy,Pharmacies,Dalaguete,9.708491512386095,123.50709808950849
+376,Guiwang Elementary School,Schools,Dalaguete,9.688019926353968,123.50323450647869
+377,Nug-as National High School,Schools,Dalaguete,9.683402657924109,123.50001532767028
+378,Alcoy National High School,Schools,Dalaguete,9.708647060000006,123.50842929339397
+379,Tingko Beach,Tourist Spots,Dalaguete,9.681860094980557,123.50301636617975
+380,Meili Beach Resort,Tourist Spots,Dalaguete,9.70320096816283,123.50967797064969
+381,Playa Del Sur Beach Resort,Tourist Spots,Dalaguete,9.669514885643157,123.50131425052636
+382,Alcoy Public Market,Markets,Dalaguete,9.70818775969817,123.5059845374118
+383,Caleriohan Mini Market,Markets,Dalaguete,9.7664865896819,123.43236160670666
+384,Catolohan Public Market,Markets,Dalaguete,9.752096595686682,123.44407936723054
+385,Alcoy church,Churches,Dalaguete,9.707630146922313,123.50531571107906
+386,Bible Baptist Church - Alcoy,Churches,Dalaguete,9.706731391428594,123.50677634171186
+387,Calvary Baptist Church,Churches,Dalaguete,9.711122701754459,123.5060047720477
+388,The Mahogany Restobar,Restaurants,Dalaguete,9.711100192137899,123.50606860308578
+389,D’ Label,Restaurants,Dalaguete,9.712734748465357,123.50773427766507
+390,Seaview Moonrise Café,Restaurants,Dalaguete,9.715700682804062,123.5090686766775
+391,나그네 (Traveler) KOREAN BBQ (삼겹살),Restaurants,Dalaguete,9.713073926579133,123.50785176011026
+392,Alcoy Public Cemetery,Cemeteries,Dalaguete,9.712156416204797,123.50980251852575
+393,Alcoy Municipal Police Station,Police Stations,Dalaguete,9.70849506835083,123.50804215004882
+394,Boljoon Municipal Hall,Municipal Halls,Dalaguete,9.628682857306165,123.47978319720407
+395,Boljoon Fire Station,Fire Stations,Dalaguete,9.628546275926897,123.47972849445149
+396,Boljoon Municipal Police Station,Police stations,Dalaguete,9.628669137800195,123.48000212783505
+397,Poblacion Barangay Hall,Barangay Halls,Dalaguete,9.629089458497488,123.47995660550433
+398,El Pardo Barangay Hall,Barangay Halls,Dalaguete,9.660968352606224,123.49450352392084
+399,Arbor Barangay Hall,Barangay Halls,Dalaguete,9.645769651982564,123.48637108035214
+400,"Brgy. Lower Becerril, Boljoon, Cebu",Barangay Halls,Dalaguete,9.620531919534807,123.4456225650253
+401,South Granada Barangay Hall,Barangay Halls,Dalaguete,9.59669736568339,123.47401042780753
+402,Arbor Health Center,Health Centers,Dalaguete,9.645888427321959,123.48660904861113
+403,Boljoon Municipal Health Office,Health Centers,Dalaguete,9.628720575051755,123.47974071226413
+404,Boljoon Rural Health Unit,Health Centers,Dalaguete,9.628805196572472,123.47974205336858
+405,alchemist pharma,Pharmacies,Dalaguete,9.627544152770051,123.47974189999546
+406,Shinsaku Pharmacy and General Merchandise,Pharmacies,Dalaguete,9.626331292012775,123.47954978772687
+407,Woodsvale Pharmacy,Pharmacies,Dalaguete,9.625883830558642,123.47941889569687
+408,Escuela Catolica,Schools,Dalaguete,9.629254230908334,123.47924636300324
+409,Patronage of Mary Development School Bldg. A,Schools,Dalaguete,9.623973690508443,123.47705661924466
+410,Patronage of Mary Development School Bldg. B,Schools,Dalaguete,9.623771498230749,123.47658577193224
+411,Boljoon National High School,Schools,Dalaguete,9.617324898484666,123.47682128055007
+412,Granada Elementary School,Schools,Dalaguete,9.599166658726128,123.47574851226409
+413,Boljoon Central Elementary School,Schools,Dalaguete,9.625250647218765,123.47982618772687
+414,Boljoon Parish Museum,Tourist Spots,Dalaguete,9.629616807659554,123.47963274064948
+415,El Gran Baluarte de Boljoon,Tourist Spots,Dalaguete,9.6287599173924,123.47974003303204
+416,Balay Doctor Dionisio Niere,Tourist Spots,Dalaguete,9.627281402476218,123.47915617791107
+417,Boljoon Baywalk,Tourist Spots,Dalaguete,9.629616639433834,123.48008434052883
+418,Boljoon Public Market,Markets,Dalaguete,9.626334344290942,123.47954790776389
+419,Nuestra Señora de Patrocinio Church (Boljoon Church),Churches,Dalaguete,9.630063883085544,123.47948070262294
+420,Patrocinio de Maria Parish (Cebu Archdiocese),Churches,Dalaguete,9.630127773586207,123.47935438661756
+421,Assembly of God Church,Churches,Dalaguete,9.625377441618047,123.47832361778653
+422,Boljoon Cemetery,Cemeteries,Dalaguete,9.616044999763236,123.47619778476255
+423,Kasikas Sa Boljoon,Restaurants,Dalaguete,9.628543959768265,123.47999986688184
+424,Bar & Resto - Club Fort-Med,Restaurants,Dalaguete,9.63469340590219,123.48396648239125
+425,Marcnel Bayside Food House,Restaurants,Dalaguete,9.583094981350818,123.46965524293564
+426,Walog Native Restaurant,Restaurants,Dalaguete,9.655384186312938,123.49134857668203
+427,Cafe Gobernadora,Restaurants,Dalaguete,9.629174728732037,123.47993776556079
+428,Oslob Municipal Hall,Municipal Halls,Oslob,9.52067240110235,123.43369249690294
+429,OSLOB POLICE STATION,Police Stations,Oslob,9.521403427210291,123.43079542664263
+430,Oslob Fire Station,Fire Stations,Oslob,9.521226028548716,123.43186845136975
+431,Nueva Caceres Barangay Hall,Barangay Halls,Oslob,9.561932510319982,123.45734040088267
+432,Bonbon Brgy Hall,Barangay Halls,Oslob,9.55551392308513,123.45302686011476
+433,Tan-awan Barangay Hall,Barangay Halls,Oslob,9.461595599295373,123.3778185466224
+434,Oslob District Hospital,Hospitals,Oslob,9.526323863329287,123.43321884361944
+435,Nueva Caceres Health Center,Health Centers,Oslob,9.562215237065095,123.45677563324206
+436,Amity Medical Clinic,Health Centers,Oslob,9.509773925983446,123.41871293672871
+437,Barangay Health Station,Health Centers,Oslob,9.59670255051524,123.47400848502721
+438,Generika,Pharmacies,Oslob,9.520804274808937,123.4318057359059
+439,Acacia Pharmacy,Pharmacies,Oslob,9.521668088304194,123.43166679255053
+440,Watsons Gaisano Oslob,Pharmacies,Oslob,9.526692033996826,123.43577304764845
+441,Gaisano Grand Mall Oslob,Malls/Department Stores,Oslob,9.526402417581947,123.43531687492593
+442,Oslob National High School,Schools,Oslob,9.525592460787815,123.43585387860249
+443,Oslob Central Elementary School,Schools,Oslob,9.52467481407628,123.4339266212997
+444,"St. Mary's Academy (Oslob, Cebu), Inc.",Schools,Oslob,9.521465977304441,123.43354567429398
+445,Nueva Caceres Elementary School,Schools,Oslob,9.559870246899957,123.45420529386121
+446,Tan-awan Elementary School,Schools,Oslob,9.46132989635472,123.37762424478673
+447,Tumalog Waterfalls,Tourist Spots,Oslob,9.486013778090559,123.36962578706623
+448,Sumilon Island Lighthouse,Tourist Spots,Oslob,9.430297823294266,123.39062458281633
+449,Oslob Paragliding Cafe,Tourist Spots,Oslob,9.526840398476688,123.40931785275671
+450,Cuartel Ruins (Museo Oslob),Tourist Spots,Oslob,9.520203104865834,123.43416532818499
+451,Baluarte,Tourist Spots,Oslob,9.52087354762906,123.43545271929682
+452,Oslob Public Market,Markets,Oslob,9.520954958072837,123.43154896225258
+453,Our Lady of Immaculate Conception Church,Churches,Oslob,9.520801327895754,123.43425001874787
+454,Oslob Parish Convent,Churches,Oslob,9.521028461250069,123.43442061227557
+455,Holy Life Tabernacle,Churches,Oslob,9.520349028726667,123.4242566933944
+456,Apostolic Pentecostals of Oslob,Churches,Oslob,9.520651218248819,123.42998083159401
+457,Oslob Municipal Public Cemetery,Cemeteries,Oslob,9.567708852829924,123.46360028317153
+458,Oslob Catholic Cemetery,Cemeteries,Oslob,9.523563607474683,123.43607807666133
+459,AC Palayok Restaurant,Restaurants,Oslob,9.52152790073119,123.43216925257309
+460,Paul & Madz Restaurant,Restaurants,Oslob,9.521681113265123,123.4321445328272
+461,Le Bistrot,Restaurants,Oslob,9.521656644642801,123.43212642791664
+462,George Restaurant Oslob,Restaurants,Oslob,9.529423408051363,123.43762018281635
+463,Wilfredo's Pizzeria - Oslob Branch,Restaurants,Oslob,9.520936675919934,123.43197364109997
+464,Topped Off Bjanes Delicacies & Pastries,Restaurants,Oslob,9.521656983718033,123.43354183581312
+465,Santander Municipal Hall,Municipal Halls,Oslob,9.41718086246691,123.33510786737024
+466,Santander Rural Health Unit,Health Centers,Oslob,9.417196106853755,123.33485990467481
+467,Santander Public Market,Markets,Oslob,9.417555793837634,123.33502659628671
+468,Felice Restorante Italiano,Restaurants,Oslob,9.431916556842218,123.3018837621693
+469,S-Eatery,Restaurants,Oslob,9.417029832623474,123.3027135363672
+470,Garden Inn,Restaurants,Oslob,9.419812902845146,123.30751177750848
+471,Felizar Audencia,Restaurants,Oslob,9.417120694132713,123.33274014921933
+472,Lyceum of Cebu - Santander Campus,Schools,Oslob,9.418784266983215,123.32151782515953
+473,Santander Central Elementary School,Schools,Oslob,9.417239930068613,123.33401038732795
+474,Inadlay Peak,Tourist spots,Oslob,9.449418236457577,123.31479566744761
+475,Melba Resort and Yoga Retreat ,Tourist spots,Oslob,9.422299370673784,123.34997535616692
+476,Samboan Municipal Hall,Municipal Halls,Oslob,9.52842804197519,123.30635878918007
+477,Samboan National High School,Schools,Oslob,9.418185161517446,123.32359791502638
+478,Cebu Technological University - Samboan Extension,Schools,Oslob,9.532789432563764,123.30641084752197
+479,Dalahikan Elementary School,Schools,Oslob,9.512037338430897,123.32043178282643
+480,Samboan Central Elementary School,Schools,Oslob,9.528722696047863,123.30709126719515
+481,Samboan Rural Health Unit,Health Centers,Oslob,9.529304020999293,123.30638379076183
+482,Samboan Cemetery,Cemeteries,Oslob,9.524848121959979,123.3043577573884
+483,Samboan Public Market,Markets,Oslob,9.527522518591551,123.30587472589212
+484,Aranas Beach Resort,Tourist Spots,Oslob,9.528474128547128,123.30471403431795
+485,Aguinid Falls EcoAdventure Park,Tourist Spots,Oslob,9.506565180865616,123.30218888819138
+486,Ponong Lake,Tourist Spots,Oslob,9.536050036567664,123.30520106559301
+487,Samboan Municipal Police Station,Police Stations,Oslob,9.528276669516487,123.30639170867826
+488,Saint Michael the Archangel Church,Churches,Oslob,9.529030520310053,123.30724585453466
+489,Flavi's Kitchen Larangan de Samboan,Restaurants,Oslob,9.531141799616359,123.30665398948055
+490,Lolo Pepe's Grill & Restobar,Restaurants,Oslob,9.527006598307791,123.30665625593264
+491,Ginatilan Municipal Hall,Municipal Halls,Oslob,9.569943404422155,123.31191747759691
+492,Ginatilan Fire Station,Fire Stations,Oslob,9.570171681674589,123.31184309318898
+493,Ginatilan Drugstore,Pharmacies,Oslob,9.569944356983193,123.31357631376756
+494,ROEV Pharmacy,Pharmacies,Oslob,9.570889386702257,123.31399814623208
+495,Ginatilan Municipal Police Station,Police Stations,Oslob,9.570055955931974,123.31192052186731
+496,Ginatilan Cemetery,Cemeteries,Oslob,9.575275647486308,123.31530368297842
+497,Inambakan Falls,Tourist Spots,Oslob,9.568593281658687,123.33866081486596
+498,Bugnawan Falls,Tourist Spots,Oslob,9.578461636908141,123.35975632519629
+499,Bantaaw Beach Resort,Tourist Spots,Oslob,9.610660791108783,123.32054404464033
+500,La Carlota Store,Malls/Department Stores,Oslob,9.570289871324455,123.31363822525793
+501,Saint Gregory the Great Parish Church,Churches,Oslob,9.569394403380468,123.31226918914678
+502,Holy Trinity College Inc - Ginatillan Cebu,Schools,Oslob,9.56886723360526,123.31287395509572
+503,Cebu Technological University - Ginatilan Extension,Schools,Oslob,9.567447980479862,123.31314698805535
+504,Guiwanon National High School,Schools,Oslob,9.568631292145973,123.31337294231501
+505,City Taste Bistro,Restaurants,Oslob,9.571027742570827,123.31334340064522
+506,"MK's Food House, Pizzeria",Restaurants,Oslob,9.568924883146648,123.31326674714182
+507,SML Grill and Restobar,Restaurants,Oslob,9.568026411157357,123.31195166922399
+508,Malabuyoc Municipal Hall,Municipal Halls,Oslob,9.656359665475494,123.32556012172516
+509,Malabuyoc Fire Station,Fire Stations,Oslob,9.650208565045038,123.32326653704486
+510,Malabuyoc Municipal Police Station,Police Stations,Oslob,9.65015771281192,123.32322508420923
+511,Malabuyoc Cemetry,Cemeteries,Oslob,9.655681826390259,123.32492353666133
+512,Old Malabuyoc Cemetery,Cemeteries,Oslob,9.66657540765498,123.32592537847736
+513,Cyril Drugstore,Pharmacies,Oslob,9.651126970414582,123.3247836459271
+514,Medway Pharmacy,Pharmacies,Oslob,9.678776243767246,123.32658385454111
+515,Malabuyoc Public Market,Markets,Oslob,9.6502048242817,123.3229646874375
+516,Malabuyoc Farmer's Market,Markets,Oslob,9.654845921345535,123.34594046734617
+517,Kabutongan Nature Park,Tourist Spots,Oslob,9.612808313459972,123.32898196041432
+518,Sunset Keoskk,Tourist Spots,Oslob,9.616555016176838,123.31930060159843
+519,Bamboo Beachhouse,Tourist Spots,Oslob,9.634758470459717,123.32507034549907
+520,Bai Store,Malls/Department Stores,Oslob,9.652251785792952,123.3242854318434
+521,Cebu Technological University - Malabuyoc Extension,Schools,Oslob,9.651552073827244,123.3238614080577
+522,Montaneza National High School,Schools,Oslob,9.674797865503205,123.32600487533851
+523,Malabuyoc Food & BBQ,Restaurants,Oslob,9.652523533689166,123.32435961000847
+524,Tintay's Prime Pizza,Restaurants,Oslob,9.649509562559349,123.32435882591706
+525,Alegria Municipal Hall,Municipal halls,Alegria,9.729394616904154,123.3401148440982
+526,Alegria Fire Station,Fire Stations,Alegria,9.729285172973576,123.34011308997384
+527,Alegria Municipal Police Station,Police stations,Alegria,9.729580291907158,123.33952086609399
+528,Malbog Cemetery,Cemeteries,Alegria,9.743753405553486,123.34002618048524
+529,Ed-Chanchan Pharmacy and General Merchandise,Pharmacies,Alegria,9.728923949508209,123.33930061351252
+530,Alegria Public Market,Markets,Alegria,9.724315033264435,123.34038771907134
+531,Malbog Fish Market,Markets,Alegria,9.743006781517837,123.34101838836891
+532,Alegria Heritage Park,Tourist Spots,Alegria,9.728350327009064,123.33931005382955
+533,Cambais Falls,Tourist Spots,Alegria,9.748387384695105,123.38925132511667
+534,Montepellier Falls,Tourist Spots,Alegria,9.723129003317203,123.35736362759043
+535,Cangkalanog Falls,Tourist Spots,Alegria,9.772880669943534,123.3739962627079
+536,Para Hardware,Malls/Department Stores,Alegria,9.727411392165605,123.3396557813456
+537,RED Wings Apparel Alegria-Cebu Outlet,Malls/Department Stores,Alegria,9.729118977135164,123.33930732887674
+538,Alegria Central Elementary School,Schools,Alegria,9.7321531681604,123.33975410605802
+539,St. Peter Academy,Schools,Alegria,9.728590372232684,123.34029716792895
+540,Santa Filomena National High School,Schools,Alegria,9.762688665834412,123.34530696986816
+541,Madridejos National High School,Schools,Alegria,9.787956061137484,123.34936667470993
+542,Montepellier National High School,Schools,Alegria,9.71837368707022,123.35825652630972
+543,Cosina Organica,Restaurants,Alegria,9.730586764675625,123.33936725131672
+544,Mingkay Pizzeria and Restaurant,Restaurants,Alegria,9.726959041460981,123.33992114960725
+545,Nan Hai Restaurant,Restaurants,Alegria,9.787353020268233,123.3462438097605
+546,Badian Municipal Hall,Municipal Halls,Badian,9.870155263924314,123.39877734089458
+547,Badian Fire Station,Fire Stations,Badian,9.86329598068278,123.3940771238984
+548,Badian Municipal Police Station,Police Stations,Badian,9.870060093284415,123.39875827502115
+549,Ginablan Badian Cemetery,Cemeteries,Badian,9.901479882890843,123.40495521503745
+550,Badian District Hospital,Hospitals,Badian,9.86989658553839,123.39957550416958
+551,Badian Rural Health Unit,Health Centers,Badian,9.865528572504802,123.39312386385694
+552,Rene-mar Pharmacy and Convenience Store,Pharmacies,Badian,9.870349897073124,123.39734200691252
+553,Badian Public Market,Markets,Badian,9.869467543097192,123.39593142123795
+554,Banhigan Public Market,Markets,Badian,9.842824066508312,123.38407872862362
+555,Kawasan Falls,Tourist Spots,Badian,9.80232090753059,123.37431146516899
+556,Badian Cayoneering,Tourist Spots,Badian,9.811690664971893,123.36774820436321
+557,Magic Beach Resort,Tourist Spots,Badian,9.855513762557878,123.36811755167469
+558,Badian Island Wellness Resort,Tourist Spots,Badian,9.875246828196238,123.38132246560613
+559,St. James Academy,Schools,Badian,9.864941316956882,123.39597258060408
+560,Badian National High School,Schools,Badian,9.865396707261622,123.39475928167931
+561,Zaragosa Integrated School,Schools,Badian,9.881870729744117,123.38251040303022
+562,Badian Elementary School,Schools,Badian,9.864767652532866,123.39327679449163
+563,Biaño's Pizza,Restaurants,Badian,9.869941991889734,123.39683130251652
+564,Lolo Jose Lechon Manok and Liempo,Restaurants,Badian,9.869922544351459,123.39582423252311
+565,Phil Am Grill and Resto Bar,Bars,Badian,9.870463516580589,123.39721556659384
+566,St. James Parish,Churches,Badian,9.870216732817862,123.39999191145667
+567,UCCP Juan Quiñones Memorial Church,Churches,Badian,9.85610002044744,123.38734900231627
+568,Iglesia Ni Cristo - Lokal ng Badian,Churches,Badian,9.868587556078623,123.4014084124432
+569,Moalboal Municipal Hall,Municipal Halls,Moalboal,9.936735590605245,123.39191304697782
+570,Moalboal Fire Station,Fire Stations,Moalboal,9.935450034043718,123.39229388978374
+571,Moalboal Municipal Police Station,Police Stations,Moalboal,9.936448302396592,123.3925668408398
+572,Moalboal Catholic Cemetery,Cemeteries,Moalboal,9.953134936050644,123.39859628825323
+573,Mahina Family Medical Clinic,Health Centers,Moalboal,9.940816614902337,123.39127943711297
+574,Moalboal Rural Health Unit,Health Centers,Moalboal,9.936462424795039,123.39272847385485
+575,ThreeSixty Pharmacy,Pharmacies,Moalboal,9.937648790541848,123.39308549615994
+576,Gador Pharmacy,Pharmacies,Moalboal,9.93687758918596,123.39271286556819
+577,Gaisano Grand Mall Moalboal,Malls/Department Stores,Moalboal,9.943490284660326,123.39645640325631
+578,Gaisano Town Center - Moalboal,Malls/Department Stores,Moalboal,9.934737396811332,123.39607563999363
+579,Moalboal Public Market,Markets,Moalboal,9.937675315559316,123.39310015688075
+580,Moalboal Fish & Meat Markets,Markets,Moalboal,9.935931980300303,123.39231708583534
+581,Busay Cave,Tourist Spots,Moalboal,9.914433586394384,123.43676053192789
+582,Quo Vadis Dive Resort,Tourist Spots,Moalboal,9.945839224546893,123.36694648826011
+583,White Beach Moalboal,Tourist Spots,Moalboal,9.974068291386763,123.37191926008612
+584,Moalboal National High School,Schools,Moalboal,9.948202128031307,123.38092696295729
+585,San Juan High School of Moalboal Inc.,Schools,Moalboal,9.955660010704905,123.40096341150759
+586,Busay National High School,Schools,Moalboal,9.9160735747966,123.4199069614718
+587,Giddyap Mountain Resort,Restaurants,Moalboal,9.915825771447542,123.41579398635676
+588,Kugita Seafood & Charcoal Grill,Restaurants,Moalboal,9.9466897040284,123.37380331806645
+589,Cafe Europa Restaurant,Restaurants,Moalboal,9.91447161063068,123.39986410090556
+590,Mayim Beach Bar,Bars,Moalboal,9.952577359124938,123.36599371526557
+591,Three Crowns Bistro and Bar,Bars,Moalboal,9.939693366269605,123.39368868393686
+592,San Juan Nepumuneco Parish (Cebu Archdiocese),Churches,Moalboal,9.937741245122151,123.39229828875506
+593,Bible Believers Baptist Church,Churches,Moalboal,9.943392170344513,123.39767683536583
+594,Birhen sa Delos Remedios Chapel,Churches,Moalboal,9.953965919148187,123.41942609913418
+595,Alcantara Municipal Hall,Municipal Halls,Alcantara,9.970343842104834,123.40223805198296
+596,Alcantara Municipal Police Station,Police Stations,Alcantara,9.976072076797006,123.40611328224826
+597,Alcantara Catholic Cemetery,Cemeteries,Alcantara,9.978016992809195,123.41093918689589
+598,Rural Health Center,Health Centers,Alcantara,9.97020654391693,123.40244514781334
+599,Poblacion Barangay Health Center,Health Centers,Alcantara,9.970881823984152,123.40447839228264
+600,The Generics Pharmacy,Pharmacies,Alcantara,9.971520087086237,123.4050779932709
+601,Alcantara Public Market,Markets,Alcantara,9.971533786828953,123.40458175774347
+602,J&L Hardware & Building Supply,Malls/Department Stores,Alcantara,9.971766576369607,123.40427190764278
+603,Halik's School,Malls/Department Stores,Alcantara,9.972944486783291,123.40561433115535
+604,Kugtong Spring,Tourist Spots,Alcantara,9.971046699237055,123.40458663096132
+605,Liboo Garden,Tourist Spots,Alcantara,9.986371261081137,123.4133916366152
+606,Saint Augustine Academy,Schools,Alcantara,9.966656182339516,123.40274157705804
+607,Alcantara Central Elementary School,Schools,Alcantara,9.974275465037957,123.40543205287888
+608,Alcantara National High School,Schools,Alcantara,9.974326866167582,123.4040277673305
+609,Cabil-isan Elementary School,Schools,Alcantara,9.979081691671178,123.41630577261262
+610,HMJ - Home Made Joy,Restaurants,Alcantara,9.972556757758326,123.40523195787722
+611,Silogan sa Tinubdan,Restaurants,Alcantara,9.97106135870496,123.4046210480652
+612,The Boundary Cafe & Restaurant,Restaurants,Alcantara,9.961679516054854,123.40162914302853
+613,Saint Augustine Parish,Churches,Alcantara,9.969401626138401,123.40366726778207
+614,Alcantara Bible Baptist Mission,Churches,Alcantara,9.976335194084209,123.40598670936538
+615,Iglesia Ni Cristo - Lokal ng Alcantara,Churches,Alcantara,9.978956550557253,123.40514103025151
+616,Ronda Municipal Hall,Municipal Halls,Ronda,10.00073019946126,123.40904905844528
+617,Ronda Catholic Cemetery,Cemeteries,Ronda,9.992067948752997,123.4079855323368
+618,Ronda Rural Health Unit,Health Centers,Ronda,10.000307254832741,123.40956479915056
+619,The Generics Pharmacy,Pharmacies,Ronda,10.000582905389258,123.4111938707963
+620,Three Sixty Pharmacy Ronda,Pharmacies,Ronda,9.999629791711001,123.41129871347334
+621,Ronda Public Market,Markets,Ronda,10.000206292589247,123.41160619008944
+622,Pahayhay Store,Malls/Department Stores,Ronda,10.006795071755283,123.41401652183033
+623,JB Store,Malls/Department Stores,Ronda,9.9977097158977,123.40906367089953
+624,Libo-o Hill,Tourist Spots,Ronda,9.993040466573794,123.41077179795447
+625,Little Baguio,Tourist Spots,Ronda,9.977965464637883,123.45556175482439
+626,Academia de Nuestra Señora Inc.,Schools,Ronda,10.000022893319349,123.40978728943203
+627,Ronda National High School,Schools,Ronda,9.998009184889982,123.40758165560298
+628,Butong Elementary School,Schools,Ronda,9.9999819976514,123.43097939588272
+629,Langin National High School,Schools,Ronda,9.971152289689877,123.47953795247382
+630,Delcio'z Resto Cafe,Restaurants,Ronda,10.023588369696972,123.42049280594817
+631,Cockfight Poultry de Ronda,Restaurants,Ronda,10.010266517923675,123.41312695902111
+632,Cherrylicious,Restaurants,Ronda,10.006452556764788,123.41437120102756
+633,Our Lady of Sorrows Parish,Churches,Ronda,10.000319575390353,123.41049168109554
+634,Bible Baptist Mission,Churches,Ronda,9.999647083649547,123.41362859776306
+635,New Life Christian Center A/G - Canduling,Churches,Ronda,10.007472174499641,123.41391480152228
+636,Dumanjug Municipal Hall,Municipal Halls,Dumanjug,10.05703325973846,123.43586247063418
+637,Dumanjug Police Station,Police Stations,Dumanjug,10.058658002755436,123.43605197658614
+638,Dumanjug Municipal Health Office,Health Centers,Dumanjug,10.05693466805996,123.4358057260651
+639,Dumanjug Public Market,Markets,Dumanjug,10.05766899868408,123.4363223483487
+640,Dumanjug Catholic Cemetery,Cemeteries,Dumanjug,10.056485381734493,123.43004471650958
+641,Dumanjug Public Cemetery,Cemeteries,Dumanjug,10.056442822322495,123.429287736829
+642,Bulak Catholic Cemetery,Cemeteries,Dumanjug,10.041796105641748,123.50233574722837
+643,Gaisano Grand Mall Dumanjug,Malls/Department Stores,Dumanjug,10.057764011422059,123.43594703499934
+644,Junmar Enterprises,Malls/Department Stores,Dumanjug,10.058021730316478,123.43728658137579
+645,Alpha Department,Malls/Department Stores,Dumanjug,10.055089521782609,123.43495552388644
+646,Dumanjug Seaside,Tourist Spots,Dumanjug,10.064850667993685,123.44617055283936
+647,Pityak Falls (Tubod-Duguan Falls),Tourist Spots,Dumanjug,10.023702438259422,123.51051378654574
+648,Cambanog Falls,Tourist Spots,Dumanjug,9.994982647780914,123.50305739546305
+649,Dumanjug National High School,Schools,Dumanjug,10.057148156014918,123.43725086030184
+650,Dumanjug Central School,Schools,Dumanjug,10.052011673642236,123.43254241689449
+651,Tapon Elementary School,Schools,Dumanjug,10.062034480172944,123.44433289137478
+652,Christianity Food & Drink,Restaurants,Dumanjug,10.057719227521005,123.43553156662551
+653,Dumanjug Little Dimsum House,Restaurants,Dumanjug,10.057067362602725,123.43658187001436
+654,Empiang's ,Restaurants,Dumanjug,10.057276099876521,123.43684327201998
+655,Sakaon Restobar,Bars,Dumanjug,10.05387670793537,123.43831168880448
+656,St. Francis of Assisi Parish Church,Churches,Dumanjug,10.057531590063865,123.43460205989183
+657,Ang Dating Daan - Dumanjug,Churches,Dumanjug,10.056276601526003,123.43979488949157
+658,Iglesia Ni Cristo - Lokal ng Dumanjug,Churches,Dumanjug,10.08265964384394,123.45618472890355
+659,Rise of Church of Jesus Christ Int'l Ministries,Churches,Dumanjug,10.074876680634295,123.45168644934503
+660,Barili Municipal Hall,Municipal Halls,Barili,10.116312268069816,123.50974151314465
+661,Barili Fire Station,Fire Stations,Barili,10.116805105433913,123.51011287174792
+662,Barili Municipal Police Station,Police Stations,Barili,10.116412671622166,123.50993834405129
+663,Barili Rural Health Unit,Health Centers,Barili,10.116119923527974,123.50992054094485
+664,Barili District Hospital,Hospitals,Barili,10.114614284148692,123.50387131709793
+665,Barili Public Cemetery,Cemeteries,Barili,10.114081464748136,123.5021349651564
+666,Barili Private Cemetery,Cemeteries,Barili,10.115789053266424,123.5019716614232
+667,Mantalongon Public Market,Markets,Barili,10.126311120783622,123.58080953253715
+668,Mantalongon Livestock Market,Markets,Barili,10.125989946680221,123.57966735295656
+669,Barili Public Market,Markets,Barili,10.112653555369397,123.51229984796957
+670,Val's Variety Store,Malls/Department Stores,Barili,10.112407208058453,123.51280862801619
+671,Sayaw Beach Resort Barili Cebu,Tourist Spots,Barili,10.114887170994889,123.48107321358276
+672,Blue Space Resort,Tourist Spots,Barili,10.137625344864427,123.50495875515854
+673,Barili ATV Adventure,Tourist Spots,Barili,10.112228967401517,123.54379739600563
+674,Barili View Deck,Tourist Spots,Barili,10.102120794512212,123.53648197238627
+675,Barili Central School,Schools,Barili,10.115233518021236,123.511026599116
+676,"Lyceum of Cebu, Inc. - Barili Campus",Schools,Barili,10.116370637641923,123.50363570257537
+677,Bartolome And Manuela Pañares Memorial National High School,Schools,Barili,10.109218412999416,123.515676201822
+678,Guibuangan Central School,Schools,Barili,10.115345237855227,123.49597048570533
+679,Harty's Bellycious Foodplace,Restaurants,Barili,10.118101446155892,123.48474978087287
+680,Gustosos,Restaurants,Barili,10.115010829604955,123.50835069435205
+681,Dhodz Pizza,Restaurants,Barili,10.114126106319285,123.51083935724266
+682,Cafe Alfonso,Restaurants,Barili,10.112407053981231,123.54398598582219
+683,St. Anne Parish,Churches,Barili,10.121878667367953,123.53932585757225
+684,Jesus Christ is Lord - Endtime Harvest Church,Churches,Barili,10.120994211536503,123.54858701875655
+685,Southern Baptist Church Barili,Churches,Barili,10.113066230502488,123.51426647476099
+686,Aloguinsan Municipal Hall,Municipal Halls,Aloguinsan,10.223298685189881,123.5482622521988
+687,Aloguinsan Fire Station,Fire Stations,Aloguinsan,10.218712141227469,123.55102663192561
+688,aloguinsan Municipal Police Station,Police Stations,Aloguinsan,10.221609576920077,123.54925670631322
+689,Aloguinsan Public Market,Markets,Aloguinsan,10.222766595052912,123.54885122254187
+690,Sptibon's Trading,Malls/Department Stores,Aloguinsan,10.222453597899907,123.54903478360623
+691,Aloguinsan Rural Health Unit,Health Centers,Aloguinsan,10.216286596376154,123.55115364281974
+692,Jhamzel Pharmacy,Pharmacies,Aloguinsan,10.222832744105968,123.54925967775668
+693,Aloguinsan Cemetery,Cemeteries,Aloguinsan,10.217012078637737,123.54653474476895
+694,Baluarte Park,Tourist Spots,Aloguinsan,10.223332153968833,123.54828045799323
+695,Bojo River Cruise,Tourist Spots,Aloguinsan,10.20598777341857,123.54506655402207
+696,The Modern Bahay Kubo,Tourist Spots,Aloguinsan,10.232802994310171,123.5618145668589
+697,Aloguinsan National High School,Schools,Aloguinsan,10.215411524181919,123.55092668973417
+698,Angilan National High School,Schools,Aloguinsan,10.224461194899485,123.56990569803547
+699,Rosario National High School,Schools,Aloguinsan,10.189307417312934,123.55696623007172
+700,Sofio's Grill House,Restaurants,Aloguinsan,10.18723541101213,123.55473900892889
+701,Kapehan sa Seaside,Restaurants,Aloguinsan,10.224282778902301,123.54837646617064
+702,Steve's Diner,Restaurants,Aloguinsan,10.222501596723514,123.5490711176364
+703,Saint Raphael the Archangel Parish,Churches,Aloguinsan,10.220490398142765,123.54962120495365
+704,Aloguinsan Seventh-Day Adventist Church,Churches,Aloguinsan,10.220790095481643,123.54742128015019
+705,The Chuch of Jesus Christ of Latter-Day Saints,Churches,Aloguinsan,10.22558922070022,123.55067579777115
+706,Pinamungahan Municipal Hall,Municipal Halls,Pinamungahan,10.270006812704946,123.58430796064641
+707,Pinamungahan Municipal Police Station,Police Stations,Pinamungahan,10.270467829276184,123.58418374516427
+708,Pinamungahan District Hospital,Hospitals,Pinamungahan,10.285799628029373,123.5878378305786
+709,Dr. Jose Ma. V. Borromeo Memorial District Hospital,Hospitals,Pinamungahan,10.275575400348917,123.58432332619083
+710,Sacsac Health Center,Health Centers,Pinamungahan,10.234635246139788,123.58510823757618
+711,TGP The Generics Pharmacy,Pharmacies,Pinamungahan,10.270267445208514,123.58378347921622
+712,Ducay Pharmacy & General Merchandise,Pharmacies,Pinamungahan,10.286295557898017,123.58854390061107
+713,Pinamungahan Public Cemetery,Cemeteries,Pinamungahan,10.276063440095582,123.58454053600619
+714,Pinamungahan Public Market,Markets,Pinamungahan,10.271118126574363,123.58399341422536
+715,7-Eleven,Malls/Department Stores,Pinamungahan,10.270753976433403,123.58367364344384
+716,Busagak Falls,Tourist Spots,Pinamungahan,10.230628450153922,123.61173537418112
+717,Tongue Flicker,Tourist Spots,Pinamungahan,10.271792193763718,123.59055807248595
+718,Hidden Valley Wave Pool and Mountain Resort,Tourist Spots,Pinamungahan,10.269811224062316,123.669166052983
+719,Pinamungahan Central School,Schools,Pinamungahan,10.271733781499602,123.58452248769676
+720,Cebu Technological University - Pinamungahan Campus,Schools,Pinamungahan,10.280969676433056,123.5903784463779
+721,Pandacan Elementary School,Schools,Pinamungahan,10.292498728536295,123.5859257948913
+722,Lamac National High School,Schools,Pinamungahan,10.277686016072948,123.60550704363932
+723,Lut-od National High School,Schools,Pinamungahan,10.275109658583418,123.6162631210136
+724,Goldilocks Pinamungahan,Restaurants,Pinamungahan,10.271271264078003,123.58452093343845
+725,Devon Crispy Fried Chicken Station,Restaurants,Pinamungahan,10.271749758131525,123.5844985019836
+726,Spanya Grill,Restaurants,Pinamungahan,10.270753976433403,123.58367364344384
+727,Sta. Monica Parish,Churches,Pinamungahan,10.270817600533828,123.58611057405216
+728,Pinamungahan Seventh Day Adventist Church,Churches,Pinamungahan,10.27298761139132,123.5838150320475
+729,PFAG - Pinamungahan First Assembly of God,Churches,Pinamungahan,10.268108604804258,123.58539649315071
+730,Toledo City Hall,City Halls,Toledo City,10.379924652999266,123.6585981478718
+731,Toledo City Fire Department,Fire Stations,Toledo City,10.3752671378326,123.63444052408279
+732,Don Andres Soriano Fire Station,Fire Stations,Toledo City,10.307281058444412,123.70244481129124
+733,Toledo City Police Station,Police Stations,Toledo City,10.385127554792783,123.64216305031478
+734,Toledo City Police Department,Police Stations,Toledo City,10.375235340359604,123.63452632265322
+735,Toledo City Health Office,Health Centers,Toledo City,10.380239762247676,123.65774783104872
+736,Toledo City Hospital,Hospitals,Toledo City,10.372354502699691,123.63873795338583
+737,Marigold Pharmacy,Pharmacies,Toledo City,10.375836129556262,123.6356765682753
+738,Mercury Drugstore,Pharmacies,Toledo City,10.375653418467412,123.63536567803274
+739,Generika Drugstore,Pharmacies,Toledo City,10.375984461711697,123.63573813173655
+740,Toledo City Public Cemetery,Cemeteries,Toledo City,10.368763517942119,123.62505184021218
+741,Toledo City Catholic Cemetery,Cemeteries,Toledo City,10.369180705030695,123.62411081428745
+742,Cantabaco Cemetery,Cemeteries,Toledo City,10.306467355946063,123.72827058125063
+743,Matab-ang Public Cemetery,Cemeteries,Toledo City,10.437839447826994,123.67473667258047
+744,Matab-ang Public Market,Markets,Toledo City,10.438057780198287,123.6757211386735
+745,Toledo Public Market,Markets,Toledo City,10.377094088724894,123.63596041288464
+746,Das Public Market,Markets,Toledo City,10.306918066052333,123.70315581655503
+747,Gaisano Grand Mall,Malls/Department Stores,Toledo City,10.390045162426066,123.65074452423417
+748,Super Metro Toledo,Malls/Department Stores,Toledo City,10.379581979627144,123.64032622302138
+749,Ballers' Corner,Malls/Department Stores,Toledo City,10.385156340134767,123.6484575580356
+750,K&L Marketing Toledo,Malls/Department Stores,Toledo City,10.381809605937997,123.64656982786993
+751,Capilla Santa Ana Museum and Community Center,Tourist Spots,Toledo City,10.37029075718524,123.62757619868658
+752,Ilihan Bridge,Tourist Spots,Toledo City,10.381420421730978,123.66077555225829
+753,Biga Pit,Tourist Spots,Toledo City,10.337935143087243,123.74754680794817
+754,Malubog Lake,Tourist Spots,Toledo City,10.367948068278467,123.716632706013
+755,Harag Beach Resort,Tourist Spots,Toledo City,10.409942569116367,123.66115855553669
+756,General Climaco National High School,Schools,Toledo City,10.374289458467189,123.71790662774532
+757,Magdugo National High School,Schools,Toledo City,10.349103208624486,123.66862772364074
+758,Consolatrix College,Schools,Toledo City,10.373786580818694,123.63694207632548
+759,South City Central School,Schools,Toledo City,10.379557060375346,123.64149850619513
+760,North City Central School,Schools,Toledo City,10.381006398112792,123.64338639163118
+761,Toledo City Science High School,Schools,Toledo City,10.381044647121247,123.6557879646885
+762,Toledo National Vocational School,Schools,Toledo City,10.3829340478589,123.65719164907607
+763,Lagkaw Bar and Restaurants,Restaurants,Toledo City,10.376414458279957,123.64194752403111
+764,Lantaw-Lantaw Restaurant & Barbecue,Restaurants,Toledo City,10.366556064508362,123.62215474907983
+765,Cocina Galleria,Restaurants,Toledo City,10.393047761501652,123.64957929324014
+766,J&J Restaurant,Restaurants,Toledo City,10.401729390713255,123.6582819160728
+767,7 Sister's Restaurant,Restaurants,Toledo City,10.383914574533112,123.65788653529638
+768,Shrine of Saint John of Sahagun,Churches,Toledo City,10.374095167732454,123.6350916901737
+769,United Church of Christ in the Philippines (UCCP) - Toledo,Churches,Toledo City,10.376626636004369,123.63841784161812
+770,First Gospel Baptist Church of Toledo City,Churches,Toledo City,10.37050808248676,123.6275268102241
+771,Pentecostal Missionary Church,Churches,Toledo City,10.38639312972996,123.64561747782928
+772,Jesus is Lord Church,Churches,Toledo City,10.391612446034609,123.65609650560201
+773,Mt. Carmel Parish,Churches,Toledo City,10.308227800509993,123.70872896476776
+774,Sacred Heart of Jesus Parish,Churches,Toledo City,10.313164689449541,123.69499696182483
+775,De La Salle Andres Soriano Memorial College,Schools,Toledo City,10.310287715956125,123.71042175458764
+776,Don Andres Soriano Elementary School,Schools,Toledo City,10.306931004111583,123.71218128307898
+777,Don Andres Soriano National High School,Schools,Toledo City,10.306558286424483,123.71281676560908
+778,7-Eleven Lutopan,Markets,Toledo City,10.307656725712372,123.70870213578465
+779,Courtyard,Restaurants,Toledo City,10.307843141878964,123.70971408353624
+780,Lutopan Wet Market,Markets,Toledo City,10.308237966999448,123.71079811766754

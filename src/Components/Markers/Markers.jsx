@@ -2,18 +2,18 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {Marker} from "react-leaflet"
-import L from "leaflet"
+import L, { latLng } from "leaflet"
 
 import './Markers.css'
+import { emphasize } from "@mui/system";
 
-var test = [{type: "Hospitals", cords: [10.253781, 123.838469]},
-{type: "Cemetaries", cords: [10.263133, 123.839979]},
-{type: "Barangay Halls", cords: [10.563133, 123.839979]}]
+// var test = [{type: "Hospitals", cords: [10.253781, 123.838469]},
+// {type: "Cemetaries", cords: [10.263133, 123.839979]},
+// {type: "Barangay Halls", cords: [10.563133, 123.839979]}]
 
 var markerIcon = L.Icon.extend({
     options:{
-        iconSize: [35,35],
-        shadowSize: [68,95]
+        iconSize: [35,35]
     }
 });
 
@@ -38,56 +38,61 @@ templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')})
 touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')})
 
 function locationChecker(location){
-    if(location.type === "Hospitals"){
+    console.log(location)
+    if(location == undefined){
+        console.log("bobo")
+    }
+
+    if(location === "Hospitals"){
         return hospitalIcon
-    }else if(location.type === "Health Centers"){
+    }else if(location === "Health Centers"){
         return healthCenterIcon
-    }else if(location.type === "Pharmacies"){
+    }else if(location === "Pharmacies"){
         return hospitalIcon
-    }else if(location.type === "Barangay Halls"){
+    }else if(location === "Barangay Halls"){
         return barangayHallIcon
-    }else if(location.type === "Malls/Department Stores"){
+    }else if(location === "Malls/Department Stores"){
         return mallDepartmentIcon
-    }else if(location.type === "Markets"){
+    }else if(location === "Markets"){
         return publicMarketIcon
-    }else if(location.type === "City Halls"){
+    }else if(location === "City Halls"){
         return cityHallIcon
-    }else if(location.type === "Schools"){
+    }else if(location === "Schools"){
         return schoolIcon
-    }else if(location.type === "Bars"){
+    }else if(location === "Bars"){
         return barIcon
-    }else if(location.type === "Police Stations"){
+    }else if(location === "Police Stations"){
         return policeStationIcon
-    }else if(location.type === "Fire Stations"){
+    }else if(location === "Fire Stations"){
         return fireStationIcon
-    }else if(location.type === "Churches"){
+    }else if(location === "Churches"){
         return churchIcon
-    }else if(location.type === "Restaurants"){
+    }else if(location === "Restaurants"){
         return restaurantIcon
-    }else if(location.type === "Tourist Spots" || location.type == "Tourist spots"){
+    }else if(location === "Tourist Spots" || location === "Tourist spots"){
         return touristSpotIcon
-    }else if(location.type === "Cemetaries"){
+    }else if(location === "Cemetaries"){
         return cemetaryIcon
-    }else if(location.type === "Police Stations"){
+    }else if(location === "Police Stations"){
         return policeStationIcon
-    }else if(location.type === "Municipal Halls" || location.type == "Municipal halls"){
+    }else if(location === "Municipal Halls" || location === "Municipal halls"){
         return municipalHallIcon
-    }else if(location.type === "Ports"){
+    }else if(location === "Ports"){
         return portIcon
+    }else{
+        return airportIcon
     }
 }
 
 const MarkerLayer = (data) => {
-    return (
-        <div>{
-            test.map((location) =>{
-                return(
-                    <Marker position={location.cords} icon = {locationChecker(location)}></Marker>
-                )
-            })
-        }
-        </div> 
-    )
+    if (data.data.lat != undefined){
+
+        return(
+        <div>
+            <Marker position = {[data.data.lat,data.data.lon]} icon = {locationChecker(data.data.type)}></Marker>
+        </div>
+        )
+    }
 }
 
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
