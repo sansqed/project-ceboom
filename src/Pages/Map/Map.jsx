@@ -1,3 +1,7 @@
+//CSV
+import Papa from 'papaparse'
+import data from '../../Assets/Data/CebuSouthLandmarks.csv'
+
 import "./Map.css"
 import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer} from "react-leaflet"
 import {CebuMap} from "../../Assets/CebuMap"
@@ -8,7 +12,7 @@ import "leaflet-draw/dist/leaflet.draw.css"
 import MarkerLayer from "../../Components/Markers/Markers"
 
 import { useLocation } from "react-router-dom"
-import { useEffect } from "react"
+import { useState, useEffect } from "react"
 
 import EditMap from "../EditMap/EditMap"
 import Search from "../Search/Search"
@@ -30,6 +34,22 @@ const Map = ({ children }) => {
       return(<UpdateTraffic/>)
   }
 
+  //convert csv to json
+  const [locationData, setLocationData] = useState([]);
+  
+  useEffect(()=>{
+    Papa.parse(data,{
+      download: true,
+      header: true,
+      complete: function(results){
+        setLocationData(results.data)
+      }
+    })
+  },[])  
+
+  // console.log(locationData)
+  //console.log(location)
+
   const _onCreate = e => {
     console.log(e)
   }
@@ -41,8 +61,6 @@ const Map = ({ children }) => {
   const _onDeleted = e => {
     console.log(e)
   }
-
-
 
   return(
 
@@ -81,7 +99,14 @@ const Map = ({ children }) => {
         />
         
         {/* Renders markers*/}
-        <MarkerLayer/>
+        {
+        locationData?.map((landmark) => (
+         <MarkerLayer
+          data = {landmark}
+         />
+        ))
+        }
+
 
 
 
