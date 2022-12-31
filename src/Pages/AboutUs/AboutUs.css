@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+}
+
+/*BACKGROUND*/
+.AboutUs{
+    background-image: url("../../Assets/images/AboutUs_background.png");
+    padding-bottom: 10vh;
+}
+
+/*HEADER*/
+.Header{
+    background-image: url("../../Assets/images/AboutUs_background.png");
+    background-color: #EB811E;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 5vh;
+}
+
+.Header > h1{
+    color: white;
+    font-size: 7vh;
+    margin-left: 5vh;
+    margin-top: 25vh;
+}
+
+.Header > p{
+    color: white;
+    font-size: 2vh;
+    margin-left: 7vh;
+    margin-bottom: 10vh;
+}
+
+/*NAVIGATION BAR*/
+.Header > .nav-logo{
+    background-image: url("../../Assets/images/project_ceboom_logo_v2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 78vh;
+    height: 19vh;
+    scale: 50%;
+    border-radius: 25px;
+    margin-left: -15vh;
+    margin-top: -11vh;
+    position: absolute;
+}
+
+.Header > .nav-bar{
+    font-size: 2.5vh;
+    font-weight: bold;
+    padding-top: 15vh;
+    margin-right: 5vh;
+}
+
+.Header > .nav-bar > a{
+    color: white;
+    text-decoration: none;
+    margin: 5vh;
+}
+
+.Header > .nav-bar > a1{
+    color:#0079BE;
+    text-decoration: none;
+}
+
+/*TEAM SECTION*/
+.TeamSection{
+    background-color: #FFFFFF;
+    scale: 95%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+}
+
+.TeamSection > .team-pic{
+    background-image: url("../../Assets/images/AboutUs_team.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 85vh;
+    height: 90vh;
+}
+
+.TeamSection > .team-content{
+    margin-left: 5vh;
+    width: 108vh;
+    height: 50vh;
+}
+
+.TeamSection > .team-content > h4{
+    color: #757575;
+    font-size: 3vh;
+    margin-top: 5vh;
+}
+
+.TeamSection > .team-content > h2{
+    font-size: 5vh;
+    margin-top: 2vh;
+    
+}
+
+.TeamSection > .team-content > p{
+    color: #6E6E6E;
+    font-size: 2.5vh;
+    margin-top: 2vh;
+}
