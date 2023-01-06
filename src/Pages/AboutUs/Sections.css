@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+
+/* Indicator Section */
+.IndicatorSection { 
+    background-color: white;
+    scale: 95%;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    display: flex;
+    width: 100%;
+    height: 208vh;
+    box-sizing: border-box;
+}
+
+.LookingHeader {
+    font-size: 7vh;
+    font-style: black;
+    font-family: Outfit;
+    font-weight: 900;
+    position: absolute;
+    top: 10vh;
+    left: 6vh;
+}
+
+.LookingDescription {
+    position: absolute;
+    top: 19vh;
+    font-size: 3vh;
+    font-family: Outfit;
+    left: 6vh;
+    color: rgb(153, 153, 153);
+}
+
+/* Columns */
+.Column {
+    float: left;
+    width: 49vh; 
+    height: 30vh;
+    position: relative;
+}
+
+/* Rows */
+.FirstRow {
+    position: absolute;
+    top: 36vh;
+    left: 10vh;
+    display: flex;
+}
+
+.SecondRow {
+    position: absolute;
+    top: 72vh;
+    left: 10vh;
+    display: flex;
+}
+
+.ThirdRow {
+    position: absolute;
+    top: 108vh;
+    left: 10vh;  
+    display: flex;
+}
+
+.FourthRow {
+    position: absolute;
+    top: 144vh;
+    left: 10vh;
+    display: flex;
+}
+
+.FifthRow {
+    position: absolute;
+    top: 177vh;
+    left: 61vh; 
+    display: flex;
+}
+
+
+.FirstRow:after, .SecondRow:after, .ThirdRow:after,
+.FourthRow:after, .FirstRow:after {
+
+    content: "";
+    display: table;
+    clear: both;
+
+}
+
+.logo {
+    right: 12vh;
+    width: 11vh;
+    height: 11vh;
+    background-repeat : no-repeat;
+    background-size : cover;
+    background-position : center;
+    object-fit: cover;
+    position: relative;
+    
+}
+
+.IndicatorTitle {
+    left: 20vh;
+    bottom: 10vh;
+    width: 13vh;
+    height: 5vh;
+    color: rgba(0, 0, 0, 1);
+    font-size: 4vh;
+    font-family: Outfit;
+    position: relative;
+    text-align: left;
+    width: 26vh;
+    height: 4vh;
+}
+
+
+.IndicatorTitleVersion2 {
+    bottom: 13vh;
+    font-size: 3.42vh !important;
+}
+
+.IndicatorDescription {
+    left: 20vh;
+    bottom: 8vh;
+    color: rgba(153, 153, 153, 1);
+    width: 27vh;
+    position: relative;
+    font-size: 2.5vh;
+    align-self: auto;
+    text-align: left;
+    font-family: Outfit;
+    font-weight: 400;
+    line-height: 4vh;
+}  
+
