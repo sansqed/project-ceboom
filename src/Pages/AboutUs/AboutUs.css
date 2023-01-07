@@ -1,3 +1,8 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
+
+
 *{
     margin: 0;
     padding: 0;
@@ -7,6 +12,8 @@
 /*BACKGROUND*/
 .AboutUs{
     background-image: url("../../Assets/images/AboutUs_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
     padding-bottom: 10vh;
 }
 
@@ -14,6 +21,8 @@
 .Header{
     background-image: url("../../Assets/images/AboutUs_background.png");
     background-color: #EB811E;
+    background-repeat: no-repeat;
+    background-size: cover;
     width: 100%;
     height: 100%;
     padding-bottom: 5vh;
@@ -104,4 +113,120 @@
     color: #6E6E6E;
     font-size: 2.5vh;
     margin-top: 2vh;
+}
+
+/* FOOTER */
+
+.Footer {
+    width: 100%;
+    height: 67vh;
+    display: flex;
+    position: absolute;
+    display: flex;
+}
+
+.BlueRectangle {
+    top: 10vh;
+    width: 100%;
+    height: 50vh;
+    background-color: #0079BE;
+    position: absolute;
+    display: flex;
+}
+
+.LandscapeBackground {
+    background-image: url(../../Assets/images/landscape_background.png);
+    top: 10vh;
+    width: 100%;
+    height: 50vh;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0079BE;
+}
+
+.RectangleContainer {
+    left: 8vh;
+    width: 106vh;
+    height: 63vh;
+    position: absolute;
+}
+
+.GrayRectangle {
+    width: 74vh;
+    height: 46vh;
+    position: absolute;
+    background-color: #C4C4C4;
+}
+
+.WhiteRectangle {
+    top: 21vh;
+    left: 37vh;
+    width: 64vh;
+    height: 35vh;
+    position: absolute;
+    background-color: white;
+}
+
+.GroupText {
+    top: 15vh;
+    left: 112vh;
+    width: 90vh;
+    height: 27vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    position: absolute; 
+}
+
+.Text {
+    font-size: 9vh;
+    font-style: black;
+    font-family: Poppins;
+    font-weight: 900;
+    letter-spacing: 0.5vh;
+    width: 100vh;
+    line-height: 9vh;
+    color: white;
+    text-align: left;
+    position: absolute;
+}
+
+.CeboomLogo {
+    background-image: url(../../Assets/images/ceboom_logo_transparent.png);
+    top: 47vh;
+    left: 161vh;
+    width: 45vh;
+    height: 9.5vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+
+}
+
+.BottomPart {
+    top: 61vh;
+    width: 100%;
+    height: 4.5vh;
+    position: absolute;
+}
+
+.BottomLine {
+    background-image: url("../../Assets/images/footer_line.svg");
+    width: 100%;
+    height: 0.4vh;
+    position: absolute;
+
+}
+
+.EndText {
+    font-size: 2.4vh;
+    position: absolute;
+    font-style: SemiBold;
+    text-align: left;
+    font-family: Outfit;
+    font-weight: 600;
+    top: 1.44vh;
+    left: 94vh;
+    color: rgb(92, 92, 92); 
 }
