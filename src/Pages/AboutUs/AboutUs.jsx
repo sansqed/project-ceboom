@@ -27,6 +27,7 @@ import TouristSpot from '../../Assets/icons/TouristSpot.png'
 
 
 
+
 const AboutUs = ({ children }) => {
 
   return(
@@ -382,6 +383,15 @@ const AboutUs = ({ children }) => {
       </div>
 
     </div>    
+          
+          {/*insert fast&furious thingy*/}
+          <div className=""></div>
+        </div>
+      </div>
+      
+    {/*insert 2nd half of page*/}   
+     
+    </div>
   )
 }
 
