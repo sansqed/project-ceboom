@@ -5,6 +5,8 @@ import MarkerLayer from './Components/Markers/Markers'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import TestMap from './Pages/Map/TestMap';
+
 import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';
 import AboutUs from './Pages/AboutUs/AboutUs';
@@ -23,10 +25,6 @@ function App() {
           <Routes>
             <Route 
               path="/map" 
-              element={<Map/>}  
-            />
-            <Route 
-              path="/map:action" 
               element={<Map/>}  
             />
             <Route 

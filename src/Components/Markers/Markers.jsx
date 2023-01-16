@@ -38,9 +38,9 @@ templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')})
 touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')})
 
 function locationChecker(location){
-    console.log(location)
+    // console.log(location)
     if(location == undefined){
-        console.log("bobo")
+        // console.log("bobo")
     }
 
     if(location === "Hospitals"){
