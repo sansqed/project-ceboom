@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
+
+
+.landing-background {
+    height: 100vh !important;
+    background-color: white;
+    background-image: url("/src/Assets/images/streets_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.landing-main-text {
+    /* color: #EB811E;
+    font-size: 65px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900; */
+    position: absolute;
+    width: 732px;
+    height: 91px;
+    left: 70px;
+    top: 260px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72px;
+    line-height: 91px;
+    text-align: left;
+
+
+    color: #EB811E;
+}
+
+.landing-sub-text-one {
+    position: absolute;
+    width: 714px;
+    height: 88px;
+    left: 70px;
+    top: 360px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 25px;
+
+    text-align: left;
+
+    color: #0079BE;
+}
+
+.landing-sub-text-two {
+    position: absolute;
+    width: 714px;
+    height: 88px;
+    left: 70px;
+    top: 395px;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 20px;
+    line-height: 25px;
+
+    text-align: left;
+
+    color: #000000;
+}
+
+.ceboom-logo {
+    position: absolute;
+    width: 280px;
+    height: 60px;
+    left: 70px;
+    top: 70px;
+}
+
+.ceboom-logo-one {
+    position: absolute;
+    width: 427px;
+    height: 518px;
+    left: 920px;
+    top: 150px;
+}
+
+.container {
+    align-items: flex-start;
+    width: 100%;
+    float: left;
+}
