@@ -1,6 +1,272 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: 0;
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap%27');
+
+.reg-background{
+    height: 100vh !important;
+    background-color: #EB811E;
+    background-image: url("/src/Assets/images/registration_streetshadow.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
+.form-background{
+    position: absolute;
+    left: 57.99%;
+    right: 0%;
+    top: -0.12%;
+    bottom: 0%;
+
+    background: #FFFFFF;
+    border-radius: 62px;
+}
+
+.shadowCeb{
+    position: absolute;
+    width: 350px;
+    height: 700px;
+    left: 470px;
+    top: 10px;
+}
+
+.Text1{
+    position: absolute;
+    left: 3.33%;
+    right: 58.12%;
+    top: 7.92%;
+    bottom: 78.35%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 76px;
+    line-height: 77.5%;
+    letter-spacing: 0.08em;
+
+    color: #FFFFFF;
+}
+
+.Text2{
+    position: absolute;
+    left: 3.33%;
+    right: 62.01%;
+    top: 24.45%;
+    bottom: 60.19%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 34px;
+    line-height: 43px;
+
+    color: #FFFFFF;
+}
+
+.Text3{
+    position: absolute;
+    left: 3.4%;
+    right: 77.36%;
+    top: 54.48%;
+    bottom: 26.31%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    line-height: 33px;
+
+    color: #FFFFFF;
+}
+
+.Text4{
+    position: absolute;
+    left: 3.4%;
+    right: 75.97%;
+    top: 77.07%;
+    bottom: 11.99%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 58px;
+    line-height: 47px;
+    /* or 81% */
+
+    letter-spacing: 0.03em;
+
+    color: #FFFFFF;
+}
+
+.createAccount{
+    position: absolute;
+    left: 60.62%;
+    right: 15.51%;
+    top: 10.71%;
+    bottom: 83.24%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 136.5%;
+    /* or 49px */
+
+    letter-spacing: 0.01em;
+
+    color: #000000;
+}
+
+/* .signUP{
+    position: inherit;
+    height: 100px;
+    width: 100px;
+    top: 25%;
+    left: 50%;
+} */
+
+.Google{
+    box-sizing: border-box;
+    position: absolute;
+    height: 55px;
+    width: 218px;
+    bottom: 73%;
+    left: 100px;
+
+    border: 1px solid #d8d3d3;
+    border-radius: 8px;
+}
+
+.googleIcon{
+    position: absolute;
+    top: 11px;
+    left: 10px;
+}
+
+.googleText{
+    position: absolute;
+    left: 25%;
+    top: 28%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136.5%;
+}
+
+.Facebook{
+    box-sizing: border-box;
+    position: absolute;
+    height: 55px;
+    width: 225px;
+    bottom: 73%;
+    /* left: 100px; */
+    right: 90px;
+
+    border: 1px solid #d8d3d3;
+    border-radius: 8px;
+}
+
+.facebookIcon{
+    position: absolute;
+    top: 11px;
+    left: 10px;
+}
+
+.facebookText{
+    position: absolute;
+    left: 25%;
+    top: 28%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 136.5%;
+}
+
+.or{
+    position: absolute;
+    right: 18.5%;
+    top: 29.5%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 200;
+    font-size: 26px;
+    line-height: 136.5%;
+}
+
+.inputs{
+    box-sizing: border-box;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    top: 37%;
+    right: 10%;
+}
+
+.inputBox1{
+    position: absolute;
+    width: 500px;
+    height: 54px;
+    left: 0%;
+}
+
+.inputBox2{
+    position: absolute;
+    width: 500px;
+    height: 54px;
+    left: 0%;
+    top: 15%;
+}
+
+.inputBox3{
+    position: absolute;
+    width: 500px;
+    height: 54px;
+    left: 0%;
+    top: 30%;
+}
+
+::placeholder{
+    position: absolute;
+    width: 160px;
+    height: 18px;
+    top: 27%;
+    left: 5%;
+
+    font-family: 'Outfit';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 115.5%;
+    /* or 18px */
+
+    letter-spacing: 5.5px;
+
+    color: #000000;
+}
+
+.create{
+    box-sizing: border-box;
+    position: absolute;
+    height: 50px;
+    width: 500px;
+    bottom: 20%;
+    left: 12%;
+
+    background-color: #EB811E;
+    color: white;
+    font-family: 'Outfit';
+    font-size: 19px;
+    
+}
+
+.link{
+    position: absolute;
+    bottom: 15%;
+    left: 12%;
+
+    font-family: 'Outfit';
+    font-size: 19px;
+}
