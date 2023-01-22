@@ -20,7 +20,7 @@
     width: 740px;
     height: 90px;
     left: 70px;
-    top: 230px;
+    top: 220px;
 
     font-family: 'Outfit';
     font-style: normal;
@@ -38,7 +38,7 @@
     width: 740px;
     height: 90px;
     left: 70px;
-    top: 330px;
+    top: 340px;
 
     font-family: 'Outfit';
     font-style: normal;
@@ -56,7 +56,7 @@
     width: 740px;
     height: 90px;
     left: 70px;
-    top: 365px;
+    top: 375px;
 
     font-family: 'Outfit';
     font-style: normal;
@@ -147,7 +147,7 @@
     margin: 2.5vh;
 }
 
-.nav-bar > a1{
+.nav-bar > b{
     color:#0079BE;
     text-decoration: none;
     margin: 2.5vh;
