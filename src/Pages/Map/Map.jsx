@@ -15,6 +15,9 @@ import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 import EditMap from "../EditMap/EditMap"
+import AddLandmark from "../EditMap/AddLandmark"
+import AddRoad from "../EditMap/AddRoad"
+import EditLandmark from "../EditMap/EditLandmark"
 import Search from "../Search/Search"
 import PathFinder from "../PathFinder/PathFinder"
 import UpdateTraffic from "../UpdateTraffic/UpdateTraffic"
@@ -26,6 +29,12 @@ const Map = ({ children }) => {
   const handleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
+    else if (subpage === "#AddLandmark")
+      return (<AddLandmark/>)
+    else if (subpage === "#AddRoad")
+      return (<AddRoad/>)
+    else if (subpage === "EditLandmark")
+      return (<EditLandmark/>)
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
