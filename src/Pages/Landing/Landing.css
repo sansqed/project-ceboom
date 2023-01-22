@@ -1,6 +1,9 @@
+
+/* Outfit Font Import */
 @import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
 
 
+/* Background Image */
 .landing-background {
     height: 100vh !important;
     background-color: white;
@@ -10,22 +13,20 @@
     background-attachment: fixed;
 }
 
+/* TEXT */
+
 .landing-main-text {
-    /* color: #EB811E;
-    font-size: 65px;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 900; */
     position: absolute;
-    width: 732px;
-    height: 91px;
+    width: 740px;
+    height: 90px;
     left: 70px;
-    top: 260px;
+    top: 220px;
 
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
     font-size: 72px;
-    line-height: 91px;
+    line-height: 90px;
     text-align: left;
 
 
@@ -34,14 +35,14 @@
 
 .landing-sub-text-one {
     position: absolute;
-    width: 714px;
-    height: 88px;
+    width: 740px;
+    height: 90px;
     left: 70px;
-    top: 360px;
+    top: 340px;
 
     font-family: 'Outfit';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 20px;
     line-height: 25px;
 
@@ -52,14 +53,14 @@
 
 .landing-sub-text-two {
     position: absolute;
-    width: 714px;
-    height: 88px;
+    width: 740px;
+    height: 90px;
     left: 70px;
-    top: 395px;
+    top: 375px;
 
     font-family: 'Outfit';
     font-style: normal;
-    font-weight: lighter;
+    font-weight: 300;
     font-size: 20px;
     line-height: 25px;
 
@@ -68,12 +69,14 @@
     color: #000000;
 }
 
+/* IMAGES */
+
 .ceboom-logo {
     position: absolute;
     width: 280px;
     height: 60px;
     left: 70px;
-    top: 70px;
+    top: 30px;
 }
 
 .ceboom-logo-one {
@@ -81,11 +84,71 @@
     width: 427px;
     height: 518px;
     left: 920px;
-    top: 150px;
+    top: 130px;
 }
 
 .container {
     align-items: flex-start;
     width: 100%;
     float: left;
+}
+
+.color-orange {
+    color:#EB811E;
+}
+
+
+/* BUTTONS */
+
+.login button[type="submit"]{
+    position: absolute;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    border: none;
+    width: 12.5%;
+    height: 7.5%;
+    left: 70px;
+    top: 450px;
+    font-size: 16px;
+    background-color: #EB811E;
+    cursor: pointer;
+}
+
+.learnmore {
+    position: absolute;
+    font-weight: bold;
+    font-family: 'Outfit', sans-serif;
+    color: #EB811E;
+    border: 2px solid #EB811E;
+    border-color: #EB811E;
+    width: 12.5%;
+    height: 7.5%;
+    left: 280px;
+    top: 450px;
+    font-size: 16px;
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* NAVIGATION BAR */
+
+.nav-bar{
+    font-size: 2.5vh;
+    font-weight: bold;
+    padding-top: 5vh;
+    margin-right: 15vh;
+}
+
+.nav-bar > a{
+    color: black;
+    text-decoration: none;
+    margin: 2.5vh;
+}
+
+.nav-bar > b{
+    color:#0079BE;
+    text-decoration: none;
+    margin: 2.5vh;
 }
