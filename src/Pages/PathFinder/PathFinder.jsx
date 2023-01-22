@@ -1,5 +1,7 @@
 import "./PathFinder.css"
+import "../../Components/SidebarCustomButton/SidebarCustomButton"
 import { Search } from "@mui/icons-material"
+import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton"
 
 const PathFinder = ({ children }) => {
 
@@ -47,9 +49,7 @@ const PathFinder = ({ children }) => {
           </div>
           
           <div className="pathfinder-searchsubmit">
-            <button type="submit">
-              <p>GET DIRECTIONS</p>
-            </button>
+            <SidebarCustomButton text="GET DIRECTIONS" className="test-button"/>
           </div>
         </div>
 
