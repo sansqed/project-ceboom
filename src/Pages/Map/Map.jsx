@@ -1,6 +1,7 @@
 //CSV
 import Papa from 'papaparse'
-import data from '../../Assets/Data/CebuSouthLandmarks.csv'
+// import data from '../../Assets/Data/CebuSouthLandmarks.csv'
+import data from '../../Assets/Data/brgy-lahug-landmarks.csv'
 
 import "./Map.css"
 import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer, Circle, Polyline, useMap} from "react-leaflet"
@@ -18,6 +19,9 @@ import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 import EditMap from "../EditMap/EditMap"
+import AddLandmark from "../EditMap/AddLandmark"
+import AddRoad from "../EditMap/AddRoad"
+import EditLandmark from "../EditMap/EditLandmark"
 import Search from "../Search/Search"
 import PathFinder from "../PathFinder/PathFinder"
 import UpdateTraffic from "../UpdateTraffic/UpdateTraffic"
@@ -28,16 +32,25 @@ import "leaflet-geometryutil"
 import '@geoman-io/leaflet-geoman-free';  
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
+import {CreateNodes} from "../../ApiCalls/NodeAPI"
+
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
   const [roads, setRoads] = useState([])
   const [currRoad, setCurrRoad] = useState(null)
+  const [isClicked, setIsClicked] = useState(false)
 
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
+    else if (subpage === "#AddLandmark")
+      return (<AddLandmark/>)
+    else if (subpage === "#AddRoad")
+      return (<AddRoad/>)
+    else if (subpage === "EditLandmark")
+      return (<EditLandmark/>)
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
@@ -63,66 +76,6 @@ const Map = ({ children }) => {
     }
   ])
 
-  const DrawMap = () => {
-    let map = useMap()  
-    // console.log(map)
-
-    var lg = L.LayerGroup
-
-    map.pm.setGlobalOptions({
-      layerGroup: lg
-    })
-
-    // console.log(lg)
-
-    map.addLayer(L.marker([10.419705993110673, 123.83194042326245]))
-    
-
-    // map.pm.enableDraw('Line', {
-    //   snappable: true,
-    //   snapDistance: 20,
-    // });
-
-    map.pm.addControls({  
-      position: 'topright',  
-      // drawCircle: false,  
-    });  
-
-    map.on('pm:drawstart', ({ workingLayer }) => {
-      workingLayer.on('pm:vertexadded', (e) => {
-        if (e.target._latlngs.length === 1){
-          console.log(e)
-          var start = markers.find(({lat, lon}) => lat === e.latlng.lat && lon === e.latlng.lng)
-          if (!start){
-            console.log(workingLayer)
-            map.pm.disableDraw()
-
-          }
-
-        }
-      });
-    });
-
-    map.on('pm:create', e => {
-      console.log(e)
-      var last = e.layer._latlngs.at(-1)
-      var first = e.layer._latlngs[0]
-      var endMarker =  markers.find(({lat, lon}) => lat === last.lat && lon === last.lng)
-      var startMarker = markers.find(({lat, lon}) => lat === first.lat && lon === first.lng)
-      if (endMarker && startMarker){
-        var newRoad = {
-          id: e.layer._leaflet_id,  
-          endPoints:[startMarker.id, endMarker.id], 
-          latlngs: e.layer._latlngs
-        }
-        setCurrRoad(newRoad)
-      } else {
-        e.target.removeLayer(e.layer)
-      }
-    })
-      
-    return null
-  }
     
   console.log("roads", roads)
   // console.log(isDrawMode)
@@ -164,8 +117,71 @@ const Map = ({ children }) => {
     })
   },[]) 
 
+  console.log("locationData", locationData)
+
   // console.log(locationData)
   //console.log(location)
+
+  const DrawMap = () => {
+    let map = useMap()  
+    // console.log(map)
+
+    var lg = L.LayerGroup
+
+    map.pm.setGlobalOptions({
+      layerGroup: lg
+    })
+
+    // console.log(lg)
+
+    map.addLayer(L.marker([10.419705993110673, 123.83194042326245]))
+  
+    // map.pm.enableDraw('Line', {
+    //   snappable: true,
+    //   snapDistance: 20,
+    // });
+
+    map.pm.addControls({  
+      position: 'topright',  
+      // drawCircle: false,  
+    });  
+
+    map.on('pm:drawstart', ({ workingLayer }) => {
+      workingLayer.on('pm:vertexadded', (e) => {
+        if (e.target._latlngs.length === 1){
+          console.log("vertexadd", e)
+          var start = locationData.find(({lat, lon}) => (lat == e.latlng.lat && lon == e.latlng.lng))
+          console.log("start", start)
+          // var start = locationData.find((loc) => loc.lat == e.latlng.lat && loc.lon == e.latlng.lng)
+          if (start === undefined){
+            console.log(workingLayer)
+            map.pm.disableDraw()
+          }
+        }
+      });
+    });
+
+    map.on('pm:create', e => {
+      console.log(e)
+      var last = e.layer._latlngs.at(-1)
+      var first = e.layer._latlngs[0]
+      var endMarker =  locationData.find(({lat, lon}) => lat == last.lat && lon == last.lng)
+      var startMarker = locationData.find(({lat, lon}) => lat == first.lat && lon == first.lng)
+      if (endMarker && startMarker){
+        var newRoad = {
+          id: e.layer._leaflet_id,  
+          endPoints:[startMarker.id, endMarker.id], 
+          latlngs: e.layer._latlngs
+        }
+        setCurrRoad(newRoad)
+      } else {
+        e.target.removeLayer(e.layer)
+      }
+    })
+      
+    return null
+  }
+  
 
   const _onCreate = e => {
     console.log(e)
@@ -182,6 +198,8 @@ const Map = ({ children }) => {
   }
 
   // console.log(roads)
+
+  console.log(locationData)
 
 
   const renderRoads = () => {
@@ -202,6 +220,21 @@ const Map = ({ children }) => {
 //     }
 //  });
 
+  async function createNodes(){
+  
+    console.log("HERE ")
+    console.log(locationData)
+    const response = await CreateNodes(locationData)
+
+    console.log(response)
+    if (response.data.status !== 201){
+      console.log("FAILED")
+    } else {
+      console.log("SUCCESS")
+    }
+
+  }
+  
   return(
 
     <div className="map-container">
@@ -241,11 +274,11 @@ const Map = ({ children }) => {
         />
         
         {/* Renders markers*/}
-        {/* {locationData?.map((landmark) => (
+        {locationData?.map((landmark) => (
          <MarkerLayer
           data = {landmark}
          />
-        ))} */}
+        ))}
 
         <DrawMap/>
 
@@ -265,6 +298,10 @@ const Map = ({ children }) => {
 
 
       </MapContainer>
+
+      <button onClick={() => createNodes()}>
+        Create Nodes
+      </button>
       </div>
   )
 }

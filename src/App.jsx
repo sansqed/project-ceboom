@@ -10,6 +10,7 @@ import TestMap from './Pages/Map/TestMap';
 import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';
 import AboutUs from './Pages/AboutUs/AboutUs';
+import Registration from './Pages/Registration/Registration';
 
 function App() {
 
@@ -38,6 +39,10 @@ function App() {
             <Route 
               path="/about-us" 
               element={<AboutUs/>}  
+            />
+            <Route
+              path="/registration"
+              element={<Registration/>}
             />
           </Routes>
       </BrowserRouter>
