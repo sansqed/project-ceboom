@@ -71,9 +71,9 @@ const AboutUs = ({ children }) => {
       
       <div className = "IndicatorSection">
 
-        <div className = "LookingHeader">
+        <h2 className = "LookingHeader">
           LOOKING FOR YOUR WAY AROUND?
-        </div>
+        </h2>
 
         <div className = "LookingDescription">
           Easily navigate the Queen City of the South through these indicators:
