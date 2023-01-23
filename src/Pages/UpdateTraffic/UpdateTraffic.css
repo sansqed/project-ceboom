@@ -1,0 +1,168 @@
+@font-face{
+    font-family: Outfit;
+    src:url(Outfit.ttf)
+}
+
+.sidebar-submenu{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100000;
+    width: 500px;
+    height: 100vh;
+    background-color: white;
+    margin-left: 6.5vh;
+  }
+.traffic-header{
+    display: flex;
+    flex-direction:column;
+    position:relative;
+    margin-top: 0;
+    background: linear-gradient(90deg, rgb(80, 181, 221) 0%, rgb(84, 171, 221) 100%);
+    height: 10vh;
+    width: 53.8vh;
+    background-color: aqua;
+}
+
+.updatetraffic{
+    font-family: "Outfit";
+    letter-spacing: 1vh;
+    color: white;
+}
+
+
+.grid{
+    position:relative;
+    background: linear-gradient(90deg, rgb(166, 214, 241) 0%, rgb(134, 197, 233) 100%);
+    width: 50vh;
+    border-radius: 1vh;
+    margin-left: 1vh;
+    margin-top:2vh;
+    text-align: left;
+    text-indent: 1vh;
+}
+
+.locbutton{
+    font-family: "Outfit";
+    font-size: 2.5vh;
+    margin-bottom: 1vh;
+}
+
+.locationIcon {
+    padding-top: 0.5vh;
+    width: 6vh;
+}
+
+.placeupdate-container {
+    display: inline-block;
+    padding-top: 1vh;
+}
+
+
+.traffic-updateroute{
+    padding-top: 2vh;
+    font-weight: bold;
+    font-size: 3vh;
+    font-family: 'Outfit';
+}
+
+
+
+.traffic-searchloc{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    height:20vh;
+}
+.traffic-sourceloc{
+    position: relative;
+    flex-direction:column;
+}
+
+.traffic-destination{
+    position: relative;
+    margin-top: 1vh;
+}
+
+.traffic-from{
+    position:relative;
+    text-align: left;
+    padding-left:2vh;
+    color: gray;
+    font-family: 'Outfit';
+    height:1vh;
+}
+
+.traffic-sourcelocdesc{
+    text-align: left;
+    padding-left:2vh;
+    color: gray;
+    font-family: 'Outfit';
+    font-size: 1.5vh;
+}
+
+.traffic-to{
+    text-align: left;
+    padding-left:2vh;
+    color: gray;
+    font-family: 'Outfit';
+    height:1vh;
+}
+
+.traffic-destinationdesc{
+    text-align: left;
+    padding-left:2vh;
+    color: gray;
+    font-size: 1.5vh;
+    font-family: 'Outfit';
+}
+
+
+.traffic-status{
+    padding-top: 2vh;
+    position:relative;
+    text-align: left;
+    font-family: 'Outfit';
+}
+
+
+.traffic-curstatus{
+    position:relative;
+    padding-left: 2.5vh;
+}
+
+.traffic-curstatbutton{
+    background-color: yellow;
+    border:none;
+    padding: 2vh;
+    margin-top:0.5vh;
+    border-radius: 10vh;
+    width:0%;
+}
+
+.status-label{
+    font-weight: 700;
+}
+.traffic-statusdesc{
+    position: relative;
+    display: inline-flex;
+    padding-left: 5vh;
+    top:-3.5vh;
+    color: #FEE227;
+    font-weight: 0;
+    font-family: 'Outfit';
+}
+
+.traffic-updatestatbutton{
+    background-color: #ff781f;
+    color: white;
+    border: none;
+    border-radius:2vh;
+    padding:1.5vh;
+    font-weight: bold;
+    font-size:2vh;
+    margin-left: 7vh;
+    font-family: 'Outfit';
+    letter-spacing: 0.1vh;
+    width: 40vh;
+}
