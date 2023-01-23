@@ -1,7 +1,8 @@
-import "./PathFinder.css"
-import "../../Components/SidebarCustomButton/SidebarCustomButton"
-import { Search } from "@mui/icons-material"
-import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton"
+import "./PathFinder.css";
+import "../../Components/Navbar/Sidebar.css";
+import "../../Components/SidebarCustomButton/SidebarCustomButton";
+import { Search } from "@mui/icons-material";
+import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton";
 
 const PathFinder = ({ children }) => {
 
@@ -10,9 +11,9 @@ const PathFinder = ({ children }) => {
     <div className="sidebar-submenu">
       <div className="pathfinder">
 
-        <div className="pathfinder-title">
-          <div className="pathfinder-title-text">
-            PATH FINDER
+        <div className="page-title">
+          <div className="page-title-text">
+            Path Finder
           </div>
         </div>
 
@@ -39,7 +40,7 @@ const PathFinder = ({ children }) => {
             <div className="pathfinder-tolabel">
               To:
             </div>
-            <input type="text" placeholder="Choose destination..."/>
+            <input type="text" placeholder="Choose destination..."></input>  
             <button type="submit">
               <Search sx={{ fontSize: "2rem" }} />
             </button>

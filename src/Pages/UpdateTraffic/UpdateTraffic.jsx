@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import "./UpdateTraffic.css";
+import "../../Components/Navbar/Sidebar.css";
 import SearchBar from "./SearchBar.jsx"
 import TrafficStatus from "./UpdateStatus";
-import { Button, Grid } from "@mui/material"
-import LocationOnIcon from '@mui/icons-material/LocationOn'
+import { Button, Grid } from "@mui/material";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 // Need to import json file including location data
 
 const UpdateTraffic = ({children}) => {
@@ -13,8 +14,8 @@ const UpdateTraffic = ({children}) => {
   return(
       <div className="sidebar-submenu">
         <TrafficStatus trafficstatusOpen = {trafficstatusOpen} trafficstatusClose = {updatestatusToggle}/>
-        <div className = "traffic-header">
-          <h1 className = "updatetraffic">UPDATE TRAFFIC</h1>
+        <div className = "page-title">
+          <div className = "page-title-text">Update Traffic</div>
           <br></br>
         </div>
         <div className = "traffic-updateroute"> Select Route to Update </div>
