@@ -6,8 +6,8 @@
 /* Background Image */
 .landing-background {
     height: 100vh !important;
+    background-color: white;
     background-image: url("/src/Assets/images/streets_background.png");
-    background-color: white !important;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
@@ -93,14 +93,14 @@
     float: left;
 }
 
-/* .color-orange {
+.color-orange {
     color:#EB811E;
-} */
+}
 
 
 /* BUTTONS */
 
-.getstarted button[type="submit"]{
+.login button[type="submit"]{
     position: absolute;
     font-weight: bold;
     font-family: 'Outfit', sans-serif;

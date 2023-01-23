@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap'); 
 
+
 *{
     margin: 0;
     padding: 0;
@@ -32,25 +33,16 @@
 
 .Header > h1{
     color: white;
-    font-family: Outfit;
     font-size: 7vh;
-    font-weight: 900;
-    margin-left: 7vh;
-    margin-top: 13vh;
-    text-align: left;
+    margin-left: 5vh;
+    margin-top: 25vh;
 }
 
 .Header > p{
     color: white;
-    font-family: Outfit;
-    font-size: 2.5vh;
-    line-height: 4vh;
+    font-size: 2vh;
     margin-left: 7vh;
-    margin-top: 2vh;
-    margin-bottom: 2vh;
-    white-space: pre-wrap;
-    text-align: left;
-
+    margin-bottom: 10vh;
 }
 
 /*NAVIGATION BAR*/
@@ -61,14 +53,13 @@
     width: 78vh;
     height: 19vh;
     scale: 50%;
-    border-radius: 3vh;
-    margin-left: -13vh;
+    border-radius: 25px;
+    margin-left: -15vh;
     margin-top: -11vh;
     position: absolute;
 }
 
 .Header > .nav-bar{
-    font-family: Outfit;
     font-size: 2.5vh;
     font-weight: bold;
     padding-top: 15vh;
@@ -94,119 +85,38 @@
     margin-top: 10vh;
     margin-bottom: 10vh;
     display: flex;
-    border-radius: 5vh;
 }
 
 .TeamSection > .team-pic{
     background-image: url("../../Assets/images/AboutUs_team.png");
     background-repeat: no-repeat;
     background-size: cover;
-    width: 100vh;
-    height: 105vh;
+    width: 85vh;
+    height: 90vh;
 }
 
 .TeamSection > .team-content{
-    margin-left: 8vh;
+    margin-left: 5vh;
     width: 108vh;
     height: 50vh;
-    white-space: pre-wrap;
 }
 
 .TeamSection > .team-content > h4{
-    font-family: Outfit;
-    font-weight: 900;
     color: #757575;
     font-size: 3vh;
     margin-top: 5vh;
 }
 
 .TeamSection > .team-content > h2{
-    font-family: Outfit;
     font-size: 5vh;
-    font-weight: 900;
-    margin-right: 5vh;
-    margin-top: 3vh;
-    text-align: justify;   
+    margin-top: 2vh;
+    
 }
 
 .TeamSection > .team-content > p{
-    font-family: Poppins;
     color: #6E6E6E;
     font-size: 2.5vh;
-    margin-right: 5vh;
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-}
-
-/*TeamSection List*/
-.icon{
-    scale: 60%;
-    gap: -10vh;
-}
-
-.TeamSection > .team-content > .listrow{
-    margin-top: 1vh;
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    gap: 10vh;
-}
-
-.TeamSection > .team-content > .listrow > .listcol{
-    display: flex;
-    align-items: center;
-    gap: 1vh;
-}
-
-.TeamSection > .team-content > .listrow > .listcol2{
-    display: flex;
-    align-items: center;
-    gap: 1vh;
-    margin-left: 11vh;
-    color: #6E6E6E;
-    font-family: Outfit;
-    font-size: 2.5vh;
-}
-
-.TeamSection > .team-content > .listrow > .listcol3{
-    display: flex;
-    align-items: center;
-    gap: 1vh;
-    margin-left: 7.7vh;
-    color: #6E6E6E;
-    font-family: Outfit;
-    font-size: 2.5vh;
-}
-
-.TeamSection > .team-content > .listrow > .listcol > p{
-    color: #6E6E6E;
-    font-family: Outfit;
-    font-size: 2.5vh;
-}
-
-/*TeamSection Roles*/
-.TeamSection > .team-content > .Role > .content {
-    display: flex;
-    flex-direction: row;
-    align-content: space-between;
-    gap: 20vh;
-    margin-top: 5vh;
-    margin-left: 7vh;
-}
-
-.TeamSection > .team-content > .Role > .content > h2{
-    font-family: Outfit;
-    font-size: 6vh;
-    font-weight: 900;
-    color: #757575;
-}
-
-.TeamSection > .team-content > .Role > .content > h4{
-    margin-top: -5vh;
-    margin-left: -3vh;
-    font-family: Outfit;
-    font-size: 2vh;
-    color: #1B1717;
+    margin-top: 2vh;
 }
 
 /* FOOTER */
@@ -270,11 +180,12 @@
     font-family: Poppins;
     font-weight: 900;
     letter-spacing: 0.5vh;
+    width: 100vh;
     line-height: 9vh;
     color: white;
     text-align: left;
+    position: absolute;
 }
-
 
 .CeboomLogo {
     background-image: url(../../Assets/images/ceboom_logo_transparent.png);
@@ -312,6 +223,6 @@
     font-family: Outfit;
     font-weight: 600;
     top: 1.44vh;
-    left: 88vh;
+    left: 94vh;
     color: rgb(92, 92, 92); 
 }

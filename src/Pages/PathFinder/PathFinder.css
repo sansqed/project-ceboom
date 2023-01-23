@@ -11,7 +11,7 @@
 }
 
 /* changed to page-title and page-title-text in Sidebar.css */
-/* .pathfinder-title{
+.page-title{
     display: flex;
     width: 100%;
     height: 9vh;
@@ -19,14 +19,16 @@
     align-items: center;
     background: #76C5F0;
 }
-.pathfinder-title-text{
+.page-title-text{
     font-style: normal;
     font-size: 40px;
     font-weight: 600;
+    text-transform: uppercase;
     line-height: 80px;
     letter-spacing: +1.3px;
     color: #FFFFFF;
-} */
+}   
+
 
 .pathfinder-searchtitle{
     text-align: center;
@@ -53,39 +55,23 @@
 
 .pathfinder-fromlabel{
     margin-left: 15px;
-    font-weight: 500;
+    margin-bottom: -20px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    color: rgba(0, 0, 0, 0.49)
+    color: rgba(0, 0, 0, 0.49);
 }
 
-.pathfinder-fromsearchbar input[type="text"]{
-    width: 80%;
+.fromsearch{
+    width: 95%;
+    top: 3vh;
     height: 2.8rem;
     margin-left: 5px;
-    background: #f5f5f5;
-    border: none;
-    outline: auto;
-    outline-color: orange;
-    border-radius: 1.625rem;
-    padding: 0 3.5rem 0 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 10px;
+    font-size: 1.5vh;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
     letter-spacing: 0.44px;
-
-}
-
-.pathfinder-fromsearchbar button[type="submit"]{
-    position: relative;
-    top: 10px;
-    width: 3.5rem;
-    height: 3rem;
-    margin-left: -3.5rem;
-    color: orange;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-
 }
 
 .from-searchdescription{
@@ -94,10 +80,11 @@
 
 .pathfinder-fromdescription{
     position: relative;
-    top: 5px;
+    top: 40px;
     margin-left: 15px;
-    font-size: 10px;
-    font-weight: 300;
+    margin-top: -15px;
+    font-size: 1.5vh;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.49);
     
 }
@@ -105,42 +92,28 @@
 /*"TO" Search Bar*/
 .pathfinder-tosearchbar{
     position: relative;
-    top: 3vh;
+    top: 7vh;
 }
 
 .pathfinder-tolabel{
     margin-left: 15px;
-    font-weight: 500;
+    margin-bottom: -20px;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     color: rgba(0, 0, 0, 0.49);
 }
 
-.pathfinder-tosearchbar input[type="text"]{
-    width: 80%;
+.tosearch{
+    width: 95%;
+    top: 3vh;
     height: 2.8rem;
     margin-left: 5px;
-    background: #f5f5f5;
-    outline: auto;
-    outline-color: orange;
-    border: none;
-    border-radius: 1.625rem;
-    padding: 0 3.5rem 0 1.5rem;
-    font-size: 1rem;
+    margin-bottom: 10px;
+    font-size: 1.5vh;
+    font-weight: 500;
+    font-family: 'Outfit', sans-serif;
     letter-spacing: 0.44px;
-}
-
-.pathfinder-tosearchbar button[type="submit"]{
-    position: relative;
-    top: 10px;
-    width: 3.5rem;
-    height: 3rem;
-    margin-left: -3.5rem;
-    color: orange;
-    background: none;
-    border: none;
-    cursor: pointer;
-
 }
 
 .to-searchdescription{
@@ -149,10 +122,11 @@
 
 .pathfinder-todescription{
     position: relative;
-    top: 5px;
+    top: 40px;
     margin-left: 15px;
-    font-size: 10px;
-    font-weight: 300;
+    margin-top: -15px;
+    font-size: 1.5vh;
+    font-weight: 500;
     color: rgba(0, 0, 0, 0.49);
 }
 
@@ -161,7 +135,7 @@
 .pathfinder-searchsubmit{
     position: relative;
     text-align: center;    
-    top: 7vh;
+    top: 18vh;
 }
 .pathfinder-searchsubmit button[type="submit"]{
     font-weight: 700;
@@ -184,6 +158,6 @@
     letter-spacing: 0.44px;
     color: #676767;
     width: 90%;
-    top: 500px;
+    top: 60vh;
     
 }
