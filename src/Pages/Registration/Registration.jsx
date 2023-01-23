@@ -22,16 +22,23 @@ const Registration = ({ children }) => {
                     <img src={Facebook} alt="Facebook" className="facebookIcon"/>
                     <text className="facebookText">Sign up with Facebook</text>
                 </button>
-                <div className="inputs">
-                    <input type="text" placeholder="FULL NAME" className="inputBox1"/>
-                    <input type="text" placeholder="EMAIL" className="inputBox2"/>
-                    <input type="password" placeholder="PASSWORD" className="inputBox3"/>                    
+                <div className="inputBox">
+                    <input type="text" required="required" />
+                    <span>Full Name</span>
+                </div>
+                <div className="inputBox">
+                    <input type="text" required="required" />
+                    <span>Email</span>
+                </div>
+                <div className="inputBox">
+                    <input type="password" required="required" />
+                    <span>Password</span>
                 </div>
                 <button className="create">
                     Create Account
                 </button>
                 <p className="link">
-                    Already have an account? <a href="#">Log in</a>
+                    Already have an account? <a href="/login">Log in</a>
                 </p>
             </div>
             <h1 className="createAccount">Create Account</h1>
