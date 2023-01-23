@@ -3,6 +3,9 @@ import Select, { components } from 'react-select'
 import "./PathFinder.css"
 import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
+import "../../Components/Navbar/Sidebar.css";
+import "../../Components/SidebarCustomButton/SidebarCustomButton";
+import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton";
 
 const PathFinder = ({ children }) => {
     const data = [
@@ -52,11 +55,11 @@ const PathFinder = ({ children }) => {
     <div className="sidebar-submenu">
         <div className="pathfinder">
 
-            <div className="pathfinder-title">
-                <div className="pathfinder-title-text">
-                    PATH FINDER
-                </div>
-            </div>
+        <div className="page-title">
+          <div className="page-title-text">
+            Path Finder
+          </div>
+        </div>
 
                 <div className="pathfinder-searchtitle"> Where would you like to go? </div>
 
