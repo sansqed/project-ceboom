@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {Marker} from "react-leaflet"
+import {Marker, Popup} from "react-leaflet"
 import L, { latLng } from "leaflet"
 
 import './Markers.css'
@@ -89,7 +89,16 @@ const MarkerLayer = (data) => {
 
         return(
         <div>
-            <Marker position = {[data.data.lat,data.data.lon]} icon = {locationChecker(data.data.type)}></Marker>
+            <Marker position = {[data.data.lat,data.data.lon]} icon = {locationChecker(data.data.type)}>
+                <Popup>
+                    <b>{data.data.name}</b>
+                    <br></br>
+                    <br></br>
+                    {data.data.type}
+                    <br></br>
+                    {data.data.location}
+                </Popup>
+            </Marker>
         </div>
         )
     }

@@ -1,0 +1,183 @@
+@font-face{
+    font-family: Outfit;
+    src:url(Outfit.ttf)
+}
+
+
+.trafficstatus-menu{
+    position: absolute;
+    overflow: hidden;
+    background: white;
+    color: #000;
+    height: 100vh;
+    width:53.8vh;
+    z-index: 10000000;
+    font-family: 'Outfit';
+    transform: translateX(-100%);
+    transition: all 0.4s;
+    margin-top: 10vh;
+}
+
+.traficstatus-menu--open{
+    transform:translateX(0%);
+}
+
+.trafficstatus-current{
+    margin-top: 3vh;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    text-indent: 2vh;
+    font-weight: bold;
+    height: 5vh;
+    border-top: 0.3vh solid #c9c9c9;
+    border-bottom: 0.3vh solid #c9c9c9;
+}
+
+.changestatus{
+    position:relative;
+    padding-top: 3vh;
+    display:flex;
+    flex-direction: column;
+    text-align: left;
+    text-indent:2vh;
+}
+
+.tbutton-container{
+    position:relative;
+    display:flex;
+    width:40vh;
+    justify-content: space-between;
+    align-self: center;
+    align-items: center;
+    padding-top: 3vh;
+}
+
+.lightwrapper{
+    position:relative;
+    border-radius: 1vh;
+    border: none;
+    background-color: transparent;
+    height:11vh;
+    width:12vh;
+}
+.lightwrapper:hover{
+    background-color:rgb(197, 237, 255);
+}
+
+.modwrapper{
+    position:relative;
+    border-radius: 1vh;
+    border: none;
+    background-color: transparent;
+    height:11vh;
+    width:12vh;
+}
+
+.modwrapper:hover{
+    background-color:rgb(197, 237, 255);
+}
+
+.heavywrapper{
+    position:relative;
+    border-radius: 1vh;
+    border: none;
+    background-color: transparent;
+    height:11vh;
+    width:12vh;
+}
+
+.heavywrapper:hover{
+    background-color:rgb(197, 237, 255);
+}
+
+.light{
+    position:relative;
+    font-family: 'Outfit';
+    display: block;
+    text-align: center;
+    font-size: 1.5vh;
+    padding-top: 1vh;
+    color:black;
+}
+.moderate{
+    position:relative;
+    font-family: 'Outfit';
+    display: block;
+    text-align: center;
+    font-size: 1.5vh;
+    padding-top: 1vh;
+    color:black;
+}
+.heavy{
+    position:relative;
+    font-family: 'Outfit';
+    display: block;
+    text-align: center;
+    font-size: 1.5vh;
+    padding-top: 1vh;
+    color: black;
+}
+
+.upbackbuttons{
+    margin-top:4vh;
+    position:relative;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.updatebut{
+    background-color: #ff781f;
+    color: white;
+    border: none;
+    border-radius:2vh;
+    padding:1.5vh;
+    font-weight: bold;
+    font-size:2vh;
+    font-family: 'Outfit';
+    letter-spacing: 0.1vh;
+    width:25vh;
+}
+
+.backbut{
+    background-color: #ff781f;
+    color: white;
+    border: none;
+    border-radius:2vh;
+    padding:1.5vh;
+    font-weight: bold;
+    font-size:2vh;
+    font-family: 'Outfit';
+    letter-spacing: 0.1vh;
+    width:25vh;
+    margin-top:2vh;
+}
+
+.trafficstatus-light{
+    background-color: yellow;
+    border:none;
+    padding:3.5vh;
+    border-radius: 10vh;
+    width:0vh;
+    margin-left: 1.5vh;
+}
+
+.trafficstatus-moderate{
+    background-color: orange;
+    border:none;
+    padding:3.5vh;
+    border-radius: 10vh;
+    width:0vh;
+    margin-left: 1.5vh;
+}
+
+.trafficstatus-heavy{
+    background-color: red;
+    border:none;
+    padding:3.5vh;
+    border-radius: 10vh;    
+    width:0vh;
+    margin-left: 1.5vh;
+}

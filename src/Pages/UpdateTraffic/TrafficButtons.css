@@ -1,0 +1,26 @@
+.traffic-lightbutton{
+    background-color: yellow;
+    border:none;
+    padding:5vh;
+    margin-top:2vh;
+    margin-left:1.5vh;
+    border-radius: 10vh;
+}
+
+.traffic-moderatebutton{
+    background-color: orange;
+    border:none;
+    padding:5vh;
+    margin-top:2vh;
+    margin-left:4vh;
+    border-radius: 10vh;
+}
+
+.traffic-heavybutton{
+    background-color: red;
+    border:none;
+    padding:5vh;
+    margin-top:2vh;
+    margin-left:4vh;
+    border-radius: 10vh;    
+}
