@@ -356,20 +356,16 @@ const AboutUs = ({ children }) => {
         </div>
 
         <div className = "GroupText">
-          
-          <span className = "Text">
 
-            <span>&quot;FIND YOUR WAY</span>
-            <br></br>
-            <span>AROUND THE</span>
-            <br></br>
-            <span>QUEEN CITY OF THE</span>
-            <br></br>
-            <span>SOUTH&quot;</span>
-            <br></br>
-    
-          </span>
-          
+          &quot;FIND YOUR WAY
+          <br></br>
+          AROUND THE
+          <br></br>
+          QUEEN CITY OF THE
+          <br></br>
+          SOUTH&quot;
+          <br></br>
+      
         </div>
 
         <div className = "CeboomLogo"></div>
@@ -382,13 +378,6 @@ const AboutUs = ({ children }) => {
         
       </div>
 
-      {/*insert fast&furious thingy*/}
-      {/*<div className=""></div>
-    </div>
-</div>*/}
-  
-{/*insert 2nd half of page*/}   
-{/* </div> */}
     </div>    
           
      
