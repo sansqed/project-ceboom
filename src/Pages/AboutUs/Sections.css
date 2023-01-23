@@ -2,16 +2,14 @@
 
 /* Indicator Section */
 .IndicatorSection { 
-    position: relative;
     background-color: white;
+    scale: 95%;
     margin-top: 10vh;
     margin-bottom: 10vh;
     display: flex;
     width: 100%;
-    scale: 95%;
     height: 208vh;
     box-sizing: border-box;
-    border-radius: 5vh;
 }
 
 .LookingHeader {
@@ -45,36 +43,46 @@
 .FirstRow {
     position: absolute;
     top: 36vh;
-    left: 5vh;
+    left: 10vh;
     display: flex;
 }
 
 .SecondRow {
     position: absolute;
     top: 72vh;
-    left: 5vh;
+    left: 10vh;
     display: flex;
 }
 
 .ThirdRow {
     position: absolute;
     top: 108vh;
-    left: 5vh;  
+    left: 10vh;  
     display: flex;
 }
 
 .FourthRow {
     position: absolute;
     top: 144vh;
-    left: 5vh;
+    left: 10vh;
     display: flex;
 }
 
 .FifthRow {
     position: absolute;
     top: 177vh;
-    left: 53vh; 
+    left: 61vh; 
     display: flex;
+}
+
+
+.FirstRow:after, .SecondRow:after, .ThirdRow:after,
+.FourthRow:after, .FirstRow:after {
+
+    content: "";
+    display: table;
+    clear: both;
+
 }
 
 .logo {

@@ -1,7 +1,6 @@
 import "./AboutUs.css"
 import "./Sections.css"
 
-import checkIcon from "../../Assets/images/check_icon.png";
 
 import Airport from '../../Assets/icons/Airport.png'
 import Bar from '../../Assets/icons/Bar.png'
@@ -43,100 +42,30 @@ const AboutUs = ({ children }) => {
         </div>
         <div className="nav-logo"></div>
         
-        <h1>ABOUT</h1>
-          <p>
-          Project CEBOOM is a CMSC142 course project initiated by the third year Computer Science {'\n'} 
-          students from the University of the Philippines - Cebu. This project aims to provide users {'\n'}
-          with the shortest route possible from their location to their intended destination with {'\n'}
-          accuracy and ease! It also shows the different landmarks found within Cebu, so users can {'\n'}
-          discover new places to visit around the island.
+        <h1 align="left">ABOUT</h1>
+          <p align="left">
+            Insert what project CEBOOM is about.
           </p>
       </div>
 
       <div className="TeamSection">
         <div className="team-pic"></div>
-        
         <div className="team-content">
           <h4 align="left">WHO WE ARE</h4>
           <h2 align="left">
-            THEORY TO ‘REAL WORLD’: 3RD- {'\n'}
-            YEAR BSCS STUDENTS OF UP CEBU {'\n'}
-            TRAVELS OUT OF THEIR COMFORT {'\n'}
+            THEORY TO ‘REAL WORLD’: 3RD-
+            YEAR BSCS STUDENTS OF UP CEBU 
+            TRAVELS OUT OF THEIR COMFORT 
             ZONE, DEVELOPS CEBOOM
           </h2>
             <p align="left">
-            As part of their CMSC-142 course requirement, third year Blocks A and B {'\n'}
-            of computer science students applied their theory-rich minds to a more {'\n'}
-            real-world applicable software solution, CEBOOM. {'\n'}
+            As part of their CMSC-142 course requirement, third year Blocks A and B 
+            of computer science students applied their theory-rich minds to a more 
+            real-world applicable software solution, CEBOOM. 
             </p>
             <p align="left">
-            As computer whiz iskolars ng bayan, they aim to embody the core {'\n'}
-            principles of the University of the Philippines 
+            Insert more... 
             </p>
-
-          <div className="listrow">
-            <div className="listcol">
-              <img class = "icon" src = {checkIcon}/>
-                <p>
-                  Fast and accurate results
-                </p> 
-            </div>
-
-            <div className="listcol">  
-              <img class = "icon" src = {checkIcon}/>
-              <p>
-                Fast and Furious
-              </p>
-            </div> 
-          </div>
-
-          <div className="listrow">
-            <div className="listcol">
-              <img class = "icon" src = {checkIcon}/>
-                <p>
-                  Intuitive design
-                </p> 
-            </div>
-
-            <div className="listcol2">  
-              <img class = "icon" src = {checkIcon}/>
-              <p>
-                Fast and Furious
-              </p>
-            </div> 
-          </div>
-
-          <div className="listrow">
-            <div className="listcol">
-              <img class = "icon" src = {checkIcon}/>
-                <p>
-                  Locally developed
-                </p> 
-            </div>
-
-            <div className="listcol3">  
-              <img class = "icon" src = {checkIcon}/>
-              <p class = "list">
-                Fast and Furious
-              </p>
-            </div> 
-          </div>
-
-          <div className="Role"> 
-            <div className="content">
-              <h2 align="left">100</h2>
-              <h2 align="left">100</h2>
-              <h2 align="left">100</h2>
-            </div>
-            <div className="content">
-              <h4 align="left">UI/UX DESIGNER</h4>
-              <h4 align="left">FRONTEND</h4>
-              <h4 align="left">         BACKEND</h4>
-            </div>
-
-          </div>
-
-
         </div>
       </div>
       
@@ -427,16 +356,20 @@ const AboutUs = ({ children }) => {
         </div>
 
         <div className = "GroupText">
+          
+          <span className = "Text">
 
-          &quot;FIND YOUR WAY
-          <br></br>
-          AROUND THE
-          <br></br>
-          QUEEN CITY OF THE
-          <br></br>
-          SOUTH&quot;
-          <br></br>
-      
+            <span>&quot;FIND YOUR WAY</span>
+            <br></br>
+            <span>AROUND THE</span>
+            <br></br>
+            <span>QUEEN CITY OF THE</span>
+            <br></br>
+            <span>SOUTH&quot;</span>
+            <br></br>
+    
+          </span>
+          
         </div>
 
         <div className = "CeboomLogo"></div>
@@ -449,6 +382,13 @@ const AboutUs = ({ children }) => {
         
       </div>
 
+      {/*insert fast&furious thingy*/}
+      {/*<div className=""></div>
+    </div>
+</div>*/}
+  
+{/*insert 2nd half of page*/}   
+{/* </div> */}
     </div>    
           
      
