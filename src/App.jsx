@@ -9,6 +9,7 @@ import TestMap from './Pages/Map/TestMap';
 
 import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';
+import LogIn from './Pages/LogIn/LogIn';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Registration from './Pages/Registration/Registration';
 
@@ -35,6 +36,10 @@ function App() {
             <Route 
               path="/" 
               element={<Landing/>}  
+            />
+            <Route 
+              path="/log-in" 
+              element={<LogIn/>}  
             />
             <Route 
               path="/about-us" 

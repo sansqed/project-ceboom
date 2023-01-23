@@ -1,0 +1,319 @@
+/* Login Page */
+
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap%27');
+
+.landing-background {
+    height: 100vh !important;
+    background-color: #EB811E;
+    background-image: url("/src/Assets/images/streets_background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/*.log-in-left-side {
+    position: absolute;
+    left: -2.29%;
+    right: 31.94%;
+    top: -0.12%;
+    bottom: -4.19%;
+    
+    background: #EB811E;
+    border-radius: 8px;
+}*/
+
+.log-in-container {
+    position: absolute;
+    left: 57.99%;
+    right: 0%;
+    top: -0.12%;
+    bottom: 0%;
+    
+    background: #FFFFFF;
+    border-top-left-radius: 62px;
+    border-bottom-left-radius: 62px;
+}
+
+.log-in-text-1{
+    position: absolute;
+    left: 20.08%;
+    right: 58.61%;
+    top: 18.16%;
+    bottom: 70.78%;
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 51px;
+    line-height: 78.5%;
+    text-align: left;
+    /* or 40px */
+    
+    letter-spacing: -0.02em;
+    
+    color: #F5F5F5;
+}
+
+.log-in-text-2{
+    position: absolute;
+    left: 13.06%;
+    right: 60.83%;
+    top: 37.25%;
+    bottom: 51.69%;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 51px;
+    line-height: 78.5%;
+    text-align: left;
+    /* or 40px */
+
+    letter-spacing: -0.02em;
+
+    color: #F5F5F5;
+}
+
+.log-in-text-3{
+    position: absolute;
+    left: 7.5%;
+    right: 69.93%;
+    top: 56.81%;
+    bottom: 36.32%;
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 51px;
+    line-height: 78.5%;
+    text-align: left;
+    /* or 40px */
+    
+    letter-spacing: -0.02em;
+    
+    color: #F5F5F5;
+    
+
+}
+
+.log-in-text-4{
+    position: absolute;
+    left: 2.01%;
+    right: 68.61%;
+    top: 74.04%;
+    bottom: 1.28%;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 78.5%;
+    text-align: left;
+    /* or 64px */
+
+    letter-spacing: -0.02em;
+
+    color: #FFFFFF;
+
+}
+
+.log-in-text-5{
+    position: absolute;
+    left: 39.51%;
+    right: 42.92%;
+    top: 85.91%;
+    bottom: 6.05%;
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 70px;
+    line-height: 78.5%;
+    /* or 64px */
+    
+    letter-spacing: -0.02em;
+    
+    color: #FFFFFF;
+    
+}
+
+.icon-login{
+    position: absolute;
+    width: 333px;
+    height: 700px;
+    left: 470px;
+    top: 10px;
+    
+    
+}
+
+.logo-login{
+    position: absolute;
+    width: 278px;
+    height: 58px;
+    left: 1100px;
+    top: 71px;
+    
+    
+}
+
+.log-in-text-6{
+    position: absolute;
+    width: 419px;
+    height: 106px;
+    left: 1030px;
+    top: 167px;
+    
+    font-family: 'Outfit' , sans-serif;
+    font-style: normal;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 30px;
+    /* or 188% */
+    
+    text-align: center;
+    letter-spacing: 0.4px;
+    
+    color: #000000;
+    
+    
+}
+
+.log-in-text-7{
+    position: absolute;
+    width: 167px;
+    height: 20px;
+    left: 1155px;
+    top: 575px;
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    
+    color: #D0D0D0;
+    
+    
+}
+
+
+
+.login button[type="submit"]{
+    position: absolute;
+    width: 415px;
+    height: 53px;
+    left: 1027px;
+    top: 425px;    
+    
+    background: #EB811E;
+    border-radius: 8px;
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 136.5%;
+    /* or 22px */
+
+    text-align: center;
+    letter-spacing: 0.38em;
+
+    color: #FFFFFF;
+
+    border: 0.5px solid #FFFFFF;
+
+}
+
+.signup button[type="submit"]{
+    position: absolute;
+    width: 415px;
+    height: 53px;
+    left: 1027px;
+    top: 600px;    
+    
+    background: #FFFFFF;
+    border-radius: 8px;
+    border: 1px solid #000000;
+
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    letter-spacing: 5.5px;
+
+    color: #000000;
+
+}
+
+.input-1{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 67%;
+    right: 5.9%;
+    top: 38.65%;
+    bottom: 55.06%;
+
+    background: #FFFFFF;
+    border: 1px solid #000000;
+
+    font-family: 'Outfit',sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 115.5%;
+    /* or 18px */
+
+    text-align: left;
+    letter-spacing: 5.5px;
+
+    color: #000000;
+}
+
+.input-2{
+    box-sizing: border-box;
+
+    position: absolute;
+    left: 67%;
+    right: 5.9%;
+    top: 47.61%;
+    bottom: 46.1%;
+    
+
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 115.5%;
+    /* or 18px */
+
+
+    text-align: left;
+    letter-spacing: 5.5px;
+
+    color: #000000;
+    
+}
+
+.psw{
+    position: absolute;
+    width: 128px;
+    height: 20px;
+    left: 1310px;
+    top: 395px;
+    
+    font-family: 'Outfit', sans-serif;
+    font-style: normal;
+    font-weight: 400px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: right;
+    
+    color: #000000;
+    
+}
+
