@@ -9,12 +9,12 @@ const Landing = ({ children }) => {
 
   /* Navigation between pages */
   const navigate = useNavigate();
-  const navigateLogIn = () => navigate('/map');
+  const navigateLogIn = () => navigate('/login');
   const navigateAboutUs = () => navigate('/about-us');
 
   return(
     <div>
-      <div className="landing-background white">
+      <div className="landing-background">
         <div className="row">
 
           {/* CEBOOM logo */}
@@ -45,9 +45,9 @@ const Landing = ({ children }) => {
             </span>
           </div>
 
-          <div className="getstarted">
+          <div className="login">
             <button type="submit" onClick={navigateLogIn}>
-              <p>Get started</p>
+              <p>Log in</p>
             </button>
           </div>
 
