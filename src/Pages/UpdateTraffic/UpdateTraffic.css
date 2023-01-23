@@ -13,7 +13,9 @@
     background-color: white;
     margin-left: 6.5vh;
   }
-.traffic-header{
+
+/* changed to page-title and page-title-text in Sidebar.css */
+/* .traffic-header{
     display: flex;
     flex-direction:column;
     position:relative;
@@ -28,7 +30,7 @@
     font-family: "Outfit";
     letter-spacing: 1vh;
     color: white;
-}
+} */
 
 
 .grid{
