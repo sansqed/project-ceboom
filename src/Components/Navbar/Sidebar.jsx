@@ -69,16 +69,18 @@ const Sidebar = ({ children }) => {
         <div className="sidebar-menu">
           {
             menuItem.map((item, index) => (
+              <NavLink to={item.path} style={{textDecoration: 'none'}}>
               <div to={item.path} key={index} className="sidebar-link" activeclassName="sidebar-active" onClick={() => {setSelectedMenuItem(item.name);setIsOpen(false)}}>
-                <NavLink to={item.path}>
+                
                   <Box>
                     <IconButton >
                       <div className="sidebar-icon">{item.icon}</div>
                     </IconButton>
                   </Box>
-                </NavLink>
-                <div style={{ display: isOpen ? "flex" : "none" }} className="sidebar-link_text">{item.name}</div>
+                
+                <div to={item.path} style={{ display: isOpen ? "flex" : "none"}} className="sidebar-link_text">{item.name}</div>
               </div>
+              </NavLink>
             ))
           }
         </div>
