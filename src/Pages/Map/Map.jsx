@@ -58,7 +58,7 @@ const Map = ({ children }) => {
       return(<UpdateTraffic/>)
   }
 
-  console.log(nodesAll.nodes)
+  // console.log(nodesAll.nodes)
   useEffect(()=>{
     setNodes(nodesAll.nodes)
   },[])
@@ -120,7 +120,7 @@ const Map = ({ children }) => {
       map.pm.enableDraw('Line')
       console.log("drawing line")
 
-      map.on('pm:create', e => {
+      map.on('pm:create', (e) => {
         console.log(e)
         var lastVertex = e.layer._latlngs.at(-1)
         var firstVertex = e.layer._latlngs[0]
@@ -138,6 +138,19 @@ const Map = ({ children }) => {
           e.target.removeLayer(e.layer)
         }
       })
+
+      map.on('pm:remove', (e) => {
+        console.log(e)
+        let targetId = e.layer._leaflet_id
+        
+        let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
+  
+        if(toRemove !== -1){
+          roads.splice(toRemove,1)
+          console.log(roads)
+          // return
+        }
+      });
 
       console.log(roads)
     }
@@ -182,18 +195,7 @@ const Map = ({ children }) => {
     // });
 
     // ON REMOVE OF MARKER
-    map.on('pm:remove', (e) => {
-      console.log(e)
-      let targetId = e.layer._leaflet_id
-      
-      let toRemove = nodes.findIndex(({leaflet_id})=>leaflet_id==targetId)
-
-      if(toRemove !== -1){
-        nodes.splice(toRemove,1)
-        console.log(nodes)
-        return
-      }
-    });
+    
 
     
     return null
@@ -220,7 +222,7 @@ const Map = ({ children }) => {
   }
 
 
-  console.log(nodes)
+  // console.log(nodes)
   console.log("roads", roads)
 
 
@@ -279,7 +281,7 @@ const Map = ({ children }) => {
 
   FetchNodes()
   
-  console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
+  // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
 
     <div className="map-container">
@@ -342,8 +344,8 @@ const Map = ({ children }) => {
       <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
         Intersections mode toggle
       </button>
-      <button onClick={() => mode === "roads"? setMode("normal"):setMode("roads")}>
-        roads mode toggle
+      <button onClick={() => setMode("roads")}>
+        roads mode 
       </button>
       <button onClick={() => FetchNodes()}>
         Fetch landmarks
