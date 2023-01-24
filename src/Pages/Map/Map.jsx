@@ -42,9 +42,6 @@ const Map = ({ children }) => {
   const HandleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
-    else if (subpage === "#AddLandmark")
-      return (<AddLandmark/>)
-    else if (subpage === "#AddRoad")
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
