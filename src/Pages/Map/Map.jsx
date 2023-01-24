@@ -20,9 +20,6 @@ import { useLocation } from "react-router-dom"
 import { useState, useEffect } from "react"
 
 import EditMap from "../EditMap/EditMap"
-import AddLandmark from "../EditMap/AddLandmark"
-import AddRoad from "../EditMap/AddRoad"
-import EditLandmark from "../EditMap/EditLandmark"
 import Search from "../Search/Search"
 import PathFinder from "../PathFinder/PathFinder"
 import UpdateTraffic from "../UpdateTraffic/UpdateTraffic"
@@ -36,6 +33,7 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import {CreateRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
+import {nodesAll} from "../../Assets/Data/intersection-data.js" 
 
 
 const Map = ({ children }) => {
@@ -52,12 +50,6 @@ const Map = ({ children }) => {
   const HandleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
-    else if (subpage === "#AddLandmark")
-      return (<AddLandmark/>)
-    else if (subpage === "#AddRoad")
-      return (<AddRoad/>)
-    else if (subpage === "EditLandmark")
-      return (<EditLandmark/>)
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
@@ -65,6 +57,8 @@ const Map = ({ children }) => {
     else if (subpage === "#updatetraffic")
       return(<UpdateTraffic/>)
   }
+
+  console.log(nodesAll.nodes)
 
   // handles addition of road
   useEffect(()=>{
@@ -80,19 +74,23 @@ const Map = ({ children }) => {
   },[currNode])
 
   //convert csv to json
-  
+  // useEffect(()=>{
+  //   Papa.parse(data,{
+  //     download: true,
+  //     header: true,
+  //     complete: function(results){
+  //       setNodes(results.data)
+  //     }
+  //   })
+  // },[]) 
 
-  useEffect(()=>{
-    Papa.parse(data,{
-      download: true,
-      header: true,
-      complete: function(results){
-        setNodes(results.data)
-      }
-    })
-  },[]) 
+  // useEffect(()=>{
+
+  // },[nodesAll])
 
   console.log("nodes", nodes)
+
+
 
   // HANDLES EDITING AND DRAWING OF MAP
   const DrawMap = () => {
@@ -274,7 +272,7 @@ const Map = ({ children }) => {
     }, []);
   };
 
-  FetchNodes()
+  // FetchNodes()
   
   console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -316,11 +314,12 @@ const Map = ({ children }) => {
         /> */}
         
         {/* Renders markers*/}
-        {nodes?.map((landmark) => (
-         <MarkerLayer
-          data = {landmark}
-         />
-        ))}
+        {nodesAll.nodes?.map((landmark) =>{
+          // console.log(landmark.latitude.toString())
+          <MarkerLayer
+            data = {landmark}
+          />
+        })}
 
         <DrawMap/>
         <MapMarkerId/>

@@ -38,8 +38,7 @@ const PathFinder = ({ children }) => {
     const colorStyles = {
         control: (styles, {isFocused}) => ({...styles, backgroundColor: 'white', color: 'black', borderRadius: 16, border: "2px solid orange", padding: 3, 
         "&:hover": {borderColor: "orange"}, boxShadow: isFocused ? "0px 0px 6px #ff8b67" : "none",}),
-        option: (styles, {isDisabled, isSelected}) => { return {...styles, backgroundColor: isDisabled ? 'white': '#F3AC4A', 
-        backgroundColor: isSelected ? '#F3AC4A' : 'white'}},
+        option: (styles, {isFocused}) => { return {...styles, backgroundColor: isFocused ? '#F3AC4A' : 'white', color: isFocused ? 'white': 'solid black'}},
         placeholder: (styles) => { return {...styles, color: 'solid black'}}
     }
 
