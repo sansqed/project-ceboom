@@ -10,24 +10,29 @@ import Button from "../../Components/Button/Button";
 const PathFinder = ({ children }) => {
     const data = [
         {
-          value: 1,
+          id: 1,
           label: "lahug brgy hall",
           location: "cebu city",
           type: "brgy hall"
         },
         {
-          value: 2,
-          label: "lahug center",
+          id: 2,
+        label: "lahug center",
           location: "cebu city",
-          type: "brgy hall"// <insert other data>
+          type: "brgy hall"
+        },{
+          id: 3,
+          label: "se",
+          location: "cebu city",
+          type: "brgy hall"
         }
     ]
     const fromLocation = (selectedOption) => {
-        setFromLocation(() => [selectedOption.label]);
+        setFromLocation(() => [selectedOption.id]);
     }
 
     const towardsDestination = (selectedOption,) => {
-        setToLocation(() => [selectedOption.label]);
+        setToLocation(() => [selectedOption.id]);
     }
 
     const colorStyles = {
@@ -49,6 +54,8 @@ const PathFinder = ({ children }) => {
 
     const [from, setFromLocation] = useState('a');
     const [to, setToLocation] = useState('b');
+
+    console.log(from, to)
 
   return(
 

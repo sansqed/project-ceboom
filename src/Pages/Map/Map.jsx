@@ -1,8 +1,8 @@
 //CSV
 import Papa from 'papaparse'
-import data from '../../Assets/Data/CebuSouthLandmarks.csv'
+// import data from '../../Assets/Data/CebuSouthLandmarks.csv'
 // import data from '../../Assets/Data/brgy-lahug-landmarks.csv'
-// import data from '../../Assets/Data/testData.csv'
+import data from '../../Assets/Data/cebu-landmarks-minimal.csv'
 
 import "./Map.css"
 import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer, Circle, Polyline, useMap, useMapEvents} from "react-leaflet"
@@ -33,7 +33,7 @@ import "leaflet-geometryutil"
 import '@geoman-io/leaflet-geoman-free';  
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
-import {CreateNodes} from "../../ApiCalls/NodeAPI"
+import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import {CreateRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 
@@ -41,12 +41,12 @@ import { MoveDownSharp } from '@mui/icons-material'
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
+  const [nodes, setNodes] = useState([]);
   const [roads, setRoads] = useState([])
   const [currRoad, setCurrRoad] = useState(null)
+  const [currNode, setCurrNode] = useState(null)
   const [isClicked, setIsClicked] = useState(false)
-  const [isStartValid, setIsStartValid] = useState(false)
-  const [markerMapping, setMarkerMapping] = useState([])
-  const [mode, setMode] = useState('Normal')
+  const [mode, setMode] = useState('normal')
 
 
   const HandleSubpage = () => {
@@ -65,52 +65,79 @@ const Map = ({ children }) => {
     else if (subpage === "#updatetraffic")
       return(<UpdateTraffic/>)
   }
-    
-  console.log("roads", roads)
-  // console.log(isDrawMode)
 
+  // handles addition of road
   useEffect(()=>{
     if (currRoad != null){
       setRoads((prev) => [...prev, currRoad])
     }
   },[currRoad])
-  
-  // const HandleEditRoads = (newRoad) => {
-  //   // useEffect(()=>{
-  //   // roads.findIndex(newRoad)
-  //   var tempRoads = roads
-  //   try{
-  //     var idx = tempRoads.findIndex(newRoad)
-  //   } catch {
-  //     var idx = -1
-  //   }
-    
-  //   if (idx === -1){
-  //     setRoads((prev) => [...prev, newRoad])
-  //   }
-  //   // },[])
-  // }
-  
-  
+
+  useEffect(()=>{
+    if (currNode != null){
+      setNodes((prev) => [...prev, currNode])
+    }
+  },[currNode])
 
   //convert csv to json
-  const [locationData, setLocationData] = useState([]);
   
+
   useEffect(()=>{
     Papa.parse(data,{
       download: true,
       header: true,
       complete: function(results){
-        setLocationData(results.data)
+        setNodes(results.data)
       }
     })
   },[]) 
 
-  console.log("locationData", locationData)
+  console.log("nodes", nodes)
 
   // HANDLES EDITING AND DRAWING OF MAP
   const DrawMap = () => {
     let map = useMap()  
+
+    if(mode==="intersection"){
+      map.pm.enableDraw('Marker')
+      console.log("drawing marker")
+
+      map.on('pm:create', (e) => {
+        let thisInter = {
+          leaflet_id: e.layer._leaflet_id,
+          landmark_type: "intersection",
+          location: null,
+          latitude: e.layer._latlng.lat,
+          longitude: e.layer._latlng.lng,
+        }
+
+        setCurrNode(thisInter)
+      })
+    }
+
+    else if (mode === "roads"){
+      map.pm.enableDraw('Line')
+      console.log("drawing line")
+
+      map.on('pm:create', e => {
+        console.log(e)
+        var lastVertex = e.layer._latlngs.at(-1)
+        var firstVertex = e.layer._latlngs[0]
+        var endMarker =  nodes.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
+        var startMarker = nodes.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
+        if (endMarker && startMarker){
+          var newRoad = {
+            leaflet_id: e.layer._leaflet_id,  
+            endPointA: startMarker.id,
+            endpointB: endMarker.id, 
+            latlngs: e.layer._latlngs
+          }
+          setCurrRoad(newRoad)
+        } else {
+          e.target.removeLayer(e.layer)
+        }
+      })
+    }
 
     // ADDS EDIT CONTROLS
     map.pm.addControls({  
@@ -118,49 +145,49 @@ const Map = ({ children }) => {
     });  
 
     // ON CREATE OF POLYLINE, CHECK IF START AND END POINTS ARE MARKERS
-    map.on('pm:create', e => {
-      console.log(e)
-      var lastVertex = e.layer._latlngs.at(-1)
-      var firstVertex = e.layer._latlngs[0]
-      var endMarker =  locationData.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
-      var startMarker = locationData.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
-      if (endMarker && startMarker){
-        var newRoad = {
-          leaflet_id: e.layer._leaflet_id,  
-          endPointA: startMarker.id,
-          endpointB: endMarker.id, 
-          latlngs: e.layer._latlngs
-        }
-        setCurrRoad(newRoad)
-      } else {
-        e.target.removeLayer(e.layer)
-      }
-    })
+    // map.on('pm:create', e => {
+    //   console.log(e)
+    //   var lastVertex = e.layer._latlngs.at(-1)
+    //   var firstVertex = e.layer._latlngs[0]
+    //   var endMarker =  nodes.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
+    //   var startMarker = nodes.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
+    //   if (endMarker && startMarker){
+    //     var newRoad = {
+    //       leaflet_id: e.layer._leaflet_id,  
+    //       endPointA: startMarker.id,
+    //       endpointB: endMarker.id, 
+    //       latlngs: e.layer._latlngs
+    //     }
+    //     setCurrRoad(newRoad)
+    //   } else {
+    //     e.target.removeLayer(e.layer)
+    //   }
+    // })
 
-    // ON EDIT OF MARKERS, CHANGE COORDS IN locationData
-    map.on('pm:globaldragmodetoggled', (e) => {
-      console.log(e)
-      map.eachLayer((layer) => {
-        layer.on('pm:dragend', (e)=>{
-          let moved = locationData.find(({leaflet_id})=> e.layer._leaflet_id == leaflet_id)
-          if(moved){
-            moved.lat = e.layer._latlng.lat.toString()
-            moved.lon = e.layer._latlng.lng.toString()            
-          }
-        })
-      })
-    });
+    // ON EDIT OF MARKERS, CHANGE COORDS IN nodes
+    // map.on('pm:globaldragmodetoggled', (e) => {
+    //   console.log(e)
+    //   map.eachLayer((layer) => {
+    //     layer.on('pm:dragend', (e)=>{
+    //       let moved = nodes.find(({leaflet_id})=> e.layer._leaflet_id == leaflet_id)
+    //       if(moved){
+    //         moved.lat = e.layer._latlng.lat.toString()
+    //         moved.lon = e.layer._latlng.lng.toString()            
+    //       }
+    //     })
+    //   })
+    // });
 
     // ON REMOVE OF MARKER
     map.on('pm:remove', (e) => {
       console.log(e)
       let targetId = e.layer._leaflet_id
       
-      let toRemove = locationData.findIndex(({leaflet_id})=>leaflet_id==targetId)
+      let toRemove = nodes.findIndex(({leaflet_id})=>leaflet_id==targetId)
 
       if(toRemove !== -1){
-        locationData.splice(toRemove,1)
-        console.log(locationData)
+        nodes.splice(toRemove,1)
+        console.log(nodes)
         return
       }
     });
@@ -175,10 +202,10 @@ const Map = ({ children }) => {
     let map = useMap()
     
     useEffect(()=>{
-      if(locationData.length > 0){
+      if(nodes.length > 0){
         map.eachLayer((layer) => {
           if(layer._latlng){
-            let corresLandmark = locationData?.find((loc) => layer._latlng.lat==loc.lat && layer._latlng.lng==loc.lon)
+            let corresLandmark = nodes?.find((loc) => layer._latlng.lat==loc.lat && layer._latlng.lng==loc.lon)
             if (corresLandmark){
               corresLandmark["leaflet_id"] = layer._leaflet_id
             }
@@ -186,11 +213,11 @@ const Map = ({ children }) => {
         })
       }
       
-    },[locationData])
+    },[nodes])
   }
 
 
-  console.log(locationData)
+  console.log(nodes)
   console.log("roads", roads)
 
 
@@ -207,10 +234,12 @@ const Map = ({ children }) => {
   
 
   async function createNodes(){
+
+    
   
     console.log("HERE ")
-    console.log(locationData)
-    const response = await CreateNodes(locationData)
+    console.log(nodes)
+    const response = await CreateNodes(nodes)
 
     console.log(response)
     if (response.data.status !== 201){
@@ -233,6 +262,19 @@ const Map = ({ children }) => {
       console.log("SUCCESS")
     }
   }
+
+  const FetchNodes = () => {
+    useEffect(() => {
+      GetNodes()
+        .then((response) => {
+          console.log(response)
+          // setData(response.data.data.companies[0]);
+        });
+    
+    }, []);
+  };
+
+  FetchNodes()
   
   console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -255,11 +297,11 @@ const Map = ({ children }) => {
         minZoom={9}
         scrollWheelZoom={true}
       >
-          {/* <TileLayer
+          <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             className='leaflet-tiles'
-          />  */}
+          /> 
 
         {/* Renders the map */}
         <GeoJSON 
@@ -274,7 +316,7 @@ const Map = ({ children }) => {
         /> */}
         
         {/* Renders markers*/}
-        {locationData?.map((landmark) => (
+        {nodes?.map((landmark) => (
          <MarkerLayer
           data = {landmark}
          />
@@ -287,18 +329,28 @@ const Map = ({ children }) => {
 
       </MapContainer>
 
+
+
+      {/* <button onClick={() => }>
+        Import landmarks
+      </button> */}
+      <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
+        Intersections mode toggle
+      </button>
+      <button onClick={() => mode === "roads"? setMode("normal"):setMode("roads")}>
+        roads mode toggle
+      </button>
+      <button onClick={() => FetchNodes()}>
+        Fetch landmarks
+      </button>
       <button onClick={() => createNodes()}>
-        Submit Nodes
+        Submit Nodes to API
       </button>
       <button onClick={()=> createRoads()}>
-        Submit Roads
+        Submit Roads to API
       </button>
-      <button onClick={() => setMode("intersections")}>
-        Create Intersections
-      </button>
-      <button onClick={() => setMode("landmarks")}>
-        Create Landmarks
-      </button>
+      
+      
       </div>
   )
 }
