@@ -7,6 +7,7 @@ import logo from "../../Assets/images/ceboom_logo.png";
 
 // import API call
 import {LoginUser} from "../../ApiCalls/UserAPI"
+import CustomButton from "../../Components/CustomButton/CustomButton"
 
 const LogIn = ({ children }) => {
   const[loginCredentials, setLoginCredentials] = useState({
@@ -72,17 +73,34 @@ const LogIn = ({ children }) => {
           {/* <button onClick={()=>submit()} >
             <p>LOGIN</p>
           </button> */}
+
+          {/* buttons are now done this way
+              change css using classname
+              check this file's css
+              you will see that .login-btn is styling this button
+              thanks
+
+              divClassName is div container for button
+              check src/Components/CustomButton
+             */}
+          <CustomButton 
+            divClassName="login-btn-container"
+            className="login-btn"
+            type="submit"
+            onClick={() => submit()}
+            title="LOGIN"
+          />
           {/* </div> */}
           {/* <input type="checkbox" checked="checked"> Keep me signed in </input> */}
           {/* <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> */}
           <div className="psw">Forgot Password?</div> 
         {/* </form>  */}
-        <div className="log-in-text-7"> Dont have an account? </div> 
-        <div className="signup">
-        <button type="submit">
-          <p>Sign Up Now</p>
-        </button>
-        </div>
+        <div className="log-in-text-7"> Don't have an account? </div> 
+        <CustomButton
+          className="signup-btn"
+          type="submit"
+          title="Sign Up Now"
+        />
       </div>
       
     </div>

@@ -199,7 +199,7 @@
 
 
 
-.login button[type="submit"]{
+.login-btn{
     position: absolute;
     width: 415px;
     height: 53px;
@@ -225,7 +225,7 @@
 
 }
 
-.signup button[type="submit"]{
+.signup-btn button[className="test"][type="submit"]{
     position: absolute;
     width: 415px;
     height: 53px;
