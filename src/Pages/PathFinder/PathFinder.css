@@ -131,13 +131,16 @@
 }
 
 
+/*div container for button. when you create a Button is in a Div.*/
 /* "SEARCH" Button */
 .pathfinder-searchsubmit{
     position: relative;
     text-align: center;    
     top: 18vh;
 }
-.pathfinder-searchsubmit button[type="submit"]{
+
+/* please do the buttons this way now :D */
+.pathfinder-searchsubmit-btn{
     font-weight: 700;
     font-size: 16px;
     font-family: 'Outfit', sans-serif;
@@ -149,6 +152,7 @@
     background-color: orange;
     cursor: pointer;
 }
+
 
 /* Recent Searches */
 .pathfinder-recentsearches{
