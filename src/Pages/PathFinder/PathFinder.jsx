@@ -4,8 +4,8 @@ import "./PathFinder.css"
 import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import "../../Components/Navbar/Sidebar.css";
-import "../../Components/SidebarCustomButton/SidebarCustomButton";
-import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton";
+import "../../Components/Button/Button";
+import Button from "../../Components/Button/Button";
 
 const PathFinder = ({ children }) => {
     const data = [
@@ -92,11 +92,23 @@ const PathFinder = ({ children }) => {
                         <div className="pathfinder-todescription">You can type out a location, or you can click a landmark on the map. </div>
                     </div>
                     
-                    <div className="pathfinder-searchsubmit">
+                    {/* <div className="pathfinder-searchsubmit">
                         <button type="submit">
                         <p>GET DIRECTIONS</p>
                         </button>
-                    </div>
+                        
+                    </div> */}
+                    {/* 
+                    
+                        PLEASE USE THIS BUTTON FOR ALL BUTTONS.
+                        YOU CAN STILL CHANGE THE CSS USING THE CLASSNAME
+                        THANKS
+                        
+                         */}
+                    <Button 
+                      title="GET DIRECTIONS" className="pathfinder-searchsubmit" 
+                      type="submit"
+                      />
                 </div>
 
             <div className="pathfinder-recentsearches">
