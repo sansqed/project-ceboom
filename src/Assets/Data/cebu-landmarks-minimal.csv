@@ -1,0 +1,138 @@
+id,name,type,location,lat,lon
+0,Alcantara Municipal Hall,Municipal Halls,Alcantara,9.970343842,123.4022381
+1,Kugtong Spring,Tourist Spots,Alcantara,9.971046699,123.4045866
+2,Saint Augustine Parish,Churches,Alcantara,9.969401626,123.4036673
+3,Alegria Municipal Hall,Municipal halls,Alegria,9.729394617,123.3401148
+4,Cambais Falls,Tourist Spots,Alegria,9.748387385,123.3892513
+5,Montepellier Falls,Tourist Spots,Alegria,9.723129003,123.3573636
+6,Aloguinsan Municipal Hall,Municipal Halls,Aloguinsan,10.22329869,123.5482623
+7,Bojo River Cruise,Tourist Spots,Aloguinsan,10.20598777,123.5450666
+8,Saint Raphael the Archangel Parish,Churches,Aloguinsan,10.2204904,123.5496212
+9,Argao Municipal Hall,Barangay Halls,Argao,9.881199169,123.6086297
+10,Philippine Science High School - Central Visayas Campus,Schools,Argao,9.89951538,123.5859571
+11,Liki Spring,Tourist Spots,Argao,9.951965051,123.6155244
+12,Asturias Municipal Hall,Municipal Hall,Asturias,10.56756158,123.7156121
+13,Asturias Airstrip,Airports,Asturias,10.53946441,123.746161
+14,Bago Health Center,Health Centers,Asturias,10.62569022,123.763959
+15,Badian Municipal Hall,Municipal Halls,Badian,9.870155264,123.3987773
+16,Kawasan Falls,Tourist Spots,Badian,9.802320908,123.3743115
+17,St. James Parish,Churches,Badian,9.870216733,123.3999919
+18,Balamban Municipal Hall,Municipal Hall,Balamban,10.5060407,123.713259
+19,Balamban Provincial Hospital,Hospitals,Balamban,10.51555127,123.7028358
+20,Gaisano Grand Mall Balamban,Malls/department stores,Balamban,10.49326799,123.7147048
+21,Bantayan Municipal Hall,Municipal Hall,Bantayan,11.16658593,123.7176231
+22,Casa de Antiguedades,Tourist spots,Bantayan,11.17579159,123.7249247
+23,Bantayan Public Market,Markets,Bantayan,11.16595019,123.7180375
+24,Barili Municipal Hall,Municipal Halls,Barili,10.11631227,123.5097415
+25,St. Anne Parish,Churches,Barili,10.12187867,123.5393259
+26,Bogo City Hall,City halls,Bogo,11.04659032,123.9794421
+27,Cebu Provincial Hospital (Bogo City),Hospitals,Bogo,11.04665301,123.9942467
+28,Bogo Pantalan,Ports,Bogo,11.05528781,124.0025286
+29,Archdiocesan Shrine of St. Vincent Ferrer,Churches,Bogo,11.04851711,124.0081079
+30,Borbon Municipal Hall,Municipal Hall,Borbon,10.83787664,124.0309098
+31,Poblacion Brgy Hall,Barangay halls,Borbon,10.83821113,124.0273502
+32,Cadaruhan Barangay Hall,Barangay halls,Borbon,10.84645725,124.0360435
+33,Lahug Barangay Hall,Barangay halls,Brgy. Lahug,10.32422868,123.8985402
+34,JY Square Mall,Malls/department stores,Brgy. Lahug,10.33059259,123.8988684
+35,University of the Philippines Cebu,Schools,Brgy. Lahug,10.3222492,123.898206
+36,Carmen Municipal Hall,Municipal Hall,Carmen,10.58748729,124.017341
+37,Luyang Barangay Hall,Barangay halls,Carmen,10.60501695,124.02476
+38,Carmen Rural Health Unit,Health Centers,Carmen,10.58771906,124.0174319
+39,Catmon Municipal Hall,Municipal Hall,Catmon,10.72348318,124.0134878
+40,Catmondaan Barangay Hall,Barangay halls,Catmon,10.68674452,124.0153363
+41,Catmon Health Center,Health Centers,Catmon,10.7218649,124.0139682
+42,"City Hall, Cebu City, Cebu",City halls,Cebu City,10.29295873,123.9015526
+43,Talamban Barangay Hall,Barangay halls,Cebu City,10.36999562,123.9184437
+44,Cebu City Medical Center,Health Centers,Cebu City,10.298447,123.8936293
+45,University of Cebu Medical Center - UCMed,Hospitals,Cebu City,10.32321481,123.9302047
+46,Perpetual Succour Hospital,Hospitals,Cebu City,10.31556317,123.9004102
+47,Compostela Municipal Hall,Municipal Hall,Compostela,10.45404848,124.0125571
+48,Barangay Cogon Barangay Hall,Barangay halls,Compostela,10.45795549,124.0093837
+49,Compostela Birthing Center,Health Centers,Compostela,10.47194488,123.9967859
+50,Consolacion Municipal Hall,Municipal Hall,Consolacion,10.37581859,123.9572968
+51,Pitogo Barangay Hall,Barangay halls,Consolacion,10.38301209,123.9718162
+52,Consolacion Municipal Health Center,Health Centers,Consolacion,10.37854104,123.9675271
+53,Cordova Municipal Hall,Municipal Hall,Cordova,10.25202794,123.9496945
+54,Gabi Barangay Hall,Barangay halls,Cordova,10.26360845,123.9616483
+55,Ibabao Barangay Hall,Barangay halls,Cordova,10.27080679,123.9472292
+56,Daanbantayan Municipal Hall,Municipal Hall,Daanbantayan,11.25037675,123.9982622
+57,Daanbantayan District Hospital,Hospitals,Daanbantayan,11.24570066,124.0105793
+58,Daanbantayan Municipal Health Office and Birthing Center,Health Centers,Daanbantayan,11.25067614,123.9989892
+59,Dalaguete Municipal Hall,Municipal Halls,Dalaguete,9.761887222,123.532996
+60,Obong Watchtower Ruins,Tourist Spots,Dalaguete,9.741332776,123.513516
+61,San Guillermo Church,Churches,Dalaguete,9.762583956,123.5352285
+62,Goldship Learning Center,Schools,Danao,10.53085329,124.0196249
+63,Hosanna Learning Center,Schools,Danao,10.51454457,124.0268036
+64,Little Light Learning Center,Schools,Danao,10.53072675,124.0193527
+65,Manto Memorial Foundation College - Bonifacio,Schools,Danao,10.52149356,124.0265955
+66,Dumanjug Municipal Hall,Municipal Halls,Dumanjug,10.05703326,123.4358625
+67,Pityak Falls (Tubod-Duguan Falls),Tourist Spots,Dumanjug,10.02370244,123.5105138
+68,St. Francis of Assisi Parish Church,Churches,Dumanjug,10.05753159,123.4346021
+69,Barangay Mactan Health Center,Health Centers,Lapu-lapu,10.30869931,124.0109905
+70,Barangay Pajo Health Center And Birthing Home,Health Centers,Lapu-lapu,10.31230144,123.9586963
+71,Looc Health Center,Health Centers,Lapu-lapu,10.30580995,123.9464072
+72,Carajay Health Center,Health Centers,Lapu-lapu,10.29503721,123.9496502
+73,Calawisan Health Center,Health Centers,Lapu-lapu,10.2837299,123.9381152
+74,Liloan Community Medical Center,Health Centers,Liloan,10.38431939,123.9769243
+75,Barangay Catarman Health Center - 1,Health Centers,Liloan,10.38674966,124.0103504
+76,Rn-Rm's Birthing Center,Health Centers,Liloan,10.38915972,124.0010443
+77,Madridejos Municipal Hall,Municipal Hall,Madridejos,11.29663517,123.7329531
+78,Cebu Northplains College,Schools,Madridejos,11.2928559,123.7313663
+79,Madridejos National High School,Schools,Madridejos,11.29278577,123.733549
+80,Mandaue City Hall,Municipal Hall,Mandaue,10.32764696,123.94301
+81,Mandaue City Police Office - Police Station 3,Police stations,Mandaue,10.36681041,123.9520527
+82,Mandaue City Municipal Cemetery,Cemeteries,Mandaue,10.3316984,123.9372308
+83,Parkmall,Malls/department stores,Mandaue,10.32477282,123.9348013
+84,Pacific Mall Bus Stop,Bus terminals,Mandaue,10.34029254,123.9504812
+85,Bogo-Medellin Medical Center,Hospitals,Medellin,11.10890117,123.9753045
+86,Medellin Municipal Hall,Municipal Hall,Medellin,11.12866468,123.961347
+87,Aisle of Medellin,Tourist Spots,Medellin,11.12631645,123.99483
+88,Minglanilla District Hospital,Hospitals,Minglanilla,10.24907351,123.8040153
+89,Minglanilla Police Station,Police stations,Minglanilla,10.24584189,123.7954601
+90,Minglanilla Municipal Hall,Municipal Halls,Minglanilla,10.2461,123.7956
+91,Moalboal Municipal Hall,Municipal Halls,Moalboal,9.936735591,123.391913
+92,Moalboal Fire Station,Fire Stations,Moalboal,9.935450034,123.3922939
+93,Moalboal Municipal Police Station,Police Stations,Moalboal,9.936448302,123.3925668
+94,Cebu South General Hospital,Hospitals,Naga,10.23200223,123.7711808
+95,City Hall of Naga,City Halls,Naga,10.20708715,123.7598565
+96,City of Naga Boardwalk,Tourist Spots,Naga,10.20868079,123.7606952
+97,City of Naga National High School,Schools,Naga,10.20888709,123.7548733
+98,Oslob Municipal Hall,Municipal Halls,Oslob,9.520672401,123.4336925
+99,Oslob Police Station,Police Stations,Oslob,9.521403427,123.4307954
+100,Oslob Fire Station,Fire Stations,Oslob,9.521226029,123.4318685
+101,Oslob District Hospital,Hospitals,Oslob,9.526323863,123.4332188
+102,Pinamungahan Municipal Hall,Municipal Halls,Pinamungahan,10.27000681,123.584308
+103,Pinamungahan Public Market,Markets,Pinamungahan,10.27111813,123.5839934
+104,Pinamungahan District Hospital,Hospitals,Pinamungahan,10.28579963,123.5878378
+105,Ronda Municipal Hall,Municipal Halls,Ronda,10.0007302,123.4090491
+106,Ronda Public Market,Markets,Ronda,10.00020629,123.4116062
+107,Ronda Rural Health Unit,Health Centers,Ronda,10.00030725,123.4095648
+108,San Remigio Municipal Hall,Municipal Hall,San Remigio,11.08390566,123.9372753
+109,San Remigio Fire Station,Fire Stations,San Remigio,11.08256858,123.9414001
+110,San Remigio Public Beach,Tourist spots,San Remigio,11.08236804,123.9350356
+111,San Fernando Municipal Hall,Municipal Halls,San Fernando,10.16260078,123.7072758
+112,San Fernando Fire Station,Fire Stations,San Fernando,10.16119479,123.7077719
+113,San Fernando Municipal Police Station,Police Stations,San Fernando,10.16018036,123.7065721
+114,Santa Fe Rural Health Unit,Health Centers,Santa Fe,11.17166573,123.7975935
+115,Santa Fe Municipal Hall,Municipal Hall,Santa Fe,11.15560923,123.7926596
+116,IFI-St. Isidore the Farmer Parish,Churches,Santa Fe,11.31829479,123.8860928
+117,Sogod Medical Clinic,Health Centers,Sogod,10.76793835,124.0048755
+118,Sogod Municipal Hall,Municipal Hall,Sogod,10.74744009,124.0043232
+119,San Pedro Calungsod Parish,Churches,Sogod,10.80471302,123.9336042
+120,Rural Health Unit Tabogon,Health Centers,Tabogon,10.93946954,124.0279085
+121,Tabogon Municipal Hall,Municipal Hall,Tabogon,10.9400965,124.0283747
+122,Punta Chapel,Churches,Tabogon,10.88241899,124.0505573
+123,Tabunok Barangay Health Station,Health Centers,Tabuelan,10.83655791,123.8801982
+124,Tabuelan Municipal Hall,Municipal Hall,Tabuelan,10.82273923,123.8725662
+125,Tabuelan Chapel,Churches,Tabuelan,10.85663699,123.9052657
+126,Cebu South Medical Center,Hospitals,Talisay,10.25378072,123.8384688
+127,Talisay City Hall,City Halls,Talisay,10.25325673,123.8294043
+128,Crocolandia,Tourist Spots,Talisay,10.24655827,123.8339702
+129,Talisay City Police Station,Police Stations,Talisay,10.24247049,123.8484873
+130,Toledo City Hall,City Halls,Toledo City,10.37992465,123.6585981
+131,Toledo City Fire Department,Fire Stations,Toledo City,10.37526714,123.6344405
+132,Toledo City Police Department,Police Stations,Toledo City,10.37523534,123.6345263
+133,Toledo City Hospital,Hospitals,Toledo City,10.3723545,123.638738
+134,Colonia Health Center,Health Centers,Tuburan,10.65514331,123.791395
+135,Tuburan Municipal Hall,Municipal Hall,Tuburan,10.72806968,123.8242112
+136,Cebu Technological University - Tuburan Campus,Schools,Tuburan,10.71823501,123.8195272

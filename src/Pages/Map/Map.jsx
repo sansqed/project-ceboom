@@ -1,10 +1,11 @@
 //CSV
 import Papa from 'papaparse'
 // import data from '../../Assets/Data/CebuSouthLandmarks.csv'
-import data from '../../Assets/Data/brgy-lahug-landmarks.csv'
+// import data from '../../Assets/Data/brgy-lahug-landmarks.csv'
+import data from '../../Assets/Data/cebu-landmarks-minimal.csv'
 
 import "./Map.css"
-import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer, Circle, Polyline, useMap} from "react-leaflet"
+import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer, Circle, Polyline, useMap, useMapEvents} from "react-leaflet"
 import {CebuMap} from "../../Assets/CebuMap"
 import {CebuRoads} from "../../Assets/CebuRoadsV2.js"
 import SideBar from "../../Components/Navbar/Sidebar"
@@ -29,14 +30,21 @@ import "leaflet-geometryutil"
 import '@geoman-io/leaflet-geoman-free';  
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
-import {CreateNodes} from "../../ApiCalls/NodeAPI"
+import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
+import {CreateRoads} from "../../ApiCalls/RoadsAPI"
+import { MoveDownSharp } from '@mui/icons-material'
+import {nodesAll} from "../../Assets/Data/intersection-data.js" 
+
 
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
+  const [nodes, setNodes] = useState([]);
   const [roads, setRoads] = useState([])
   const [currRoad, setCurrRoad] = useState(null)
+  const [currNode, setCurrNode] = useState(null)
   const [isClicked, setIsClicked] = useState(false)
+  const [mode, setMode] = useState('normal')
 
 
   const HandleSubpage = () => {
@@ -50,151 +58,169 @@ const Map = ({ children }) => {
       return(<UpdateTraffic/>)
   }
 
-  const [markers, setMarkers] = useState([
-    {
-      id: 1,
-      name: "Cebu South Medical Center",
-      location: "Hospitals,Talisay",
-      lat: 10.253780719586434,
-      lon: 123.83846878657616
-    },
-    { 
-      id: 2,
-      name: "Simbajon Medical Clinic",
-      location: "Health Centers,Talisay",
-      lat: 10.261654916331313,
-      lon: 123.83701029448979
-    }
-  ])
+  console.log(nodesAll.nodes)
 
-    
-  console.log("roads", roads)
-  // console.log(isDrawMode)
-
+  // handles addition of road
   useEffect(()=>{
     if (currRoad != null){
       setRoads((prev) => [...prev, currRoad])
     }
   },[currRoad])
-  
-  const HandleEditRoads = (newRoad) => {
-    // useEffect(()=>{
-    // roads.findIndex(newRoad)
-    var tempRoads = roads
-    try{
-      var idx = tempRoads.findIndex(newRoad)
-    } catch {
-      var idx = -1
+
+  useEffect(()=>{
+    if (currNode != null){
+      setNodes((prev) => [...prev, currNode])
     }
-    
-    if (idx === -1){
-      setRoads((prev) => [...prev, newRoad])
-    }
-    // },[])
-  }
-  
-  
+  },[currNode])
 
   //convert csv to json
-  const [locationData, setLocationData] = useState([]);
-  
-  useEffect(()=>{
-    Papa.parse(data,{
-      download: true,
-      header: true,
-      complete: function(results){
-        setLocationData(results.data)
-      }
-    })
-  },[]) 
+  // useEffect(()=>{
+  //   Papa.parse(data,{
+  //     download: true,
+  //     header: true,
+  //     complete: function(results){
+  //       setNodes(results.data)
+  //     }
+  //   })
+  // },[]) 
 
-  console.log("locationData", locationData)
+  // useEffect(()=>{
 
-  // console.log(locationData)
-  //console.log(location)
+  // },[nodesAll])
 
+  console.log("nodes", nodes)
+
+
+
+  // HANDLES EDITING AND DRAWING OF MAP
   const DrawMap = () => {
     let map = useMap()  
-    // console.log(map)
 
-    var lg = L.LayerGroup
+    if(mode==="intersection"){
+      map.pm.enableDraw('Marker')
+      console.log("drawing marker")
 
-    map.pm.setGlobalOptions({
-      layerGroup: lg
-    })
+      map.on('pm:create', (e) => {
+        let thisInter = {
+          leaflet_id: e.layer._leaflet_id,
+          landmark_type: "intersection",
+          location: null,
+          latitude: e.layer._latlng.lat,
+          longitude: e.layer._latlng.lng,
+        }
 
-    // console.log(lg)
+        setCurrNode(thisInter)
+      })
+    }
 
-    map.addLayer(L.marker([10.419705993110673, 123.83194042326245]))
-  
-    // map.pm.enableDraw('Line', {
-    //   snappable: true,
-    //   snapDistance: 20,
-    // });
+    else if (mode === "roads"){
+      map.pm.enableDraw('Line')
+      console.log("drawing line")
 
+      map.on('pm:create', e => {
+        console.log(e)
+        var lastVertex = e.layer._latlngs.at(-1)
+        var firstVertex = e.layer._latlngs[0]
+        var endMarker =  nodes.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
+        var startMarker = nodes.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
+        if (endMarker && startMarker){
+          var newRoad = {
+            leaflet_id: e.layer._leaflet_id,  
+            endPointA: startMarker.id,
+            endpointB: endMarker.id, 
+            latlngs: e.layer._latlngs
+          }
+          setCurrRoad(newRoad)
+        } else {
+          e.target.removeLayer(e.layer)
+        }
+      })
+    }
+
+    // ADDS EDIT CONTROLS
     map.pm.addControls({  
       position: 'topright',  
-      // drawCircle: false,  
     });  
 
-    map.on('pm:drawstart', ({ workingLayer }) => {
-      workingLayer.on('pm:vertexadded', (e) => {
-        if (e.target._latlngs.length === 1){
-          console.log("vertexadd", e)
-          var start = locationData.find(({lat, lon}) => (lat == e.latlng.lat && lon == e.latlng.lng))
-          console.log("start", start)
-          // var start = locationData.find((loc) => loc.lat == e.latlng.lat && loc.lon == e.latlng.lng)
-          if (start === undefined){
-            console.log(workingLayer)
-            map.pm.disableDraw()
-          }
-        }
-      });
+    // ON CREATE OF POLYLINE, CHECK IF START AND END POINTS ARE MARKERS
+    // map.on('pm:create', e => {
+    //   console.log(e)
+    //   var lastVertex = e.layer._latlngs.at(-1)
+    //   var firstVertex = e.layer._latlngs[0]
+    //   var endMarker =  nodes.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
+    //   var startMarker = nodes.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
+    //   if (endMarker && startMarker){
+    //     var newRoad = {
+    //       leaflet_id: e.layer._leaflet_id,  
+    //       endPointA: startMarker.id,
+    //       endpointB: endMarker.id, 
+    //       latlngs: e.layer._latlngs
+    //     }
+    //     setCurrRoad(newRoad)
+    //   } else {
+    //     e.target.removeLayer(e.layer)
+    //   }
+    // })
+
+    // ON EDIT OF MARKERS, CHANGE COORDS IN nodes
+    // map.on('pm:globaldragmodetoggled', (e) => {
+    //   console.log(e)
+    //   map.eachLayer((layer) => {
+    //     layer.on('pm:dragend', (e)=>{
+    //       let moved = nodes.find(({leaflet_id})=> e.layer._leaflet_id == leaflet_id)
+    //       if(moved){
+    //         moved.lat = e.layer._latlng.lat.toString()
+    //         moved.lon = e.layer._latlng.lng.toString()            
+    //       }
+    //     })
+    //   })
+    // });
+
+    // ON REMOVE OF MARKER
+    map.on('pm:remove', (e) => {
+      console.log(e)
+      let targetId = e.layer._leaflet_id
+      
+      let toRemove = nodes.findIndex(({leaflet_id})=>leaflet_id==targetId)
+
+      if(toRemove !== -1){
+        nodes.splice(toRemove,1)
+        console.log(nodes)
+        return
+      }
     });
 
-    map.on('pm:create', e => {
-      console.log(e)
-      var last = e.layer._latlngs.at(-1)
-      var first = e.layer._latlngs[0]
-      var endMarker =  locationData.find(({lat, lon}) => lat == last.lat && lon == last.lng)
-      var startMarker = locationData.find(({lat, lon}) => lat == first.lat && lon == first.lng)
-      if (endMarker && startMarker){
-        var newRoad = {
-          id: e.layer._leaflet_id,  
-          endPoints:[startMarker.id, endMarker.id], 
-          latlngs: e.layer._latlngs
-        }
-        setCurrRoad(newRoad)
-      } else {
-        e.target.removeLayer(e.layer)
-      }
-    })
-      
+    
     return null
   }
-  
 
-  const _onCreate = e => {
-    console.log(e)
-    // const { layerType, layer } = e
-
-    // if (layerType === "polyline"){
-    //   const { _leaflet_id } = layer 
-
-    //   setNewRoads((oldRoads) => [
-    //     ...oldRoads,
-    //     {id: _leaflet_id, latlngs: layer.getLatLngs()},
-    //   ])
-    // } 
+  // MAPS LANDMARK ID TO LEAFLET ID
+  // leaflet ID is essential for rendering
+  const MapMarkerId = () =>{
+    let map = useMap()
+    
+    useEffect(()=>{
+      if(nodes.length > 0){
+        map.eachLayer((layer) => {
+          if(layer._latlng){
+            let corresLandmark = nodes?.find((loc) => layer._latlng.lat==loc.lat && layer._latlng.lng==loc.lon)
+            if (corresLandmark){
+              corresLandmark["leaflet_id"] = layer._leaflet_id
+            }
+          }
+        })
+      }
+      
+    },[nodes])
   }
 
-  // console.log(roads)
 
-  console.log(locationData)
+  console.log(nodes)
+  console.log("roads", roads)
 
 
-  const renderRoads = () => {
-    const purpleOptions = { color: 'purple' }
+  const RenderRoads = () => {
+    const purpleOptions = { color: 'white', weight: 5 }
     return(
       roads.map((road)=>{
         return(
@@ -203,19 +229,15 @@ const Map = ({ children }) => {
       })
     )
   }
-
-//   var editToolbar = new L.EditToolbar.SnapEdit(map, {
-//     featureGroup: L.featureGroup([polyline]),
-//     snapOptions: {
-//        guideLayers: [guideLayer]
-//     }
-//  });
+  
 
   async function createNodes(){
+
+    
   
     console.log("HERE ")
-    console.log(locationData)
-    const response = await CreateNodes(locationData)
+    console.log(nodes)
+    const response = await CreateNodes(nodes)
 
     console.log(response)
     if (response.data.status !== 201){
@@ -225,7 +247,34 @@ const Map = ({ children }) => {
     }
 
   }
+
+  async function createRoads(){
+    console.log("HERE ")
+    console.log(roads)
+    const response = await CreateRoads(roads)
+
+    console.log(response)
+    if (response.data.status !== 201){
+      console.log("FAILED")
+    } else {
+      console.log("SUCCESS")
+    }
+  }
+
+  const FetchNodes = () => {
+    useEffect(() => {
+      GetNodes()
+        .then((response) => {
+          console.log(response)
+          // setData(response.data.data.companies[0]);
+        });
+    
+    }, []);
+  };
+
+  // FetchNodes()
   
+  console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
 
     <div className="map-container">
@@ -246,11 +295,11 @@ const Map = ({ children }) => {
         minZoom={9}
         scrollWheelZoom={true}
       >
-         {/* <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-          className='leaflet-tiles'
-        />  */}
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+            className='leaflet-tiles'
+          /> 
 
         {/* Renders the map */}
         <GeoJSON 
@@ -259,40 +308,48 @@ const Map = ({ children }) => {
         />
 
         {/* Renders the road */}
-        <GeoJSON
+        {/* <GeoJSON
           data = {CebuRoads}
           className="cebu-roads"
-        />
+        /> */}
         
         {/* Renders markers*/}
-        {locationData?.map((landmark) => (
-         <MarkerLayer
-          data = {landmark}
-         />
-        ))}
+        {nodesAll.nodes?.map((landmark) =>{
+          // console.log(landmark.latitude.toString())
+          <MarkerLayer
+            data = {landmark}
+          />
+        })}
 
         <DrawMap/>
-
-        {
-          markers.map((landmark) => (
-            <MarkerLayer
-              data = {landmark}
-            />
-          ))
-        }
-
-
-        {renderRoads()}
-
-
-          
+        <MapMarkerId/>
+        <RenderRoads/>    
 
 
       </MapContainer>
 
-      <button onClick={() => createNodes()}>
-        Create Nodes
+
+
+      {/* <button onClick={() => }>
+        Import landmarks
+      </button> */}
+      <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
+        Intersections mode toggle
       </button>
+      <button onClick={() => mode === "roads"? setMode("normal"):setMode("roads")}>
+        roads mode toggle
+      </button>
+      <button onClick={() => FetchNodes()}>
+        Fetch landmarks
+      </button>
+      <button onClick={() => createNodes()}>
+        Submit Nodes to API
+      </button>
+      <button onClick={()=> createRoads()}>
+        Submit Roads to API
+      </button>
+      
+      
       </div>
   )
 }

@@ -9,9 +9,9 @@ import TestMap from './Pages/Map/TestMap';
 
 import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';
-import LogIn from './Pages/LogIn/LogIn';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Registration from './Pages/Registration/Registration';
+import LogIn from './Pages/LogIn/LogIn';
 
 function App() {
 
@@ -38,7 +38,7 @@ function App() {
               element={<Landing/>}  
             />
             <Route 
-              path="/log-in" 
+              path="/login" 
               element={<LogIn/>}  
             />
             <Route 

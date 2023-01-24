@@ -37,9 +37,11 @@ const LogIn = ({ children }) => {
         </form> 
         <div className="log-in-text-7"> Dont have an account? </div> 
         <div className="signup">
-        <button type="submit">
-          <p>Sign Up Now</p>
-        </button>
+          <a href="/registration">
+            <button type="submit">
+            <p>Sign Up Now</p>
+            </button>
+          </a>
         </div>
       </div>
       
