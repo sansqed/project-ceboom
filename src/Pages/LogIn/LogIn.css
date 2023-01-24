@@ -225,7 +225,7 @@
 
 }
 
-.signup-btn button[className="test"][type="submit"]{
+.signup-btn{
     position: absolute;
     width: 415px;
     height: 53px;
