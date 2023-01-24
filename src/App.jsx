@@ -11,6 +11,7 @@ import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';
 import AboutUs from './Pages/AboutUs/AboutUs';
 import Registration from './Pages/Registration/Registration';
+import LogIn from './Pages/LogIn/LogIn';
 
 function App() {
 
