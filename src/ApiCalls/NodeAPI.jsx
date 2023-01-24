@@ -1,5 +1,5 @@
 import { async } from "q";
-import { postAPICall } from "./axiosMethodCalls";
+import { postAPICall, getAPICall } from "./axiosMethodCalls";
 
 export const CreateNodes = async(nodes) => {
     try{
@@ -18,7 +18,7 @@ export const CreateNodes = async(nodes) => {
 
 export const GetNodes = async() => {
     try{
-        const response = await postAPICall("https://94ec-111-125-90-19.ap.ngrok.io/nodes/get_all", {});
+        const response = await postAPICall("https://94ec-111-125-90-19.ap.ngrok.io/nodes/get_all",{});
         return { data: response};
     } catch (error) {
         return { data: error };

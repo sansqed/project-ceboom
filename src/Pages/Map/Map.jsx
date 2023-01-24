@@ -68,6 +68,9 @@ const Map = ({ children }) => {
   }
 
   console.log(nodesAll.nodes)
+  useEffect(()=>{
+    setNodes(nodesAll.nodes)
+  },[])
 
   // handles addition of road
   useEffect(()=>{
@@ -97,7 +100,7 @@ const Map = ({ children }) => {
 
   // },[nodesAll])
 
-  console.log("nodes", nodes)
+  console.log("nodes", nodesAll)
 
 
 
@@ -130,8 +133,8 @@ const Map = ({ children }) => {
         console.log(e)
         var lastVertex = e.layer._latlngs.at(-1)
         var firstVertex = e.layer._latlngs[0]
-        var endMarker =  nodes.find(({lat, lon}) => lat == lastVertex.lat && lon == lastVertex.lng)
-        var startMarker = nodes.find(({lat, lon}) => lat == firstVertex.lat && lon == firstVertex.lng)
+        var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
+        var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
         if (endMarker && startMarker){
           var newRoad = {
             leaflet_id: e.layer._leaflet_id,  
@@ -144,6 +147,8 @@ const Map = ({ children }) => {
           e.target.removeLayer(e.layer)
         }
       })
+
+      console.log(roads)
     }
 
     // ADDS EDIT CONTROLS
@@ -281,7 +286,7 @@ const Map = ({ children }) => {
     }, []);
   };
 
-  // FetchNodes()
+  FetchNodes()
   
   console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -324,10 +329,11 @@ const Map = ({ children }) => {
         
         {/* Renders markers*/}
         {nodesAll.nodes?.map((landmark) =>{
-          // console.log(landmark.latitude.toString())
+          // console.log(landmark)
+          return(
           <MarkerLayer
             data = {landmark}
-          />
+          />)
         })}
 
         <DrawMap/>

@@ -84,25 +84,25 @@ function locationChecker(location){
 }
 
 const MarkerLayer = (data) => {
-    console.log(data)
-    return(<></>)
-    // if (data != undefined){
-    //     // console.log(data.latitude,data.longitude)
-    //     return(
-    //         <div>
-    //             <Marker 
-    //                 position = {[data.latitude,data.longitude]} 
-    //                 // icon = {locationChecker(data.landmark_type)}
-    //             >
-    //                 {/* <Tooltip className="marker-tooltip">
-    //                     <b className="marker-name">{data.data.name}</b>
-    //                     <p className="marker-type">{data.data.type}</p>
-    //                     <p className="marker-location">{data.data.location}</p>
-    //                 </Tooltip> */}
-    //             </Marker>
-    //         </div>
-    //     )
-    // }
+    // console.log(data)
+    // return(<></>)
+    if (data != undefined){
+        // console.log(data.data.landmark_type)
+        return(
+            <div>
+                <Marker 
+                    position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
+                    icon = {locationChecker(data.data.landmark_type)}
+                >
+                    {/* <Tooltip className="marker-tooltip">
+                        <b className="marker-name">{data.data.name}</b>
+                        <p className="marker-type">{data.data.landmark_type}</p>
+                        <p className="marker-location">{data.data.location}</p>
+                    </Tooltip> */}
+                </Marker>
+            </div>
+        )
+    }
 }
 
 // var barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')});
