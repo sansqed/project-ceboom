@@ -9,11 +9,30 @@ const EditMap = ({ children }) => {
       <div className="page-title">
         <div className="page-title-text">Edit Map</div>
       </div>
-      <div className="container">
-        <a href = "#AddLandmark">Add Landmark</a>
-        <a href= "#AddRoad">Add Road</a>
-        <a href= "#EditLandmark">Edit Landmark</a>
-      </div>
+        <p class="ridge"> 
+          <div class = "header">Landmarks</div>
+          <div className = "wrapper">
+            <button class="button">Add</button>
+            <button class="button">Edit</button>
+            <button class="button">Delete</button>
+          </div>
+        </p>
+        <p class="ridge"> 
+          <div class = "header">Intersections</div>
+          <div className = "wrapper">
+            <button class="button">Add</button>
+            <button class="button">Edit</button>
+            <button class="button">Delete</button>
+          </div>
+        </p>
+        <p class="ridge"> 
+          <div class = "header">Roads</div>
+          <div className = "wrapper">
+            <button class="button">Add</button>
+            <button class="button">Edit</button>
+            <button class="button">Delete</button>
+          </div>
+        </p>
     </div>
   )
 }
