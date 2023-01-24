@@ -1,11 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {Marker, Popup} from "react-leaflet"
+import {Marker, Popup, Tooltip, useMap} from "react-leaflet"
 import L, { latLng } from "leaflet"
 
 import './Markers.css'
-import { emphasize } from "@mui/system";
 
 // var test = [{type: "Hospitals", cords: [10.253781, 123.838469]},
 // {type: "Cemetaries", cords: [10.263133, 123.839979]},
@@ -89,15 +88,15 @@ const MarkerLayer = (data) => {
 
         return(
         <div>
-            <Marker position = {[data.data.lat,data.data.lon]} icon = {locationChecker(data.data.type)}>
-                <Popup>
-                    <b>{data.data.name}</b>
-                    <br></br>
-                    <br></br>
-                    {data.data.type}
-                    <br></br>
-                    {data.data.location}
-                </Popup>
+            <Marker 
+                position = {[data.data.lat,data.data.lon]} 
+                icon = {locationChecker(data.data.type)}
+            >
+                {/* <Tooltip className="marker-tooltip">
+                    <b className="marker-name">{data.data.name}</b>
+                    <p className="marker-type">{data.data.type}</p>
+                    <p className="marker-location">{data.data.location}</p>
+                </Tooltip> */}
             </Marker>
         </div>
         )

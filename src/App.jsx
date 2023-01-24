@@ -37,6 +37,10 @@ function App() {
               element={<Landing/>}  
             />
             <Route 
+              path="/login" 
+              element={<LogIn/>}  
+            />
+            <Route 
               path="/about-us" 
               element={<AboutUs/>}  
             />

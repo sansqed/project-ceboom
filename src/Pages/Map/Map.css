@@ -1,3 +1,8 @@
 .test-circle{
   fill: black;
 }
+
+.leaflet-tile-pane{
+  opacity: 0.45;
+  z-index: 10000000000000000000000000 !important; 
+}
