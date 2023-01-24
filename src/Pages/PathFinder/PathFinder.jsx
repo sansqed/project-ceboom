@@ -4,8 +4,8 @@ import "./PathFinder.css"
 import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import "../../Components/Navbar/Sidebar.css";
-import "../../Components/SidebarCustomButton/SidebarCustomButton";
-import SidebarCustomButton from "../../Components/SidebarCustomButton/SidebarCustomButton";
+import "../../Components/CustomButton/CustomButton";
+import CustomButton from "../../Components/CustomButton/CustomButton";
 
 const PathFinder = ({ children }) => {
     const data = [
@@ -38,8 +38,7 @@ const PathFinder = ({ children }) => {
     const colorStyles = {
         control: (styles, {isFocused}) => ({...styles, backgroundColor: 'white', color: 'black', borderRadius: 16, border: "2px solid orange", padding: 3, 
         "&:hover": {borderColor: "orange"}, boxShadow: isFocused ? "0px 0px 6px #ff8b67" : "none",}),
-        option: (styles, {isDisabled, isSelected}) => { return {...styles, backgroundColor: isDisabled ? 'white': '#F3AC4A', 
-        backgroundColor: isSelected ? '#F3AC4A' : 'white'}},
+        option: (styles, {isFocused}) => { return {...styles, backgroundColor: isFocused ? '#F3AC4A' : 'white', color: isFocused ? 'white': 'solid black'}},
         placeholder: (styles) => { return {...styles, color: 'solid black'}}
     }
 
@@ -99,11 +98,26 @@ const PathFinder = ({ children }) => {
                         <div className="pathfinder-todescription">You can type out a location, or you can click a landmark on the map. </div>
                     </div>
                     
-                    <div className="pathfinder-searchsubmit">
+                    {/* <div className="pathfinder-searchsubmit">
                         <button type="submit">
                         <p>GET DIRECTIONS</p>
                         </button>
-                    </div>
+                        
+                    </div> */}
+                    {/* 
+                    
+                        PLEASE USE THIS BUTTON FOR ALL BUTTONS.
+                        YOU CAN STILL CHANGE THE CSS USING THE CLASSNAME
+                        THANKS
+
+                        PLEASE CHECK src/Components/Button/Button.jsx
+
+                         */}
+                    <CustomButton 
+                      divClassName="pathfinder-searchsubmit"
+                      title="GET DIRECTIONS" className="pathfinder-searchsubmit-btn" 
+                      type="submit"
+                      />
                 </div>
 
             <div className="pathfinder-recentsearches">

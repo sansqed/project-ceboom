@@ -1,12 +1,60 @@
 import "./LogIn.css"
 //import {Col, Row} from "react-bootstrap"
 import React, { useState } from "react";
+import toast, { Toaster } from "react-hot-toast"
 
 import icon from "../../Assets/images/icon-login.png";
 import logo from "../../Assets/images/ceboom_logo.png";
 
+// import API call
+import {LoginUser} from "../../ApiCalls/UserAPI"
+import CustomButton from "../../Components/CustomButton/CustomButton"
 
 const LogIn = ({ children }) => {
+  const[loginCredentials, setLoginCredentials] = useState({
+    username: "",
+    password: "",
+  });
+
+  const handleChange = (e) =>{
+    const {name, value} = e.target;
+    setLoginCredentials((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const [isClicked, setIsClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  async function submit(){
+    // if (!isClicked){
+      // setIsClicked(true);
+      //setIsLoading(true);
+      const response = await LoginUser(
+        loginCredentials
+      );
+      console.log(loginCredentials)
+
+      // API response
+      console.log(response)
+      toast('Hello World');
+      if (response.data.status !== 200) {
+          console.log(response)
+          toast.error(response.data.messages.error)
+
+      } else {
+          toast.success()
+          console.log("success")
+          console.log(response)
+        //setIsLoading(false);
+        // localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id).slice(1,-1));
+
+      // }
+      // setIsClicked(false);
+    }
+  }
+
   return(
     <div className="landing-background">
       <div className="row">
@@ -21,28 +69,45 @@ const LogIn = ({ children }) => {
         <div className = "log-in-container"></div>
         <img alt="logo" src={logo} className="logo-login" /> 
         <div className="log-in-text-6"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div>
-         <form>
-          <input className="input-1" type="email" id="email" name="email" placeholder=" EMAIL" required></input>
 
-          <input className="input-2" type="password" id="password" name="password" placeholder=" PASSWORD" r required></input>
+          <input 
+          className="input-1" 
+          type="text" 
+          id="username" 
+          name="username" 
+          placeholder=" USERNAME" 
+          required 
+          onChange={(e) => handleChange(e)}
+          />
+          
+          <input 
+          className="input-2"
+           type="password" 
+           id="password" 
+           name="password" 
+           placeholder=" PASSWORD"  
+           required onChange={(e) => handleChange(e)}
+           />
 
-          <div className="login">
-          <button type="submit">
-            <p>LOGIN</p>
-          </button>
-          </div>
+          <CustomButton 
+            divClassName="login-btn-container"
+            className="login-btn"
+            type="submit"
+            onClick={() => submit()}
+            title="LOGIN"
+          />
+
           {/* <input type="checkbox" checked="checked"> Keep me signed in </input> */}
           {/* <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> */}
           <div className="psw">Forgot Password?</div> 
-        </form> 
+
         <div className="log-in-text-7"> Dont have an account? </div> 
-        <div className="signup">
-          <a href="/registration">
-            <button type="submit">
-            <p>Sign Up Now</p>
-            </button>
-          </a>
-        </div>
+        <CustomButton
+          divClassName="signup-btn-container"
+          className="signup-btn"
+          type="submit"
+          title="Sign Up Now"
+        />
       </div>
       
     </div>
