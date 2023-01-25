@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Outfit&display=swap%27');
+
 *{
     font-family: 'Outfit';
     margin: 0;
@@ -27,6 +28,7 @@
     right: 0%;
     top: 0%;
     bottom: 0%;
+    gap: 10px;
 
     background: #FFFFFF;
     border-radius: 62px;
@@ -140,7 +142,7 @@
     position: absolute;
     height: 55px;
     width: 218px;
-    bottom: 65%;
+    top: 20%;
     left: 100px;
 
     border: 1px solid #d8d3d3;
@@ -172,7 +174,7 @@
     position: absolute;
     height: 55px;
     width: 225px;
-    bottom: 65%;
+    top: 20%;
     /* left: 100px; */
     right: 90px;
 
@@ -203,7 +205,7 @@
 .or{
     position: absolute;
     right: 18.5%;
-    top: 29.5%;
+    top: 31%;
 
     font-family: 'Outfit';
     font-style: normal;
@@ -224,7 +226,8 @@
 .inputBox{
     position: relative;
     width: 500px;
-    top: 5%;
+    height: 60px;
+    top: 3%;
 }
 
 .inputBox input{
@@ -234,7 +237,7 @@
     border: 1px solid #5C5C5C;
     background-color: transparent;
     border-radius: 5px;
-    color: #5C5C5C;
+    color: #000000;
     
     font-size: 1.1em;
     font-family: 'Outfit';
@@ -247,7 +250,7 @@
     color: #5C5C5C;
     left: 0;
     padding: 19px 15px;
-    bottom: 16%;
+    bottom: 5%;
     font-size: 1em;
     pointer-events: none;
     display: block;
@@ -268,8 +271,10 @@
     position: absolute;
     height: 50px;
     width: 500px;
-    bottom: 14%;
+    bottom: 20%;
     left: 11.5%;
+    border-radius: 8px;
+    border: 1px solid gray;
 
     background-color: #EB811E;
     color: white;
