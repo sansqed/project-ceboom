@@ -102,12 +102,14 @@ const LogIn = ({ children }) => {
           <div className="psw">Forgot Password?</div> 
 
         <div className="log-in-text-7"> Dont have an account? </div> 
-        <CustomButton
-          divClassName="signup-btn-container"
-          className="signup-btn"
-          type="submit"
-          title="Sign Up Now"
-        />
+        <a href="/registration">  
+          <CustomButton
+            divClassName="signup-btn-container"
+            className="signup-btn"
+            type="submit"
+            title="Sign Up Now"
+          />
+        </a>
       </div>
       
     </div>

@@ -1,5 +1,6 @@
 import "./Registration.css"
 import React, { useState } from "react"
+import CustomButton from "../../Components/CustomButton/CustomButton"
 import Cebu from "../../Assets/images/registration_CebShadow.png"
 import Google from "../../Assets/images/googleLogo.png"
 import Facebook from "../../Assets/images/facebookLogo.png"
@@ -39,11 +40,13 @@ const Registration = ({ children }) => {
                     <input type="password" required="required" />
                     <span>Password</span>
                 </div>
-                <a>
-                    <button className="create">
-                        Create Account
-                    </button>
-                </a>
+                <div>
+                    <a>
+                        <CustomButton className="create" 
+                        type="submit"
+                        title="Create Account" />
+                    </a>
+                </div>
                 <p className="link">
                     Already have an account? <a href="/login">Log in</a>
                 </p>
