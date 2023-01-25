@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css?family=Outfit&display=swap');
+
+.sidebar-submenu{
+    font-family: 'Outfit', sans-serif;
+}
+
+.pathfinder{
+    display: flex;
+    width: 500px;
+    height: 70vh;
+}
+
+/* changed to page-title and page-title-text in Sidebar.css */
+.page-title{
+    display: flex;
+    width: 100%;
+    height: 9vh;
+    justify-content: center;
+    align-items: center;
+    background: #76C5F0;
+}
+.page-title-text{
+    font-style: normal;
+    font-size: 40px;
+    font-weight: 600;
+    text-transform: uppercase;
+    line-height: 80px;
+    letter-spacing: +1.3px;
+    color: #FFFFFF;
+}   
+
+
+.pathfinder-searchtitle{
+    text-align: center;
+    position: absolute;
+    font-weight: 500;
+    font-size: 25px;
+    letter-spacing: 0.44px;
+    width: 100%;
+    top: 13vh;
+}
+
+.pathfinder-search{
+    text-align: left;
+    position: absolute;
+    width: 100%;
+    top: 18vh;
+
+}
+
+/* "FROM" Search Bar */
+.pathfinder-fromsearchbar{
+    position: relative;
+}
+
+.pathfinder-fromlabel{
+    margin-left: 15px;
+    margin-bottom: -20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.49);
+}
+
+
+/*div container for button. when you create a Button is in a Div.*/
+/* "SEARCH" Button */
+.pathfinder-searchsubmit{
+    position: relative;
+    text-align: center;    
+    top: 18vh;
+}
+
+/* please do the buttons this way now :D */
+.pathfinder-searchsubmit-btn{
+    font-weight: 700;
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 1.15rem;
+    width: 40%;
+    height: 2.8rem;
+    background-color: orange;
+    cursor: pointer;
+}
+
+
+/* Recent Searches */
+.search-recentsearches{
+    position: absolute;
+    text-align: left;
+    font-weight: 700;
+    letter-spacing: 0.44px;
+    color: #676767;
+    width: 90%;
+    top: 30vh;
+    
+}
