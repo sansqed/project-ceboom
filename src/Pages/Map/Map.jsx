@@ -36,11 +36,16 @@ import { MoveDownSharp } from '@mui/icons-material'
 import {nodesAll} from "../../Assets/Data/intersection-data.js" 
 import {edges} from "../../Assets/Data/edges"
 import AddLandmarksFn from './AddLandmarksFn'
+import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
+import { landmarks } from '../../Assets/Data/landmarks'
+import { intersections } from '../../Assets/intersections'
 
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
   const [nodes, setNodes] = useState([]);
+  const [Intersections, setIntersections] = useState([])
+  const [landmarks, setLandmarks] = useState([])
   const [roads, setRoads] = useState([])
   const [currRoad, setCurrRoad] = useState(null)
   const [currNode, setCurrNode] = useState(null)
@@ -51,60 +56,59 @@ const Map = ({ children }) => {
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
-      return(
-        <EditMap  
-          editMode={editMode}
-          setEditMode={(e) => setEditMode(e)}
-          editData={editData}
-        />
-      )
+      return(<EditMap/>)
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
       return(<PathFinder/>)
     else if (subpage === "#updatetraffic")
       return(<UpdateTraffic/>)
+    else if (subpage === "#addlandmark")
+      return(<AddLandmarksSidebar
+        setEditMode={setEditMode}
+        editData={editData}
+      />)
   }
 
-  // console.log(nodesAll.nodes)
-  useEffect(()=>{
-    setNodes(nodesAll.nodes)
-  },[])
+  // UNCOMMENT IF SERVER IS UP
+  const FetchNodes = () => {
+    useEffect(() => {
+      GetNodes()
+        .then((response) => {
+          console.log(response.data.data)
+          setLandmarks(response.data.data.nodes)
+          setIntersections(response.data.data.intersections)
+        });
+    
+    }, []);
+  };
+  FetchNodes()
 
-  // handles addition of road
-  useEffect(()=>{
-    if (currRoad != null){
-      setRoads((prev) => [...prev, currRoad])
-    }
-  },[currRoad])
+  // UNCOMMENT IF SERVER IS DOWN
+  // setLandmarks(landmarks)
+  // setIntersections(intersections)
 
-  useEffect(()=>{
-    if (currNode != null){
-      setNodes((prev) => [...prev, currNode])
-    }
-  },[currNode])
-
-  //convert csv to json
+  // // console.log(nodesAll.nodes)
   // useEffect(()=>{
-  //   Papa.parse(data,{
-  //     download: true,
-  //     header: true,
-  //     complete: function(results){
-  //       setNodes(results.data)
-  //     }
-  //   })
-  // },[]) 
+  //   setNodes(nodesAll.nodes)
+  // },[])
+
+  // // handles addition of road
+  // useEffect(()=>{
+  //   if (currRoad != null){
+  //     setRoads((prev) => [...prev, currRoad])
+  //   }
+  // },[currRoad])
 
   // useEffect(()=>{
-
-  // },[nodesAll])
-
-
-  console.log("nodes", nodesAll)
+  //   if (currNode != null){
+  //     setNodes((prev) => [...prev, currNode])
+  //   }
+  // },[currNode])
 
   // HANDLES EDITING AND DRAWING OF MAP
-  const DrawMap = () => {
-    let map = useMap()  
+  // const DrawMap = () => {
+  //   let map = useMap()  
 
     // if(mode==="intersection"){
     //   map.pm.enableDraw('Marker')
@@ -207,7 +211,7 @@ const Map = ({ children }) => {
 
     
   //   return null
-  }
+  // }
 
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
@@ -237,6 +241,8 @@ const Map = ({ children }) => {
       
     },[nodes])
   }
+
+  // nodesAll.find(({id})=> id === label)
 
 
   // console.log(nodes)
@@ -287,18 +293,7 @@ const Map = ({ children }) => {
     }
   }
 
-  const FetchNodes = () => {
-    useEffect(() => {
-      GetNodes()
-        .then((response) => {
-          console.log(response)
-          // setData(response.data.data.companies[0]);
-        });
-    
-    }, []);
-  };
-
-  FetchNodes()
+  
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -340,15 +335,14 @@ const Map = ({ children }) => {
         /> */}
         
         {/* Renders markers*/}
-        {nodesAll.nodes?.map((landmark) =>{
-
+        {landmarks?.map((landmark) =>{
           return(
           <MarkerLayer
             data = {landmark}
           />)
         })}
 
-        <DrawMap/>
+        {/* <DrawMap/> */}
         <MapMarkerId/>
         <RenderRoads/>    
         <HandleEditModes/>
