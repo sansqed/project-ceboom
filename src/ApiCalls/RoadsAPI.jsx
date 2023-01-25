@@ -2,7 +2,7 @@ import { postAPICall } from "./axiosMethodCalls";
 
 export const CreateRoads = async(roads) => {
     try{
-        const response = await postAPICall("https://94ec-111-125-90-19.ap.ngrok.io/edges/add", {
+        const response = await postAPICall("https://0f5e-202-92-153-180.ap.ngrok.io/edges/add", {
             node_id_As: roads.map(x => x.endPointA ),
             node_id_Bs: roads.map(x => x.endpointB),
             // node_id_As: [4],

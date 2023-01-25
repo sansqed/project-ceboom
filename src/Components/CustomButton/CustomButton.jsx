@@ -6,7 +6,7 @@ import React from 'react';
 const CustomButton = (props) => {
   return (
     <div className={props.divClassName}>
-      <button className={props.className}type={props.type} onClick={props.onClick}  role={props.role}>
+      <button className={props.className}type={props.type} onClick={props.onClick}  role={props.role} name={props.name}>
         {props.title}
       </button>
     </div>

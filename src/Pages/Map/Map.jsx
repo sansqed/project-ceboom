@@ -34,7 +34,8 @@ import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import {CreateRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {nodesAll} from "../../Assets/Data/intersection-data.js" 
-
+import {edges} from "../../Assets/Data/edges"
+import AddLandmarks from './AddLandmarks'
 
 const Map = ({ children }) => {
   const location = useLocation()
@@ -45,6 +46,8 @@ const Map = ({ children }) => {
   const [currNode, setCurrNode] = useState(null)
   const [isClicked, setIsClicked] = useState(false)
   const [mode, setMode] = useState('normal')
+
+  const [newLandmarks, setNewLandmarks] = useState([])
 
 
   const HandleSubpage = () => {
@@ -92,8 +95,6 @@ const Map = ({ children }) => {
   // },[nodesAll])
 
   console.log("nodes", nodesAll)
-
-
 
   // HANDLES EDITING AND DRAWING OF MAP
   const DrawMap = () => {
@@ -154,6 +155,7 @@ const Map = ({ children }) => {
 
       console.log(roads)
     }
+    
 
     // ADDS EDIT CONTROLS
     map.pm.addControls({  
@@ -223,15 +225,16 @@ const Map = ({ children }) => {
 
 
   // console.log(nodes)
-  console.log("roads", roads)
+  // console.log("roads", roads)
+  console.log("edges", edges)
 
 
   const RenderRoads = () => {
     const purpleOptions = { color: 'white', weight: 5 }
     return(
-      roads.map((road)=>{
+      edges?.map((road)=>{
         return(
-          <Polyline key={road.id} pathOptions={purpleOptions} positions={road.latlngs} />
+          <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
         )
       })
     )
@@ -257,8 +260,8 @@ const Map = ({ children }) => {
 
   async function createRoads(){
     console.log("HERE ")
-    console.log(roads)
-    const response = await CreateRoads(roads)
+    console.log(edges)
+    const response = await CreateRoads(edges)
 
     console.log(response)
     if (response.data.status !== 201){
@@ -279,7 +282,7 @@ const Map = ({ children }) => {
     }, []);
   };
 
-  FetchNodes()
+  // FetchNodes()
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -302,11 +305,11 @@ const Map = ({ children }) => {
         minZoom={9}
         scrollWheelZoom={true}
       >
-          <TileLayer
+          {/* <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             className='leaflet-tiles'
-          /> 
+          />  */}
 
         {/* Renders the map */}
         <GeoJSON 
@@ -332,16 +335,17 @@ const Map = ({ children }) => {
         <DrawMap/>
         <MapMarkerId/>
         <RenderRoads/>    
+        {mode==="add-landmarks"? <AddLandmarks/>:<></>}
 
 
       </MapContainer>
 
 
 
-      {/* <button onClick={() => }>
-        Import landmarks
-      </button> */}
-      <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
+      <button onClick={() => setMode("add-landmarks")}>
+        Add landmarks
+      </button>
+      {/* <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
         Intersections mode toggle
       </button>
       <button onClick={() => setMode("roads")}>
@@ -355,7 +359,7 @@ const Map = ({ children }) => {
       </button>
       <button onClick={()=> createRoads()}>
         Submit Roads to API
-      </button>
+      </button> */}
       
       
       </div>
