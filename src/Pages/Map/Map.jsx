@@ -261,11 +261,22 @@ const Map = ({ children }) => {
     const purpleOptions = { color: 'white', weight: 5 }
     const lightTraffic = {color: 'white'}
     return(
-      edgesOld?.map((road)=>{
+      edges?.map((road) =>{
+
+        let allPositions = road.latitudes.map((latitude,index) => 
+        [latitude,road.longitudes[index]])
+        let id = +road.id
+        
         return(
-          <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
+          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions} />
         )
       })
+
+      // edgesOld?.map((road)=>{
+      //   return(
+      //     <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
+      //   )
+      // })
 
       // edges?.map((road)=>{
       //   let allPositions = road.latitude.map((lat, index) => {
