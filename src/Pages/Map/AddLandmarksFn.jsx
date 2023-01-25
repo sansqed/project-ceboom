@@ -11,14 +11,33 @@ const AddLandmarksFn = (handleAction) => {
 
   const map = useMap()    
 
+
+
   map.pm.enableDraw('Marker')
 
   map.on('pm:create', (e)=>{
     let thisLayer = e.layer
+    let thisMarker = () => {return(
+      <Marker>
+        position = {thisLayer._latlng}
+        <Popup>
+          test
+        </Popup>
+      </Marker>
+    )};
+
+
+
     // var popup = L.popup()
     // .setLatLng(thisLayer._latlng)
     // .setContent('<p>Hello world!<br />This is a nice popup.</p>')
     // .openOn(map);
+
+    // const contents = () => {
+    //   return(
+
+    //   )
+    // }
     
     thisLayer.bindPopup('<input>test</input>').openPopup()
     map.pm.disableDraw()

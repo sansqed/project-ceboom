@@ -6,16 +6,7 @@ import CustomButton from "../../Components/CustomButton/CustomButton"
 import AddLandmarksSidebar from "./AddLandmarksSidebar";
 import PropTypes from "prop-types";
 
-const EditMap = (editMode, setEditMode, editData) => {
-
-  if(editMode === "add-location")
-    return(<AddLandmarksSidebar 
-      addedLandmarks={editData}
-    />)
-
-  const handleClick = (e) => {
-    setEditMode(e.target)
-  }
+const EditMap = ({children}) => {
 
   return(
     <div className="sidebar-submenu">
@@ -28,12 +19,7 @@ const EditMap = (editMode, setEditMode, editData) => {
         <p class="ridge"> 
           <div class = "header">Landmarks</div>
           <div className = "wrapper">
-            {/* <button class="button" onClick={e=>handleClick(e)}>Add</button> */}
-            <CustomButton
-              title="add"
-              name="add-location"
-              onClick={(e)=>handleClick(e)}
-            />
+            <button class="button"><NavLink to={"#addlandmark"}>Add</NavLink></button>
             <button class="button">Edit</button>
             <button class="button">Delete</button>
           </div>
