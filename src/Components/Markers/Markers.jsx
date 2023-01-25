@@ -40,7 +40,7 @@ startIcon = new markerIcon({iconUrl: require('../../Assets/icons/Start.png')}),
 endIcon = new markerIcon({iconUrl: require('../../Assets/icons/End.png')})
 
 function locationChecker(location){
-    console.log(location)
+    // console.log(location)
     if(location == undefined){
         // console.log("bobo")
     }

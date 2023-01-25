@@ -31,14 +31,16 @@ import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
 import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
-import {CreateRoads} from "../../ApiCalls/RoadsAPI"
+import {CreateRoads, GetRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {nodesAll} from "../../Assets/Data/intersection-data.js" 
-import {edges} from "../../Assets/Data/edges"
 import AddLandmarksFn from './AddLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
-import { landmarks } from '../../Assets/Data/landmarks'
-import { intersections } from '../../Assets/intersections'
+
+import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
+import {landmarksRaw} from '../../Assets/Data/landmarksRaw'
+import {edgesOld} from "../../Assets/Data/edgesOld"
+import { edges } from '../../Assets/Data/edges'
 
 const Map = ({ children }) => {
   const location = useLocation()
@@ -53,7 +55,6 @@ const Map = ({ children }) => {
   const [editMode, setEditMode] = useState('normal')
   const [editData, setEditData] = useState([])
 
-
   const HandleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
@@ -63,30 +64,37 @@ const Map = ({ children }) => {
       return(<PathFinder/>)
     else if (subpage === "#updatetraffic")
       return(<UpdateTraffic/>)
-    else if (subpage === "#addlandmark")
-      return(<AddLandmarksSidebar
-        setEditMode={setEditMode}
-        editData={editData}
-      />)
+    else if (subpage === "#addlandmark=false" || subpage === "#addlandmark=true")
+      return(<AddLandmarksSidebar/>)
   }
 
+  // console.log(landmarksRaw)
+
   // UNCOMMENT IF SERVER IS UP
-  const FetchNodes = () => {
-    useEffect(() => {
-      GetNodes()
-        .then((response) => {
-          console.log(response.data.data)
-          setLandmarks(response.data.data.nodes)
-          setIntersections(response.data.data.intersections)
-        });
+  // const FetchNodes = () => {
+  //   useEffect(() => {
+  //     GetNodes()
+  //       .then((response) => {
+  //         console.log(response.data.data)
+  //         setLandmarks(response.data.data.nodes)
+  //         setIntersections(response.data.data.intersections)
+  //       });
+
+  //     // GetRoads().then((response)=>{
+  //       // console.log(response)
+  //       // setRoads(response.data.data.edges)
+  //     // })
     
-    }, []);
-  };
-  FetchNodes()
+  //   }, []);
+  // };
+  // FetchNodes()
 
   // UNCOMMENT IF SERVER IS DOWN
-  // setLandmarks(landmarks)
-  // setIntersections(intersections)
+  useEffect(()=>{
+    setLandmarks(landmarksRaw)
+    setIntersections(intersectionsRaw)
+    setRoads(edgesOld)
+  },[])
 
   // // console.log(nodesAll.nodes)
   // useEffect(()=>{
@@ -216,82 +224,88 @@ const Map = ({ children }) => {
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
 
+  // console.log(roads)
+  // const HandleEditModes = () => {
+  //   if(editMode === "add-landmarks")
+  //     return(<AddLandmarksFn handleAction={setEditData} setMode={setEditMode} />)
+  // }
 
-  const HandleEditModes = () => {
-    if(editMode === "add-landmarks")
-      return(<AddLandmarksFn handleAction={setEditData} />)
-  }
+  // console.log(editMode)
 
-  console.log(editMode)
-
-  const MapMarkerId = () =>{
-    let map = useMap()
+  // const MapMarkerId = () =>{
+  //   let map = useMap()
     
-    useEffect(()=>{
-      if(nodes.length > 0){
-        map.eachLayer((layer) => {
-          if(layer._latlng){
-            let corresLandmark = nodes?.find((loc) => layer._latlng.lat==loc.lat && layer._latlng.lng==loc.lon)
-            if (corresLandmark){
-              corresLandmark["leaflet_id"] = layer._leaflet_id
-            }
-          }
-        })
-      }
-      
-    },[nodes])
-  }
+  //   useEffect(()=>{
+  //     if(nodes.length > 0){
+  //       map.eachLayer((layer) => {
+  //         if(layer._latlng){
+  //           let corresLandmark = nodes?.find((loc) => layer._latlng.lat==loc.lat && layer._latlng.lng==loc.lon)
+  //           if (corresLandmark){
+  //             corresLandmark["leaflet_id"] = layer._leaflet_id
+  //           }
+  //         }
+  //       })
+  //     }
+  //   },[nodes])
+  // }
 
   // nodesAll.find(({id})=> id === label)
 
 
   // console.log(nodes)
   // console.log("roads", roads)
-  console.log("edges", edges)
+  // console.log("edges", edges)
 
 
   const RenderRoads = () => {
     const purpleOptions = { color: 'white', weight: 5 }
     const lightTraffic = {color: 'white'}
     return(
-      edges?.map((road)=>{
+      edgesOld?.map((road)=>{
         return(
           <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
         )
       })
-    )
-  }
-  
 
-  async function createNodes(){
+      // edges?.map((road)=>{
+      //   let allPositions = road.latitude.map((lat, index) => {
+      //     return {lat: lat, lng:road.longitude[index]}
+      //   })
+      //   return(
+      //     <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
+      //   )
+      // })
+    )
 
     
-  
-    console.log("HERE ")
-    console.log(nodes)
-    const response = await CreateNodes(nodes)
-
-    console.log(response)
-    if (response.data.status !== 201){
-      console.log("FAILED")
-    } else {
-      console.log("SUCCESS")
-    }
-
   }
 
-  async function createRoads(){
-    console.log("HERE ")
-    console.log(edges)
-    const response = await CreateRoads(edges)
+  // async function createNodes(){  
+  //   console.log("HERE ")
+  //   console.log(nodes)
+  //   const response = await CreateNodes(nodes)
 
-    console.log(response)
-    if (response.data.status !== 201){
-      console.log("FAILED")
-    } else {
-      console.log("SUCCESS")
-    }
-  }
+  //   console.log(response)
+  //   if (response.data.status !== 201){
+  //     console.log("FAILED")
+  //   } else {
+  //     console.log("SUCCESS")
+  //   }
+
+  // }
+
+  // async function createRoads(){
+  //   console.log("HERE ")
+  //   console.log(edges)
+  //   const response = await CreateRoads(edges)
+
+  //   console.log(response)
+  //   if (response.data.status !== 201){
+  //     console.log("FAILED")
+  //   } else {
+  //     console.log("SUCCESS")
+  //   }
+  // }
 
   
   
@@ -327,14 +341,14 @@ const Map = ({ children }) => {
           data={CebuMap.features}
           className="cebu-outline"
         />
-
-        {/* Renders the road */}
-        {/* <GeoJSON
-          data = {CebuRoads}
-          className="cebu-roads"
-        /> */}
         
         {/* Renders markers*/}
+        
+
+        {/* <DrawMap/> */}
+        {/* <MapMarkerId/> */}
+        {/* <HandleEditModes/> */}
+        <RenderRoads/>    
         {landmarks?.map((landmark) =>{
           return(
           <MarkerLayer
@@ -342,20 +356,14 @@ const Map = ({ children }) => {
           />)
         })}
 
-        {/* <DrawMap/> */}
-        <MapMarkerId/>
-        <RenderRoads/>    
-        <HandleEditModes/>
-        
-
 
       </MapContainer>
 
 
 
-      <button onClick={() => setEditMode("add-landmarks")}>
+      {/* <button onClick={() => setEditMode("add-landmarks")}>
         Add landmarks
-      </button>
+      </button> */}
       {/* <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
         Intersections mode toggle
       </button>

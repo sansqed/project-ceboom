@@ -1,4 +1,4 @@
-export const intersections = [
+export const intersectionsRaw = [
     {
         "id": "130",
         "name": "",

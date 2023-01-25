@@ -1,4 +1,4 @@
-export const landmarks = [
+export const landmarksRaw = [
     {
         "id": "2",
         "name": "Alcantara Municipal Hall",
@@ -1115,4 +1115,4 @@ export const landmarks = [
         "longitude": "123.8195272",
         "is_deleted": "0"
     }
-]
+];

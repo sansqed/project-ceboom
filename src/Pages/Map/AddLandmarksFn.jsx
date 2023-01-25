@@ -4,15 +4,13 @@ import "leaflet-geometryutil"
 import '@geoman-io/leaflet-geoman-free';  
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 import {MapContainer, Marker, Popup, GeoJSON, FeatureGroup, TileLayer, Circle, Polyline, useMap, useMapEvents} from "react-leaflet"
-import { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 
-const AddLandmarksFn = (handleAction) => {
+const AddLandmarksFn = (handleAction, setMode) => {
   console.log("add landmarks")
 
   const map = useMap()    
-
-
-
+  
   map.pm.enableDraw('Marker')
 
   map.on('pm:create', (e)=>{
@@ -51,6 +49,8 @@ const AddLandmarksFn = (handleAction) => {
     //   longitude: e.layer._latlng.lng
     // }
     // console.log(thisLandmark)
+
+    setMode("normal")
   })  
 };
 
