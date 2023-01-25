@@ -1,4 +1,5 @@
 import React from 'react'
+import { nodesAll } from '../../Assets/Data/intersection-data.js'
 import Select, { components } from 'react-select'
 import "./PathFinder.css"
 import { useState } from 'react'
@@ -8,31 +9,15 @@ import "../../Components/CustomButton/CustomButton";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 
 const PathFinder = ({ children }) => {
-    const data = [
-        {
-          id: 1,
-          label: "lahug brgy hall",
-          location: "cebu city",
-          type: "brgy hall"
-        },
-        {
-          id: 2,
-        label: "lahug center",
-          location: "cebu city",
-          type: "brgy hall"
-        },{
-          id: 3,
-          label: "se",
-          location: "cebu city",
-          type: "brgy hall"
-        }
-    ]
+    const [from, setFromLocation] = useState('Location A');
+    const [to, setToLocation] = useState('Location B');
+
     const fromLocation = (selectedOption) => {
-        setFromLocation(() => [selectedOption.id]);
+        setFromLocation(selectedOption.label);
     }
 
     const towardsDestination = (selectedOption,) => {
-        setToLocation(() => [selectedOption.id]);
+        setToLocation(selectedOption.label);
     }
 
     const colorStyles = {
@@ -51,8 +36,7 @@ const PathFinder = ({ children }) => {
       };
       
 
-    const [from, setFromLocation] = useState('a');
-    const [to, setToLocation] = useState('b');
+    
 
     console.log(from, to)
 
@@ -76,7 +60,7 @@ const PathFinder = ({ children }) => {
                             <Select
                                 className='fromsearch'
                                 components={{ DropdownIndicator }}
-                                options={data} 
+                                options={nodesAll.nodes.map(({name, id})=>({label: name, value: id}) )} 
                                 onChange={(fromLocation)}
                                 styles={colorStyles}
                             />
@@ -90,7 +74,7 @@ const PathFinder = ({ children }) => {
                         <Select 
                             className='tosearch'
                             components={{ DropdownIndicator }}
-                            options={data} 
+                            options={nodesAll.nodes.map(({name, id})=>({label: name, value: id}) )} 
                             onChange={towardsDestination} 
                             styles={colorStyles}
                         />
@@ -123,8 +107,8 @@ const PathFinder = ({ children }) => {
             <div className="pathfinder-recentsearches">
                 Recent Searches
                 <hr/>
-                <p> {from} </p>
-                <p> {to} </p>
+                <p> {from} TO</p>
+                <p> {to}</p>
             </div>
           
         </div>
