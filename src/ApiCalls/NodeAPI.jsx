@@ -3,7 +3,7 @@ import { postAPICall, getAPICall } from "./axiosMethodCalls";
 
 export const CreateNodes = async(nodes) => {
     try{
-        const response = await postAPICall("https://94ec-111-125-90-19.ap.ngrok.io/nodes/add", {
+        const response = await postAPICall("https://0f5e-202-92-153-180.ap.ngrok.io/nodes/add", {
             names: nodes.map(x => x.name),
             landmark_types: nodes.map(x => x.type == ""? "others": x.type),
             latitudes: nodes.map(x => x.lat),
@@ -18,7 +18,7 @@ export const CreateNodes = async(nodes) => {
 
 export const GetNodes = async() => {
     try{
-        const response = await postAPICall("https://ceboomapiproject.000webhostapp.com/public/nodes/get_all",{});
+        const response = await postAPICall("https://0f5e-202-92-153-180.ap.ngrok.io/nodes/get_all",{});
         return { data: response};
     } catch (error) {
         return { data: error };

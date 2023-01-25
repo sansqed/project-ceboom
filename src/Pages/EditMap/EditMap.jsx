@@ -3,23 +3,19 @@ import React, { useState } from 'react';
 import "../../Components/Navbar/Sidebar.css"
 import { NavLink, useLocation } from "react-router-dom"
 import CustomButton from "../../Components/CustomButton/CustomButton"
-import AddLandmarks from "../Map/AddLandmarks";
+import AddLandmarksSidebar from "./AddLandmarksSidebar";
+import PropTypes from "prop-types";
 
-
-const EditMap = ({ children }) => {
-  const [editMode, setEditMode] = useState("")
+const EditMap = (editMode, setEditMode, editData) => {
 
   if(editMode === "add-location")
-    return(<AddLandmarks/>)
+    return(<AddLandmarksSidebar 
+      addedLandmarks={editData}
+    />)
 
   const handleClick = (e) => {
-    const {name, value} = e.target
-    setEditMode(name)
+    setEditMode(e.target)
   }
-
-
-  
-  
 
   return(
     <div className="sidebar-submenu">
@@ -63,4 +59,11 @@ const EditMap = ({ children }) => {
   );
 };
 
-export default EditMap;
+EditMap.propTypes = {
+  editMode: PropTypes.string, 
+  setEditMode: PropTypes.func, 
+  editData: PropTypes.func
+}
+
+
+export default EditMap

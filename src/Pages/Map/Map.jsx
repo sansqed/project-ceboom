@@ -35,7 +35,7 @@ import {CreateRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {nodesAll} from "../../Assets/Data/intersection-data.js" 
 import {edges} from "../../Assets/Data/edges"
-import AddLandmarks from './AddLandmarks'
+import AddLandmarksFn from './AddLandmarksFn'
 
 const Map = ({ children }) => {
   const location = useLocation()
@@ -45,14 +45,19 @@ const Map = ({ children }) => {
   const [currRoad, setCurrRoad] = useState(null)
   const [currNode, setCurrNode] = useState(null)
   const [isClicked, setIsClicked] = useState(false)
-  const [mode, setMode] = useState('normal')
-
-  const [newLandmarks, setNewLandmarks] = useState([])
+  const [editMode, setEditMode] = useState('normal')
+  const [editData, setEditData] = useState([])
 
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
-      return(<EditMap/>)
+      return(
+        <EditMap  
+          editMode={editMode}
+          setEditMode={(e) => setEditMode(e)}
+          editData={editData}
+        />
+      )
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
@@ -94,73 +99,74 @@ const Map = ({ children }) => {
 
   // },[nodesAll])
 
+
   console.log("nodes", nodesAll)
 
   // HANDLES EDITING AND DRAWING OF MAP
   const DrawMap = () => {
     let map = useMap()  
 
-    if(mode==="intersection"){
-      map.pm.enableDraw('Marker')
-      console.log("drawing marker")
+    // if(mode==="intersection"){
+    //   map.pm.enableDraw('Marker')
+    //   console.log("drawing marker")
 
-      map.on('pm:create', (e) => {
-        let thisInter = {
-          leaflet_id: e.layer._leaflet_id,
-          landmark_type: "intersection",
-          location: null,
-          latitude: e.layer._latlng.lat,
-          longitude: e.layer._latlng.lng,
-        }
+    //   map.on('pm:create', (e) => {
+    //     let thisInter = {
+    //       leaflet_id: e.layer._leaflet_id,
+    //       landmark_type: "intersection",
+    //       location: null,
+    //       latitude: e.layer._latlng.lat,
+    //       longitude: e.layer._latlng.lng,
+    //     }
 
-        setCurrNode(thisInter)
-      })
-    }
+    //     setCurrNode(thisInter)
+    //   })
+    // }
 
-    else if (mode === "roads"){
-      map.pm.enableDraw('Line')
-      console.log("drawing line")
+    // else if (mode === "roads"){
+    //   map.pm.enableDraw('Line')
+    //   console.log("drawing line")
 
-      map.on('pm:create', (e) => {
-        console.log(e)
-        var lastVertex = e.layer._latlngs.at(-1)
-        var firstVertex = e.layer._latlngs[0]
-        var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-        var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
-        if (endMarker && startMarker){
-          var newRoad = {
-            leaflet_id: e.layer._leaflet_id,  
-            endPointA: startMarker.id,
-            endpointB: endMarker.id, 
-            latlngs: e.layer._latlngs
-          }
-          setCurrRoad(newRoad)
-        } else {
-          e.target.removeLayer(e.layer)
-        }
-      })
+    //   map.on('pm:create', (e) => {
+    //     console.log(e)
+    //     var lastVertex = e.layer._latlngs.at(-1)
+    //     var firstVertex = e.layer._latlngs[0]
+    //     var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
+    //     var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+    //     if (endMarker && startMarker){
+    //       var newRoad = {
+    //         leaflet_id: e.layer._leaflet_id,  
+    //         endPointA: startMarker.id,
+    //         endpointB: endMarker.id, 
+    //         latlngs: e.layer._latlngs
+    //       }
+    //       setCurrRoad(newRoad)
+    //     } else {
+    //       e.target.removeLayer(e.layer)
+    //     }
+    //   })
 
-      map.on('pm:remove', (e) => {
-        console.log(e)
-        let targetId = e.layer._leaflet_id
+      // map.on('pm:remove', (e) => {
+      //   console.log(e)
+      //   let targetId = e.layer._leaflet_id
         
-        let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
+      //   let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
   
-        if(toRemove !== -1){
-          roads.splice(toRemove,1)
-          console.log(roads)
-          // return
-        }
-      });
+      //   if(toRemove !== -1){
+      //     roads.splice(toRemove,1)
+      //     console.log(roads)
+      //     // return
+      //   }
+      // });
 
-      console.log(roads)
-    }
+      // console.log(roads)
+    // }
     
 
     // ADDS EDIT CONTROLS
-    map.pm.addControls({  
-      position: 'topright',  
-    });  
+    // map.pm.addControls({  
+    //   position: 'topright',  
+    // });  
 
     // ON CREATE OF POLYLINE, CHECK IF START AND END POINTS ARE MARKERS
     // map.on('pm:create', e => {
@@ -200,11 +206,20 @@ const Map = ({ children }) => {
     
 
     
-    return null
+  //   return null
   }
 
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
+
+
+  const HandleEditModes = () => {
+    if(editMode === "add-landmarks")
+      return(<AddLandmarksFn handleAction={setEditData} />)
+  }
+
+  console.log(editMode)
+
   const MapMarkerId = () =>{
     let map = useMap()
     
@@ -231,6 +246,7 @@ const Map = ({ children }) => {
 
   const RenderRoads = () => {
     const purpleOptions = { color: 'white', weight: 5 }
+    const lightTraffic = {color: 'white'}
     return(
       edges?.map((road)=>{
         return(
@@ -282,7 +298,7 @@ const Map = ({ children }) => {
     }, []);
   };
 
-  // FetchNodes()
+  FetchNodes()
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -325,7 +341,7 @@ const Map = ({ children }) => {
         
         {/* Renders markers*/}
         {nodesAll.nodes?.map((landmark) =>{
-          // console.log(landmark)
+
           return(
           <MarkerLayer
             data = {landmark}
@@ -335,14 +351,15 @@ const Map = ({ children }) => {
         <DrawMap/>
         <MapMarkerId/>
         <RenderRoads/>    
-        {mode==="add-landmarks"? <AddLandmarks/>:<></>}
+        <HandleEditModes/>
+        
 
 
       </MapContainer>
 
 
 
-      <button onClick={() => setMode("add-landmarks")}>
+      <button onClick={() => setEditMode("add-landmarks")}>
         Add landmarks
       </button>
       {/* <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
