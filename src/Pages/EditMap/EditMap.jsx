@@ -3,23 +3,10 @@ import React, { useState } from 'react';
 import "../../Components/Navbar/Sidebar.css"
 import { NavLink, useLocation } from "react-router-dom"
 import CustomButton from "../../Components/CustomButton/CustomButton"
-import AddLandmarks from "../Map/AddLandmarks";
+import AddLandmarksSidebar from "./AddLandmarksSidebar";
+import PropTypes from "prop-types";
 
-
-const EditMap = ({ children }) => {
-  const [editMode, setEditMode] = useState("")
-
-  if(editMode === "add-location")
-    return(<AddLandmarks/>)
-
-  const handleClick = (e) => {
-    const {name, value} = e.target
-    setEditMode(name)
-  }
-
-
-  
-  
+const EditMap = ({children}) => {
 
   return(
     <div className="sidebar-submenu">
@@ -32,12 +19,7 @@ const EditMap = ({ children }) => {
         <p class="ridge"> 
           <div class = "header">Landmarks</div>
           <div className = "wrapper">
-            {/* <button class="button" onClick={e=>handleClick(e)}>Add</button> */}
-            <CustomButton
-              title="add"
-              name="add-location"
-              onClick={(e)=>handleClick(e)}
-            />
+            <button class="button"><NavLink to={"#addlandmark"}>Add</NavLink></button>
             <button class="button">Edit</button>
             <button class="button">Delete</button>
           </div>
@@ -63,4 +45,11 @@ const EditMap = ({ children }) => {
   );
 };
 
-export default EditMap;
+EditMap.propTypes = {
+  editMode: PropTypes.string, 
+  setEditMode: PropTypes.func, 
+  editData: PropTypes.func
+}
+
+
+export default EditMap

@@ -64,4 +64,26 @@
     justify-content: left;
     font-size: 2vh;
     cursor: pointer;
+    transition: all 0.5s;
+}
+
+.sidebar-bottom-section {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    padding-left: 0.5vh;
+    width: 100%;
+    align-items: center;
+    justify-content: left;
+    gap: 10px;
+}
+
+.sidebar-bottom-section-link-text {
+    z-index: 10000020;
+    align-items: center;
+    justify-content: left;
+    font-size: 2vh;
+    cursor: pointer;
+    transition: all 0.5s;
+    
 }

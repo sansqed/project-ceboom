@@ -34,52 +34,57 @@ publicMarketIcon = new markerIcon({iconUrl: require('../../Assets/icons/PublicMa
 restaurantIcon = new markerIcon({iconUrl: require('../../Assets/icons/Restaurant.png')}),
 schoolIcon = new markerIcon({iconUrl: require('../../Assets/icons/School.png')}),
 templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')}),
-touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')})
+touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')}),
+defaultIcon = new markerIcon({iconUrl: require('../../Assets/icons/DefaultIcon.png')}),
+startIcon = new markerIcon({iconUrl: require('../../Assets/icons/Start.png')}),
+endIcon = new markerIcon({iconUrl: require('../../Assets/icons/End.png')})
 
 function locationChecker(location){
-    // console.log(location)
+    console.log(location)
     if(location == undefined){
         // console.log("bobo")
     }
 
-    if(location === "Hospitals"){
+    if(location === "Hospital"){
         return hospitalIcon
-    }else if(location === "Health Centers"){
+    }else if(location === "Health Center"){
         return healthCenterIcon
-    }else if(location === "Pharmacies"){
+    }else if(location === "Pharmacy"){
         return hospitalIcon
-    }else if(location === "Barangay Halls"){
+    }else if(location === "Barangay Hall"){
         return barangayHallIcon
-    }else if(location === "Malls/Department Stores"){
+    }else if(location === "Mall/Department Store"){
         return mallDepartmentIcon
-    }else if(location === "Markets"){
+    }else if(location === "Market"){
         return publicMarketIcon
-    }else if(location === "City Halls"){
+    }else if(location === "City Hall"){
         return cityHallIcon
-    }else if(location === "Schools"){
+    }else if(location === "School"){
         return schoolIcon
-    }else if(location === "Bars"){
+    }else if(location === "Bar"){
         return barIcon
-    }else if(location === "Police Stations"){
+    }else if(location === "Police Station"){
         return policeStationIcon
-    }else if(location === "Fire Stations"){
+    }else if(location === "Fire Station"){
         return fireStationIcon
-    }else if(location === "Churches"){
+    }else if(location === "Church"){
         return churchIcon
-    }else if(location === "Restaurants"){
+    }else if(location === "Restaurant"){
         return restaurantIcon
-    }else if(location === "Tourist Spots" || location === "Tourist spots"){
+    }else if(location === "Tourist Spot"){
         return touristSpotIcon
-    }else if(location === "Cemetaries"){
+    }else if(location === "Cemetery"){
         return cemetaryIcon
-    }else if(location === "Police Stations"){
+    }else if(location === "Police Station"){
         return policeStationIcon
-    }else if(location === "Municipal Halls" || location === "Municipal halls"){
+    }else if(location === "Municipal Hall"){
         return municipalHallIcon
-    }else if(location === "Ports"){
+    }else if(location === "Port"){
         return portIcon
+    }else if(location === "Bus Terminal"){
+        return busStationIcon
     }else{
-        return airportIcon
+        return defaultIcon
     }
 }
 
@@ -88,6 +93,33 @@ const MarkerLayer = (data) => {
     // return(<></>)
     if (data != undefined){
         // console.log(data.data.landmark_type)
+    
+    //comment out up until else to not display intersections
+    if(data.data.landmark_type == "Intersection"){
+        return null
+    }
+    else if(data.data.landmark_type == "Start"){
+        return(
+            <div>
+                <Marker
+                    position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
+                    icon = {startIcon}
+                >
+                </Marker>
+            </div>
+        )
+    }else if(data.data.landmark_type == "End"){
+        return(
+            <div>
+                <Marker
+                    position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
+                    icon = {endIcon}
+                >
+                </Marker>
+            </div>
+        )
+    }else
+    {
         return(
             <div>
                 <Marker 
@@ -103,6 +135,7 @@ const MarkerLayer = (data) => {
                 </Marker>
             </div>
         )
+    }
     }
 }
 
