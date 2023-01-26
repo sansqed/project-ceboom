@@ -34,7 +34,7 @@ import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import {CreateRoads, GetRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {nodesAll} from "../../Assets/Data/intersection-data.js" 
-import AddLandmarksFn from './AddLandmarksFn'
+import {AddLandmarksFn} from './AddLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
 
 import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
