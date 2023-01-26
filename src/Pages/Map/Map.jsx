@@ -199,28 +199,6 @@ const Map = ({ children }) => {
     
     const response = await CreateNodes([data])
 
-    // console.log(response)
-    // if (response.data.status !== 201){
-    //   console.log("FAILED")
-    // } else {
-    //   console.log("SUCCESS")
-    // }
-
-    
-    // const {name, value, id} = e.target
-
-    // if(tempData?.id == id){
-
-    //   setTempData((prev) => ({...prev, name:value}))
-
-    // } else {
-    //   setTempData({
-    //     id: id,
-    //     name: value
-    //   })
-    // }
-
-    // console.log(tempData)
     
   }
 
@@ -228,10 +206,6 @@ const Map = ({ children }) => {
 
   const HandleMode = () => {
     const map = useMap()
-    // map.pm.addControls({  
-    //   position: 'topright',  
-    //   // drawCircle: false,  
-    // });  
 
     map.closePopupOnClick = false
 
@@ -304,98 +278,9 @@ const Map = ({ children }) => {
     }
   }
 
-  
-  // // console.log(nodesAll.nodes)
-  // useEffect(()=>{
-  //   setNodes(nodesAll.nodes)
-  // },[])
-
-  // // handles addition of road
-  // useEffect(()=>{
-  //   if (currRoad != null){
-  //     setRoads((prev) => [...prev, currRoad])
-  //   }
-  // },[currRoad])
-
-  // useEffect(()=>{
-  //   if (currNode != null){
-  //     setNodes((prev) => [...prev, currNode])
-  //   }
-  // },[currNode])
-
-  // HANDLES EDITING AND DRAWING OF MAP
-  const DrawMap = () => {
-    let map = useMap()  
-
-    // if(mode==="intersection"){
-    //   map.pm.enableDraw('Marker')
-    //   console.log("drawing marker")
-
-    //   map.on('pm:create', (e) => {
-    //     let thisInter = {
-    //       leaflet_id: e.layer._leaflet_id,
-    //       landmark_type: "intersection",
-    //       location: null,
-    //       latitude: e.layer._latlng.lat,
-    //       longitude: e.layer._latlng.lng,
-    //     }
-
-    //     setCurrNode(thisInter)
-    //   })
-    // }
-
-    // else if (mode === "roads"){
-    //   map.pm.enableDraw('Line')
-    //   console.log("drawing line")
-
-    //   map.on('pm:create', (e) => {
-    //     console.log(e)
-    //     var lastVertex = e.layer._latlngs.at(-1)
-    //     var firstVertex = e.layer._latlngs[0]
-    //     var endMarker =  allNodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-    //     var startMarker = allNodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
-    //     if (endMarker && startMarker){
-    //       var newRoad = {
-    //         leaflet_id: e.layer._leaflet_id,  
-    //         endPointA: startMarker.id,
-    //         endpointB: endMarker.id, 
-    //         latlngs: e.layer._latlngs
-    //       }
-    //       CALL API ---------------------------
-    //       createRoads(newRoad)
-    //     } else {
-    //       e.target.removeLayer(e.layer)
-    //     }
-    //   })
-      map.pm.enableGlobalRemovalMode()
-      map.on('pm:remove', (e) => {
-        console.log(e)
-        let targetId = e.layer._leaflet_id
-        
-        let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
-  
-        if(toRemove !== -1){
-          roads.splice(toRemove,1)
-          console.log(roads)
-          // return
-        }
-      });
-
-      console.log(roads)
-    // }
-    
-
-    // ADDS EDIT CONTROLS
-    // map.pm.addControls({  
-    //   position: 'topright',  
-    // });  
-    
-    return null
-  }
 
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
-
   const RenderRoads = () => {
     let map = useMap()
     const purpleOptions = { color: 'white', weight: 5 }
@@ -435,26 +320,7 @@ const Map = ({ children }) => {
 
         )
       })
-
-  
-      
-      // edgesOld?.map((road)=>{
-      //   return(
-      //     <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
-      //   )
-      // })
-
-      // edges?.map((road)=>{
-      //   let allPositions = road.latitude.map((lat, index) => {
-      //     return {lat: lat, lng:road.longitude[index]}
-      //   })
-      //   return(
-      //     <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
-      //   )
-      // })
-    )
-
-    
+    )    
   }
 
   const RenderShortPath = () => {
@@ -492,36 +358,6 @@ const Map = ({ children }) => {
           data={{ landmark_type: "End", latitude: path.at(-1).latitudes.at(-1), longitude: path.at(-1).longitudes.at(-1)}}
         />)
   }
-
-  // < MarkerLayer data={landmark_type: "Start"}/>
-
-  // async function createNodes(){  
-  //   console.log("HERE ")
-  //   console.log(nodes)
-  //   const response = await CreateNodes(nodes)
-
-  //   console.log(response)
-  //   if (response.data.status !== 201){
-  //     console.log("FAILED")
-  //   } else {
-  //     console.log("SUCCESS")
-  //   }
-
-  // }
-
-  // async function createRoads(){
-  //   console.log("HERE ")
-  //   console.log(edges)
-  //   const response = await CreateRoads(edges)
-
-  //   console.log(response)
-  //   if (response.data.status !== 201){
-  //     console.log("FAILED")
-  //   } else {
-  //     console.log("SUCCESS")
-  //   }
-  // }
-
   console.log(allNodes)
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
@@ -558,20 +394,13 @@ const Map = ({ children }) => {
           data={CebuMap.features}
           className="cebu-outline"
         />
-        
-        {/* Renders markers*/}
-        
 
-        {/* <DrawMap/> */}
         
         <MapMarkerId/>
-        {/* <HandleEditModes/> */}
-
         <HandleMode/>
         <RenderRoads/>
         {subpage==="#pathfinder"? 
           <div>
-
             <RenderShortPath/>    
             <RenderStartMarker/>
             <RenderEndMarker/>
@@ -594,29 +423,7 @@ const Map = ({ children }) => {
         })}
 
 
-      </MapContainer>
-
-
-      {/* <input onChange={e}>test</input> */}
-      {/* <button onClick={() => setEditMode("add-landmarks")}>
-        Add landmarks
-      </button> */}
-      {/* <button onClick={() => mode === "intersection"? setMode("normal"):setMode("intersection")}>
-        Intersections mode toggle
-      </button>
-      <button onClick={() => setMode("roads")}>
-        roads mode 
-      </button>
-      <button onClick={() => FetchNodes()}>
-        Fetch landmarks
-      </button>
-      <button onClick={() => createNodes()}>
-        Submit Nodes to API
-      </button>
-      <button onClick={()=> createRoads()}>
-        Submit Roads to API
-      </button> */}
-      
+      </MapContainer>      
       
       </div>
   )
