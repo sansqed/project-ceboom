@@ -4,22 +4,47 @@ import SearchBar from "./SearchBar.jsx"
 import TrafficStatus from "./UpdateStatus";
 import { Button, Grid } from "@mui/material"
 import LocationOnIcon from '@mui/icons-material/LocationOn'
+import CloseIcon from '@mui/icons-material/Close';
 // Need to import json file including location data
 
 const UpdateTraffic = ({children}) => {
   const [trafficstatusOpen, setstatOpen] = useState(false);
   const updatestatusToggle = () => {console.log("shet")}
+  const [isOpen, setIsOpen] = useState(true);
+  const toggle = () => setIsOpen(!isOpen);
 
   return(
-      <div className="sidebar-submenu">
-        <TrafficStatus trafficstatusOpen = {trafficstatusOpen} trafficstatusClose = {updatestatusToggle}/>
-        <div className = "traffic-header">
-          <h1 className = "updatetraffic">UPDATE TRAFFIC</h1>
-          <br></br>
-        </div>
-        <div className = "traffic-updateroute"> Select Route to Update </div>
+      <div className="sidebar-submenu-traffic" style={{width: isOpen? "55vh" : "0vh"}}>
+        <div className="updating-traffic">
+        {/* <TrafficStatus trafficstatusOpen = {trafficstatusOpen} trafficstatusClose = {updatestatusToggle}/> */}
+          <div className = "traffic-header">
+            <div className = "updatetraffic">UPDATE TRAFFIC</div>
+            <CloseIcon className="traffic-close-icon" onClick={toggle}></CloseIcon>
+          </div>
+              <div className = "traffic-updateroute"> Select Route to Update </div>
+              <div className = "traffic-updateroutedesc">Select a road in the map to update traffic information</div>
+              <div className= "update-name-container">
+                <div className= "road-name">Name</div>
+              </div>
+              <div className= "traffic-status-container">
+              <div className = "traffic-status">
+                <p className = "status-label">Current Status:</p>
+                <div className = "traffic-statbuttonwrapper">
+                  <div className = "traffic-curstatbutton-light"></div>
+                  <div className = "traffic-statusdesc-light">Light Traffic</div>
+                  </div>
+                  <p className = "status-label">Updated Status:</p>
+                <div className = "traffic-statbuttonwrapper">
+                  <div className = "traffic-curstatbutton-heavy"></div>
+                  <div className = "traffic-statusdesc-heavy">Heavy Traffic</div>
+                </div>
+                </div>
+              </div>
+        {/* <div className = "traffic-updateroute"> Select Route to Update </div>
         <div className = "traffic-searchloc">
           <div className = "traffic-sourceloc">
+            <div className = "traffic-from">FROM:</div>
+            <SearchBar placeholder = "Choose source location..."/>
             <div className = "traffic-sourcelocdesc">
               Select a road in the map to update traffic Information
             </div>
@@ -46,8 +71,8 @@ const UpdateTraffic = ({children}) => {
             <div className = "traffic-statusdesc">Heavy Traffic</div>
           </div>
           <button onClick = {updatestatusToggle} className = "traffic-updatestatbutton">UPDATE TRAFFIC INFORMATION</button>
+        </div> */}
         </div>
-
       </div>
     );
   }
