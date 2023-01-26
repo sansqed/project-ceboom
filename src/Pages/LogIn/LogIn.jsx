@@ -41,16 +41,17 @@ const LogIn = ({ children }) => {
       toast('Hello World');
       if (response.data.status !== 200) {
           console.log(response)
-          toast.error(response.data.messages.error)
+          // toast.error(response.data.messages.error)
 
       } else {
           toast.success()
           // temp lmaoooo
-          var usr = {};
-          usr["username"] = loginCredentials.username; 
-          localStorage.setItem("username", JSON.stringify(usr));
+          // var usr = {};
+          // usr["username"] = loginCredentials.username; 
+          localStorage.setItem("user", loginCredentials.username)
+          localStorage.setItem("user_id", JSON.stringify(response.data.data.id));
           localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
-          console.log("success")
+          // console.log("success")
           console.log(response)
         //setIsLoading(false);
         // localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id).slice(1,-1));
