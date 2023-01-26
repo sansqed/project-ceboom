@@ -266,6 +266,7 @@ const Map = ({ children }) => {
   // leaflet ID is essential for rendering
 
   const RenderRoads = () => {
+    let map = useMap()
     const purpleOptions = { color: 'white', weight: 5 }
     const lightTraffic = {color: 'white'}
     return(
@@ -274,13 +275,34 @@ const Map = ({ children }) => {
         let allPositions = road.latitudes.map((latitude,index) => 
           [latitude,road.longitudes[index]])
         let id = +road.id
+
         
         return(
-          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}>
-          <Popup>
-            test
-          </Popup>
-          </Polyline>
+          <FeatureGroup>
+            {subpage==="#updatetraffic"? 
+              <Popup>
+              <div className = "changestatus">
+                <b>Change Status to:</b>
+                <div className = "tbutton-container">
+                  <button className = "lightwrapper">
+                    <div className = "trafficstatus-light"></div>
+                    <small className = "light">Light</small>    
+                  </button>
+                  <button className = "modwrapper">
+                    <div className = "trafficstatus-moderate"></div>
+                    <small className = "moderate">Moderate</small>  
+                  </button>
+                  <button className = "heavywrapper">
+                    <div className = "trafficstatus-heavy"></div>
+                    <small className = "heavy">Heavy</small>   
+                  </button>
+                </div>
+              </div>
+            </Popup>
+            :<></>}
+          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}/>
+          </FeatureGroup>
+
         )
       })
 
