@@ -39,13 +39,20 @@ const LogIn = ({ children }) => {
       // API response
       console.log(response)
       toast('Hello World');
-      if (response.data.status !== 200) {
+      if (response.data.data.status !== 200) {
           console.log(response)
-          toast.error(response.data.messages.error)
+          // toast.error(response.data.messages.error)
 
       } else {
           toast.success()
-          console.log("success")
+          // temp lmaoooo
+          // var usr = {};
+          // usr["username"] = loginCredentials.username; 
+          localStorage.setItem("user", loginCredentials.username)
+          localStorage.setItem("user_id", JSON.stringify(response.data.data.id));
+          localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
+          window.location.href= "/map";
+          // console.log("success")
           console.log(response)
         //setIsLoading(false);
         // localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id).slice(1,-1));
@@ -56,7 +63,7 @@ const LogIn = ({ children }) => {
   }
 
   return(
-    <div className="landing-background">
+    <div className="login-background">
       <div className="row">
           <img alt="icon" src={icon} className="icon-login" />
           <div className="log-in-text-1"> Know your Destination, </div> 
@@ -108,6 +115,11 @@ const LogIn = ({ children }) => {
             className="signup-btn"
             type="submit"
             title="Sign Up Now"
+            // please change the link later, i dunno how to do this properly
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href='/registration';
+            }}
           />
         </a>
       </div>

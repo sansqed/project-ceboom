@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {Marker, Popup, Tooltip, useMap} from "react-leaflet"
-import L, { latLng } from "leaflet"
+import L, { latLng, Layer } from "leaflet"
 
 import './Markers.css'
 
@@ -126,12 +126,12 @@ const MarkerLayer = (data) => {
                     position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
                     icon = {locationChecker(data.data.landmark_type)}
                 >
-                    <Tooltip className="marker-tooltip">
+                    {/* <Tooltip className="marker-tooltip">
                         <p>{data.data.id}</p>
                         <b className="marker-name">{data.data.name}</b>
                         <p className="marker-type">{data.data.landmark_type}</p>
                         <p className="marker-location">{data.data.location}</p>
-                    </Tooltip>
+                    </Tooltip> */}
                 </Marker>
             </div>
         )

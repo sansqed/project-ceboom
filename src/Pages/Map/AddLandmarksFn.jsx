@@ -5,7 +5,7 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 import { useMap } from "react-leaflet"
 
 
-const AddLandmarksFn = (setCurrNode, editData) => {
+export const AddLandmarksFn = (setCurrNode, editData) => {
   const map = useMap()
   map.pm.enableDraw('Marker',{continueDrawing:false})
 
@@ -27,5 +27,3 @@ const AddLandmarksFn = (setCurrNode, editData) => {
     map.removeLayer(thisLayer)
   })
 };
-
-export default AddLandmarksFn;

@@ -17,7 +17,7 @@ import MarkerLayer from "../../Components/Markers/Markers"
 import L, { latLng } from "leaflet"
 
 import { Navigate, useLocation } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 import EditMap from "../EditMap/EditMap"
 import Search from "../Search/Search"
@@ -31,23 +31,23 @@ import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
 import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
-import {CreateRoads, GetRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
-import {nodesAll} from "../../Assets/Data/intersection-data.js" 
-import AddLandmarksFn from './AddLandmarksFn'
+import {AddLandmarkFn, EditLandmarkFn, RemoveLandmarkFn} from './EditLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
-
+import { AddRoads } from './AddRoads'
 import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
 import {landmarksRaw} from '../../Assets/Data/landmarksRaw'
-import {edgesOld} from "../../Assets/Data/edgesOld"
 import { edges } from '../../Assets/Data/edges'
-
+import { GetRoads } from '../../ApiCalls/RoadsAPI'
 import { locationChecker } from '../../Components/Markers/Markers'
+
+import Select, { components } from 'react-select'
+import { landmarkAll } from '../../Assets/Data/landmarktype-data.js'
+import { locationsAll } from '../../Assets/Data/location-data.js'
 
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
-  const [nodes, setNodes] = useState([]);
   const [intersections, setIntersections] = useState([])
   const [landmarks, setLandmarks] = useState([])
   const [roads, setRoads] = useState([])
@@ -56,6 +56,9 @@ const Map = ({ children }) => {
   const [isClicked, setIsClicked] = useState(false)
   const [editData, setEditData] = useState([])
   const [tempData, setTempData] = useState()
+  const [editedNodes, setEditedNodes] = useState({created:[], deleted:[], edited:[]})
+  const [editedEdges, setEditedEdges] = useState({created:[], deleted:[], edited:[]})
+  const [allNodes, setAllNodes] = useState([])
 
 
   // show path
@@ -86,15 +89,16 @@ const Map = ({ children }) => {
   //         setIntersections(response.data.data.intersections)
   //       });
 
-  //     // GetRoads().then((response)=>{
-  //       // console.log(response)
-  //       // setRoads(response.data.data.edges)
-  //     // })
+  //     GetRoads().then((response)=>{
+  //       console.log(response)
+  //       setRoads(response.data.data.edges)
+  //     })
     
   //   }, []);
   // };
   // FetchNodes()
-
+  
+  
   // UNCOMMENT IF SERVER IS DOWN
   useEffect(()=>{
     setLandmarks(landmarksRaw)
@@ -102,25 +106,89 @@ const Map = ({ children }) => {
     setRoads(edges)
   },[])
 
-  console.log(editData)
 
+  useEffect(() => {
+    setAllNodes(landmarks.concat(intersections))
+  },[landmarks, intersections]);
+  
+  async function createNodes(node){  
+    const response = await CreateNodes([node])
 
-
-  const handleEditChange = (e) => {
-    const {name, value, id} = e.target
-
-    if(tempData?.id == id){
-
-      setTempData((prev) => ({...prev, name:value}))
-
+    console.log(response)
+    if (response.data.status !== 201){
+      console.log("FAILED")
     } else {
-      setTempData({
-        id: id,
-        name: value
-      })
+      console.log("SUCCESS")
     }
 
-    console.log(tempData)
+  }
+
+  const MapMarkerId = () =>{
+    let map = useMap()
+
+    useEffect(()=>{
+      if(landmarks.length > 0){
+        map.eachLayer((layer) => {
+          if(layer._latlng){
+            let index = landmarks?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+            if (index != -1){
+              landmarks[index]["leaflet_id"] = layer._leaflet_id
+            } else { 
+              index = intersections?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+              if (intersections != -1) {
+                intersections["leaflet_id"] = layer._leaflet_id
+              } 
+              // else {
+              //   index = roads?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+              //   if (roads != -1){
+              //     roads["leaflet_id"] = layer._leaflet_id
+              //   }
+              // }
+            } 
+          }
+        })
+      }
+
+    },[landmarks,intersections,roads])
+  }
+      console.log(landmarks,intersections)
+      console.log(editData)
+
+  const nameIn = useRef(null)
+  const typeIn = useRef(null)
+  const locationIn = useRef(null)
+
+  async function handleEditChange (data) {
+    data.name = nameIn.current.value
+    data.location = locationIn.current.value
+    data.landmark_type = typeIn.current.value
+
+    console.log([data])
+    
+    const response = await CreateNodes([data])
+
+    // console.log(response)
+    // if (response.data.status !== 201){
+    //   console.log("FAILED")
+    // } else {
+    //   console.log("SUCCESS")
+    // }
+
+    
+    // const {name, value, id} = e.target
+
+    // if(tempData?.id == id){
+
+    //   setTempData((prev) => ({...prev, name:value}))
+
+    // } else {
+    //   setTempData({
+    //     id: id,
+    //     name: value
+    //   })
+    // }
+
+    // console.log(tempData)
     
   }
 
@@ -137,7 +205,7 @@ const Map = ({ children }) => {
 
     
     if(subpage==="#addlandmark?adding"){
-      AddLandmarksFn(setCurrNode, editData)
+      AddLandmarkFn(setCurrNode, editData)
       return(
         <div> 
           <Navigate to={"#addlandmark"}/>
@@ -155,19 +223,30 @@ const Map = ({ children }) => {
       )
     } 
     
-    else if(subpage==="#addlandmark")
+    else if(subpage==="#addlandmark"){
+
       return(
         <div>
           {editData?.map((data, index)=>(
           
           <FeatureGroup >
-            <Popup maxWidth={200} interactive={true} closeOnEscapeKey={false} autoClose={false} closeOnClick={false}>
+            <Popup maxWidth={200} keepInView={true} interactive={true} closePopupOnClick={true} closeOnEscapeKey={false} autoClose={false} closeOnClick={false}>
               <label>Name</label>
-              <input id={data.leaflet_id} name='name' autoComplete="off" onChange={e => handleEditChange(e)}/>
+              <input id={data.leaflet_id} ref={nameIn} name='name' autoComplete="off"/>
               <label>Type of Landmark</label>
-              <input id={data.leaflet_id} name='landmark_type' autoComplete='off' onChange={e => handleEditChange(e)}/>
+              {/* <input id={data.leaflet_id} name='landmark_type' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
+							<Select
+								className='landmark_type'
+								options={landmarkAll.landmark.map(({label, value})=>({label, value}) )}
+								onChange={e => handleEditChange(e)}
+							/>
               <label>Location</label>
-              <input id={data.leaflet_id} name='location' autoComplete='off' onChange={e => handleEditChange(e)}/>
+              {/* <input id={data.leaflet_id} name='location' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
+							<Select
+								className='location'
+								options={locationsAll.location.map(({label, value})=>({label, value}) )}
+								onChange={e => handleEditChange(e)}
+							/>
               <input id={data.leaflet_id} name={"submit-addlandmark"} type={"submit"} onClick={e=>handleEditChange(e)}/>
             </Popup>
             <Marker 
@@ -179,8 +258,21 @@ const Map = ({ children }) => {
           ))}
         </div>
       )
+    }
+
+    else if (subpage == "#removelandmark"){
+      RemoveLandmarkFn(landmarks, editedNodes, setEditedNodes)
+    }
+    else if (subpage == "#editlandmark"){
+      EditLandmarkFn(landmarks, editedNodes, setEditedNodes)
+    }
+
+    else if (subpage == "#addroads"){
+      AddRoads(allNodes)
+    }
   }
 
+  
   // // console.log(nodesAll.nodes)
   // useEffect(()=>{
   //   setNodes(nodesAll.nodes)
@@ -228,8 +320,8 @@ const Map = ({ children }) => {
     //     console.log(e)
     //     var lastVertex = e.layer._latlngs.at(-1)
     //     var firstVertex = e.layer._latlngs[0]
-    //     var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-    //     var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+    //     var endMarker =  allNodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
+    //     var startMarker = allNodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
     //     if (endMarker && startMarker){
     //       var newRoad = {
     //         leaflet_id: e.layer._leaflet_id,  
@@ -237,7 +329,8 @@ const Map = ({ children }) => {
     //         endpointB: endMarker.id, 
     //         latlngs: e.layer._latlngs
     //       }
-    //       setCurrRoad(newRoad)
+    //       CALL API ---------------------------
+    //       createRoads(newRoad)
     //     } else {
     //       e.target.removeLayer(e.layer)
     //     }
@@ -272,6 +365,7 @@ const Map = ({ children }) => {
   // leaflet ID is essential for rendering
 
   const RenderRoads = () => {
+    let map = useMap()
     const purpleOptions = { color: 'white', weight: 5 }
     const lightTraffic = {color: 'white'}
     return(
@@ -280,13 +374,34 @@ const Map = ({ children }) => {
         let allPositions = road.latitudes.map((latitude,index) => 
           [latitude,road.longitudes[index]])
         let id = +road.id
+
         
         return(
-          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}>
-          <Popup>
-            test
-          </Popup>
-          </Polyline>
+          <FeatureGroup>
+            {subpage==="#updatetraffic"? 
+              <Popup>
+              <div className = "changestatus">
+                <b>Change Status to:</b>
+                <div className = "tbutton-container">
+                  <button className = "lightwrapper">
+                    <div className = "trafficstatus-light"></div>
+                    <small className = "light">Light</small>    
+                  </button>
+                  <button className = "modwrapper">
+                    <div className = "trafficstatus-moderate"></div>
+                    <small className = "moderate">Moderate</small>  
+                  </button>
+                  <button className = "heavywrapper">
+                    <div className = "trafficstatus-heavy"></div>
+                    <small className = "heavy">Heavy</small>   
+                  </button>
+                </div>
+              </div>
+            </Popup>
+            :<></>}
+          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}/>
+          </FeatureGroup>
+
         )
       })
 
@@ -376,7 +491,7 @@ const Map = ({ children }) => {
   //   }
   // }
 
-  
+  console.log(allNodes)
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
@@ -417,8 +532,10 @@ const Map = ({ children }) => {
         
 
         {/* <DrawMap/> */}
-        {/* <MapMarkerId/> */}
+        
+        <MapMarkerId/>
         {/* <HandleEditModes/> */}
+
         <HandleMode/>
         <RenderRoads/>
         {subpage==="#pathfinder"? 
@@ -432,10 +549,11 @@ const Map = ({ children }) => {
         }
         {landmarks?.map((landmark) =>{
           return(
-          <MarkerLayer
+            <MarkerLayer
             data = {landmark}
-          />)
-        })}
+            />)
+          })}
+          <HandleMode/>
 
         {intersections?.map((landmark) => {
           return (
