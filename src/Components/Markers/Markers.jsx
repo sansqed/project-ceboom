@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {Marker, Popup, Tooltip, useMap} from "react-leaflet"
-import L, { latLng } from "leaflet"
+import L, { latLng, Layer } from "leaflet"
 
 import './Markers.css'
 
