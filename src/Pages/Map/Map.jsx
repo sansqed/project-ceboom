@@ -34,11 +34,11 @@ import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {AddLandmarkFn, EditLandmarkFn, RemoveLandmarkFn} from './EditLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
-
+import { AddRoads } from './AddRoads'
 import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
 import {landmarksRaw} from '../../Assets/Data/landmarksRaw'
 import { edges } from '../../Assets/Data/edges'
-
+import { GetRoads } from '../../ApiCalls/RoadsAPI'
 import { locationChecker } from '../../Components/Markers/Markers'
 
 const Map = ({ children }) => {
@@ -79,10 +79,10 @@ const Map = ({ children }) => {
   //         setIntersections(response.data.data.intersections)
   //       });
 
-  //     // GetRoads().then((response)=>{
-  //       // console.log(response)
-  //       // setRoads(response.data.data.edges)
-  //     // })
+  //     GetRoads().then((response)=>{
+  //       console.log(response)
+  //       setRoads(response.data.data.edges)
+  //     })
     
   //   }, []);
   // };
@@ -97,8 +97,8 @@ const Map = ({ children }) => {
   },[])
 
   useEffect(() => {
-    setAllNodes([...new Set([...landmarks, ...intersections])])
-  },[]);
+    setAllNodes(landmarks.concat(intersections))
+  },[landmarks, intersections]);
 
   const MapMarkerId = () =>{
     let map = useMap()
@@ -217,6 +217,10 @@ const Map = ({ children }) => {
     }
     else if (subpage == "#editlandmark"){
       EditLandmarkFn(landmarks, editedNodes, setEditedNodes)
+    }
+
+    else if (subpage == "#addroads"){
+      AddRoads(allNodes)
     }
   }
 
@@ -399,7 +403,7 @@ const Map = ({ children }) => {
   //   }
   // }
 
-  
+  console.log(allNodes)
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
