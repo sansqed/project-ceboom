@@ -2,7 +2,7 @@ import { postAPICall } from "./axiosMethodCalls";
 
 export const LoginUser = async(user) => {
     try{
-        const response = await postAPICall("https://ca07-175-176-65-47.ap.ngrok.io/logins/login", {
+        const response = await postAPICall("https://6529-111-125-90-19.ap.ngrok.io/logins/login", {
             username: user.username,
             password: user.password,
         });

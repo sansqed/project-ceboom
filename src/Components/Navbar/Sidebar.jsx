@@ -21,12 +21,20 @@ import CeboomLogo from '../../Assets/images/project_ceboom_logo.png'
 const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = useState('MENU');
-  const [usernameDisplay, setUsernameDisplay] = useState('Guest')
+  const [usernameDisplay, setUser] = useState('')
   const toggle = () => setIsOpen(!isOpen);
 
   const doubleToggle = () => {
     toggle();
     setSelectedMenuItem('MENU');
+  }
+
+  const getUser = () => {
+    if (localStorage.getItem("user") != ""){
+      setUser(localStorage.getItem("user"))
+    } else {
+      setUser("Guest")
+    }
   }
 
   const menuItem = [
@@ -60,7 +68,7 @@ const Sidebar = ({ children }) => {
             <Box>
               <IconButton>
                 {" "}
-                <Menu onClick={doubleToggle} sx={{ fontSize: "4vh" }} style={{color: 'black'}}/>
+                <Menu onClick={() => {doubleToggle(); getUser()}} sx={{ fontSize: "4vh" }} style={{color: 'black'}}/>
               </IconButton>
             </Box>
           </div>
@@ -89,10 +97,10 @@ const Sidebar = ({ children }) => {
           <div className="sidebar-bottom-section">
             <Box>
               <IconButton>
-                <div className="sidebar-user-icon" onClick={() => setUsernameDisplay('Ryan D.')}>
-                  {/* <ThemeProvider theme={darkButton}> */}
+                <div className="sidebar-user-icon">
+  
                     <AccountCircle sx={{fontSize: "3.5vh"}} style={{color: 'black'}}/>
-                  {/* </ThemeProvider> */}
+
                 </div>
               </IconButton>
             </Box>
