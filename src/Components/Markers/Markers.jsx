@@ -95,10 +95,10 @@ const MarkerLayer = (data) => {
         // console.log(data.data.landmark_type)
     
     //comment out up until else to not display intersections
-    if(data.data.landmark_type == "Intersection"){
-        return null
-    }
-    else if(data.data.landmark_type == "Start"){
+    // if(data.data.landmark_type == "Intersection"){
+    //     return null
+    // }
+    if(data.data.landmark_type == "Start"){
         return(
             <div>
                 <Marker
