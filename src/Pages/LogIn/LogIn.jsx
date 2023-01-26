@@ -65,7 +65,7 @@ const LogIn = ({ children }) => {
   return(
     <div className="login-background">
       <img alt="icon" src={icon} className="icon-login" />
-      <div className>
+      <div className="row">
           <div className="log-in-text-1"> Know Your Destination, </div> 
           <div className="log-in-text-2"> Look at Your Whereabouts, </div>
           <div className="log-in-text-3"> Discover New Places, </div>
@@ -73,8 +73,8 @@ const LogIn = ({ children }) => {
           <div className="log-in-text-5"> CEBU </div>  
       </div>
 
-      <div className="form-background">
-        <div className="form-container">
+      <div className="form-background-log">
+        <div className="form-container-log">
           <img alt="logo" src={logo} className="logo-login" />
           <div className="form-description">
             <span>Project Ceboom is a web-based batch project brought to you by BS Computer Science
