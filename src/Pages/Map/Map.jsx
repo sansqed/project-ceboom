@@ -60,18 +60,24 @@ const Map = ({ children }) => {
   const [editedEdges, setEditedEdges] = useState({created:[], deleted:[], edited:[]})
   const [allNodes, setAllNodes] = useState([])
 
+
+  // show path
+  const [path, setPath] = useState([]);
+
   const HandleSubpage = () => {
     if (subpage === "#editmap")
       return(<EditMap/>)
     else if (subpage === "#search")
       return(<Search/>)
     else if (subpage === "#pathfinder")
-      return(<PathFinder/>)
+      return(<PathFinder setPath={setPath}/>)
     else if (subpage === "#updatetraffic")
       return(<UpdateTraffic/>)
     else if (subpage === "#addlandmark" || subpage === "#addlandmark?adding")
       return(<AddLandmarksSidebar editData={editData  } />)
   }
+
+  console.log(path)
 
   // UNCOMMENT IF SERVER IS UP
   // const FetchNodes = () => {
@@ -286,8 +292,8 @@ const Map = ({ children }) => {
   // },[currNode])
 
   // HANDLES EDITING AND DRAWING OF MAP
-  // const DrawMap = () => {
-  //   let map = useMap()  
+  const DrawMap = () => {
+    let map = useMap()  
 
     // if(mode==="intersection"){
     //   map.pm.enableDraw('Marker')
@@ -329,21 +335,21 @@ const Map = ({ children }) => {
     //       e.target.removeLayer(e.layer)
     //     }
     //   })
-
-      // map.on('pm:remove', (e) => {
-      //   console.log(e)
-      //   let targetId = e.layer._leaflet_id
+      map.pm.enableGlobalRemovalMode()
+      map.on('pm:remove', (e) => {
+        console.log(e)
+        let targetId = e.layer._leaflet_id
         
-      //   let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
+        let toRemove = roads.findIndex(({leaflet_id})=>leaflet_id==targetId)
   
-      //   if(toRemove !== -1){
-      //     roads.splice(toRemove,1)
-      //     console.log(roads)
-      //     // return
-      //   }
-      // });
+        if(toRemove !== -1){
+          roads.splice(toRemove,1)
+          console.log(roads)
+          // return
+        }
+      });
 
-      // console.log(roads)
+      console.log(roads)
     // }
     
 
@@ -352,8 +358,8 @@ const Map = ({ children }) => {
     //   position: 'topright',  
     // });  
     
-  //   return null
-  // }
+    return null
+  }
 
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
@@ -399,6 +405,8 @@ const Map = ({ children }) => {
         )
       })
 
+  
+      
       // edgesOld?.map((road)=>{
       //   return(
       //     <Polyline key={road.leaflet_id} pathOptions={purpleOptions} positions={road.latlngs} />
@@ -418,7 +426,57 @@ const Map = ({ children }) => {
     
   }
 
-  
+  const RenderShortPath = () => {
+    const redOptions = { color: 'red', weight: 5 }
+    console.log(path)
+
+    return (
+      path?.map((shortPath) => {
+
+        let thisPath = shortPath.latitudes.map((latitude, index) =>
+          [latitude, shortPath.longitudes[index]])
+        let id = +shortPath.id
+
+        return (
+          <Polyline key={id} pathOptions={redOptions} positions={thisPath}>
+          </Polyline>
+        )
+      }))}
+
+    
+  const RenderStartMarker = () => {
+    console.log(path)
+    if(path && path.length)
+      return (
+        <MarkerLayer
+          data={{ landmark_type: "Start", latitude: path[0].latitudes[0], longitude: path[0].longitudes[0] }}
+        />)
+  }
+
+  const RenderEndMarker = () => {
+    console.log(path)
+    if (path && path.length)
+      return (
+        <MarkerLayer
+          data={{ landmark_type: "End", latitude: path.at(-1).latitudes.at(-1), longitude: path.at(-1).longitudes.at(-1)}}
+        />)
+  }
+
+  // < MarkerLayer data={landmark_type: "Start"}/>
+
+  // async function createNodes(){  
+  //   console.log("HERE ")
+  //   console.log(nodes)
+  //   const response = await CreateNodes(nodes)
+
+  //   console.log(response)
+  //   if (response.data.status !== 201){
+  //     console.log("FAILED")
+  //   } else {
+  //     console.log("SUCCESS")
+  //   }
+
+  // }
 
   // async function createRoads(){
   //   console.log("HERE ")
@@ -477,7 +535,18 @@ const Map = ({ children }) => {
         
         <MapMarkerId/>
         {/* <HandleEditModes/> */}
+
+        <HandleMode/>
         <RenderRoads/>
+        {subpage==="#pathfinder"? 
+          <div>
+
+            <RenderShortPath/>    
+            <RenderStartMarker/>
+            <RenderEndMarker/>
+          </div>
+        :<></>
+        }
         {landmarks?.map((landmark) =>{
           return(
             <MarkerLayer
@@ -485,6 +554,13 @@ const Map = ({ children }) => {
             />)
           })}
           <HandleMode/>
+
+        {intersections?.map((landmark) => {
+          return (
+            <MarkerLayer
+              data={landmark}
+            />)
+        })}
 
 
       </MapContainer>
