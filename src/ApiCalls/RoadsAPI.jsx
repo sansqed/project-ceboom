@@ -17,6 +17,15 @@ export const CreateRoads = async(roads) => {
     }
 }
 
+export const GetRoads = async() => {
+    try{
+        const response = await postAPICall(URL+"edges/get_all",{});
+        return { data: response};
+    } catch (error) {
+        return { data: error };
+    }
+}
+
 export const shortestPath = async(origin, dest) => {
     try{
         console.log(origin + "/" + dest)
