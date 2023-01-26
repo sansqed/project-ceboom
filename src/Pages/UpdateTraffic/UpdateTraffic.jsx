@@ -8,7 +8,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn'
 
 const UpdateTraffic = ({children}) => {
   const [trafficstatusOpen, setstatOpen] = useState(false);
-  const updatestatusToggle = () => {setstatOpen((prevState) => !prevState);}
+  const updatestatusToggle = () => {console.log("shet")}
 
   return(
       <div className="sidebar-submenu">
@@ -20,17 +20,8 @@ const UpdateTraffic = ({children}) => {
         <div className = "traffic-updateroute"> Select Route to Update </div>
         <div className = "traffic-searchloc">
           <div className = "traffic-sourceloc">
-            <div className = "traffic-from">FROM:</div>
-            <SearchBar placeholder = "Choose source location..."/>
             <div className = "traffic-sourcelocdesc">
-              You can type out the location, or you can click on a landmark in the map
-            </div>
-          </div>
-          <div className = "traffic-destination">
-            <div className = "traffic-to">TO:</div>
-            <SearchBar placeholder = "Destination..."/>
-            <div className = "traffic-destinationdesc"> 
-            You can type out the location, or you can click on a landmark in the map 
+              Select a road in the map to update traffic Information
             </div>
           </div>
         </div>
@@ -43,8 +34,16 @@ const UpdateTraffic = ({children}) => {
         <div className = "traffic-status">
           <p className = "status-label">Current Status:</p>
           <div className = "traffic-statbuttonwrapper">
-            <div className = "traffic-curstatbutton"></div>
+            <div className = "traffic-lightbutton"></div>
             <div className = "traffic-statusdesc">Light Traffic</div>
+          </div>
+          <div className = "traffic-statbuttonwrapper">
+            <div className = "traffic-mediumbutton"></div>
+            <div className = "traffic-statusdesc">Medium Traffic</div>
+          </div>
+          <div className = "traffic-statbuttonwrapper">
+            <div className = "traffic-heavybutton"></div>
+            <div className = "traffic-statusdesc">Heavy Traffic</div>
           </div>
           <button onClick = {updatestatusToggle} className = "traffic-updatestatbutton">UPDATE TRAFFIC INFORMATION</button>
         </div>

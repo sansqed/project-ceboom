@@ -15,13 +15,16 @@
   }
 .traffic-header{
     display: flex;
+    text-align: center;
     flex-direction:column;
     position:relative;
     margin-top: 0;
     background: linear-gradient(90deg, rgb(80, 181, 221) 0%, rgb(84, 171, 221) 100%);
     height: 10vh;
-    width: 53.8vh;
+    width: 100%;
     background-color: aqua;
+    padding-top: 15px;
+  padding-bottom: 15px; 
 }
 
 .updatetraffic{
@@ -34,12 +37,14 @@
 .grid{
     position:relative;
     background: linear-gradient(90deg, rgb(166, 214, 241) 0%, rgb(134, 197, 233) 100%);
-    width: 50vh;
+    width: 80%;
+    float:center;
     border-radius: 1vh;
     margin-left: 1vh;
     margin-top:2vh;
-    text-align: left;
+    text-align: center;
     text-indent: 1vh;
+    vertical-align: center;
 }
 
 .locbutton{
@@ -56,6 +61,7 @@
 .placeupdate-container {
     display: inline-block;
     padding-top: 1vh;
+    width: 100%;
 }
 
 
@@ -64,6 +70,7 @@
     font-weight: bold;
     font-size: 3vh;
     font-family: 'Outfit';
+    text-align: center;
 }
 
 
@@ -94,11 +101,12 @@
 }
 
 .traffic-sourcelocdesc{
-    text-align: left;
+    text-align: center;
     padding-left:2vh;
     color: gray;
     font-family: 'Outfit';
     font-size: 1.5vh;
+    padding-top: 15px;
 }
 
 .traffic-to{
@@ -131,8 +139,26 @@
     padding-left: 2.5vh;
 }
 
-.traffic-curstatbutton{
+.traffic-lightbutton{
     background-color: yellow;
+    border:none;
+    padding: 2vh;
+    margin-top:0.5vh;
+    border-radius: 10vh;
+    width:0%;
+}
+
+.traffic-mediumbutton{
+    background-color: orange;
+    border:none;
+    padding: 2vh;
+    margin-top:0.5vh;
+    border-radius: 10vh;
+    width:0%;
+}
+
+.traffic-heavybutton{
+    background-color: red;
     border:none;
     padding: 2vh;
     margin-top:0.5vh;

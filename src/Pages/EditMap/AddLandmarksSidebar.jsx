@@ -15,14 +15,14 @@ const AddLandmarksSidebar = ({editData}) => {
 
 
   console.log(editData)
-  return(
-    <div className="sidebar-submenu">
-      {/* <div className="editMap-Container">Add Landmarks</div> */}
-      <NavLink to={"#addlandmark?adding"}>test</NavLink>
-      <button onClick={()=>submitLandmarks()}>submit</button>
-      <p id="testname">asdf</p>
-    </div>
-  );
+  // return(
+  //   <div className="sidebar-submenu">
+  //     {/* <div className="editMap-Container">Add Landmarks</div> */}
+  //     <NavLink to={"#addlandmark?adding"}>test</NavLink>
+  //     <button onClick={()=>submitLandmarks()}>submit</button>
+  //     <p id="testname">asdf</p>
+  //   </div>
+  // );
 };
 
 AddLandmarksSidebar.propTypes = {
