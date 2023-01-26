@@ -45,6 +45,11 @@ const LogIn = ({ children }) => {
 
       } else {
           toast.success()
+          // temp lmaoooo
+          var usr = {};
+          usr["username"] = loginCredentials.username; 
+          localStorage.setItem("username", JSON.stringify(usr));
+          localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
           console.log("success")
           console.log(response)
         //setIsLoading(false);
@@ -108,6 +113,11 @@ const LogIn = ({ children }) => {
             className="signup-btn"
             type="submit"
             title="Sign Up Now"
+            // please change the link later, i dunno how to do this properly
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href='/registration';
+            }}
           />
         </a>
       </div>
