@@ -41,6 +41,10 @@ import { edges } from '../../Assets/Data/edges'
 
 import { locationChecker } from '../../Components/Markers/Markers'
 
+import Select, { components } from 'react-select'
+import { landmarkAll } from '../../Assets/Data/landmarktype-data.js'
+import { locationsAll } from '../../Assets/Data/location-data.js'
+
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
@@ -217,10 +221,20 @@ const Map = ({ children }) => {
               <label>Name</label>
               <input id={data.leaflet_id} ref={nameIn} name='name' autoComplete="off"/>
               <label>Type of Landmark</label>
-              <input id={data.leaflet_id} ref={typeIn}name='landmark_type' autoComplete='off'/>
+              {/* <input id={data.leaflet_id} name='landmark_type' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
+							<Select
+								className='landmark_type'
+								options={landmarkAll.landmark.map(({label, value})=>({label, value}) )}
+								onChange={e => handleEditChange(e)}
+							/>
               <label>Location</label>
-              <input id={data.leaflet_id} ref={locationIn} name='location' autoComplete='off'/>  
-              <input id={data.leaflet_id} name={"submit-addlandmark"} type={"submit"} onClick={()=>handleEditChange(data)}/>
+              {/* <input id={data.leaflet_id} name='location' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
+							<Select
+								className='location'
+								options={locationsAll.location.map(({label, value})=>({label, value}) )}
+								onChange={e => handleEditChange(e)}
+							/>
+              <input id={data.leaflet_id} name={"submit-addlandmark"} type={"submit"} onClick={e=>handleEditChange(e)}/>
             </Popup>
             <Marker 
               key={data.leaflet_id}
