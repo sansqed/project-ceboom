@@ -54,6 +54,7 @@ const Map = ({ children }) => {
   const [tempData, setTempData] = useState()
   const [editedNodes, setEditedNodes] = useState({created:[], deleted:[], edited:[]})
   const [editedEdges, setEditedEdges] = useState({created:[], deleted:[], edited:[]})
+  const [allNodes, setAllNodes] = useState([])
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
@@ -86,13 +87,18 @@ const Map = ({ children }) => {
   //   }, []);
   // };
   // FetchNodes()
-
+  
+  
   // UNCOMMENT IF SERVER IS DOWN
   useEffect(()=>{
     setLandmarks(landmarksRaw)
     setIntersections(intersectionsRaw)
     setRoads(edges)
   },[])
+
+  useEffect(() => {
+    setAllNodes([...new Set([...landmarks, ...intersections])])
+  },[]);
 
   const MapMarkerId = () =>{
     let map = useMap()
@@ -262,8 +268,8 @@ const Map = ({ children }) => {
     //     console.log(e)
     //     var lastVertex = e.layer._latlngs.at(-1)
     //     var firstVertex = e.layer._latlngs[0]
-    //     var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-    //     var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+    //     var endMarker =  allNodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
+    //     var startMarker = allNodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
     //     if (endMarker && startMarker){
     //       var newRoad = {
     //         leaflet_id: e.layer._leaflet_id,  
@@ -271,7 +277,8 @@ const Map = ({ children }) => {
     //         endpointB: endMarker.id, 
     //         latlngs: e.layer._latlngs
     //       }
-    //       setCurrRoad(newRoad)
+    //       CALL API ---------------------------
+    //       createRoads(newRoad)
     //     } else {
     //       e.target.removeLayer(e.layer)
     //     }
