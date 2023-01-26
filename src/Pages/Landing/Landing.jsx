@@ -15,7 +15,7 @@ const Landing = ({ children }) => {
   return(
     <div>
       <div className="landing-background">
-        <div className="row">
+        <div className>
 
           {/* CEBOOM logo */}
           <img alt="ceboom-logo"
@@ -27,7 +27,7 @@ const Landing = ({ children }) => {
           src={logo_one}
           className="ceboom-logo-one"/>
 
-          <div className="nav-bar" align="right">
+          <div className="nav-bar-land" align="right">
             <b href="/">Home</b>
             <a href="/about-us">About</a>
             <a href="/login">Login</a>

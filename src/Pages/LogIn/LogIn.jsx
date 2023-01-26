@@ -65,7 +65,7 @@ const LogIn = ({ children }) => {
   return(
     <div className="login-background">
       <img alt="icon" src={icon} className="icon-login" />
-      <div className="row">
+      <div className>
           <div className="log-in-text-1"> Know Your Destination, </div> 
           <div className="log-in-text-2"> Look at Your Whereabouts, </div>
           <div className="log-in-text-3"> Discover New Places, </div>
