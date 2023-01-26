@@ -23,3 +23,12 @@ export const GetRoads = async() => {
         return { data: error };
     }
 }
+
+export const GetTraffic = async() => {
+    try{
+        const response = await postAPICall("https://0f5e-202-92-153-180.ap.ngrok.io/edges/traffic",{});
+        return { data: response};
+    } catch (error) {
+        return { data: error };
+    }
+}

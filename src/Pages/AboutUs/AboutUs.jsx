@@ -40,6 +40,7 @@ const AboutUs = ({ children }) => {
           <a href="/">Home</a>
           <a1 href="/about">About</a1>
           <a href="/login">Login</a>
+          
         </div>
         <div className="nav-logo"></div>
         
