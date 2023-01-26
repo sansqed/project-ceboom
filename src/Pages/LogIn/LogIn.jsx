@@ -39,7 +39,7 @@ const LogIn = ({ children }) => {
       // API response
       console.log(response)
       toast('Hello World');
-      if (response.data.status !== 200) {
+      if (response.data.data.status !== 200) {
           console.log(response)
           // toast.error(response.data.messages.error)
 
@@ -51,6 +51,7 @@ const LogIn = ({ children }) => {
           localStorage.setItem("user", loginCredentials.username)
           localStorage.setItem("user_id", JSON.stringify(response.data.data.id));
           localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
+          window.location.href= "/map";
           // console.log("success")
           console.log(response)
         //setIsLoading(false);
