@@ -5,7 +5,40 @@ import Cebu from "../../Assets/images/registration_CebShadow.png"
 import Google from "../../Assets/images/googleLogo.png"
 import Facebook from "../../Assets/images/facebookLogo.png"
 
+import { AddNewUser, AddUserAPI } from "../../ApiCalls/AddUserAPI"
+
 const Registration = ({ children }) => {
+
+    const [newUser, setNewUser] = useState({
+       username: "",
+       password: "", 
+    });
+
+    const handleChange = (e) =>{
+        const {name, value} = e.target;
+        setNewUser((prevState) => ({
+            ...prevState,
+            [name]: value,
+        })); 
+    };
+
+    // const [isClicked, setIsClicked] = useState(false);
+    // const [isLoading, setIsLoading] = useState(false);
+
+
+    async function submitNewUser(){
+        const response = await AddNewUser (
+          newUser  
+        );
+
+        console.log(newUser);
+
+        // API response
+        console.log(response)
+    };
+
+    
+
 
     return(
         <div className="reg-background">
@@ -22,31 +55,55 @@ const Registration = ({ children }) => {
                         <text className="googleText">Sign up with Google</text>
                     </button>
                 </a>
+
                 <a>
                     <button className="Facebook">
                         <img src={Facebook} alt="Facebook Icon" className="googleIcon"/>
                         <text className="facebookText">Sign up with Facebook</text>
                     </button>
                 </a>
+
                 <div className="inputBox">
-                    <input type="text" required="required" />
+                    <input 
+                    type="text" 
+                    required="required" 
+                    id="username"
+                    name="username"
+                    onChange={(e) => handleChange(e)}
+                    />
                     <span>Full Name</span>
                 </div>
-                <div className="inputBox">
-                    <input type="text" required="required" />
+
+                {/* <div className="inputBox">
+                    <input 
+                    type="text"
+                    required="required"
+                    id="email"
+                    name="email"
+                    onChange={(e) => handleChange(e)}
+                    />
                     <span>Email</span>
-                </div>
+                </div> */}
+
                 <div className="inputBox">
-                    <input type="password" required="required" />
+                    <input 
+                    type="password" 
+                    required="required"
+                    id="password"
+                    name="password"
+                    onChange={(e) => handleChange(e)}
+                    />
                     <span>Password</span>
                 </div>
-                <div>
-                    <a>
-                        <CustomButton className="create" 
-                        type="submit"
-                        title="Create Account" />
-                    </a>
-                </div>
+
+                <CustomButton 
+                divClassName = "createAccountBox"
+                className="create" 
+                type="submit"
+                title="Create Account" 
+                onClick={() => submitNewUser()}
+                />
+                
                 <p className="link">
                     Already have an account? <a href="/login">Log in</a>
                 </p>
