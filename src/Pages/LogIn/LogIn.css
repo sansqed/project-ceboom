@@ -37,7 +37,7 @@
 .log-in-text-1{
     position: absolute;
     left: 20.08%;
-    right: 58.61%;
+    right: 18.61%;
     top: 18.16%;
     bottom: 70.78%;
     
@@ -222,7 +222,7 @@
     color: #FFFFFF;
 
     border: 0.5px solid #FFFFFF;
-
+    cursor: pointer;
 }
 
 .signup-btn{
@@ -246,7 +246,7 @@
     letter-spacing: 5.5px;
 
     color: #000000;
-
+    cursor: pointer;
 }
 
 .input-1{
