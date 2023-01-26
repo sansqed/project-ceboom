@@ -82,3 +82,22 @@ p.ridge {
   color: blue;
 }
 
+.edit-searchsubmit{
+  position: relative;
+  text-align: center;    
+  top: 18vh;
+  bottom: 18vh;
+}
+
+.edit-searchsubmit-btn{
+  font-weight: 700;
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    border: none;
+    border-radius: 1.15rem;
+    width: 40%;
+    height: 2.8rem;
+    background-color: orange;
+    cursor: pointer;
+}

@@ -30,7 +30,7 @@ const Sidebar = ({ children }) => {
   }
 
   const getUser = () => {
-    if (localStorage.getItem("user") != ""){
+    if (localStorage.getItem("user") != null){
       setUser(localStorage.getItem("user"))
     } else {
       setUser("Guest")
