@@ -7,7 +7,7 @@ import { ThemeProvider } from "@mui/material/styles"
 
 import { Box } from "@mui/system"
 import { IconButton } from '@mui/material';
-import darkButton from '../../Themes/SidebarIconThemes/SidebarDark';
+// import darkButton from '../../Themes/SidebarIconThemes/SidebarDark';
 // ! routing
 import { NavLink } from "react-router-dom"
 
@@ -90,9 +90,9 @@ const Sidebar = ({ children }) => {
             <Box>
               <IconButton>
                 <div className="sidebar-user-icon" onClick={() => setUsernameDisplay('Ryan D.')}>
-                  <ThemeProvider theme={darkButton}>
+                  {/* <ThemeProvider theme={darkButton}> */}
                     <AccountCircle sx={{fontSize: "3.5vh"}} style={{color: 'black'}}/>
-                  </ThemeProvider>
+                  {/* </ThemeProvider> */}
                 </div>
               </IconButton>
             </Box>

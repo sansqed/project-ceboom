@@ -9,7 +9,7 @@ const Landing = ({ children }) => {
 
   /* Navigation between pages */
   const navigate = useNavigate();
-  const navigateLogIn = () => navigate('/login');
+  const navigateLogIn = () => navigate('/map');
   const navigateAboutUs = () => navigate('/about-us');
 
   return(
@@ -47,7 +47,7 @@ const Landing = ({ children }) => {
 
           <div className="login">
             <button type="submit" onClick={navigateLogIn}>
-              <p>Log in</p>
+              <p>Get started</p>
             </button>
           </div>
 
