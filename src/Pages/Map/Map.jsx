@@ -31,6 +31,7 @@ import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
 import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
+import {CreateRoads, GetRoads, GetTraffic} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {AddLandmarkFn, EditLandmarkFn, RemoveLandmarkFn} from './EditLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
@@ -77,7 +78,38 @@ const Map = ({ children }) => {
       return(<AddLandmarksSidebar editData={editData  } />)
   }
 
-  console.log(path)
+  async function trafficAPI(id){
+    const response = await GetTraffic(id);
+    console.log(response.data)
+  }
+
+  async function getRoad(id){
+    const response = await GetRoads(id);
+    console.log(response.data)
+  }
+
+  const reRenderRoad = () => {
+    return (
+      <RenderRoads/>
+    )
+  }
+
+  const updateTraffic = (e,status) => {
+    if (status === "light"){
+      const option = {color: 'yellow', weight: 5}
+      console.log(e)
+      return(
+        <Polyline key={e} pathOptions={option}/>
+      )
+      
+    }
+    else if (status === "moderate"){
+
+    }
+    else if (status === "heavy"){
+
+    }
+  }
 
   // UNCOMMENT IF SERVER IS UP
   // const FetchNodes = () => {
@@ -374,8 +406,7 @@ const Map = ({ children }) => {
         let allPositions = road.latitudes.map((latitude,index) => 
           [latitude,road.longitudes[index]])
         let id = +road.id
-
-        
+        console.log(allPositions)
         return(
           <FeatureGroup>
             {subpage==="#updatetraffic"? 
@@ -383,15 +414,15 @@ const Map = ({ children }) => {
               <div className = "changestatus">
                 <b>Change Status to:</b>
                 <div className = "tbutton-container">
-                  <button className = "lightwrapper">
+                  <button className = "lightwrapper" onClick={(e) => updateTraffic(id, "light")}>
                     <div className = "trafficstatus-light"></div>
                     <small className = "light">Light</small>    
                   </button>
-                  <button className = "modwrapper">
+                  <button className = "modwrapper" onClick={(e) => updateTraffic(road.data, "moderate")}>
                     <div className = "trafficstatus-moderate"></div>
                     <small className = "moderate">Moderate</small>  
                   </button>
-                  <button className = "heavywrapper">
+                  <button className = "heavywrapper" onClick={(e) => updateTraffic(road.data, "heavy")}>
                     <div className = "trafficstatus-heavy"></div>
                     <small className = "heavy">Heavy</small>   
                   </button>
@@ -399,7 +430,7 @@ const Map = ({ children }) => {
               </div>
             </Popup>
             :<></>}
-          <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}/>
+            <Polyline key={id} pathOptions={purpleOptions} positions={allPositions}/>
           </FeatureGroup>
 
         )

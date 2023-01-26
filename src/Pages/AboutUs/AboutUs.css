@@ -110,6 +110,15 @@
     text-decoration: none;
 }
 
+.LogoRectangle {
+    top: 201vh;
+    left: 0vh;
+    width: 1440vh;
+    height: 105vh;
+    position: absolute;
+    background-color: white;
+}
+
 /*TEAM SECTION*/
 .TeamSection{
     position: relative;
