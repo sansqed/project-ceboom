@@ -41,8 +41,8 @@ const Registration = ({ children }) => {
 
     return(
         <div className="reg-background">
-            <img src={Cebu} alt="cebu" className="shadowCeb" />
             <div className="leftText">
+                <img src={Cebu} alt="cebu" className="shadowCeb" />
                 <h1 className="Text1">Find your way around.</h1>
                 <h1 className="Text2">Find local businesses, view maps and get driving directions in CEBU</h1>
                 <h1 className="Text3">Providing easy access to locations,
