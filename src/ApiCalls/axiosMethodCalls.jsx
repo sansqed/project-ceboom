@@ -11,3 +11,5 @@ export const postAPICall = (url, data) => {
 export const getAPICall = (url) => {
   return axios.get(url);
 };
+
+export const URL = "https://7e01-111-125-90-19.ap.ngrok.io/"

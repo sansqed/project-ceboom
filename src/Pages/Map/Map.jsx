@@ -34,11 +34,11 @@ import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
 import { MoveDownSharp } from '@mui/icons-material'
 import {AddLandmarkFn, EditLandmarkFn, RemoveLandmarkFn} from './EditLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
-
+import { AddRoads } from './AddRoads'
 import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
 import {landmarksRaw} from '../../Assets/Data/landmarksRaw'
 import { edges } from '../../Assets/Data/edges'
-
+import { GetRoads } from '../../ApiCalls/RoadsAPI'
 import { locationChecker } from '../../Components/Markers/Markers'
 
 import Select, { components } from 'react-select'
@@ -58,6 +58,7 @@ const Map = ({ children }) => {
   const [tempData, setTempData] = useState()
   const [editedNodes, setEditedNodes] = useState({created:[], deleted:[], edited:[]})
   const [editedEdges, setEditedEdges] = useState({created:[], deleted:[], edited:[]})
+  const [allNodes, setAllNodes] = useState([])
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
@@ -82,15 +83,16 @@ const Map = ({ children }) => {
   //         setIntersections(response.data.data.intersections)
   //       });
 
-  //     // GetRoads().then((response)=>{
-  //       // console.log(response)
-  //       // setRoads(response.data.data.edges)
-  //     // })
+  //     GetRoads().then((response)=>{
+  //       console.log(response)
+  //       setRoads(response.data.data.edges)
+  //     })
     
   //   }, []);
   // };
   // FetchNodes()
-
+  
+  
   // UNCOMMENT IF SERVER IS DOWN
   useEffect(()=>{
     setLandmarks(landmarksRaw)
@@ -98,6 +100,11 @@ const Map = ({ children }) => {
     setRoads(edges)
   },[])
 
+
+  useEffect(() => {
+    setAllNodes(landmarks.concat(intersections))
+  },[landmarks, intersections]);
+  
   async function createNodes(node){  
     const response = await CreateNodes([node])
 
@@ -253,6 +260,10 @@ const Map = ({ children }) => {
     else if (subpage == "#editlandmark"){
       EditLandmarkFn(landmarks, editedNodes, setEditedNodes)
     }
+
+    else if (subpage == "#addroads"){
+      AddRoads(allNodes)
+    }
   }
 
   
@@ -303,8 +314,8 @@ const Map = ({ children }) => {
     //     console.log(e)
     //     var lastVertex = e.layer._latlngs.at(-1)
     //     var firstVertex = e.layer._latlngs[0]
-    //     var endMarker =  nodesAll.nodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-    //     var startMarker = nodesAll.nodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+    //     var endMarker =  allNodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
+    //     var startMarker = allNodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
     //     if (endMarker && startMarker){
     //       var newRoad = {
     //         leaflet_id: e.layer._leaflet_id,  
@@ -312,7 +323,8 @@ const Map = ({ children }) => {
     //         endpointB: endMarker.id, 
     //         latlngs: e.layer._latlngs
     //       }
-    //       setCurrRoad(newRoad)
+    //       CALL API ---------------------------
+    //       createRoads(newRoad)
     //     } else {
     //       e.target.removeLayer(e.layer)
     //     }
@@ -421,7 +433,7 @@ const Map = ({ children }) => {
   //   }
   // }
 
-  
+  console.log(allNodes)
   
   // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
