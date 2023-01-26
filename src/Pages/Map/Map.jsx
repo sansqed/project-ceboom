@@ -17,7 +17,7 @@ import MarkerLayer from "../../Components/Markers/Markers"
 import L, { latLng } from "leaflet"
 
 import { Navigate, useLocation } from "react-router-dom"
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 
 import EditMap from "../EditMap/EditMap"
 import Search from "../Search/Search"
@@ -31,15 +31,12 @@ import '@geoman-io/leaflet-geoman-free';
 import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';  
 
 import {CreateNodes, GetNodes} from "../../ApiCalls/NodeAPI"
-import {CreateRoads, GetRoads} from "../../ApiCalls/RoadsAPI"
 import { MoveDownSharp } from '@mui/icons-material'
-import {nodesAll} from "../../Assets/Data/intersection-data.js" 
-import {AddLandmarksFn} from './AddLandmarksFn'
+import {AddLandmarkFn, EditLandmarkFn, RemoveLandmarkFn} from './EditLandmarksFn'
 import AddLandmarksSidebar from '../EditMap/AddLandmarksSidebar'
 
 import { intersectionsRaw } from '../../Assets/Data/intersectionsRaw'
 import {landmarksRaw} from '../../Assets/Data/landmarksRaw'
-import {edgesOld} from "../../Assets/Data/edgesOld"
 import { edges } from '../../Assets/Data/edges'
 
 import { locationChecker } from '../../Components/Markers/Markers'
@@ -51,7 +48,6 @@ import { locationsAll } from '../../Assets/Data/location-data.js'
 const Map = ({ children }) => {
   const location = useLocation()
   const subpage = location.hash  
-  const [nodes, setNodes] = useState([]);
   const [intersections, setIntersections] = useState([])
   const [landmarks, setLandmarks] = useState([])
   const [roads, setRoads] = useState([])
@@ -60,6 +56,8 @@ const Map = ({ children }) => {
   const [isClicked, setIsClicked] = useState(false)
   const [editData, setEditData] = useState([])
   const [tempData, setTempData] = useState()
+  const [editedNodes, setEditedNodes] = useState({created:[], deleted:[], edited:[]})
+  const [editedEdges, setEditedEdges] = useState({created:[], deleted:[], edited:[]})
 
   const HandleSubpage = () => {
     if (subpage === "#editmap")
@@ -100,27 +98,57 @@ const Map = ({ children }) => {
     setRoads(edges)
   },[])
 
-  console.log(editData)
+  const MapMarkerId = () =>{
+    let map = useMap()
 
+    useEffect(()=>{
+      if(landmarks.length > 0){
+        map.eachLayer((layer) => {
+          if(layer._latlng){
+            let index = landmarks?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+            if (index != -1){
+              landmarks[index]["leaflet_id"] = layer._leaflet_id
+            } else { 
+              index = intersections?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+              if (intersections != -1) {
+                intersections["leaflet_id"] = layer._leaflet_id
+              } 
+              // else {
+              //   index = roads?.findIndex(({latitude,longitude}) => layer._latlng.lat==latitude && layer._latlng.lng==longitude)
+              //   if (roads != -1){
+              //     roads["leaflet_id"] = layer._leaflet_id
+              //   }
+              // }
+            } 
+          }
+        })
+      }
 
+    },[landmarks,intersections,roads])
+  }
+      console.log(landmarks,intersections)
+      console.log(editData)
 
-  const handleEditChange = (e) => {
-		console.log(e)	
-			
-    const {name, value, id} = e.target
+  const nameIn = useRef(null)
+  const typeIn = useRef(null)
+  const locationIn = useRef(null)
 
-    if(tempData?.id == id){
+  const handleEditChange = () => {
+    console.log(nameIn.current.value, typeIn.current.value, locationIn.current.value)
+    // const {name, value, id} = e.target
 
-      setTempData((prev) => ({...prev, name:value}))
+    // if(tempData?.id == id){
 
-    } else {
-      setTempData({
-        id: id,
-        name: value
-      })
-    }
+    //   setTempData((prev) => ({...prev, name:value}))
 
-    console.log(tempData)
+    // } else {
+    //   setTempData({
+    //     id: id,
+    //     name: value
+    //   })
+    // }
+
+    // console.log(tempData)
     
   }
 
@@ -137,7 +165,7 @@ const Map = ({ children }) => {
 
     
     if(subpage==="#addlandmark?adding"){
-      AddLandmarksFn(setCurrNode, editData)
+      AddLandmarkFn(setCurrNode, editData)
       return(
         <div> 
           <Navigate to={"#addlandmark"}/>
@@ -155,15 +183,16 @@ const Map = ({ children }) => {
       )
     } 
     
-    else if(subpage==="#addlandmark")
+    else if(subpage==="#addlandmark"){
+
       return(
         <div>
           {editData?.map((data, index)=>(
           
           <FeatureGroup >
-            <Popup maxWidth={200} interactive={true} closeOnEscapeKey={false} autoClose={false} closeOnClick={false}>
+            <Popup maxWidth={200} keepInView={true} interactive={true} closePopupOnClick={true} closeOnEscapeKey={false} autoClose={false} closeOnClick={false}>
               <label>Name</label>
-              <input id={data.leaflet_id} name='name' autoComplete="off" onChange={e => handleEditChange(e)}/>
+              <input id={data.leaflet_id} ref={nameIn} name='name' autoComplete="off"/>
               <label>Type of Landmark</label>
               {/* <input id={data.leaflet_id} name='landmark_type' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
 							<Select
@@ -189,8 +218,17 @@ const Map = ({ children }) => {
           ))}
         </div>
       )
+    }
+
+    else if (subpage == "#removelandmark"){
+      RemoveLandmarkFn(landmarks, editedNodes, setEditedNodes)
+    }
+    else if (subpage == "#editlandmark"){
+      EditLandmarkFn(landmarks, editedNodes, setEditedNodes)
+    }
   }
 
+  
   // // console.log(nodesAll.nodes)
   // useEffect(()=>{
   //   setNodes(nodesAll.nodes)
@@ -409,16 +447,17 @@ const Map = ({ children }) => {
         
 
         {/* <DrawMap/> */}
-        {/* <MapMarkerId/> */}
+        
+        <MapMarkerId/>
         {/* <HandleEditModes/> */}
-        <HandleMode/>
-        <RenderRoads/>    
+        <RenderRoads/>
         {landmarks?.map((landmark) =>{
           return(
-          <MarkerLayer
+            <MarkerLayer
             data = {landmark}
-          />)
-        })}
+            />)
+          })}
+          <HandleMode/>
 
 
       </MapContainer>
