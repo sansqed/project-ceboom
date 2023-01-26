@@ -7,12 +7,16 @@ import "../../Components/Navbar/Sidebar.css";
 import "../../Components/CustomButton/CustomButton";
 import CustomButton from "../../Components/CustomButton/CustomButton";
 import { shortestPath } from '../../ApiCalls/RoadsAPI.jsx'
+import { AddHistory, GetHistory } from '../../ApiCalls/HistoryAPI.jsx';
 import { MapContainer, Marker, Popup, GeoJSON, Polyline, useMap, FeatureGroup } from "react-leaflet"
 
 
 const PathFinder = ({setPath}) => {
     const [from, setFromLocation] = useState('Location A');
     const [to, setToLocation] = useState('Location B');
+    const [user_id, setUserId] = useState(localStorage.getItem("user_id").slice(1, -1));
+    const [searchHistory, setSearchHistory] = useState([]);
+
     // const [path, setPath] = useState([]);
 
     const fromLocation = (selectedOption) => {
@@ -22,6 +26,22 @@ const PathFinder = ({setPath}) => {
     const towardsDestination = (selectedOption,) => {
         setToLocation(selectedOption.value);
     }
+  
+    const getUserData = () => {
+      if (localStorage.getItem("user") != null){
+        setUserId(localStorage.getItem("user_id").slice(1,-1));
+      }
+    }
+
+    async function getHistory(){
+      const response = await GetHistory();
+      console.log(response.data)
+    }
+
+    useEffect(()=>{
+      getUserData()
+      getHistory()
+    },[])
 
     const colorStyles = {
         control: (styles, {isFocused}) => ({...styles, backgroundColor: 'white', color: 'black', borderRadius: 16, border: "2px solid orange", padding: 3, 
@@ -53,6 +73,13 @@ const PathFinder = ({setPath}) => {
         //   <Polyline key={id} pathOptions = {purpleOptions} positions={shortPath}></Polyline>
         // )
       })
+    }
+    
+    async function SetHistory (){
+      console.log(from, to, user_id);
+      const response = await AddHistory(user_id, from, to);
+      
+      console.log(response);
     }
 
   // console.log(path)
@@ -138,7 +165,7 @@ const PathFinder = ({setPath}) => {
                       divClassName="pathfinder-searchsubmit"
                       title="GET DIRECTIONS" className="pathfinder-searchsubmit-btn" 
                       type="submit"
-                      onClick={()=>FetchData()}
+                      onClick={()=>{FetchData();SetHistory()}}
                       />
                 </div>
 
