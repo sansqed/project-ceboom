@@ -47,7 +47,7 @@ export const EditLandmarkFn = (landmarks, editedNodes, setEditedNodes) => {
   });
 };
 
-export const AddLandmarkFn = (setCurrNode, editData) => {
+export const AddLandmarkFn = (setCurrNode, editData, setEditData) => {
   const map = useMap()
   map.pm.enableDraw('Marker',{continueDrawing:false})
 
@@ -64,7 +64,7 @@ export const AddLandmarkFn = (setCurrNode, editData) => {
         landmark_type: "",
         latitude: thisLayer?._latlng.lat,
         longitude: thisLayer?._latlng.lng
-      })
+      })  
 
     map.removeLayer(thisLayer)
   })
