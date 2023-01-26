@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Outfit&display=swap%27');
 
-.landing-background {
+.login-background {
     height: 100vh !important;
     background-color: #EB811E;
     background-image: url("/src/Assets/images/streets_background.png");
