@@ -64,7 +64,78 @@ const LogIn = ({ children }) => {
 
   return(
     <div className="login-background">
+      <img alt="icon" src={icon} className="icon-login" />
       <div className="row">
+          <div className="log-in-text-1"> Know Your Destination, </div> 
+          <div className="log-in-text-2"> Look at Your Whereabouts, </div>
+          <div className="log-in-text-3"> Discover New Places, </div>
+          <div className="log-in-text-4"> Find your way around. </div>
+          <div className="log-in-text-5"> CEBU </div>  
+      </div>
+
+      <div className="form-background">
+        <div className="form-container">
+          <img alt="logo" src={logo} className="logo-login" />
+          <div className="form-description">
+            <span>Project Ceboom is a web-based batch project brought to you by BS Computer Science
+batch 2024, in partial fulfillment of the Requirements for the Course CMSC 142 - Design and
+Analysis of Algorithms in the University of the Philippines Cebu. Taking inspiration from Google
+Maps and Waze, Project Ceboom is a simpler version of the two.</span>
+          </div>
+
+          <div className="inputBox-container">
+            <div className="inputBox">
+                <input 
+                type="text" 
+                required="required" 
+                id="username"
+                name="username"
+                onChange={(e) => handleChange(e)}
+                />
+                <span>User Name</span>
+            </div>
+
+            <div className="inputBox">
+                <input 
+                type="password" 
+                required="required"
+                id="password"
+                name="password"
+                onChange={(e) => handleChange(e)}
+                />
+                <span>Password</span>
+            </div>
+          </div>
+
+          <div className="psw">Forgot Password?</div> 
+          
+          <CustomButton 
+            divClassName="login-btn-container"
+            className="login-btn"
+            type="submit"
+            onClick={() => submit()}
+            title="LOGIN"
+          />
+
+          <div className="log-in-text-7"> Dont have an account? </div> 
+          <a href="/registration">  
+            <CustomButton
+              divClassName="signup-btn-container"
+              className="signup-btn"
+              type="submit"
+              title="Sign Up Now"
+              // please change the link later, i dunno how to do this properly
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href='/registration';
+              }}
+            />
+          </a>
+          
+
+        </div>
+      </div>
+      {/* <div className="row">
           <img alt="icon" src={icon} className="icon-login" />
           <div className="log-in-text-1"> Know your Destination, </div> 
           <div className="log-in-text-2"> Look at Your Whereabouts, </div>
@@ -77,15 +148,18 @@ const LogIn = ({ children }) => {
         <img alt="logo" src={logo} className="logo-login" /> 
         <div className="log-in-text-6"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, </div>
 
+        <div className="inputContainer">
           <input 
-          className="input-1" 
-          type="text" 
-          id="username" 
-          name="username" 
-          placeholder=" USERNAME" 
-          required 
-          onChange={(e) => handleChange(e)}
-          />
+            className="input-1" 
+            type="text" 
+            id="username" 
+            name="username" 
+            placeholder=" USERNAME" 
+            required="required"
+            onChange={(e) => handleChange(e)}
+            />
+        </div>
+          
           
           <input 
           className="input-2"
@@ -104,8 +178,6 @@ const LogIn = ({ children }) => {
             title="LOGIN"
           />
 
-          {/* <input type="checkbox" checked="checked"> Keep me signed in </input> */}
-          {/* <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button> */}
           <div className="psw">Forgot Password?</div> 
 
         <div className="log-in-text-7"> Dont have an account? </div> 
@@ -122,7 +194,7 @@ const LogIn = ({ children }) => {
             }}
           />
         </a>
-      </div>
+      </div> */}
       
     </div>
   )
