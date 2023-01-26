@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import "../../Components/Navbar/Sidebar.css"
 import { NavLink, useLocation } from "react-router-dom"
 import CustomButton from "../../Components/CustomButton/CustomButton"
-import AddLandmarksFn from "../Map/AddLandmarksFn";
+import AddLandmarksFn from "../Map/EditLandmarksFn";
 import PropTypes from "prop-types";
 
 
