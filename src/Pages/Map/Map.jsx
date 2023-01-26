@@ -237,7 +237,7 @@ const Map = ({ children }) => {
           
           <FeatureGroup >
             <Popup maxWidth={200} keepInView={true} interactive={true} closePopupOnClick={true} closeOnEscapeKey={false} autoClose={false} closeOnClick={false}>
-              <label>Name</label>
+              <label><span style={{color: "#EB811E", fontSize: "17px", fontWeight: "700"}}>Name</span></label>
               <input id={data.leaflet_id} ref={nameIn} name='name' autoComplete="off"/>
               <label>Type of Landmark</label>
               {/* <input id={data.leaflet_id} name='landmark_type' autoComplete='off' onChange={e => handleEditChange(e)}/> */}
