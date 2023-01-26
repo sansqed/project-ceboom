@@ -7,7 +7,7 @@
     background-color: #EB811E;
     background-image: url("/src/Assets/images/streets_background.png");
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: right-top;
     background-attachment: fixed;
 }
 
@@ -34,37 +34,48 @@
     border-bottom-left-radius: 62px;
 }
 
+.row{
+    position: absolute;
+    width: 631px;
+    height: 650px;
+    left: 62px;
+    top: 58px;
+}
+
 .log-in-text-1{
     position: absolute;
-    left: 20.08%;
-    right: 18.61%;
-    top: 18.16%;
-    bottom: 70.78%;
-    
-    font-family: 'Outfit', sans-serif;
+    left: 60.51%;
+    right: 58.18%;
+    top: 22.55%;
+    bottom: 57.39%;
+
+    font-family: 'Outfit';
+    width: 300px;
+    text-align: left;
     font-style: normal;
     font-weight: 500;
-    font-size: 51px;
+    font-size: 40px;
     line-height: 78.5%;
-    text-align: left;
-    /* or 40px */
-    
+    /* or 31px */
+
     letter-spacing: -0.02em;
-    
+
     color: #F5F5F5;
+
 }
 
 .log-in-text-2{
     position: absolute;
-    left: 13.06%;
+    left: 46.06%;
     right: 60.83%;
-    top: 37.25%;
+    top: 41.25%;
     bottom: 51.69%;
 
     font-family: 'Outfit', sans-serif;
+    width: 300px;
     font-style: normal;
     font-weight: 500;
-    font-size: 51px;
+    font-size: 40px;
     line-height: 78.5%;
     text-align: left;
     /* or 40px */
@@ -76,15 +87,16 @@
 
 .log-in-text-3{
     position: absolute;
-    left: 7.5%;
+    left: 41.5%;
     right: 69.93%;
-    top: 56.81%;
+    top: 61.81%;
     bottom: 36.32%;
     
     font-family: 'Outfit', sans-serif;
     font-style: normal;
+    width: 206px;
     font-weight: 500;
-    font-size: 51px;
+    font-size: 40px;
     line-height: 78.5%;
     text-align: left;
     /* or 40px */
@@ -98,17 +110,18 @@
 
 .log-in-text-4{
     position: absolute;
-    left: 2.01%;
-    right: 68.61%;
-    top: 74.04%;
-    bottom: 1.28%;
+    left: 3.31%;
+    right: 66.32%;
+    top: 2.75%;
+    bottom: 68.57%;
 
-    font-family: 'Outfit', sans-serif;
+    font-family: 'Outfit';
+    width: 400px;
+    text-align: left;
     font-style: normal;
     font-weight: 800;
-    font-size: 70px;
+    font-size: 82px;
     line-height: 78.5%;
-    text-align: left;
     /* or 64px */
 
     letter-spacing: -0.02em;
@@ -119,15 +132,15 @@
 
 .log-in-text-5{
     position: absolute;
-    left: 39.51%;
+    left: 86.51%;
     right: 42.92%;
-    top: 85.91%;
+    top: 82.91%;
     bottom: 6.05%;
     
     font-family: 'Outfit', sans-serif;
     font-style: normal;
     font-weight: 800;
-    font-size: 70px;
+    font-size: 82px;
     line-height: 78.5%;
     /* or 64px */
     
@@ -151,10 +164,29 @@
     position: absolute;
     width: 278px;
     height: 58px;
-    left: 1100px;
-    top: 71px;
-    
-    
+    left: 25%;
+    top: 21px;
+    scale: 90%;
+}
+
+.form-description{
+    position: absolute;
+    /* height: 106px;
+    width: 419px; */
+    width: 489px;
+    /* background-color: transparent; */
+    left: 35px;
+    top: 88px;
+
+    font-family: 'Outfit';
+    font-weight: 200;
+    text-align: center;
+}
+
+.inputBox-container{
+    position: absolute;
+    top: 230px;
+    left: 17px;
 }
 
 .log-in-text-6{
@@ -183,8 +215,8 @@
     position: absolute;
     width: 167px;
     height: 20px;
-    left: 1155px;
-    top: 575px;
+    left: 200px;
+    top: 510px;
     
     font-family: 'Outfit', sans-serif;
     font-style: normal;
@@ -201,10 +233,10 @@
 
 .login-btn{
     position: absolute;
-    width: 415px;
+    width: 501px;
     height: 53px;
-    left: 1027px;
-    top: 425px;    
+    left: 26px;
+    top: 430px;    
     
     background: #EB811E;
     border-radius: 8px;
@@ -229,8 +261,8 @@
     position: absolute;
     width: 415px;
     height: 53px;
-    left: 1027px;
-    top: 600px;    
+    left: 70px;
+    top: 540px;    
     
     background: #FFFFFF;
     border-radius: 8px;
@@ -266,6 +298,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 115.5%;
+    /* border-radius: 10px; */
     /* or 18px */
 
     text-align: left;
@@ -303,8 +336,8 @@
     position: absolute;
     width: 128px;
     height: 20px;
-    left: 1310px;
-    top: 395px;
+    left: 400px;
+    top: 380px;
     
     font-family: 'Outfit', sans-serif;
     font-style: normal;

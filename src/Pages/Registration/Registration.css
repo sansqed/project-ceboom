@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Outfit&display=swap%27');
 
+
 *{
     font-family: 'Outfit';
     margin: 0;
@@ -13,8 +14,9 @@
     background-color: #EB811E;
     background-image: url("/src/Assets/images/registration_streetshadow.png");
     background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    background-position: right-top;
+    background-attachment:fixed;
+    /* max-width: 100vh; */
 }
 
 .form-background{
@@ -23,15 +25,30 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    min-height: 100vh;
-    left: 57.99%;
-    right: 0%;
-    top: 0%;
-    bottom: 0%;
+    background-repeat: no-repeat;
+    /* min-height: 100vh; */
+    /* width: 100vh; */
+    overflow: hidden;
+    height: 714px;
+    width: 686px;
+    left: 850px;
+    top: -1px;
+    border-radius: [object Object]px;
+
     gap: 10px;
 
     background: #FFFFFF;
-    border-radius: 62px;
+    /* border-radius: 62px; */
+    border-top-left-radius: 62px;
+    border-bottom-left-radius: 62px;
+}
+
+.form-container{
+    position: absolute;
+    width: 550px;
+    height: 600px;
+    /* background-color: black; */
+    /* color: white; */
 }
 
 .shadowCeb{
@@ -42,8 +59,31 @@
     top: 10px;
 }
 
+.leftText{
+    position: absolute;
+    width: 555px;
+    height: 688px;
+    left: 48px;
+    top: 5px;
+    text-align: left;
+}
+
 .Text1{
     position: absolute;
+    height: 118px;
+    width: 555px;
+    left: 48px;
+    top: 68px;
+    border-radius: nullpx;
+    
+
+    /* top: 68px; */
+
+    /* position: absolute;
+    width: 555px;
+    height: 688px;
+    left: 48px;
+    top: 68px; */
     left: 3.33%;
     right: 58.12%;
     top: 7.92%;
@@ -53,7 +93,7 @@
     font-style: normal;
     font-weight: 800;
     font-size: 76px;
-    line-height: 77.5%;
+    line-height: 58.9px;
     letter-spacing: 0.08em;
 
     color: #FFFFFF;
@@ -61,23 +101,38 @@
 
 .Text2{
     position: absolute;
+    height: 132px;
+    width: 499px;
+    left: 48px;
+    top: 210px;
+    border-radius: nullpx;
+    /* text-align: left; */
+
+    /* position: absolute; */
     left: 3.33%;
     right: 62.01%;
-    top: 24.45%;
+    top: 26.45%;
     bottom: 60.19%;
 
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 300;
     font-size: 34px;
-    line-height: 43px;
+    line-height: 42.89px;
 
     color: #FFFFFF;
 }
 
 .Text3{
     position: absolute;
-    left: 5.4%;
+    height: 165px;
+    width: 277px;
+    left: 49px;
+    top: 468px;
+    border-radius: nullpx;
+
+    /* position: absolute; */
+    left: 3%;
     right: 77.36%;
     top: 49.48%;
     bottom: 26.31%;
@@ -93,6 +148,13 @@
 
 .Text4{
     position: absolute;
+    height: 94px;
+    width: 297px;
+    left: 49px;
+    top: 662px;
+    border-radius: nullpx;
+
+    /* position: absolute; */
     left: 3.4%;
     right: 75.97%;
     top: 77.07%;
@@ -112,10 +174,11 @@
 
 .createAccount{
     position: absolute;
-    left: 60.62%;
-    right: 15.51%;
-    top: 10.71%;
-    bottom: 83.24%;
+    width: 300px;
+    height: 352xp;
+    top: 32px;
+    left: 0px;
+
 
     font-family: 'Outfit';
     font-style: normal;
@@ -142,8 +205,8 @@
     position: absolute;
     height: 55px;
     width: 218px;
-    top: 20%;
-    left: 100px;
+    top: 160px;
+    left: 95px;
 
     border: 1px solid #d8d3d3;
     border-radius: 8px;
@@ -174,9 +237,9 @@
     position: absolute;
     height: 55px;
     width: 225px;
-    top: 20%;
+    top: 160px;
     /* left: 100px; */
-    right: 90px;
+    right: 95px;
 
     border: 1px solid #d8d3d3;
     border-radius: 8px;
@@ -204,8 +267,8 @@
 
 .or{
     position: absolute;
-    right: 18.5%;
-    top: 31%;
+    right: 45.25%;
+    top: 35%;
 
     font-family: 'Outfit';
     font-style: normal;
@@ -225,9 +288,11 @@
 
 .inputBox{
     position: relative;
-    width: 500px;
+    width: 501px;
     height: 60px;
-    top: 3%;
+    top: 8%;
+    right: 0px;
+    margin: 10px;
 }
 
 .inputBox input{
@@ -268,16 +333,17 @@
     position: relative;
     width: 500px;
     height: 60px;
-    top: 3%;
+    top: 8%;
 }
 
 .create{
     box-sizing: border-box;
     position: absolute;
     height: 50px;
-    width: 500px;
+    width: 501px;
     bottom: 0%;
-    left: 0%;
+    /* left: 50px; */
+    right: 0px;
     border-radius: 8px;
     border: 1px solid gray;
 
@@ -290,8 +356,8 @@
 
 .link{
     position: absolute;
-    bottom: 13%;
-    left: 12%;
+    bottom: 18%;
+    left: 14%;
 
     font-family: 'Outfit';
     font-size: 19px;
