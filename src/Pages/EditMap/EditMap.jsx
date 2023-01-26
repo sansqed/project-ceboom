@@ -19,7 +19,7 @@ const EditMap = ({children}) => {
         <p class="ridge"> 
           <div class = "header">Landmarks</div>
           <div className = "wrapper">
-            <button class="button"><NavLink to={"#addlandmark=false"}>Add</NavLink></button>
+            <button class="button"><NavLink to={"#addlandmark"}>Add</NavLink></button>
             <button class="button">Edit</button>
             <button class="button">Delete</button>
           </div>

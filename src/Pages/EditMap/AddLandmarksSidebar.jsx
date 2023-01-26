@@ -7,20 +7,20 @@ import AddLandmarksFn from "../Map/AddLandmarksFn";
 import PropTypes from "prop-types";
 
 
-const AddLandmarksSidebar = ({setMode, editData}) => {
-
-  const location = useLocation()
-  console.log(location)
-
+const AddLandmarksSidebar = ({editData}) => {
+  console.log("add landmark sidebar")
   const submitLandmarks = async() => {
-
+    
   }
 
+
+  console.log(editData)
   return(
     <div className="sidebar-submenu">
       {/* <div className="editMap-Container">Add Landmarks</div> */}
-      <NavLink to={"#addlandmark=true"}>test</NavLink>
+      <NavLink to={"#addlandmark?adding"}>test</NavLink>
       <button onClick={()=>submitLandmarks()}>submit</button>
+      <p id="testname">asdf</p>
     </div>
   );
 };

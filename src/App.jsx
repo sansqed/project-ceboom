@@ -34,6 +34,10 @@ function App() {
               element={<Map/>}  
             />
             <Route 
+              path="/map:action=:subaction" 
+              element={<Map/>}  
+            />
+            <Route 
               path="/" 
               element={<Landing/>}  
             />

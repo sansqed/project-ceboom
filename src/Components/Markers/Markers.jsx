@@ -39,7 +39,7 @@ defaultIcon = new markerIcon({iconUrl: require('../../Assets/icons/DefaultIcon.p
 startIcon = new markerIcon({iconUrl: require('../../Assets/icons/Start.png')}),
 endIcon = new markerIcon({iconUrl: require('../../Assets/icons/End.png')})
 
-function locationChecker(location){
+export function locationChecker(location){
     // console.log(location)
     if(location == undefined){
         // console.log("bobo")
@@ -118,8 +118,8 @@ const MarkerLayer = (data) => {
                 </Marker>
             </div>
         )
-    }else
-    {
+    } else
+    { 
         return(
             <div>
                 <Marker 
