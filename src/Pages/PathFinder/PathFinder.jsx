@@ -9,11 +9,14 @@ import CustomButton from "../../Components/CustomButton/CustomButton";
 import { shortestPath } from '../../ApiCalls/RoadsAPI.jsx'
 import { MapContainer, Marker, Popup, GeoJSON, Polyline, useMap, FeatureGroup } from "react-leaflet"
 
+import CloseIcon from '@mui/icons-material/Close';
 
 const PathFinder = ({setPath}) => {
     const [from, setFromLocation] = useState('Location A');
     const [to, setToLocation] = useState('Location B');
     // const [path, setPath] = useState([]);
+    const [isOpen, setIsOpen] = useState(true);
+    const toggle = () => setIsOpen(!isOpen);
 
     const fromLocation = (selectedOption) => {
         setFromLocation(selectedOption.value);
@@ -79,13 +82,14 @@ const PathFinder = ({setPath}) => {
 
   return(
 
-    <div className="sidebar-submenu">
+    <div className="sidebar-submenu-pathfinder" style={{width: isOpen? "55vh" : "0vh"}}>
         <div className="pathfinder">
 
-        <div className="page-title">
-          <div className="page-title-text">
+        <div className="page-title-pathfinder">
+          <div className="page-title-text-pathfinder">
             Path Finder
           </div>
+          <CloseIcon className="pathfinder-close-icon" onClick={toggle}></CloseIcon>
         </div>
 
                 <div className="pathfinder-searchtitle"> Where would you like to go? </div>
