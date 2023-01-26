@@ -36,12 +36,22 @@ const AboutUs = ({ children }) => {
     <div className="AboutUs">
       
       <div className="Header">
+
         <div className="nav-bar" align="right">
           <a href="/">Home</a>
           <a1 href="/about">About</a1>
           <a href="/login">Login</a>
-          
+
+
+        {/*<div className="nav-bar">
+          <div className="mem-bar" align="right">
+            <a className="nav-bar-mem" href="/">Home</a>
+            <a className="nav-bar-mem" href="/about-us">About</a>
+            <a className="nav-bar-mem" href="/map">Map</a>
+            <a className="nav-bar-mem" href="/login">Login</a>
+          </div>*/}
         </div>
+
         <div className="nav-logo"></div>
         
         <h1>ABOUT</h1>

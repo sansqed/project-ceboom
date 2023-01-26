@@ -1,23 +1,26 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { nodesAll } from '../../Assets/Data/intersection-data.js'
 import Select, { components } from 'react-select'
 import "./PathFinder.css"
-import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
 import "../../Components/Navbar/Sidebar.css";
 import "../../Components/CustomButton/CustomButton";
 import CustomButton from "../../Components/CustomButton/CustomButton";
+import { shortestPath } from '../../ApiCalls/RoadsAPI.jsx'
+import { MapContainer, Marker, Popup, GeoJSON, Polyline, useMap, FeatureGroup } from "react-leaflet"
 
-const PathFinder = ({ children }) => {
+
+const PathFinder = ({setPath}) => {
     const [from, setFromLocation] = useState('Location A');
     const [to, setToLocation] = useState('Location B');
+    // const [path, setPath] = useState([]);
 
     const fromLocation = (selectedOption) => {
-        setFromLocation(selectedOption.label);
+        setFromLocation(selectedOption.value);
     }
 
     const towardsDestination = (selectedOption,) => {
-        setToLocation(selectedOption.label);
+        setToLocation(selectedOption.value);
     }
 
     const colorStyles = {
@@ -34,9 +37,43 @@ const PathFinder = ({ children }) => {
           </components.DropdownIndicator>
         );
       };
-      
 
-    
+    async function FetchData (){
+      const response = await shortestPath(from, to).then((data)=>{
+        console.log(data.data.data)
+
+        setPath(data.data.data.data)
+
+        
+        // console.log(data.data.data.latitudes)
+        // let shortPath = road.latitudes.map((latitude, index) =>
+        //   [latitude, road.longitudes[index]])
+
+        // return(
+        //   <Polyline key={id} pathOptions = {purpleOptions} positions={shortPath}></Polyline>
+        // )
+      })
+    }
+
+  // console.log(path)
+
+  // const RenderRoads = () => {
+  //   const purpleOptions = { color: 'red', weight: 5 }
+  //   const lightTraffic = { color: 'red' }
+  //   return (
+  //     path?.map((road) => {
+
+  //       let shortPath = road.latitudes.map((latitude, index) =>
+  //         [latitude, road.longitudes[index]])
+  //       let id = +road.id
+
+  //       return (
+  //         <Polyline key={id} pathOptions={purpleOptions} positions={shortPath}>
+  //         </Polyline>
+  //       )
+  //     }
+  // ))}
+  // <RenderRoads /> 
 
     console.log(from, to)
 
@@ -101,6 +138,7 @@ const PathFinder = ({ children }) => {
                       divClassName="pathfinder-searchsubmit"
                       title="GET DIRECTIONS" className="pathfinder-searchsubmit-btn" 
                       type="submit"
+                      onClick={()=>FetchData()}
                       />
                 </div>
 

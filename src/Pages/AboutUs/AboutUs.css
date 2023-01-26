@@ -56,7 +56,7 @@
 /*NAVIGATION BAR*/
 .Header > .nav-logo{
     background-image: url("../../Assets/images/project_ceboom_logo_v2.png");
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat; */
     background-size: cover;
     width: 78vh;
     height: 19vh;
@@ -64,15 +64,39 @@
     border-radius: 3vh;
     margin-left: -13vh;
     margin-top: -11vh;
+    top: 137px;
     position: absolute;
 }
 
+.nav-container{
+    position: relative;
+    top: 50%;
+}
+
 .Header > .nav-bar{
+    position: relative;
     font-family: Outfit;
-    font-size: 2.5vh;
-    font-weight: bold;
-    padding-top: 15vh;
+    height: 105px;
+    /* padding-top: 10vh; */
+    bottom: -75px;
+    margin-right: 0;
+    background-color: white;
+}
+
+.Header > .nav-bar > .mem-bar{
+    position:relative;
     margin-right: 5vh;
+    top: 10%;
+}
+
+.Header > .nav-bar > .mem-bar > .nav-bar-mem{
+    margin-right: 13vh;
+    text-decoration: none;
+    color: black;
+}
+
+.Header > .nav-bar > .mem-bar > .nav-bar-mem:focus{
+    color: blue;
 }
 
 .Header > .nav-bar > a{
