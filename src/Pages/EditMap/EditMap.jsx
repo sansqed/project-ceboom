@@ -7,12 +7,16 @@ import AddLandmarksSidebar from "./AddLandmarksSidebar";
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 import { AddRoads } from "../Map/AddRoads";
+import CloseIcon from '@mui/icons-material/Close';
 
 
 
 
 
 const EditMap = ({children}) => {
+
+  const [isOpen, setIsOpen] = useState(true);
+  const toggle = () => setIsOpen(!isOpen);
 
   let navigate = useNavigate();
   const addLandmarkRoute = () => {
@@ -25,8 +29,16 @@ const EditMap = ({children}) => {
   }
 
   return(
-    <div className="sidebar-submenu">
-      <div className="editMap-Container">Edit Map</div>
+    // 
+    <div className="sidebar-submenu-edit" style={{width: isOpen? "55vh" : "0vh"}}>
+        <div className="page-title-edit">
+            <div className="page-title-text-edit">
+              Edit Map
+            </div>
+            <CloseIcon className="Icon" onClick={toggle}></CloseIcon>
+          </div>
+          <div className="search-searchtitle"> Edit the Map's Node and Road </div>
+      <div className="edit-buttons">
       <CustomButton 
                       divClassName="edit-searchsubmit"
                       title="ADD NODES" className="edit-searchsubmit-btn" 
@@ -40,6 +52,8 @@ const EditMap = ({children}) => {
                       type="button"
                       onClick={addRoadRoute}
                       />
+      </div>
+
     </div>
   );
 };

@@ -1,12 +1,45 @@
-.sidebar-submenu{
-  position: absolute;
-  display: flex;
-  z-index: 100000;
-  width: 500px;
-  height: 100vh;
-  background-color: white;
-  margin-left: 6.5vh;
+.sidebar-submenu-edit{
+    font-family: 'Outfit', sans-serif;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    z-index: 100000;
+    width: 55vh;
+    height: 100vh;
+    background-color: white;
+    margin-left: 6.5vh;
+    overflow: hidden;
+    transition: all 0.5s;
+  }
+
+
+.icon{
+  height: 9vh;
+
 }
+
+/* changed to page-title and page-title-text in Sidebar.css */
+.page-title-edit{
+  display: flex;
+  width: 100%;
+  height: 9vh;
+  align-items: center;
+  text-align: center;
+  justify-content:space-around;
+
+  background: #EB811E;;
+}
+.page-title-text-edit{
+  font-style: normal;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 80px;
+  letter-spacing: +1.3px;
+  padding: 0vh 0vh 0vh 20%;
+  color: #FFFFFF;
+}   
+
 
 p.ridge {
   border-style: ridge;
@@ -40,13 +73,19 @@ p.ridge {
   text-align: center;
 }
 
+.editMap-close-icon{
+  float: right;
+}
+
+
 .editMap-Container {  
   text-align: center; 
   position: absolute;
   font-weight: bold;
   font-size: 40px;
   color: white;
-  background-color: rgb(122, 177, 229);
+  background-color: #EB811E;
+  height: 9vh;
   text-transform: uppercase;
   letter-spacing: +1.3px;
   width: 100%;
@@ -89,6 +128,29 @@ p.ridge {
   bottom: 18vh;
 }
 
+.edit-buttons{
+  /* height: 2.8rem;
+  margin-left: 5px;
+  margin-bottom: 10px; */
+  position: absolute;
+  display: flex;
+  width: 95%;
+  padding-left: 20px;
+  padding-right: 20px;
+  /* top: 100vh;
+  width: 95%
+  height: 6vh;
+
+
+  text-align: center;
+  justify-content:space-around; */
+  top: 3vh;  
+  justify-content:space-around;
+  align-self: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
 .edit-searchsubmit-btn{
   font-weight: 700;
     font-size: 16px;
@@ -96,7 +158,7 @@ p.ridge {
     color: white;
     border: none;
     border-radius: 1.15rem;
-    width: 40%;
+    width: 20vh;
     height: 2.8rem;
     background-color: orange;
     cursor: pointer;
