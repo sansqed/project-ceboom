@@ -17,8 +17,29 @@ p.ridge {
   border-top: none;
 }
 
-/* .header {
-  font-size: 20px; */
+.flex-item {
+  /* font-size: 20px; */
+  margin-left: 50px;
+  /* text-align: center !important; */
+  margin-bottom: 10px;
+  text-decoration: none !important;
+}
+
+.flex-header {
+  /* font-size: 20px; */
+  text-align: center !important;
+}
+
+.flex-container{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-align: center;
+}
+
 .editMap-Container {  
   text-align: center; 
   position: absolute;
