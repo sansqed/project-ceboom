@@ -98,6 +98,18 @@ const Map = ({ children }) => {
     setRoads(edges)
   },[])
 
+  async function createNodes(node){  
+    const response = await CreateNodes([node])
+
+    console.log(response)
+    if (response.data.status !== 201){
+      console.log("FAILED")
+    } else {
+      console.log("SUCCESS")
+    }
+
+  }
+
   const MapMarkerId = () =>{
     let map = useMap()
 
@@ -133,8 +145,23 @@ const Map = ({ children }) => {
   const typeIn = useRef(null)
   const locationIn = useRef(null)
 
-  const handleEditChange = () => {
-    console.log(nameIn.current.value, typeIn.current.value, locationIn.current.value)
+  async function handleEditChange (data) {
+    data.name = nameIn.current.value
+    data.location = locationIn.current.value
+    data.landmark_type = typeIn.current.value
+
+    console.log([data])
+    
+    const response = await CreateNodes([data])
+
+    // console.log(response)
+    // if (response.data.status !== 201){
+    //   console.log("FAILED")
+    // } else {
+    //   console.log("SUCCESS")
+    // }
+
+    
     // const {name, value, id} = e.target
 
     // if(tempData?.id == id){
@@ -379,19 +406,7 @@ const Map = ({ children }) => {
     
   }
 
-  // async function createNodes(){  
-  //   console.log("HERE ")
-  //   console.log(nodes)
-  //   const response = await CreateNodes(nodes)
-
-  //   console.log(response)
-  //   if (response.data.status !== 201){
-  //     console.log("FAILED")
-  //   } else {
-  //     console.log("SUCCESS")
-  //   }
-
-  // }
+  
 
   // async function createRoads(){
   //   console.log("HERE ")

@@ -48,7 +48,7 @@ function App() {
             <Route 
               path="/about-us" 
               element={<AboutUs/>}  
-            />
+            />  
             <Route
               path="/registration"
               element={<Registration/>}
