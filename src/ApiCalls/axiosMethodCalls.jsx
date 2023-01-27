@@ -13,3 +13,5 @@ export const getAPICall = (url) => {
 };
 
 export const URL = "https://ceboomapi-production.up.railway.app/"
+// export const URL = "https://7863-43-226-6-219.ap.ngrok.io/"
+

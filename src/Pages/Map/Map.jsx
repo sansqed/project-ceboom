@@ -62,6 +62,7 @@ const Map = ({ children }) => {
   const [isFetchData, setIsFetchData] = useState(true)
   const [showTooltip, setShowToolTip] = useState(true)
   const [pathStartEnd, setPathStartEnd] = useState(null)
+  const [showIntersections, setShowIntersections] = useState(false)
 
   FetchData(landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData)
 
@@ -79,7 +80,12 @@ const Map = ({ children }) => {
       setPath(null)
     }
 
-    if (subpage === "x#editmap"){
+    if (subpage === "#addroads")
+      setShowIntersections(true)
+    else
+      setShowIntersections(false)
+
+    if (subpage === "#editmap"){
       return(<EditMap/>)
     }
     else if (subpage === "#search"){
@@ -382,7 +388,7 @@ const Map = ({ children }) => {
           })}
           <HandleMode/>
 
-        {intersections?.map((landmark) => {
+        {showIntersections && intersections?.map((landmark) => {
           return (
             <MarkerLayer
             data={landmark}
