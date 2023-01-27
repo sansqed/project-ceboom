@@ -68,6 +68,7 @@ const Map = ({ children }) => {
   FetchData(landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData)
 
   const [path, setPath] = useState([]);
+  const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   useEffect(()=>{
     setRoleId(localStorage.getItem("role_id"))
@@ -109,7 +110,7 @@ const Map = ({ children }) => {
   console.log(currRoad)
   console.log(pathStartEnd)
 
-  const handleUpdateTraffic = (road,status) => {
+  async function handleUpdateTraffic(road,status){
     if (status === "Light"){
       SetTraffic(road.id,0)      
     }
@@ -122,6 +123,7 @@ const Map = ({ children }) => {
 
     console.log(road)
     setCurrRoad({oldTraffic: road?.traffic==2000? "Heavy":road?.traffic==1000? "Moderate":"Light", newTraffic: status})
+    await sleep(1000)
     window.location.reload(false)
   }
 
