@@ -5,12 +5,11 @@
 
 /* Background Image */
 .landing-background {
-    height: 100vh;
+    height: 100vh !important;
     background-color: white;
     background-image: url("/src/Assets/images/streets_background.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
     background-attachment: fixed;
 }
 
@@ -18,16 +17,16 @@
 
 .landing-main-text {
     position: absolute;
-    width: 50%;
-    height: auto;
-    left: 5%;
-    top: 30%;
+    width: 740px;
+    height: 90px;
+    left: 70px;
+    top: 220px;
 
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 700;
-    font-size: 10vmin;
-    line-height: auto;  
+    font-size: 72px;
+    line-height: 90px;
     text-align: left;
 
 
@@ -36,16 +35,16 @@
 
 .landing-sub-text-one {
     position: absolute;
-    width: 50%;
-    height: auto;
-    left: 5%;
-    top: 45%;
+    width: 740px;
+    height: 90px;
+    left: 70px;
+    top: 340px;
 
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 500;
-    font-size: 3vmin;
-    line-height: auto;
+    font-size: 20px;
+    line-height: 25px;
 
     text-align: left;
 
@@ -54,16 +53,16 @@
 
 .landing-sub-text-two {
     position: absolute;
-    width: 50%;
-    height: auto;
-    left: 5%;
-    top: 51%;
+    width: 740px;
+    height: 90px;
+    left: 70px;
+    top: 375px;
 
     font-family: 'Outfit';
     font-style: normal;
     font-weight: 300;
-    font-size: 3vmin;
-    line-height: auto;
+    font-size: 20px;
+    line-height: 25px;
 
     text-align: left;
 
@@ -74,18 +73,18 @@
 
 .ceboom-logo {
     position: absolute;
-    width: 18%;
-    height: auto;
-    left: 5%;
-    top: 5%;
+    width: 280px;
+    height: 60px;
+    left: 70px;
+    top: 30px;
 }
 
 .ceboom-logo-one {
     position: absolute;
-    width: 28%;
-    height: auto;
-    right: 10%;
-    top: 18%;
+    width: 427px;
+    height: 518px;
+    left: 920px;
+    top: 130px;
 }
 
 .container {
@@ -101,7 +100,7 @@
 
 /* BUTTONS */
 
-.landing-getstarted button[type="submit"]{
+.login button[type="submit"]{
     position: absolute;
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
@@ -109,9 +108,9 @@
     border: none;
     width: 12.5%;
     height: 7.5%;
-    left: 5%;
-    top: 62%;
-    font-size: 2.4vmin;
+    left: 70px;
+    top: 450px;
+    font-size: 16px;
     background-color: #EB811E;
     cursor: pointer;
 }
@@ -121,13 +120,13 @@
     font-weight: bold;
     font-family: 'Outfit', sans-serif;
     color: #EB811E;
-    border: 0.3vmin solid #EB811E;
+    border: 2px solid #EB811E;
     border-color: #EB811E;
     width: 12.5%;
     height: 7.5%;
-    left: 19%;
-    top: 62%;
-    font-size: 2.4vmin;
+    left: 280px;
+    top: 450px;
+    font-size: 16px;
     background-color: white;
     cursor: pointer;
 }
