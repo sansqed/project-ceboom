@@ -6,7 +6,7 @@ import { edges } from "../Assets/Data/edges";
 import { useEffect } from "react";
 
 export const FetchData = (landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData) => {
-  let isServerUp = false;
+  let isServerUp = true;
 
   const FetchNodes = () => {
     useEffect(() => {
@@ -24,22 +24,22 @@ export const FetchData = (landmarks, setLandmarks, intersections, setIntersectio
     }, []);
   };
 
-  // FetchNodes()
-  useEffect(()=>{
-    if(isFetchData){
-      if (isServerUp){
-        FetchNodes()
-      } else {
-        setLandmarks(landmarksRaw)
-        setIntersections(intersectionsRaw)
-        setRoads(edges)
-      }
-    }
-  },[isFetchData])
+  FetchNodes()
+  // useEffect(()=>{
+  //   if(isFetchData){
+  //     if (isServerUp){
+  //       FetchNodes()
+  //     } else {
+  //       setLandmarks(landmarksRaw)
+  //       setIntersections(intersectionsRaw)
+  //       setRoads(edges)
+  //     }
+  //   }
+  // },[isFetchData])
 
-  // useEffect(() => {
-  //   setAllNodes(landmarks.concat(intersections))
-  // },[landmarks, intersections]);
+  useEffect(() => {
+    setAllNodes(landmarks.concat(intersections))
+  },[landmarks, intersections]);
   
   
 }

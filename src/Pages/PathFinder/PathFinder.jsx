@@ -164,6 +164,7 @@ const PathFinder = ({setPath, landmarksData}) => {
                 <p> TO</p>
                 <p> <span style={{color: "#EB811E", fontSize: "25px", fontWeight: "700"}}>{to}</span></p>
             </div>
+                    */}
 
           
         </div>

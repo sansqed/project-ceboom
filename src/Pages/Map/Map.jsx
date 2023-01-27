@@ -43,7 +43,7 @@ import { locationsAll } from '../../Assets/Data/location-data.js'
 import { SetTraffic } from '../../ApiCalls/RoadsAPI'
 
 import {FetchData} from '../../Helpers/FetchData'
-import { ConstructionOutlined } from '@mui/icons-material'
+import { ConstructionOutlined, Opacity } from '@mui/icons-material'
 
 const Map = ({ children }) => {
   const location = useLocation()
@@ -61,6 +61,7 @@ const Map = ({ children }) => {
   const [allNodes, setAllNodes] = useState([])
   const [isFetchData, setIsFetchData] = useState(true)
   const [showTooltip, setShowToolTip] = useState(true)
+  const [pathStartEnd, setPathStartEnd] = useState(null)
 
   FetchData(landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData)
   // console.log(landmarks, intersections, roads, allNodes)
@@ -74,6 +75,11 @@ const Map = ({ children }) => {
     else(
       setShowToolTip(true)
     )
+
+    if (subpage !== "#pathfinder"){
+      setPathStartEnd(null)
+      setPath(null)
+    }
 
     if (subpage === "#editmap"){
       return(<EditMap/>)
@@ -107,18 +113,6 @@ const Map = ({ children }) => {
   }
   // console.log(roads)
 
-  async function handleCreateNode(node){  
-    const response = await CreateNodes([node])
-
-    console.log(response)
-    if (response.data.status !== 201){
-      console.log("FAILED")
-    } else {
-      console.log("SUCCESS")
-    }
-
-  }
-
   const MapMarkerId = () =>{
     let map = useMap()
 
@@ -145,8 +139,9 @@ const Map = ({ children }) => {
       // console.log(editData)
 
   const nameIn = useRef(null)
+
   async function handleEditChange (data) {
-    console.log(nameIn.current.value, document.getElementsByClassName("landmark_type-select")[0].textContent, document.getElementsByClassName("location-select")[0].textContent)
+    // console.log(nameIn.current.value, document.getElementsByClassName("landmark_type-select")[0].textContent, document.getElementsByClassName("location-select")[0].textContent)
 
     data.name = nameIn.current.value
     data.landmark_type = document.getElementsByClassName("landmark_type-select")[0].textContent
@@ -154,7 +149,7 @@ const Map = ({ children }) => {
     console.log(data)
 
 
-    const response = await CreateNodes([currNode])
+    const response = await CreateNodes([data])
     console.log(response)
 
     if (response.data.status !== 201){
@@ -250,16 +245,16 @@ const Map = ({ children }) => {
       AddRoads(allNodes)
     }
   }
-
+  
 
 
   // MAPS LANDMARK ID TO LEAFLET ID
   // leaflet ID is essential for rendering
   const RenderRoads = () => {
     let map = useMap()
-    const lightTraffic = {color: 'white'}
-    const moderateTraffic = {color: 'yellow'}
-    const heavyTraffic = {color: 'red'}
+    const lightTraffic = {color: 'white', opacity: 0.5}
+    const moderateTraffic = {color: 'yellow', opacity: 0.5}
+    const heavyTraffic = {color: 'red', opacity: 0.5}
     return(
       roads?.map((road) =>{
 
@@ -290,7 +285,13 @@ const Map = ({ children }) => {
               </div>
             </Popup>
             :<></>}
-            <Polyline key={id} pathOptions={road.traffic==2000? heavyTraffic:road.traffic==1000? moderateTraffic:lightTraffic} positions={allPositions}/>
+            <Polyline 
+              key={id} 
+              pathOptions={
+                road.traffic==2000? heavyTraffic:road.traffic==1000? moderateTraffic:lightTraffic
+              } 
+              positions={allPositions}
+            />
           </FeatureGroup>
 
         )
@@ -299,7 +300,7 @@ const Map = ({ children }) => {
   }
 
   const RenderShortPath = () => {
-    const redOptions = { color: '#BA630B', weight: 10 }
+    const redOptions = { color: '#0079be', weight: 7 }
     console.log(path)
 
     return (

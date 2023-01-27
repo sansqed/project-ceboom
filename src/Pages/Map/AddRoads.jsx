@@ -27,7 +27,7 @@ export const AddRoads = (allNodes) => {
     const map = useMap()
     map.pm.enableDraw('Line')
     console.log("drawing line")
-    console.log(currRoad)
+    console.log(allNodes)
     
     map.on('pm:create', (e) => {
     console.log(e)
