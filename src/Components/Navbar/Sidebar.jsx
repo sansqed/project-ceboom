@@ -33,7 +33,6 @@ const Sidebar = ({ children }) => {
     try{
       console.log("here")
       setUser(localStorage.getItem("username").substring(13,localStorage.getItem("username").length-2))
-      // console.log(localStorage.getItem("id"))
       setRoleId(localStorage.getItem("role_id"))
     } catch {
       setUser("Guest")
