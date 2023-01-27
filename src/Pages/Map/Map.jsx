@@ -116,8 +116,8 @@ const Map = ({ children }) => {
     }
 
     console.log(road)
-
     setCurrRoad({oldTraffic: road?.traffic==2000? "Heavy":road?.traffic==1000? "Moderate":"Light", newTraffic: status})
+    window.location.reload(false)
   }
 
 
