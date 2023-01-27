@@ -29,7 +29,7 @@ export const GetRoads = async() => {
 export const shortestPath = async(origin, dest) => {
     try{
         console.log(origin + "/" + dest)
-        const response = await postAPICall("https://7e01-111-125-90-19.ap.ngrok.io/graphs/get_shortest_path/" + origin +"/" + dest, {
+        const response = await postAPICall(URL+"graphs/get_shortest_path/" + origin +"/" + dest, {
             
         });
 
@@ -39,9 +39,9 @@ export const shortestPath = async(origin, dest) => {
     }
 }
 
-export const GetTraffic = async() => {
+export const SetTraffic = async(id, val) => {
     try{
-        const response = await postAPICall("https://0f5e-202-92-153-180.ap.ngrok.io/edges/traffic",{});
+        const response = await postAPICall(URL+"edges/traffic/" + id + "/" + val);
         return { data: response};
     } catch (error) {
         return { data: error };

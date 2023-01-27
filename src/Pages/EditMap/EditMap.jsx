@@ -10,9 +10,6 @@ import { AddRoads } from "../Map/AddRoads";
 import CloseIcon from '@mui/icons-material/Close';
 
 
-
-
-
 const EditMap = ({children}) => {
 
   const [isOpen, setIsOpen] = useState(true);
@@ -35,7 +32,7 @@ const EditMap = ({children}) => {
             <div className="page-title-text-edit">
               Edit Map
             </div>
-            <CloseIcon className="Icon" onClick={toggle}></CloseIcon>
+            <CloseIcon className="pathfinder-close-icon" onClick={toggle}></CloseIcon>
           </div>
           <div className="search-searchtitle"> Edit the Map's Node and Road </div>
       <div className="edit-buttons">

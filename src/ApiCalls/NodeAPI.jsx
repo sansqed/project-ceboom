@@ -21,8 +21,11 @@ export const CreateNodes = async(nodes) => {
 export const GetNodes = async() => {
     try{
         const response = await postAPICall(URL+"nodes/get_all",{});
+        // const response = await postAPICall(URL+"nodes/get_all",{});
+        console.log(response)
         return { data: response};
     } catch (error) {
         return { data: error };
     }
 }
+

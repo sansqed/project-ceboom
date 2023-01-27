@@ -12,10 +12,10 @@ import { MapContainer, Marker, Popup, GeoJSON, Polyline, useMap, FeatureGroup } 
 
 import CloseIcon from '@mui/icons-material/Close';
 
-const PathFinder = ({setPath}) => {
+const PathFinder = ({setPath, landmarksData}) => {
     const [from, setFromLocation] = useState('Location A');
     const [to, setToLocation] = useState('Location B');
-    const [user_id, setUserId] = useState(localStorage.getItem("user_id").slice(1, -1));
+    // const [user_id, setUserId] = useState(localStorage?.getItem("user_id")?.slice(1, -1));
     const [searchHistory, setSearchHistory] = useState([]);
 
     // const [path, setPath] = useState([]);
@@ -30,21 +30,21 @@ const PathFinder = ({setPath}) => {
         setToLocation(selectedOption.value);
     }
   
-    const getUserData = () => {
-      if (localStorage.getItem("user") != null){
-        setUserId(localStorage.getItem("user_id").slice(1,-1));
-      }
-    }
+    // const getUserData = () => {
+    //   if (localStorage.getItem("user") != null){
+    //     setUserId(localStorage.getItem("user_id").slice(1,-1));
+    //   }
+    // }
 
-    async function getHistory(){
-      const response = await GetHistory();
-      console.log(response.data)
-    }
+    // async function getHistory(){
+    //   const response = await GetHistory();
+    //   console.log(response.data)
+    // }
 
-    useEffect(()=>{
-      getUserData()
-      getHistory()
-    },[])
+    // useEffect(()=>{
+    //   getUserData()
+    //   getHistory()
+    // },[])
 
     const colorStyles = {
         control: (styles, {isFocused}) => ({...styles, backgroundColor: 'white', color: 'black', borderRadius: 16, border: "2px solid orange", padding: 3, 
@@ -78,34 +78,14 @@ const PathFinder = ({setPath}) => {
       })
     }
     
-    async function SetHistory (){
-      console.log(from, to, user_id);
-      const response = await AddHistory(user_id, from, to);
+    // async function SetHistory (){
+    //   console.log(from, to, user_id);
+    //   const response = await AddHistory(user_id, from, to);
       
-      console.log(response);
-    }
+    //   console.log(response);
+    // }
 
-  // console.log(path)
-
-  // const RenderRoads = () => {
-  //   const purpleOptions = { color: 'red', weight: 5 }
-  //   const lightTraffic = { color: 'red' }
-  //   return (
-  //     path?.map((road) => {
-
-  //       let shortPath = road.latitudes.map((latitude, index) =>
-  //         [latitude, road.longitudes[index]])
-  //       let id = +road.id
-
-  //       return (
-  //         <Polyline key={id} pathOptions={purpleOptions} positions={shortPath}>
-  //         </Polyline>
-  //       )
-  //     }
-  // ))}
-  // <RenderRoads /> 
-
-    console.log(from, to)
+    // console.log(from, to)
 
   return(
 
@@ -128,7 +108,7 @@ const PathFinder = ({setPath}) => {
                             <Select
                                 className='fromsearch'
                                 components={{ DropdownIndicator }}
-                                options={nodesAll.nodes.map(({name, id})=>({label: name, value: id}) )} 
+                                options={landmarksData?.map(({name, id})=>({label: name, value: id}) )} 
                                 onChange={(fromLocation)}
                                 styles={colorStyles}
                             />
@@ -142,7 +122,7 @@ const PathFinder = ({setPath}) => {
                         <Select 
                             className='tosearch'
                             components={{ DropdownIndicator }}
-                            options={nodesAll.nodes.map(({name, id})=>({label: name, value: id}) )} 
+                            options={landmarksData?.map(({name, id})=>({label: name, value: id}) )} 
                             onChange={towardsDestination} 
                             styles={colorStyles}
                         />
@@ -169,17 +149,22 @@ const PathFinder = ({setPath}) => {
                       divClassName="pathfinder-searchsubmit"
                       title="GET DIRECTIONS" className="pathfinder-searchsubmit-btn" 
                       type="submit"
-                      onClick={()=>{FetchData();SetHistory()}}
+                      onClick={()=>{
+                        FetchData();
+                        // SetHistory()
+                      }}
                       />
                 </div>
 
-            <div className="pathfinder-recentsearches">
+            {/* <div className="pathfinder-recentsearches">
                 Recent Searches
                 <hr/>
+
                 <p> <span style={{color: "#EB811E", fontSize: "25px", fontWeight: "700"}}>{from}</span></p>
                 <p> TO</p>
                 <p> <span style={{color: "#EB811E", fontSize: "25px", fontWeight: "700"}}>{to}</span></p>
             </div>
+
           
         </div>
     </div>

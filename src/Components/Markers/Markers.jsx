@@ -5,6 +5,7 @@ import {Marker, Popup, Tooltip, useMap} from "react-leaflet"
 import L, { latLng, Layer } from "leaflet"
 
 import './Markers.css'
+import { useLocation } from "react-router";
 
 // var test = [{type: "Hospitals", cords: [10.253781, 123.838469]},
 // {type: "Cemetaries", cords: [10.263133, 123.839979]},
@@ -88,16 +89,17 @@ export function locationChecker(location){
     }
 }
 
-const MarkerLayer = (data) => {
+const MarkerLayer = (data, showTooltip) => {
+    const subpage = useLocation().hash
     // console.log(data)
     // return(<></>)
     if (data != undefined){
         // console.log(data.data.landmark_type)
     
     //comment out up until else to not display intersections
-    // if(data.data.landmark_type == "Intersection"){
-    //     return null
-    // }
+    if(data.data.landmark_type == "Intersection"){
+        return null
+    }
     if(data.data.landmark_type == "Start"){
         return(
             <div>
@@ -126,12 +128,16 @@ const MarkerLayer = (data) => {
                     position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
                     icon = {locationChecker(data.data.landmark_type)}
                 >
-                    {/* <Tooltip className="marker-tooltip">
-                        <p>{data.data.id}</p>
-                        <b className="marker-name">{data.data.name}</b>
-                        <p className="marker-type">{data.data.landmark_type}</p>
-                        <p className="marker-location">{data.data.location}</p>
-                    </Tooltip> */}
+                    {
+                        subpage !== "#addroads"?
+                            <Tooltip className="marker-tooltip">
+                                {/* <p>{data.data.id}</p> */}
+                                <b className="marker-name">{data.data.name}</b>
+                                <p className="marker-type">{data.data.landmark_type}</p>
+                                <p className="marker-location">{data.data.location}</p>
+                            </Tooltip>
+                        :<></>
+                    }
                 </Marker>
             </div>
         )
