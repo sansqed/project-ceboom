@@ -1,5 +1,5 @@
 
-import { postAPICall, getAPICall, URL } from "./axiosMethodCalls";
+import { postAPICall, URL } from "./axiosMethodCalls";
 
 export const CreateRoads = async(roads) => {
     try{
@@ -9,7 +9,7 @@ export const CreateRoads = async(roads) => {
             node_id_Bs: roads.map(x => x.endpointB),
             // node_id_As: [4],
             // node_id_Bs: [5],
-            coords: roads.map(x => x.latlngs.map(y=> [y.lat, y .lng])   ),
+            coords: roads.map(x => x.latlngs.map(y=> [y.lat,y.lng])),
         });
         return { data: response};
     } catch (error) {

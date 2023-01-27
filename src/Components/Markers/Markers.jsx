@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import {Marker, Popup, Tooltip, useMap} from "react-leaflet"
-import L, { latLng, Layer } from "leaflet"
+import {Marker, Tooltip, useMap} from "react-leaflet"
+import L from "leaflet"
 
 import './Markers.css'
 import { useLocation } from "react-router";
@@ -25,7 +25,8 @@ var specialMarkerIcon = L.Icon.extend({
     }
 })
 
-const airportIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')}),
+const 
+// airportIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')}),
 barIcon = new markerIcon({iconUrl: require('../../Assets/icons/Bar.png')}),
 barangayHallIcon = new markerIcon({iconUrl: require('../../Assets/icons/BarangayHall.png')}),
 busStationIcon = new markerIcon({iconUrl: require('../../Assets/icons/BusStation.png')}),
@@ -42,7 +43,7 @@ portIcon = new markerIcon({iconUrl: require('../../Assets/icons/Port.png')}),
 publicMarketIcon = new markerIcon({iconUrl: require('../../Assets/icons/PublicMarket.png')}),
 restaurantIcon = new markerIcon({iconUrl: require('../../Assets/icons/Restaurant.png')}),
 schoolIcon = new markerIcon({iconUrl: require('../../Assets/icons/School.png')}),
-templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')}),
+// templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')}),
 touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')}),
 defaultIcon = new markerIcon({iconUrl: require('../../Assets/icons/DefaultIcon.png')}),
 startIcon = new specialMarkerIcon({iconUrl: require('../../Assets/icons/Start.png')}),

@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 // ! material UI icons and other stuff. please check docs. Material UI has many capabilities
 // ! that are all worth checking out. 
 import { Menu, Search, Route, AddLocation, Traffic , AccountCircle} from "@mui/icons-material"
-import { ThemeProvider } from "@mui/material/styles"
 
 import { Box } from "@mui/system"
 import { IconButton } from '@mui/material';
@@ -15,7 +14,7 @@ import { NavLink } from "react-router-dom"
 import './Sidebar.css'
 
 // ! other imports
-import CeboomLogo from '../../Assets/images/project_ceboom_logo.png'
+// import CeboomLogo from '../../Assets/images/project_ceboom_logo.png'
 
 
 const Sidebar = ({ children }) => {

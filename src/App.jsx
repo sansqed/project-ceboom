@@ -1,11 +1,9 @@
 import './App.css';
-import React, { useState } from 'react';
+import React from 'react';
 
-import MarkerLayer from './Components/Markers/Markers'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import TestMap from './Pages/Map/TestMap';
 
 import Map from "./Pages/Map/Map"
 import Landing from './Pages/Landing/Landing';

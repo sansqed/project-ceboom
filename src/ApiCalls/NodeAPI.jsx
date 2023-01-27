@@ -1,12 +1,11 @@
-import { async } from "q";
-import { postAPICall, getAPICall, URL } from "./axiosMethodCalls";
+import { postAPICall, URL } from "./axiosMethodCalls";
 
 export const CreateNodes = async(nodes) => {
     try{
 
         const response = await postAPICall(URL+"nodes/add", {
             names: nodes.map(x => x.name),
-            landmark_types: nodes.map(x => x.landmark_type == ""? "others": x.landmark_type),
+            landmark_types: nodes.map(x => x.landmark_type === ""? "others": x.landmark_type),
             locations: nodes.map(x => x.location),
             latitudes: nodes.map(x => x.latitude),
             longitudes: nodes.map(x => x.longitude),

@@ -1,4 +1,4 @@
-import { postAPICall, getAPICall, URL } from "./axiosMethodCalls";
+import { postAPICall, URL } from "./axiosMethodCalls";
 
 export const AddHistory = async(user_id, origin, destination) => {
     try{
@@ -7,6 +7,7 @@ export const AddHistory = async(user_id, origin, destination) => {
             origin: origin,
             destination: destination,
         })
+        return { data:response }
     } catch (error) {
         return { data: error }
     }
