@@ -123,7 +123,7 @@ const PathFinder = ({setPath, landmarksData, setPathStartEnd}) => {
                                 styles={colorStyles}
                             />
 
-                        <div className="pathfinder-fromdescription"> You can type out a location, or you can click a landmark on the map. </div>
+                        <div className="pathfinder-fromdescription"> You can type out a location of the landmark. </div>
                     </div>
 
                     <div className="pathfinder-tosearchbar">
@@ -137,7 +137,7 @@ const PathFinder = ({setPath, landmarksData, setPathStartEnd}) => {
                             styles={colorStyles}
                         />
 
-                        <div className="pathfinder-todescription">You can type out a location, or you can click a landmark on the map. </div>
+                        <div className="pathfinder-todescription">You can type out a location of the landmark. </div>
                     </div>
                     
                     {/* <div className="pathfinder-searchsubmit">
