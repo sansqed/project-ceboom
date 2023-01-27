@@ -1,6 +1,6 @@
 import "./Search.css"
 import React from 'react'
-import { nodesAll } from '../../Assets/Data/intersection-data.js'
+// import { nodesAll } from '../../Assets/Data/intersection-data.js'
 import Select, { components } from 'react-select'
 import { useState } from 'react'
 import SearchIcon from '@mui/icons-material/Search';
@@ -8,7 +8,7 @@ import "../../Components/Navbar/Sidebar.css";
 import "../../Components/CustomButton/CustomButton";
 import CloseIcon from '@mui/icons-material/Close';
 
-const Search = ({ children }) => {
+const Search = ({landmarksData}) => {
   const [mark_name,setMarkerName] = useState('Name')
   const [mark_type,setMarkerType] = useState('Type')
   const [mark_location,setMarkerLocation] = useState('Location')
@@ -57,7 +57,7 @@ const Search = ({ children }) => {
                     <Select
                         className='fromsearch'
                         components={{ DropdownIndicator }}
-                        options={nodesAll.nodes.map(({name, landmark_type, location, latitude, longitude})=>({label: name, mType: landmark_type, mLocation: location,  mLatitude: latitude,  mLongitude: longitude}) )} 
+                        options={landmarksData.map(({name, landmark_type, location, latitude, longitude})=>({label: name, mType: landmark_type, mLocation: location,  mLatitude: latitude,  mLongitude: longitude}) )} 
                         onChange={handleEvent}
                         styles={colorStyles}
                     />

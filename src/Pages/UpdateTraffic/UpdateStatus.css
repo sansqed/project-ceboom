@@ -161,7 +161,7 @@
     padding:3.5vh;
     border-radius: 10vh;
     width:0vh;
-    margin-left: 1.5vh;
+    margin-left: 2.5vh;
 }
 
 .trafficstatus-moderate{
@@ -170,7 +170,7 @@
     padding:3.5vh;
     border-radius: 10vh;
     width:0vh;
-    margin-left: 1.5vh;
+    margin-left: 2.5vh;
 }
 
 .trafficstatus-heavy{
@@ -179,5 +179,5 @@
     padding:3.5vh;
     border-radius: 10vh;    
     width:0vh;
-    margin-left: 1.5vh;
+    margin-left: 2.5vh;
 }

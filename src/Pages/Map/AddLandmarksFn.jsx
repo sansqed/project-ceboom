@@ -12,17 +12,16 @@ export const AddLandmarksFn = (setCurrNode, editData) => {
   map.on('pm:create', (e)=>{
     let thisLayer = e.layer
     map.pm.disableDraw()
-    setCurrNode(thisLayer)
+    // setCurrNode(thisLayer)
 
-    if(editData.find(({leaflet_id}) => leaflet_id==e.layer._leaflet_id) === undefined)
-      editData.push({
-        leaflet_id: thisLayer?._leaflet_id,
-        name: "",
-        location: "",
-        landmark_type: "",
-        latitude: thisLayer?._latlng.lat,
-        longitude: thisLayer?._latlng.lng
-      })
+    setCurrNode({
+      leaflet_id: thisLayer?._leaflet_id,
+      name: "",
+      location: "",
+      landmark_type: "",
+      latitude: thisLayer?._latlng.lat,
+      longitude: thisLayer?._latlng.lng
+    })
 
     map.removeLayer(thisLayer)
   })

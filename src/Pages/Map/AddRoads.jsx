@@ -5,6 +5,8 @@ import '@geoman-io/leaflet-geoman-free/dist/leaflet-geoman.css';
 import { useMap } from "react-leaflet"
 import { CreateRoads } from "../../ApiCalls/RoadsAPI"
 import { useState } from "react";
+import { toastStyle } from "../../Helpers/Styles";
+import toast from "react-hot-toast";
 export const AddRoads = (allNodes) => {
 
     const [currRoad, setCurrRoad] = useState(null)
@@ -43,10 +45,21 @@ export const AddRoads = (allNodes) => {
         }
         console.log("SULOD BA")
         setCurrRoad(newRoad)
-        CreateRoads([newRoad])
+        const response = CreateRoads([newRoad])
+        
+        if(response !== 201){
+            toast.error(response, {
+                style: toastStyle()
+              });
+        }
+        e.target.addLayer(e.layer.setStyle({color: 'white'}))
     } else {
         console.log("SHET")
         e.target.removeLayer(e.layer)
+
+        toast.error("Road must start and end on a marker", {
+            style: toastStyle()
+        });
     }
     })
 };

@@ -140,7 +140,7 @@
     padding-left: 2.5vh;
 }
 
-.traffic-curstatbutton-light{
+.traffic-curstatbutton-Light{
     background-color: yellow;
     border:none;
     padding: 2vh;
@@ -149,8 +149,26 @@
     width:0%;
 }
 
-.traffic-curstatbutton-heavy{
+.traffic-curstatbutton-Moderate{
+    background-color: #ffa500;
+    border:none;
+    padding: 2vh;
+    margin-top:0.5vh;
+    border-radius: 10vh;
+    width:0%;
+}
+
+.traffic-curstatbutton-Heavy{
     background-color: #F03232;
+    border:none;
+    padding: 2vh;
+    margin-top:0.5vh;
+    border-radius: 10vh;
+    width:0%;
+}
+
+.traffic-curstatbutton-{
+    background-color: white;
     border:none;
     padding: 2vh;
     margin-top:0.5vh;
@@ -161,7 +179,18 @@
 .status-label{
     font-weight: 700;
 }
-.traffic-statusdesc-light{
+
+.traffic-statusdesc-{
+    position: relative;
+    display: inline-flex;
+    padding-left: 5vh;
+    top:-3.5vh;
+    color: white;
+    font-weight: 0;
+    font-family: 'Outfit';
+}
+
+.traffic-statusdesc-Light{
     position: relative;
     display: inline-flex;
     padding-left: 5vh;
@@ -171,7 +200,19 @@
     font-family: 'Outfit';
 }
 
-.traffic-statusdesc-heavy{
+
+
+.traffic-statusdesc-Moderate{
+    position: relative;
+    display: inline-flex;
+    padding-left: 5vh;
+    top:-3.5vh;
+    color: #ffa500;
+    font-weight: 0;
+    font-family: 'Outfit';
+}
+
+.traffic-statusdesc-Heavy{
     position: relative;
     display: inline-flex;
     padding-left: 5vh;

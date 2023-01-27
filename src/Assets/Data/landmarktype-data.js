@@ -1,5 +1,6 @@
 export var landmarkAll = {
     "landmark": [
+		{ 'value': 'Intersection', 'label': 'Intersection'},
         { 'value': 'Municipal Hall', 'label': 'Municipal Hall'},
 		{ 'value': 'Tourist Spot', 'label': 'Tourist Spot'},
 		{ 'value': 'Church', 'label': 'Church'},
@@ -15,6 +16,5 @@ export var landmarkAll = {
 		{ 'value': 'Bus Terminal', 'label': 'Bus Terminal'},
 		{ 'value': 'Fire Station', 'label': 'Fire Station'},
 		{ 'value': 'Market', 'label': 'Market'},
-		{ 'value': 'Intersection', 'label': 'Intersection'}
     ]
 }
