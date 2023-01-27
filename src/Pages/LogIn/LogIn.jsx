@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast"
 
 import icon from "../../Assets/images/icon-login.png";
 import logo from "../../Assets/images/ceboom_logo.png";
+import { Navigate } from "react-router-dom";
 
 // import API call
 import {LoginUser} from "../../ApiCalls/UserAPI"
@@ -15,6 +16,8 @@ const LogIn = ({ children }) => {
     username: "",
     password: "",
   });
+
+  const [status, setStatus] = useState(null)
 
   const handleChange = (e) =>{
     const {name, value} = e.target;
@@ -51,7 +54,7 @@ const LogIn = ({ children }) => {
           localStorage.setItem("username", JSON.stringify(usr));
           localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
           console.log("success")
-          console.log(response)
+          setStatus(response.data.status)
         //setIsLoading(false);
         // localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id).slice(1,-1));
 
@@ -129,6 +132,8 @@ Maps and Waze, Project Ceboom is a simpler version of the two.</span>
               }}
             />
           </a>
+
+          {status===200?<Navigate to={"/map"}/>:<></>}
           
 
         </div>
