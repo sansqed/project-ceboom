@@ -13,8 +13,8 @@ const Landing = ({ children }) => {
   const navigateAboutUs = () => navigate('/about-us');
 
   return(
-    <div className="landing-background">
-      <div className="">
+    <div>
+      <div className="landing-background">
         <div className>
 
           {/* CEBOOM logo */}
@@ -39,13 +39,13 @@ const Landing = ({ children }) => {
           <div className="landing-sub-text-one left">Find local businesses, view maps and get driving directions in CEBU.</div>
           <div className="landing-sub-text-two left">Providing easy access to locations, landmarks, and roads, ultimately putting an emphasis on the user's <span style={{
             color: '#EB811E',
-            fontSize: '3vmin',
+            fontSize: '20px',
             display: 'inline'}}> 
               "sense of direction." 
             </span>
           </div>
 
-          <div className="landing-getstarted">
+          <div className="login">
             <button type="submit" onClick={navigateLogIn}>
               <p>Get started</p>
             </button>
