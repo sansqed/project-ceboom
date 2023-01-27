@@ -6,12 +6,15 @@ import toast, { Toaster } from "react-hot-toast"
 import icon from "../../Assets/images/icon-login.png";
 import logo from "../../Assets/images/ceboom_logo.png";
 import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import API call
 import {LoginUser} from "../../ApiCalls/UserAPI"
 import CustomButton from "../../Components/CustomButton/CustomButton"
 
 const LogIn = ({ children }) => {
+  const nav = useNavigate()
+
   const[loginCredentials, setLoginCredentials] = useState({
     username: "",
     password: "",
@@ -39,10 +42,12 @@ const LogIn = ({ children }) => {
       );
       console.log(loginCredentials)
 
+
+
       // API response
       console.log(response)
       toast('Hello World');
-      if (response.data.status !== 200) {
+      if (response.data.data.status !== 200) {
           console.log(response)
           toast.error(response.data.messages.error)
 
@@ -50,11 +55,13 @@ const LogIn = ({ children }) => {
           toast.success()
           // temp lmaoooo
           var usr = {};
+          console.log(response.data.data.id)
           usr["username"] = loginCredentials.username; 
           localStorage.setItem("username", JSON.stringify(usr));
           localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id));
           console.log("success")
-          setStatus(response.data.status)
+          setStatus(response.data.data.status)
+          nav("/map")
         //setIsLoading(false);
         // localStorage.setItem("role_id", JSON.stringify(response.data.data.role_id).slice(1,-1));
 
@@ -62,6 +69,9 @@ const LogIn = ({ children }) => {
       // setIsClicked(false);
     }
   }
+
+
+  console.log(localStorage.getItem("role_id"))
 
   return(
     <div className="login-background">
@@ -133,7 +143,7 @@ Maps and Waze, Project Ceboom is a simpler version of the two.</span>
             />
           </a>
 
-          {status===200?<Navigate to={"/map"}/>:<></>}
+          {/* {status===200?<Navigate to={"/map"}/>:<></>} */}
           
 
         </div>

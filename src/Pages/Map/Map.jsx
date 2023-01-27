@@ -63,10 +63,15 @@ const Map = ({ children }) => {
   const [showTooltip, setShowToolTip] = useState(true)
   const [pathStartEnd, setPathStartEnd] = useState(null)
   const [showIntersections, setShowIntersections] = useState(false)
+  const [roleId, setRoleId] = useState("-1")
 
   FetchData(landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData)
 
   const [path, setPath] = useState([]);
+
+  useEffect(()=>{
+    setRoleId(localStorage.getItem("role_id"))
+  },[])
 
   const HandleSubpage = () => {
     if (subpage === "#addroads")
@@ -80,12 +85,12 @@ const Map = ({ children }) => {
       setPath(null)
     }
 
-    if (subpage === "#addroads")
+    if (subpage === "#addroads" && roleId==="\"1\"")
       setShowIntersections(true)
     else
       setShowIntersections(false)
 
-    if (subpage === "#editmap"){
+    if (subpage === "#editmap" && roleId==="\"1\""){
       return(<EditMap/>)
     }
     else if (subpage === "#search"){
@@ -94,10 +99,10 @@ const Map = ({ children }) => {
     else if (subpage === "#pathfinder"){
       return(<PathFinder setPath={setPath} landmarksData={landmarks} setPathStartEnd={setPathStartEnd}/>)
     }
-    else if (subpage === "#updatetraffic"){
+    else if (subpage === "#updatetraffic" && roleId==="\"1\""){
       return(<UpdateTraffic roadInfo={currRoad}/>)
     }
-    else if (subpage === "#addlandmark" || subpage === "#addlandmark?adding" || subpage === "#addroads" ){
+    else if ((subpage === "#addlandmark" || subpage === "#addlandmark?adding" || subpage === "#addroads") && roleId==="\"1\""){
       return(<EditMap/>)
     }
   }

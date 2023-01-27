@@ -22,19 +22,27 @@ const Sidebar = ({ children }) => {
   const [selectedMenuItem, setSelectedMenuItem] = useState('MENU');
   const [usernameDisplay, setUser] = useState('')
   const toggle = () => setIsOpen(!isOpen);
+  const [roleID, setRoleId] = useState("-1")
 
   const doubleToggle = () => {
     toggle();
     setSelectedMenuItem('MENU');
   }
-
+  console.log(localStorage.getItem("username"))
   const getUser = () => {
-    if (localStorage.getItem("user") != null){
-      setUser(localStorage.getItem("user"))
-    } else {
-      setUser("Admin")
+    try{
+      console.log("here")
+      setUser(localStorage.getItem("username").substring(13,localStorage.getItem("username").length-2))
+      // console.log(localStorage.getItem("id"))
+      setRoleId(localStorage.getItem("role_id"))
+    } catch {
+      setUser("Guest")
     }
   }
+
+  // console.log(roleID==="\"1\"")
+
+  
 
   const menuItem = [
     {
@@ -67,7 +75,10 @@ const Sidebar = ({ children }) => {
             <Box>
               <IconButton>
                 {" "}
-                <Menu onClick={() => {doubleToggle(); getUser()}} sx={{ fontSize: "4vh" }} style={{color: 'black'}}/>
+                <Menu onClick={() => {
+                  doubleToggle()
+                  getUser()
+                }} sx={{ fontSize: "4vh" }} style={{color: 'black'}}/>
               </IconButton>
             </Box>
           </div>
@@ -105,8 +116,8 @@ const Sidebar = ({ children }) => {
             </Box>
             <div className = "sidebar-bottom-section-link-text"
                 style={{display: isOpen? "flex": "none"}}>
-              {/* {usernameDisplay} */}
-              Admin
+              {usernameDisplay}
+              {/* Admin */}
             </div>
           </div>
 

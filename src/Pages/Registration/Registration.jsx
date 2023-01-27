@@ -5,9 +5,10 @@ import Cebu from "../../Assets/images/registration_CebShadow.png"
 import Google from "../../Assets/images/googleLogo.png"
 import Facebook from "../../Assets/images/facebookLogo.png"
 import { AddNewUser, AddUserAPI } from "../../ApiCalls/AddUserAPI"
+import { useNavigate } from "react-router-dom"
 
 const Registration = ({ children }) => {
-
+    const nav = useNavigate()
     const [newUser, setNewUser] = useState({
        username: "",
        password: "", 
@@ -29,6 +30,10 @@ const Registration = ({ children }) => {
         const response = await AddNewUser (
           newUser  
         );
+
+        if(response.data.data.status===201){
+            nav("/")
+        }
 
         console.log(newUser);
 
