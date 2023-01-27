@@ -33,7 +33,7 @@ const Sidebar = ({ children }) => {
     if (localStorage.getItem("user") != null){
       setUser(localStorage.getItem("user"))
     } else {
-      setUser("Guest")
+      setUser("Admin")
     }
   }
 
@@ -106,7 +106,8 @@ const Sidebar = ({ children }) => {
             </Box>
             <div className = "sidebar-bottom-section-link-text"
                 style={{display: isOpen? "flex": "none"}}>
-              {usernameDisplay}
+              {/* {usernameDisplay} */}
+              Admin
             </div>
           </div>
 
