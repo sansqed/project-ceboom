@@ -159,9 +159,12 @@ const PathFinder = ({setPath, landmarksData}) => {
             {/* <div className="pathfinder-recentsearches">
                 Recent Searches
                 <hr/>
-                <p> {from} TO</p>
-                <p> {to}</p>
-            </div> */}
+
+                <p> <span style={{color: "#EB811E", fontSize: "25px", fontWeight: "700"}}>{from}</span></p>
+                <p> TO</p>
+                <p> <span style={{color: "#EB811E", fontSize: "25px", fontWeight: "700"}}>{to}</span></p>
+            </div>
+
           
         </div>
     </div>

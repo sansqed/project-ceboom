@@ -31,7 +31,7 @@
     overflow: hidden;
     height: 714px;
     width: 686px;
-    left: 850px;
+    left: 0%;
     top: -1px;
     border-radius: [object Object]px;
 
@@ -39,8 +39,8 @@
 
     background: #FFFFFF;
     /* border-radius: 62px; */
-    border-top-left-radius: 62px;
-    border-bottom-left-radius: 62px;
+    border-top-right-radius: 62px;
+    border-bottom-right-radius: 62px;
 }
 
 .form-container{
@@ -55,17 +55,19 @@
     position: absolute;
     width: 350px;
     height: 700px;
-    left: 470px;
-    top: 10px;
+    left: 420px;
+    top: 5px;
 }
 
 .leftText{
+    isplay: flex;
     position: absolute;
-    width: 555px;
-    height: 688px;
-    left: 48px;
-    top: 5px;
+    width: 631px;
+    height: 650px;
+    left: 45%;
+    top:5px;
     text-align: left;
+    margin-left: 20px;
 }
 
 .Text1{
@@ -83,10 +85,10 @@
     width: 555px;
     height: 688px;
     left: 48px;
-    top: 68px; */
+    top: 68px; */;
     left: 3.33%;
     right: 58.12%;
-    top: 7.92%;
+    top: 7.00%;
     bottom: 78.35%;
 
     font-family: 'Outfit';

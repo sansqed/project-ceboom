@@ -33,15 +33,18 @@
     height: 9vh;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    justify-content:space-around;
     background: #EB811E;
 }
 .page-title-text-search{
     font-style: normal;
-    font-size: 35px;
+    font-size: 32px;
     font-weight: 600;
     text-transform: uppercase;
     line-height: 80px;
     letter-spacing: +1.3px;
+    padding: 0vh 0vh 0vh 6%;
     color: #FFFFFF;
 }   
 

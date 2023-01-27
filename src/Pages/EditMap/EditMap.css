@@ -128,27 +128,20 @@ p.ridge {
   bottom: 18vh;
 }
 
-.edit-buttons{
-  /* height: 2.8rem;
-  margin-left: 5px;
-  margin-bottom: 10px; */
-  position: absolute;
+.editing-map-buttons{
   display: flex;
-  width: 95%;
-  padding-left: 20px;
-  padding-right: 20px;
-  /* top: 100vh;
-  width: 95%
-  height: 6vh;
-
-
-  text-align: center;
-  justify-content:space-around; */
-  top: 3vh;  
+  position: absolute;
   justify-content:space-around;
   align-self: center;
   align-items: center;
-  flex-wrap: wrap;
+/* 
+
+
+  width: 95%;
+
+  top: 3vh;  
+
+  flex-wrap: wrap; */
 }
 
 .edit-searchsubmit-btn{
@@ -162,4 +155,16 @@ p.ridge {
     height: 2.8rem;
     background-color: orange;
     cursor: pointer;
+    margin-left: 5pt;
+    margin-right: 5pt; 
+}
+
+.edit-searchtitle{
+  text-align: center;
+  position: absolute;
+  font-weight: 500;
+  font-size: 25px;
+  letter-spacing: 0.44px;
+  width: 100%;
+  top: 13vh;
 }
