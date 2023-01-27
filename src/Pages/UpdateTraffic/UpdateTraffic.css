@@ -141,7 +141,7 @@
 }
 
 .traffic-curstatbutton-Light{
-    background-color: yellow;
+    background-color: #eaeaea;
     border:none;
     padding: 2vh;
     margin-top:0.5vh;
@@ -195,7 +195,7 @@
     display: inline-flex;
     padding-left: 5vh;
     top:-3.5vh;
-    color: #FEE227;
+    color: #383838;
     font-weight: 0;
     font-family: 'Outfit';
 }

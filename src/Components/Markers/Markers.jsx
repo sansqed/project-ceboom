@@ -13,9 +13,17 @@ import { useLocation } from "react-router";
 
 var markerIcon = L.Icon.extend({
     options:{
-        iconSize: [35,35]
+        iconSize: [35,35],
+        // opacity: 0.3
     }
 });
+
+var specialMarkerIcon = L.Icon.extend({
+    options:{
+        iconSize: [50,50],
+        shadowSize: [68, 95],
+    }
+})
 
 const airportIcon = new markerIcon({iconUrl: require('../../Assets/icons/Airport.png')}),
 barIcon = new markerIcon({iconUrl: require('../../Assets/icons/Bar.png')}),
@@ -37,8 +45,8 @@ schoolIcon = new markerIcon({iconUrl: require('../../Assets/icons/School.png')})
 templeIcon = new markerIcon({iconUrl: require('../../Assets/icons/Temple.png')}),
 touristSpotIcon = new markerIcon({iconUrl: require('../../Assets/icons/TouristSpot.png')}),
 defaultIcon = new markerIcon({iconUrl: require('../../Assets/icons/DefaultIcon.png')}),
-startIcon = new markerIcon({iconUrl: require('../../Assets/icons/Start.png')}),
-endIcon = new markerIcon({iconUrl: require('../../Assets/icons/End.png')})
+startIcon = new specialMarkerIcon({iconUrl: require('../../Assets/icons/Start.png')}),
+endIcon = new specialMarkerIcon({iconUrl: require('../../Assets/icons/End.png')})
 
 export function locationChecker(location){
     // console.log(location)
@@ -107,6 +115,12 @@ const MarkerLayer = (data, showTooltip) => {
                     position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
                     icon = {startIcon}
                 >
+                    <Tooltip className="marker-tooltip">
+                        {/* <p>{data.data.id}</p> */}
+                        <b className="marker-name">{data.data.name}</b>
+                        <p className="marker-type">{data.data.landmark_type}</p>
+                        <p className="marker-location">{data.data.location}</p>
+                    </Tooltip>
                 </Marker>
             </div>
         )
@@ -116,7 +130,14 @@ const MarkerLayer = (data, showTooltip) => {
                 <Marker
                     position = {[data.data.latitude.toString(),data.data.longitude.toString()]} 
                     icon = {endIcon}
+                    
                 >
+                <Tooltip className="marker-tooltip">
+                    {/* <p>{data.data.id}</p> */}
+                    <b className="marker-name">{data.data.name}</b>
+                    <p className="marker-type">{data.data.landmark_type}</p>
+                    <p className="marker-location">{data.data.location}</p>
+                </Tooltip>
                 </Marker>
             </div>
         )

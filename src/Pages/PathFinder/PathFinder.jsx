@@ -12,7 +12,7 @@ import { MapContainer, Marker, Popup, GeoJSON, Polyline, useMap, FeatureGroup } 
 
 import CloseIcon from '@mui/icons-material/Close';
 
-const PathFinder = ({setPath, landmarksData}) => {
+const PathFinder = ({setPath, landmarksData, setPathStartEnd}) => {
     const [from, setFromLocation] = useState('Location A');
     const [to, setToLocation] = useState('Location B');
     // const [user_id, setUserId] = useState(localStorage?.getItem("user_id")?.slice(1, -1));
@@ -63,8 +63,18 @@ const PathFinder = ({setPath, landmarksData}) => {
 
     async function FetchData (){
       const response = await shortestPath(from, to).then((data)=>{
-        console.log(data.data.data)
+        let start = landmarksData.find(({id})=>id == from)
+        start.landmark_type = "Start"
 
+        let end = landmarksData.find(({id}) => id == to)
+        end.landmark_type = "End"
+
+        setPathStartEnd({
+          start: start,
+          end: end,
+        })
+        console.log(data.data.data)
+        
         setPath(data.data.data.data)
 
         

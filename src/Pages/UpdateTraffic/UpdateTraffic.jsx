@@ -12,6 +12,7 @@ const UpdateTraffic = ({roadInfo}) => {
   const updatestatusToggle = () => {console.log("shet")}
   const [isOpen, setIsOpen] = useState(true);
   const toggle = () => setIsOpen(!isOpen);
+  console.log(roadInfo)
 
   return(
       <div className="sidebar-submenu-traffic" style={{width: isOpen? "55vh" : "0vh"}}>

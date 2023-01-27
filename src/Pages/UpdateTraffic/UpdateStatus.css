@@ -156,8 +156,10 @@
 }
 
 .trafficstatus-light{
-    background-color: yellow;
-    border:none;
+    background-color: #eaeaea;
+    border: none;
+    /* border-color: #000; */
+    border-width: 10;
     padding:3.5vh;
     border-radius: 10vh;
     width:0vh;

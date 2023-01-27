@@ -64,9 +64,7 @@ const Map = ({ children }) => {
   const [pathStartEnd, setPathStartEnd] = useState(null)
 
   FetchData(landmarks, setLandmarks, intersections, setIntersections, setRoads, setAllNodes, isFetchData)
-  // console.log(landmarks, intersections, roads, allNodes)
 
-  // show path
   const [path, setPath] = useState([]);
 
   const HandleSubpage = () => {
@@ -81,14 +79,14 @@ const Map = ({ children }) => {
       setPath(null)
     }
 
-    if (subpage === "#editmap"){
+    if (subpage === "x#editmap"){
       return(<EditMap/>)
     }
     else if (subpage === "#search"){
       return(<Search landmarksData={landmarks} />)
     }
     else if (subpage === "#pathfinder"){
-      return(<PathFinder setPath={setPath} landmarksData={landmarks}/>)
+      return(<PathFinder setPath={setPath} landmarksData={landmarks} setPathStartEnd={setPathStartEnd}/>)
     }
     else if (subpage === "#updatetraffic"){
       return(<UpdateTraffic roadInfo={currRoad}/>)
@@ -97,6 +95,8 @@ const Map = ({ children }) => {
       return(<EditMap/>)
     }
   }
+  console.log(currRoad)
+  console.log(pathStartEnd)
 
   const handleUpdateTraffic = (road,status) => {
     if (status === "Light"){
@@ -109,9 +109,11 @@ const Map = ({ children }) => {
       SetTraffic(road.id,2000)
     }
 
-    setCurrRoad({oldTraffic: road?.traffic===2000? "Heavy":road?.traffic===1000? "Moderate":"Light", newTraffic: status})
+    console.log(road)
+
+    setCurrRoad({oldTraffic: road?.traffic==2000? "Heavy":road?.traffic==1000? "Moderate":"Light", newTraffic: status})
   }
-  // console.log(roads)
+
 
   const MapMarkerId = () =>{
     let map = useMap()
@@ -135,13 +137,10 @@ const Map = ({ children }) => {
 
     },[landmarks,intersections,roads])
   }
-      // console.log(landmarks,intersections)
-      // console.log(editData)
 
   const nameIn = useRef(null)
 
   async function handleEditChange (data) {
-    // console.log(nameIn.current.value, document.getElementsByClassName("landmark_type-select")[0].textContent, document.getElementsByClassName("location-select")[0].textContent)
 
     data.name = nameIn.current.value
     data.landmark_type = document.getElementsByClassName("landmark_type-select")[0].textContent
@@ -179,20 +178,6 @@ const Map = ({ children }) => {
             />
             :<></>
           }
-          
-
-          
-
-          {/* {editData?.map((data)=>(
-          <Marker 
-            key={data.leaflet_id}
-            position={[data.latitude, data.longitude]} 
-            icon={locationChecker(data.landmark_type)}
-          >
-            <Popup>
-              hellow
-            </Popup>
-          </Marker>))} */}
         </div>
       )
     } 
@@ -253,7 +238,7 @@ const Map = ({ children }) => {
   const RenderRoads = () => {
     let map = useMap()
     const lightTraffic = {color: 'white', opacity: 0.5}
-    const moderateTraffic = {color: 'yellow', opacity: 0.5}
+    const moderateTraffic = {color: 'orange', opacity: 0.5}
     const heavyTraffic = {color: 'red', opacity: 0.5}
     return(
       roads?.map((road) =>{
@@ -318,35 +303,36 @@ const Map = ({ children }) => {
       }))}
 
     
-  const RenderStartMarker = () => {
+  const RenderStartEndMarker = () => {
     console.log(path)
     if(path && path.length)
       return (
-        <MarkerLayer
-          data={{ landmark_type: "Start", latitude: path[0].latitudes[0], longitude: path[0].longitudes[0] }}
-        />)
-  }
-
-  const RenderEndMarker = () => {
-    console.log(path)
-    if (path && path.length)
-      return (
-        <MarkerLayer
-          data={{ landmark_type: "End", latitude: path.at(-1).latitudes.at(-1), longitude: path.at(-1).longitudes.at(-1)}}
-        />)
+        <div>
+          <MarkerLayer
+            data={pathStartEnd.start}
+            zIndexOffset={10000000000000}
+            riseOnHover={true}
+          />
+          <MarkerLayer
+            data={pathStartEnd.end}
+            zIndexOffset={10000000000000}
+            riseOnHover={true}
+          />
+        </div>
+      )
   }
   console.log(allNodes)
 
   const DrawMap = () => {
     let map = useMap()
 
-    map.pm.addControls({  
-      position: 'topright',  
-      // drawCircle: false,  
-    });  
+    map.eachLayer((layer)=>layer?.redraw())
+    // map.pm.addControls({  
+    //   position: 'topright',  
+    //   // drawCircle: false,  
+    // });  
   }
   
-  // console.log(roads.map(x => [x.latlngs.map(y => [y.lat, y.lng])]))
   return(
 
     <div className="map-container">
@@ -386,19 +372,12 @@ const Map = ({ children }) => {
         <HandleMode/>
         <RenderRoads/>
         {/* <DrawMap/> */}
-        {subpage==="#pathfinder"? 
-          <div>
-            <RenderShortPath/>    
-            <RenderStartMarker/>
-            <RenderEndMarker/>
-          </div>
-        :<></>
-        }
         {landmarks?.map((landmark) =>{
           return(
             <MarkerLayer
             data = {landmark}
             showTooltip={showTooltip}
+            zIndexOffset={10}
             />)
           })}
           <HandleMode/>
@@ -406,10 +385,17 @@ const Map = ({ children }) => {
         {intersections?.map((landmark) => {
           return (
             <MarkerLayer
-              data={landmark}
-              
+            data={landmark}
+            
             />)
-        })}
+          })}
+        {subpage==="#pathfinder"? 
+          <div>
+            <RenderStartEndMarker/>
+            <RenderShortPath/>    
+          </div>
+        :<></>
+        }
       </MapContainer>      
       
       </div>
