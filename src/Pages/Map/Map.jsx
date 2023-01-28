@@ -384,7 +384,7 @@ const Map = ({ children }) => {
         <MapMarkerId/>
         <HandleMode/>
         <RenderRoads/>
-        <DrawMap/>
+        {/* <DrawMap/> */}
         {landmarks?.map((landmark) =>{
           return(
             <MarkerLayer
