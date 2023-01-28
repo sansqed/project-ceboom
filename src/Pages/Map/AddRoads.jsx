@@ -7,7 +7,7 @@ import { CreateRoads } from "../../ApiCalls/RoadsAPI"
 import { useState } from "react";
 import { toastStyle } from "../../Helpers/Styles";
 import toast from "react-hot-toast";
-export const AddRoads = (allNodes) => {
+export const AddRoads = (allNodes, intersections) => {
 
     const [currRoad, setCurrRoad] = useState(null)
 
@@ -23,6 +23,9 @@ export const AddRoads = (allNodes) => {
     //       console.log("SUCCESS")
     //     }
     // }
+    function trueRound(value, digits){
+      return (Math.round((value*Math.pow(10,digits)).toFixed(digits-1))/Math.pow(10,digits)).toFixed(digits);
+    }
 
     const map = useMap()
     map.pm.enableDraw('Line')
@@ -34,8 +37,19 @@ export const AddRoads = (allNodes) => {
     console.log(allNodes)
     var lastVertex = e.layer._latlngs.at(-1)
     var firstVertex = e.layer._latlngs[0]
-    var endMarker =  allNodes.find(({latitude, longitude}) => latitude == lastVertex.lat && longitude == lastVertex.lng)
-    var startMarker = allNodes.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+    
+    var endMarker =  allNodes.find(({latitude, longitude}) => trueRound(+latitude, 10) === trueRound(+lastVertex.lat, 10) && trueRound(+longitude,10) == trueRound(lastVertex.lng,10))
+    
+    // if(endMarker === undefined)
+    //   endMarker = inter.find(({latitude, longitude}) => trueRound(+latitude, 10) === trueRound(+lastVertex, 10) && trueRound(+longitude,10) == trueRound(lastVertex.lng,10))
+
+    var startMarker =  allNodes.find(({latitude, longitude}) => trueRound(+latitude, 10) === trueRound(+firstVertex.lat, 10) && trueRound(+longitude,10) == trueRound(+firstVertex.lng,10))
+    // if(startMarker === undefined)
+    //   startMarker = intersections.find(({latitude, longitude}) => latitude == firstVertex.lat && longitude == firstVertex.lng)
+      console.log(lastVertex, firstVertex)
+      console.log()
+      console.log(startMarker, endMarker)
+
     if (endMarker && startMarker){
         var newRoad = {
         leaflet_id: e.layer._leaflet_id,  

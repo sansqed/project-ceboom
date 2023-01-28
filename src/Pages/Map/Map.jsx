@@ -171,7 +171,7 @@ const Map = ({ children }) => {
     } 
 
   }
-
+  console.log(allNodes)
   const HandleMode = () => {
     const map = useMap()
 
@@ -240,7 +240,7 @@ const Map = ({ children }) => {
     }
 
     else if (subpage == "#addroads"){
-      AddRoads(allNodes)
+      AddRoads(allNodes, intersections)
     }
   }
   
@@ -339,11 +339,11 @@ const Map = ({ children }) => {
   const DrawMap = () => {
     let map = useMap()
 
-    map.eachLayer((layer)=>layer?.redraw())
-    // map.pm.addControls({  
-    //   position: 'topright',  
-    //   // drawCircle: false,  
-    // });  
+    // map.eachLayer((layer)=>layer?.redraw())
+    map.pm.addControls({  
+      position: 'topright',  
+      // drawCircle: false,  
+    });  
   }
   
   return(
@@ -384,7 +384,7 @@ const Map = ({ children }) => {
         <MapMarkerId/>
         <HandleMode/>
         <RenderRoads/>
-        {/* <DrawMap/> */}
+        <DrawMap/>
         {landmarks?.map((landmark) =>{
           return(
             <MarkerLayer
